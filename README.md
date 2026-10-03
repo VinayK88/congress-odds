@@ -1,5 +1,7 @@
 # Congress Odds
 
+**[Open the live dashboard](https://vinayk88.github.io/congress-odds/)** · [Automatic update runs](https://github.com/VinayK88/congress-odds/actions)
+
 A responsive 2026 U.S. House and Senate control dashboard showing Democratic and Republican market-implied chances from Polymarket.
 
 <!-- CONGRESS_ODDS:START -->
