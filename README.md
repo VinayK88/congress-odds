@@ -7,8 +7,8 @@ A responsive 2026 U.S. House and Senate control dashboard showing Democratic and
 
 | Chamber | Democrats | Republicans | Retrieved (UTC) |
 | :-- | --: | --: | :-- |
-| [House](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 93.5% | 6.5% | 2026-10-03 22:07:38 |
-| [Senate](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 64.5% | 35.5% | 2026-10-03 22:07:38 |
+| [House](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 93.5% | 6.5% | 2026-10-03 22:24:08 |
+| [Senate](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 64.5% | 35.5% | 2026-10-03 22:24:08 |
 
 Source: Polymarket market-implied probabilities, not polling percentages or guaranteed outcomes. Independent market prices are shown without normalization and may not total 100%. Check the retrieval dates above; scheduled updates may be delayed.
 <!-- CONGRESS_ODDS:END -->
