@@ -26,13 +26,33 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Retrieve verified source data and update README
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - name: Install model dependencies
+        run: pip install -r scripts/requirements.txt
+      - name: Validate parsers and model chronology
+        run: |
+          node --test scripts/data-core.test.mjs
+          python scripts/test_model.py
+      - name: Retrieve verified source data
         run: node scripts/update-data.mjs
-      - name: Save snapshot and README
+      - name: Train daily model
+        id: model
+        continue-on-error: true
+        run: python scripts/train-model.py
+      - name: Report training failure
+        if: steps.model.outcome == 'failure'
+        run: echo "::warning::Model training failed. Retaining timestamped previous forecasts; expired forecasts are labeled on the site."
+      - name: Update README comparisons and model results
+        run: node scripts/update-readme.mjs
+      - name: Save snapshots and README
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add dist/data/latest.json README.md
+          git add dist/data/*.json README.md
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh Congress control probabilities'
             git push

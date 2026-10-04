@@ -1,2 +1,5 @@
 dist/congress-odds-source.zip
 *.tmp
+
+__pycache__/
+*.pyc

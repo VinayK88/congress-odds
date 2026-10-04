@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {midpoint,parseKalshi,parsePredictIt,parseEvent,consensus,markdown,slugs} from '../dist/data-core.mjs';
+const at='2026-10-04T08:00:00Z',now=Date.parse(at);
+const contract=(p)=>({probability:p,closed:false});
+const c={source:'Example',url:'https://example.com',fetchedAt:at,parties:{democratic:contract(.6),republican:contract(.4)}};
+test('midpoints reject missing, crossed and incomplete quotes',()=>{assert.ok(Math.abs(midpoint('.6','.7')-.65)<1e-12);for(const pair of [[null,.7],['',.7],[.8,.7],[0,.7],[.5,1],[NaN,.7]])assert.throws(()=>midpoint(...pair));});
+test('Kalshi contracts map by ticker, not array position',()=>{const r=parseKalshi({event:{event_ticker:'CONTROLH-2026',markets:[{ticker:'CONTROLH-2026-R',yes_bid_dollars:'.3',yes_ask_dollars:'.4',status:'active'},{ticker:'CONTROLH-2026-D',yes_bid_dollars:'.6',yes_ask_dollars:'.7',status:'active'}]}},'house',at);assert.ok(Math.abs(r.parties.democratic.probability-.65)<1e-12);assert.equal(r.parties.republican.probability,.35);});
+test('PredictIt rejects a different election market',()=>assert.throws(()=>parsePredictIt({id:8600})));
+test('Polymarket finds Yes by label and rejects missing prices',()=>{const event={slug:slugs.house,markets:['Democratic Party','Republican Party'].map(groupItemTitle=>({groupItemTitle,active:true,outcomes:['No','Yes'],outcomePrices:['.3','.7'],updatedAt:at}))};assert.equal(parseEvent(event,'house',at).parties.democratic.probability,.7);event.markets[0].outcomePrices[1]=null;assert.throws(()=>parseEvent(event,'house'));});
+test('average excludes stale and closed sources without normalizing',()=>{const data={sources:{polymarket:{house:c},kalshi:{house:{...c,fetchedAt:'2026-10-04T01:00:00Z'}},predictit:{house:{...c,parties:{democratic:{probability:.8,closed:true},republican:contract(.2)}}}}};assert.equal(consensus(data,'house',now).included.length,1);assert.equal(consensus(data,'house',now).parties.democratic.probability,.6);assert.equal(consensus(data,'house',now+3*3600000),null);});
+test('README retains timestamp and labels model target separately',()=>{const text=markdown({sources:{polymarket:{house:c}}});assert.ok(text.includes(at));assert.ok(text.includes('Polymarket: Yes'));});

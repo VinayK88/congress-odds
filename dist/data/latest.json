@@ -1,46 +1,113 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "electionYear": 2026,
-  "chambers": {
-    "house": {
-      "chamber": "house",
-      "source": "Polymarket",
-      "url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
-      "fetchedAt": "2026-10-04T07:52:32.137Z",
-      "parties": {
-        "democratic": {
-          "probability": 0.935,
-          "marketId": "562802",
-          "updatedAt": "2026-10-04T07:50:53.679305Z",
-          "closed": false
-        },
-        "republican": {
-          "probability": 0.075,
-          "marketId": "562803",
-          "updatedAt": "2026-10-04T07:50:53.679305Z",
-          "closed": false
+  "sources": {
+    "polymarket": {
+      "house": {
+        "chamber": "house",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
+        "fetchedAt": "2026-10-04T08:18:23.211Z",
+        "priceMethod": "Yes outcome price",
+        "parties": {
+          "democratic": {
+            "probability": 0.935,
+            "marketId": "562802",
+            "updatedAt": "2026-10-04T08:14:51.58706Z",
+            "closed": false
+          },
+          "republican": {
+            "probability": 0.075,
+            "marketId": "562803",
+            "updatedAt": "2026-10-04T08:14:51.58706Z",
+            "closed": false
+          }
+        }
+      },
+      "senate": {
+        "chamber": "senate",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
+        "fetchedAt": "2026-10-04T08:18:23.165Z",
+        "priceMethod": "Yes outcome price",
+        "parties": {
+          "democratic": {
+            "probability": 0.645,
+            "marketId": "562793",
+            "updatedAt": "2026-10-04T08:14:51.58706Z",
+            "closed": false
+          },
+          "republican": {
+            "probability": 0.355,
+            "marketId": "562794",
+            "updatedAt": "2026-10-04T08:14:51.58706Z",
+            "closed": false
+          }
         }
       }
     },
-    "senate": {
-      "chamber": "senate",
-      "source": "Polymarket",
-      "url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
-      "fetchedAt": "2026-10-04T07:52:32.168Z",
-      "parties": {
-        "democratic": {
-          "probability": 0.645,
-          "marketId": "562793",
-          "updatedAt": "2026-10-04T07:50:53.679305Z",
-          "closed": false
-        },
-        "republican": {
-          "probability": 0.355,
-          "marketId": "562794",
-          "updatedAt": "2026-10-04T07:50:53.679305Z",
-          "closed": false
+    "kalshi": {
+      "senate": {
+        "chamber": "senate",
+        "source": "Kalshi",
+        "url": "https://kalshi.com/markets/controls/senate-winner/controls-2026",
+        "fetchedAt": "2026-10-04T08:18:22.602Z",
+        "priceMethod": "Yes bid/ask midpoint",
+        "parties": {
+          "democratic": {
+            "probability": 0.635,
+            "marketId": "CONTROLS-2026-D",
+            "closed": false
+          },
+          "republican": {
+            "probability": 0.365,
+            "marketId": "CONTROLS-2026-R",
+            "closed": false
+          }
+        }
+      },
+      "house": {
+        "chamber": "house",
+        "source": "Kalshi",
+        "url": "https://kalshi.com/markets/controlh/house-winner/controlh-2026",
+        "fetchedAt": "2026-10-04T08:18:22.771Z",
+        "priceMethod": "Yes bid/ask midpoint",
+        "parties": {
+          "democratic": {
+            "probability": 0.9185000000000001,
+            "marketId": "CONTROLH-2026-D",
+            "closed": false
+          },
+          "republican": {
+            "probability": 0.0815,
+            "marketId": "CONTROLH-2026-R",
+            "closed": false
+          }
+        }
+      }
+    },
+    "predictit": {
+      "senate": {
+        "chamber": "senate",
+        "source": "PredictIt",
+        "url": "https://www.predictit.org/markets/detail/8155/Which-party-will-control-the-Senate-after-the-2026-election",
+        "fetchedAt": "2026-10-04T08:18:23.127Z",
+        "priceMethod": "Yes bid/ask midpoint",
+        "sourceTimestampRaw": "2026-10-04T04:17:32.2945553",
+        "parties": {
+          "democratic": {
+            "probability": 0.645,
+            "marketId": 31947,
+            "closed": false
+          },
+          "republican": {
+            "probability": 0.375,
+            "marketId": 31948,
+            "closed": false
+          }
         }
       }
     }
-  }
+  },
+  "errors": {}
 }

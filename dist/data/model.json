@@ -1,0 +1,1856 @@
+{
+  "schemaVersion": 1,
+  "trainedAt": "2026-10-04T08:14:26Z",
+  "algorithm": "StandardScaler + Ridge (alpha=10)",
+  "target": "Next daily Kalshi closing Yes bid/ask midpoint",
+  "features": [
+    "level",
+    "change_1d",
+    "change_3d",
+    "change_7d",
+    "volatility_7d"
+  ],
+  "validation": "Expanding-window one-step forecasts on the last 60 valid daily examples; fixed alpha, no random split.",
+  "series": {
+    "CONTROLH-2026-D": {
+      "chamber": "house",
+      "party": "democratic",
+      "ticker": "CONTROLH-2026-D",
+      "forecast": 0.9178112006431204,
+      "forecastFor": "2026-10-05T04:00:00Z",
+      "dataThrough": "2026-10-04T04:00:00Z",
+      "lastClose": 0.9185000000000001,
+      "maePP": 0.2800284684584216,
+      "baselineMaePP": 0.25416666666666793,
+      "testDays": 60,
+      "trainingExamples": 357,
+      "historyDays": 365,
+      "testStart": "2026-08-06T04:00:00Z",
+      "testEnd": "2026-10-04T04:00:00Z",
+      "coefficients": [
+        -0.0009247920978944555,
+        0.00027575970952645597,
+        -0.00021620470791535004,
+        0.0010329102852441006,
+        -0.00047770717920316583
+      ],
+      "intercept": 0.0007941176470588297,
+      "featureMeans": [
+        0.7879803921568623,
+        0.0008053221288515406,
+        0.0023599439775910365,
+        0.005392156862745095,
+        0.005477285390428354
+      ],
+      "featureScales": [
+        0.07259695270948606,
+        0.008532147133058306,
+        0.015590658087608282,
+        0.025926182543643428,
+        0.005410037852046946
+      ],
+      "backtest": [
+        {
+          "t": 1785988800,
+          "predicted": 0.8349765220636617,
+          "actual": 0.835,
+          "baseline": 0.835,
+          "trainExamples": 297
+        },
+        {
+          "t": 1786075200,
+          "predicted": 0.8349766751752881,
+          "actual": 0.835,
+          "baseline": 0.835,
+          "trainExamples": 298
+        },
+        {
+          "t": 1786161600,
+          "predicted": 0.834976825945518,
+          "actual": 0.845,
+          "baseline": 0.835,
+          "trainExamples": 299
+        },
+        {
+          "t": 1786248000,
+          "predicted": 0.8450269424029129,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 300
+        },
+        {
+          "t": 1786334400,
+          "predicted": 0.8447132457555637,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 301
+        },
+        {
+          "t": 1786420800,
+          "predicted": 0.8447155566780528,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 302
+        },
+        {
+          "t": 1786507200,
+          "predicted": 0.8448633902370518,
+          "actual": 0.855,
+          "baseline": 0.845,
+          "trainExamples": 303
+        },
+        {
+          "t": 1786593600,
+          "predicted": 0.8551875957702645,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 304
+        },
+        {
+          "t": 1786680000,
+          "predicted": 0.8548737594818866,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 305
+        },
+        {
+          "t": 1786766400,
+          "predicted": 0.8548749308968541,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 306
+        },
+        {
+          "t": 1786852800,
+          "predicted": 0.8547595828219006,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 307
+        },
+        {
+          "t": 1786939200,
+          "predicted": 0.8547615733794458,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 308
+        },
+        {
+          "t": 1787025600,
+          "predicted": 0.8547635310192855,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 309
+        },
+        {
+          "t": 1787112000,
+          "predicted": 0.8547654565385647,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 310
+        },
+        {
+          "t": 1787198400,
+          "predicted": 0.8547755228953883,
+          "actual": 0.845,
+          "baseline": 0.855,
+          "trainExamples": 311
+        },
+        {
+          "t": 1787284800,
+          "predicted": 0.8439436087110057,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 312
+        },
+        {
+          "t": 1787371200,
+          "predicted": 0.8442625839055538,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 313
+        },
+        {
+          "t": 1787457600,
+          "predicted": 0.8442692361008762,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 314
+        },
+        {
+          "t": 1787544000,
+          "predicted": 0.8441161301035894,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 315
+        },
+        {
+          "t": 1787630400,
+          "predicted": 0.844123186390189,
+          "actual": 0.855,
+          "baseline": 0.845,
+          "trainExamples": 316
+        },
+        {
+          "t": 1787716800,
+          "predicted": 0.8543757886764357,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 317
+        },
+        {
+          "t": 1787803200,
+          "predicted": 0.8540698228542613,
+          "actual": 0.845,
+          "baseline": 0.855,
+          "trainExamples": 318
+        },
+        {
+          "t": 1787889600,
+          "predicted": 0.8439911901325331,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 319
+        },
+        {
+          "t": 1787976000,
+          "predicted": 0.8445011440529296,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 320
+        },
+        {
+          "t": 1788062400,
+          "predicted": 0.844505887126976,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 321
+        },
+        {
+          "t": 1788148800,
+          "predicted": 0.8443352324603427,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 322
+        },
+        {
+          "t": 1788235200,
+          "predicted": 0.8443395587153297,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 323
+        },
+        {
+          "t": 1788321600,
+          "predicted": 0.8441606155670802,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 324
+        },
+        {
+          "t": 1788408000,
+          "predicted": 0.8441669260415188,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 325
+        },
+        {
+          "t": 1788494400,
+          "predicted": 0.8449435080407957,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 326
+        },
+        {
+          "t": 1788580800,
+          "predicted": 0.844943900245978,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 327
+        },
+        {
+          "t": 1788667200,
+          "predicted": 0.8449442867159994,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 328
+        },
+        {
+          "t": 1788753600,
+          "predicted": 0.8449446675767677,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 329
+        },
+        {
+          "t": 1788840000,
+          "predicted": 0.8449450429505446,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 330
+        },
+        {
+          "t": 1788926400,
+          "predicted": 0.844945412956076,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 331
+        },
+        {
+          "t": 1789012800,
+          "predicted": 0.8449457777087171,
+          "actual": 0.845,
+          "baseline": 0.845,
+          "trainExamples": 332
+        },
+        {
+          "t": 1789099200,
+          "predicted": 0.8449461373205522,
+          "actual": 0.855,
+          "baseline": 0.845,
+          "trainExamples": 333
+        },
+        {
+          "t": 1789185600,
+          "predicted": 0.8549811513703514,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 334
+        },
+        {
+          "t": 1789272000,
+          "predicted": 0.8546530254264434,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 335
+        },
+        {
+          "t": 1789358400,
+          "predicted": 0.8546556793437667,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 336
+        },
+        {
+          "t": 1789444800,
+          "predicted": 0.8548320518605416,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 337
+        },
+        {
+          "t": 1789531200,
+          "predicted": 0.8548332250258683,
+          "actual": 0.855,
+          "baseline": 0.855,
+          "trainExamples": 338
+        },
+        {
+          "t": 1789617600,
+          "predicted": 0.854834381746592,
+          "actual": 0.885,
+          "baseline": 0.855,
+          "trainExamples": 339
+        },
+        {
+          "t": 1789704000,
+          "predicted": 0.8853348511992045,
+          "actual": 0.895,
+          "baseline": 0.885,
+          "trainExamples": 340
+        },
+        {
+          "t": 1789790400,
+          "predicted": 0.8945472703127977,
+          "actual": 0.895,
+          "baseline": 0.895,
+          "trainExamples": 341
+        },
+        {
+          "t": 1789876800,
+          "predicted": 0.8941235132355799,
+          "actual": 0.9025000000000001,
+          "baseline": 0.895,
+          "trainExamples": 342
+        },
+        {
+          "t": 1789963200,
+          "predicted": 0.9027739928856324,
+          "actual": 0.9125000000000001,
+          "baseline": 0.9025000000000001,
+          "trainExamples": 343
+        },
+        {
+          "t": 1790049600,
+          "predicted": 0.9133822344653538,
+          "actual": 0.9055,
+          "baseline": 0.9125000000000001,
+          "trainExamples": 344
+        },
+        {
+          "t": 1790136000,
+          "predicted": 0.9053605275177243,
+          "actual": 0.911,
+          "baseline": 0.9055,
+          "trainExamples": 345
+        },
+        {
+          "t": 1790222400,
+          "predicted": 0.9116597602491565,
+          "actual": 0.9165000000000001,
+          "baseline": 0.911,
+          "trainExamples": 346
+        },
+        {
+          "t": 1790308800,
+          "predicted": 0.9167415803916281,
+          "actual": 0.9135,
+          "baseline": 0.9165000000000001,
+          "trainExamples": 347
+        },
+        {
+          "t": 1790395200,
+          "predicted": 0.9128578861864377,
+          "actual": 0.9185000000000001,
+          "baseline": 0.9135,
+          "trainExamples": 348
+        },
+        {
+          "t": 1790481600,
+          "predicted": 0.9183458254445521,
+          "actual": 0.9175,
+          "baseline": 0.9185000000000001,
+          "trainExamples": 349
+        },
+        {
+          "t": 1790568000,
+          "predicted": 0.916913893230424,
+          "actual": 0.9165000000000001,
+          "baseline": 0.9175,
+          "trainExamples": 350
+        },
+        {
+          "t": 1790654400,
+          "predicted": 0.9155394408671649,
+          "actual": 0.9145000000000001,
+          "baseline": 0.9165000000000001,
+          "trainExamples": 351
+        },
+        {
+          "t": 1790740800,
+          "predicted": 0.9139032344234621,
+          "actual": 0.914,
+          "baseline": 0.9145000000000001,
+          "trainExamples": 352
+        },
+        {
+          "t": 1790827200,
+          "predicted": 0.9132480446738129,
+          "actual": 0.9145000000000001,
+          "baseline": 0.914,
+          "trainExamples": 353
+        },
+        {
+          "t": 1790913600,
+          "predicted": 0.9136339522623422,
+          "actual": 0.9155,
+          "baseline": 0.9145000000000001,
+          "trainExamples": 354
+        },
+        {
+          "t": 1791000000,
+          "predicted": 0.9148012538562165,
+          "actual": 0.9175,
+          "baseline": 0.9155,
+          "trainExamples": 355
+        },
+        {
+          "t": 1791086400,
+          "predicted": 0.9167611041781023,
+          "actual": 0.9185000000000001,
+          "baseline": 0.9175,
+          "trainExamples": 356
+        }
+      ]
+    },
+    "CONTROLH-2026-R": {
+      "chamber": "house",
+      "party": "republican",
+      "ticker": "CONTROLH-2026-R",
+      "forecast": 0.08228572611429091,
+      "forecastFor": "2026-10-05T04:00:00Z",
+      "dataThrough": "2026-10-04T04:00:00Z",
+      "lastClose": 0.0815,
+      "maePP": 0.31640049717539404,
+      "baselineMaePP": 0.2808333333333332,
+      "testDays": 60,
+      "trainingExamples": 357,
+      "historyDays": 365,
+      "testStart": "2026-08-06T04:00:00Z",
+      "testEnd": "2026-10-04T04:00:00Z",
+      "coefficients": [
+        -0.0011478239500290136,
+        -8.699555193161817e-05,
+        6.285516237143351e-05,
+        0.0012729974229078729,
+        0.0008969701647298541
+      ],
+      "intercept": -0.0007941176470588383,
+      "featureMeans": [
+        0.21251120448179356,
+        -0.000788515406162465,
+        -0.0023515406162464988,
+        -0.005380952380952384,
+        0.005523032463256686
+      ],
+      "featureScales": [
+        0.07305970957357429,
+        0.008575955396411962,
+        0.015659331227394307,
+        0.025864584358209545,
+        0.00542992703522726
+      ],
+      "backtest": [
+        {
+          "t": 1785988800,
+          "predicted": 0.16482919990968936,
+          "actual": 0.165,
+          "baseline": 0.165,
+          "trainExamples": 297
+        },
+        {
+          "t": 1786075200,
+          "predicted": 0.16483055249770887,
+          "actual": 0.165,
+          "baseline": 0.165,
+          "trainExamples": 298
+        },
+        {
+          "t": 1786161600,
+          "predicted": 0.16483188405890353,
+          "actual": 0.155,
+          "baseline": 0.165,
+          "trainExamples": 299
+        },
+        {
+          "t": 1786248000,
+          "predicted": 0.15525684519895497,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 300
+        },
+        {
+          "t": 1786334400,
+          "predicted": 0.15509526593458947,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 301
+        },
+        {
+          "t": 1786420800,
+          "predicted": 0.15509449519275162,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 302
+        },
+        {
+          "t": 1786507200,
+          "predicted": 0.15513055266375889,
+          "actual": 0.14500000000000002,
+          "baseline": 0.155,
+          "trainExamples": 303
+        },
+        {
+          "t": 1786593600,
+          "predicted": 0.14509559666295407,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 304
+        },
+        {
+          "t": 1786680000,
+          "predicted": 0.14493569144228877,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 305
+        },
+        {
+          "t": 1786766400,
+          "predicted": 0.14493617910683432,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 306
+        },
+        {
+          "t": 1786852800,
+          "predicted": 0.14526584426735303,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 307
+        },
+        {
+          "t": 1786939200,
+          "predicted": 0.14526365641710293,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 308
+        },
+        {
+          "t": 1787025600,
+          "predicted": 0.14526150476183666,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 309
+        },
+        {
+          "t": 1787112000,
+          "predicted": 0.14525938842447383,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 310
+        },
+        {
+          "t": 1787198400,
+          "predicted": 0.14509678341299734,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 311
+        },
+        {
+          "t": 1787284800,
+          "predicted": 0.14509594056743322,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 312
+        },
+        {
+          "t": 1787371200,
+          "predicted": 0.1450951127641716,
+          "actual": 0.155,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 313
+        },
+        {
+          "t": 1787457600,
+          "predicted": 0.15597037609912556,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 314
+        },
+        {
+          "t": 1787544000,
+          "predicted": 0.15612227489568298,
+          "actual": 0.14500000000000002,
+          "baseline": 0.155,
+          "trainExamples": 315
+        },
+        {
+          "t": 1787630400,
+          "predicted": 0.14620692356233378,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 316
+        },
+        {
+          "t": 1787716800,
+          "predicted": 0.14605486218109692,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 317
+        },
+        {
+          "t": 1787803200,
+          "predicted": 0.14604329123703952,
+          "actual": 0.155,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 318
+        },
+        {
+          "t": 1787889600,
+          "predicted": 0.15646746956869403,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 319
+        },
+        {
+          "t": 1787976000,
+          "predicted": 0.15657307105820992,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 320
+        },
+        {
+          "t": 1788062400,
+          "predicted": 0.15586604062190051,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 321
+        },
+        {
+          "t": 1788148800,
+          "predicted": 0.1558840961937539,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 322
+        },
+        {
+          "t": 1788235200,
+          "predicted": 0.15604224260242117,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 323
+        },
+        {
+          "t": 1788321600,
+          "predicted": 0.15603432039242124,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 324
+        },
+        {
+          "t": 1788408000,
+          "predicted": 0.15602651927966293,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 325
+        },
+        {
+          "t": 1788494400,
+          "predicted": 0.15488616668747837,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 326
+        },
+        {
+          "t": 1788580800,
+          "predicted": 0.1548869994495295,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 327
+        },
+        {
+          "t": 1788667200,
+          "predicted": 0.15488782032319262,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 328
+        },
+        {
+          "t": 1788753600,
+          "predicted": 0.1548886295607333,
+          "actual": 0.165,
+          "baseline": 0.155,
+          "trainExamples": 329
+        },
+        {
+          "t": 1788840000,
+          "predicted": 0.16572928714238983,
+          "actual": 0.165,
+          "baseline": 0.165,
+          "trainExamples": 330
+        },
+        {
+          "t": 1788926400,
+          "predicted": 0.16584404036251216,
+          "actual": 0.155,
+          "baseline": 0.165,
+          "trainExamples": 331
+        },
+        {
+          "t": 1789012800,
+          "predicted": 0.1559429264089246,
+          "actual": 0.155,
+          "baseline": 0.155,
+          "trainExamples": 332
+        },
+        {
+          "t": 1789099200,
+          "predicted": 0.15588350468565537,
+          "actual": 0.14500000000000002,
+          "baseline": 0.155,
+          "trainExamples": 333
+        },
+        {
+          "t": 1789185600,
+          "predicted": 0.1458125178515238,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 334
+        },
+        {
+          "t": 1789272000,
+          "predicted": 0.14567482210784433,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 335
+        },
+        {
+          "t": 1789358400,
+          "predicted": 0.1456689901021277,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 336
+        },
+        {
+          "t": 1789444800,
+          "predicted": 0.1448512355424194,
+          "actual": 0.14500000000000002,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 337
+        },
+        {
+          "t": 1789531200,
+          "predicted": 0.1448524012848505,
+          "actual": 0.135,
+          "baseline": 0.14500000000000002,
+          "trainExamples": 338
+        },
+        {
+          "t": 1789617600,
+          "predicted": 0.13510552296636547,
+          "actual": 0.125,
+          "baseline": 0.135,
+          "trainExamples": 339
+        },
+        {
+          "t": 1789704000,
+          "predicted": 0.12480399003748799,
+          "actual": 0.11499999999999999,
+          "baseline": 0.125,
+          "trainExamples": 340
+        },
+        {
+          "t": 1789790400,
+          "predicted": 0.11489315777677088,
+          "actual": 0.10500000000000001,
+          "baseline": 0.11499999999999999,
+          "trainExamples": 341
+        },
+        {
+          "t": 1789876800,
+          "predicted": 0.10440445345191862,
+          "actual": 0.0985,
+          "baseline": 0.10500000000000001,
+          "trainExamples": 342
+        },
+        {
+          "t": 1789963200,
+          "predicted": 0.0974832539485756,
+          "actual": 0.0895,
+          "baseline": 0.0985,
+          "trainExamples": 343
+        },
+        {
+          "t": 1790049600,
+          "predicted": 0.08790998575000634,
+          "actual": 0.0935,
+          "baseline": 0.0895,
+          "trainExamples": 344
+        },
+        {
+          "t": 1790136000,
+          "predicted": 0.0923447377547826,
+          "actual": 0.0905,
+          "baseline": 0.0935,
+          "trainExamples": 345
+        },
+        {
+          "t": 1790222400,
+          "predicted": 0.08977287029230366,
+          "actual": 0.083,
+          "baseline": 0.0905,
+          "trainExamples": 346
+        },
+        {
+          "t": 1790308800,
+          "predicted": 0.0823999097832202,
+          "actual": 0.0865,
+          "baseline": 0.083,
+          "trainExamples": 347
+        },
+        {
+          "t": 1790395200,
+          "predicted": 0.08661229836731067,
+          "actual": 0.0815,
+          "baseline": 0.0865,
+          "trainExamples": 348
+        },
+        {
+          "t": 1790481600,
+          "predicted": 0.08185294973325767,
+          "actual": 0.083,
+          "baseline": 0.0815,
+          "trainExamples": 349
+        },
+        {
+          "t": 1790568000,
+          "predicted": 0.08372077784903961,
+          "actual": 0.0845,
+          "baseline": 0.083,
+          "trainExamples": 350
+        },
+        {
+          "t": 1790654400,
+          "predicted": 0.08559657449770833,
+          "actual": 0.0845,
+          "baseline": 0.0845,
+          "trainExamples": 351
+        },
+        {
+          "t": 1790740800,
+          "predicted": 0.08534468738805813,
+          "actual": 0.0865,
+          "baseline": 0.0845,
+          "trainExamples": 352
+        },
+        {
+          "t": 1790827200,
+          "predicted": 0.08757036902976194,
+          "actual": 0.0865,
+          "baseline": 0.0865,
+          "trainExamples": 353
+        },
+        {
+          "t": 1790913600,
+          "predicted": 0.08773485754210758,
+          "actual": 0.08549999999999999,
+          "baseline": 0.0865,
+          "trainExamples": 354
+        },
+        {
+          "t": 1791000000,
+          "predicted": 0.08645739902806993,
+          "actual": 0.0835,
+          "baseline": 0.08549999999999999,
+          "trainExamples": 355
+        },
+        {
+          "t": 1791086400,
+          "predicted": 0.0844555586725002,
+          "actual": 0.0815,
+          "baseline": 0.0835,
+          "trainExamples": 356
+        }
+      ]
+    },
+    "CONTROLS-2026-D": {
+      "chamber": "senate",
+      "party": "democratic",
+      "ticker": "CONTROLS-2026-D",
+      "forecast": 0.6364654319683093,
+      "forecastFor": "2026-10-05T04:00:00Z",
+      "dataThrough": "2026-10-04T04:00:00Z",
+      "lastClose": 0.635,
+      "maePP": 0.7137855400018054,
+      "baselineMaePP": 0.6833333333333333,
+      "testDays": 60,
+      "trainingExamples": 357,
+      "historyDays": 365,
+      "testStart": "2026-08-06T04:00:00Z",
+      "testEnd": "2026-10-04T04:00:00Z",
+      "coefficients": [
+        5.3198697617614576e-05,
+        0.00023473930656051092,
+        0.0008716106464127191,
+        -0.0004846687164372202,
+        4.3856928076543494e-05
+      ],
+      "intercept": 0.0009523809523809526,
+      "featureMeans": [
+        0.4144915966386557,
+        0.0009243697478991597,
+        0.00277310924369748,
+        0.006358543417366948,
+        0.006086928455331197
+      ],
+      "featureScales": [
+        0.08634954329272677,
+        0.008517893175815437,
+        0.015641879955423734,
+        0.02532863031916159,
+        0.004720215507014555
+      ],
+      "backtest": [
+        {
+          "t": 1785988800,
+          "predicted": 0.4646218571328022,
+          "actual": 0.445,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 297
+        },
+        {
+          "t": 1786075200,
+          "predicted": 0.4432240229055423,
+          "actual": 0.46499999999999997,
+          "baseline": 0.445,
+          "trainExamples": 298
+        },
+        {
+          "t": 1786161600,
+          "predicted": 0.46483759762562893,
+          "actual": 0.46499999999999997,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 299
+        },
+        {
+          "t": 1786248000,
+          "predicted": 0.46504849222527056,
+          "actual": 0.455,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 300
+        },
+        {
+          "t": 1786334400,
+          "predicted": 0.4558210077639275,
+          "actual": 0.455,
+          "baseline": 0.455,
+          "trainExamples": 301
+        },
+        {
+          "t": 1786420800,
+          "predicted": 0.4547647705455674,
+          "actual": 0.455,
+          "baseline": 0.455,
+          "trainExamples": 302
+        },
+        {
+          "t": 1786507200,
+          "predicted": 0.4547678365257262,
+          "actual": 0.485,
+          "baseline": 0.455,
+          "trainExamples": 303
+        },
+        {
+          "t": 1786593600,
+          "predicted": 0.486316198342064,
+          "actual": 0.495,
+          "baseline": 0.485,
+          "trainExamples": 304
+        },
+        {
+          "t": 1786680000,
+          "predicted": 0.49557147074007374,
+          "actual": 0.495,
+          "baseline": 0.495,
+          "trainExamples": 305
+        },
+        {
+          "t": 1786766400,
+          "predicted": 0.4959990652325296,
+          "actual": 0.485,
+          "baseline": 0.495,
+          "trainExamples": 306
+        },
+        {
+          "t": 1786852800,
+          "predicted": 0.48398651237799767,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 307
+        },
+        {
+          "t": 1786939200,
+          "predicted": 0.48369045888744716,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 308
+        },
+        {
+          "t": 1787025600,
+          "predicted": 0.483726188612422,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 309
+        },
+        {
+          "t": 1787112000,
+          "predicted": 0.4841185966555945,
+          "actual": 0.475,
+          "baseline": 0.485,
+          "trainExamples": 310
+        },
+        {
+          "t": 1787198400,
+          "predicted": 0.4747657024269889,
+          "actual": 0.46499999999999997,
+          "baseline": 0.475,
+          "trainExamples": 311
+        },
+        {
+          "t": 1787284800,
+          "predicted": 0.46505930882719604,
+          "actual": 0.46499999999999997,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 312
+        },
+        {
+          "t": 1787371200,
+          "predicted": 0.4655198388320559,
+          "actual": 0.46499999999999997,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 313
+        },
+        {
+          "t": 1787457600,
+          "predicted": 0.465536608406114,
+          "actual": 0.46499999999999997,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 314
+        },
+        {
+          "t": 1787544000,
+          "predicted": 0.4659176737739084,
+          "actual": 0.46499999999999997,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 315
+        },
+        {
+          "t": 1787630400,
+          "predicted": 0.4659060586312049,
+          "actual": 0.46499999999999997,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 316
+        },
+        {
+          "t": 1787716800,
+          "predicted": 0.4658947341725881,
+          "actual": 0.475,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 317
+        },
+        {
+          "t": 1787803200,
+          "predicted": 0.4760371042681464,
+          "actual": 0.485,
+          "baseline": 0.475,
+          "trainExamples": 318
+        },
+        {
+          "t": 1787889600,
+          "predicted": 0.48573804692419437,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 319
+        },
+        {
+          "t": 1787976000,
+          "predicted": 0.4852286382936416,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 320
+        },
+        {
+          "t": 1788062400,
+          "predicted": 0.4848173068813446,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 321
+        },
+        {
+          "t": 1788148800,
+          "predicted": 0.4844118655189783,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 322
+        },
+        {
+          "t": 1788235200,
+          "predicted": 0.48441922727414904,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 323
+        },
+        {
+          "t": 1788321600,
+          "predicted": 0.4844264054417728,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 324
+        },
+        {
+          "t": 1788408000,
+          "predicted": 0.48483745771569736,
+          "actual": 0.475,
+          "baseline": 0.485,
+          "trainExamples": 325
+        },
+        {
+          "t": 1788494400,
+          "predicted": 0.4746689143834645,
+          "actual": 0.475,
+          "baseline": 0.475,
+          "trainExamples": 326
+        },
+        {
+          "t": 1788580800,
+          "predicted": 0.4751708662966343,
+          "actual": 0.475,
+          "baseline": 0.475,
+          "trainExamples": 327
+        },
+        {
+          "t": 1788667200,
+          "predicted": 0.475168895030353,
+          "actual": 0.46499999999999997,
+          "baseline": 0.475,
+          "trainExamples": 328
+        },
+        {
+          "t": 1788753600,
+          "predicted": 0.46503915259045453,
+          "actual": 0.475,
+          "baseline": 0.46499999999999997,
+          "trainExamples": 329
+        },
+        {
+          "t": 1788840000,
+          "predicted": 0.4759929913304049,
+          "actual": 0.475,
+          "baseline": 0.475,
+          "trainExamples": 330
+        },
+        {
+          "t": 1788926400,
+          "predicted": 0.4755627489578121,
+          "actual": 0.475,
+          "baseline": 0.475,
+          "trainExamples": 331
+        },
+        {
+          "t": 1789012800,
+          "predicted": 0.47601050095075015,
+          "actual": 0.475,
+          "baseline": 0.475,
+          "trainExamples": 332
+        },
+        {
+          "t": 1789099200,
+          "predicted": 0.47514910992705156,
+          "actual": 0.475,
+          "baseline": 0.475,
+          "trainExamples": 333
+        },
+        {
+          "t": 1789185600,
+          "predicted": 0.47514814246798726,
+          "actual": 0.485,
+          "baseline": 0.475,
+          "trainExamples": 334
+        },
+        {
+          "t": 1789272000,
+          "predicted": 0.48560465497033534,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 335
+        },
+        {
+          "t": 1789358400,
+          "predicted": 0.4847900145426645,
+          "actual": 0.485,
+          "baseline": 0.485,
+          "trainExamples": 336
+        },
+        {
+          "t": 1789444800,
+          "predicted": 0.4852071326150798,
+          "actual": 0.525,
+          "baseline": 0.485,
+          "trainExamples": 337
+        },
+        {
+          "t": 1789531200,
+          "predicted": 0.5263407400021886,
+          "actual": 0.545,
+          "baseline": 0.525,
+          "trainExamples": 338
+        },
+        {
+          "t": 1789617600,
+          "predicted": 0.5466688738441615,
+          "actual": 0.555,
+          "baseline": 0.545,
+          "trainExamples": 339
+        },
+        {
+          "t": 1789704000,
+          "predicted": 0.5566394369556232,
+          "actual": 0.585,
+          "baseline": 0.555,
+          "trainExamples": 340
+        },
+        {
+          "t": 1789790400,
+          "predicted": 0.5877144810179067,
+          "actual": 0.595,
+          "baseline": 0.585,
+          "trainExamples": 341
+        },
+        {
+          "t": 1789876800,
+          "predicted": 0.5965197352586374,
+          "actual": 0.595,
+          "baseline": 0.595,
+          "trainExamples": 342
+        },
+        {
+          "t": 1789963200,
+          "predicted": 0.595106171460726,
+          "actual": 0.595,
+          "baseline": 0.595,
+          "trainExamples": 343
+        },
+        {
+          "t": 1790049600,
+          "predicted": 0.5925904272885474,
+          "actual": 0.605,
+          "baseline": 0.595,
+          "trainExamples": 344
+        },
+        {
+          "t": 1790136000,
+          "predicted": 0.604944836192952,
+          "actual": 0.625,
+          "baseline": 0.605,
+          "trainExamples": 345
+        },
+        {
+          "t": 1790222400,
+          "predicted": 0.627835031470456,
+          "actual": 0.645,
+          "baseline": 0.625,
+          "trainExamples": 346
+        },
+        {
+          "t": 1790308800,
+          "predicted": 0.6497136757301609,
+          "actual": 0.605,
+          "baseline": 0.645,
+          "trainExamples": 347
+        },
+        {
+          "t": 1790395200,
+          "predicted": 0.6028857831318314,
+          "actual": 0.615,
+          "baseline": 0.605,
+          "trainExamples": 348
+        },
+        {
+          "t": 1790481600,
+          "predicted": 0.6152837347173156,
+          "actual": 0.615,
+          "baseline": 0.615,
+          "trainExamples": 349
+        },
+        {
+          "t": 1790568000,
+          "predicted": 0.6138771901248635,
+          "actual": 0.615,
+          "baseline": 0.615,
+          "trainExamples": 350
+        },
+        {
+          "t": 1790654400,
+          "predicted": 0.6161089183670122,
+          "actual": 0.615,
+          "baseline": 0.615,
+          "trainExamples": 351
+        },
+        {
+          "t": 1790740800,
+          "predicted": 0.6157079664054436,
+          "actual": 0.615,
+          "baseline": 0.615,
+          "trainExamples": 352
+        },
+        {
+          "t": 1790827200,
+          "predicted": 0.6160131093287612,
+          "actual": 0.625,
+          "baseline": 0.615,
+          "trainExamples": 353
+        },
+        {
+          "t": 1790913600,
+          "predicted": 0.6272997236065802,
+          "actual": 0.625,
+          "baseline": 0.625,
+          "trainExamples": 354
+        },
+        {
+          "t": 1791000000,
+          "predicted": 0.6259399949784763,
+          "actual": 0.625,
+          "baseline": 0.625,
+          "trainExamples": 355
+        },
+        {
+          "t": 1791086400,
+          "predicted": 0.6260746922314929,
+          "actual": 0.635,
+          "baseline": 0.625,
+          "trainExamples": 356
+        }
+      ]
+    },
+    "CONTROLS-2026-R": {
+      "chamber": "senate",
+      "party": "republican",
+      "ticker": "CONTROLS-2026-R",
+      "forecast": 0.36453822009874015,
+      "forecastFor": "2026-10-05T04:00:00Z",
+      "dataThrough": "2026-10-04T04:00:00Z",
+      "lastClose": 0.365,
+      "maePP": 0.7259706383965341,
+      "baselineMaePP": 0.6333333333333337,
+      "testDays": 60,
+      "trainingExamples": 357,
+      "historyDays": 365,
+      "testStart": "2026-08-06T04:00:00Z",
+      "testEnd": "2026-10-04T04:00:00Z",
+      "coefficients": [
+        0.0002443152315640423,
+        -0.0018073292105873955,
+        0.0011610265948007702,
+        -0.0003475535362872382,
+        0.00045111481155135196
+      ],
+      "intercept": -0.0009523809523809547,
+      "featureMeans": [
+        0.5848347338935567,
+        -0.0009243697478991596,
+        -0.0028291316526610644,
+        -0.006526610644257703,
+        0.007179775938653584
+      ],
+      "featureScales": [
+        0.0865188285930852,
+        0.009924851808783422,
+        0.01598104418351793,
+        0.025235806516318706,
+        0.0058328224127975736
+      ],
+      "backtest": [
+        {
+          "t": 1785988800,
+          "predicted": 0.5433924426349734,
+          "actual": 0.545,
+          "baseline": 0.545,
+          "trainExamples": 297
+        },
+        {
+          "t": 1786075200,
+          "predicted": 0.5458779698927405,
+          "actual": 0.535,
+          "baseline": 0.545,
+          "trainExamples": 298
+        },
+        {
+          "t": 1786161600,
+          "predicted": 0.5377533790636885,
+          "actual": 0.535,
+          "baseline": 0.535,
+          "trainExamples": 299
+        },
+        {
+          "t": 1786248000,
+          "predicted": 0.534521092813956,
+          "actual": 0.545,
+          "baseline": 0.535,
+          "trainExamples": 300
+        },
+        {
+          "t": 1786334400,
+          "predicted": 0.5426238343272595,
+          "actual": 0.545,
+          "baseline": 0.545,
+          "trainExamples": 301
+        },
+        {
+          "t": 1786420800,
+          "predicted": 0.5449992111094133,
+          "actual": 0.545,
+          "baseline": 0.545,
+          "trainExamples": 302
+        },
+        {
+          "t": 1786507200,
+          "predicted": 0.5449993722740073,
+          "actual": 0.505,
+          "baseline": 0.545,
+          "trainExamples": 303
+        },
+        {
+          "t": 1786593600,
+          "predicted": 0.5126282935683724,
+          "actual": 0.505,
+          "baseline": 0.505,
+          "trainExamples": 304
+        },
+        {
+          "t": 1786680000,
+          "predicted": 0.5042996303596184,
+          "actual": 0.505,
+          "baseline": 0.505,
+          "trainExamples": 305
+        },
+        {
+          "t": 1786766400,
+          "predicted": 0.503916746128282,
+          "actual": 0.505,
+          "baseline": 0.505,
+          "trainExamples": 306
+        },
+        {
+          "t": 1786852800,
+          "predicted": 0.5060714157010368,
+          "actual": 0.505,
+          "baseline": 0.505,
+          "trainExamples": 307
+        },
+        {
+          "t": 1786939200,
+          "predicted": 0.5064490330324208,
+          "actual": 0.505,
+          "baseline": 0.505,
+          "trainExamples": 308
+        },
+        {
+          "t": 1787025600,
+          "predicted": 0.5064149722601137,
+          "actual": 0.525,
+          "baseline": 0.505,
+          "trainExamples": 309
+        },
+        {
+          "t": 1787112000,
+          "predicted": 0.5230934015450223,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 310
+        },
+        {
+          "t": 1787198400,
+          "predicted": 0.5249515876756079,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 311
+        },
+        {
+          "t": 1787284800,
+          "predicted": 0.5249524382777105,
+          "actual": 0.535,
+          "baseline": 0.525,
+          "trainExamples": 312
+        },
+        {
+          "t": 1787371200,
+          "predicted": 0.5319842444333237,
+          "actual": 0.535,
+          "baseline": 0.535,
+          "trainExamples": 313
+        },
+        {
+          "t": 1787457600,
+          "predicted": 0.5339899554302739,
+          "actual": 0.535,
+          "baseline": 0.535,
+          "trainExamples": 314
+        },
+        {
+          "t": 1787544000,
+          "predicted": 0.534005536683623,
+          "actual": 0.535,
+          "baseline": 0.535,
+          "trainExamples": 315
+        },
+        {
+          "t": 1787630400,
+          "predicted": 0.5333917400911672,
+          "actual": 0.535,
+          "baseline": 0.535,
+          "trainExamples": 316
+        },
+        {
+          "t": 1787716800,
+          "predicted": 0.5342652514612459,
+          "actual": 0.525,
+          "baseline": 0.535,
+          "trainExamples": 317
+        },
+        {
+          "t": 1787803200,
+          "predicted": 0.5260667429907617,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 318
+        },
+        {
+          "t": 1787889600,
+          "predicted": 0.5240938318275941,
+          "actual": 0.515,
+          "baseline": 0.525,
+          "trainExamples": 319
+        },
+        {
+          "t": 1787976000,
+          "predicted": 0.5162997198667402,
+          "actual": 0.525,
+          "baseline": 0.515,
+          "trainExamples": 320
+        },
+        {
+          "t": 1788062400,
+          "predicted": 0.523238840688185,
+          "actual": 0.515,
+          "baseline": 0.525,
+          "trainExamples": 321
+        },
+        {
+          "t": 1788148800,
+          "predicted": 0.5170811290365076,
+          "actual": 0.525,
+          "baseline": 0.515,
+          "trainExamples": 322
+        },
+        {
+          "t": 1788235200,
+          "predicted": 0.523864153810647,
+          "actual": 0.515,
+          "baseline": 0.525,
+          "trainExamples": 323
+        },
+        {
+          "t": 1788321600,
+          "predicted": 0.5171637971226581,
+          "actual": 0.515,
+          "baseline": 0.515,
+          "trainExamples": 324
+        },
+        {
+          "t": 1788408000,
+          "predicted": 0.5152412926664748,
+          "actual": 0.525,
+          "baseline": 0.515,
+          "trainExamples": 325
+        },
+        {
+          "t": 1788494400,
+          "predicted": 0.5227337127474803,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 326
+        },
+        {
+          "t": 1788580800,
+          "predicted": 0.5249684668330596,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 327
+        },
+        {
+          "t": 1788667200,
+          "predicted": 0.5254164450676431,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 328
+        },
+        {
+          "t": 1788753600,
+          "predicted": 0.5242905745179484,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 329
+        },
+        {
+          "t": 1788840000,
+          "predicted": 0.5247378065747612,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 330
+        },
+        {
+          "t": 1788926400,
+          "predicted": 0.5242420666128973,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 331
+        },
+        {
+          "t": 1789012800,
+          "predicted": 0.5242501939066274,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 332
+        },
+        {
+          "t": 1789099200,
+          "predicted": 0.5246533096403331,
+          "actual": 0.525,
+          "baseline": 0.525,
+          "trainExamples": 333
+        },
+        {
+          "t": 1789185600,
+          "predicted": 0.5246584387429073,
+          "actual": 0.515,
+          "baseline": 0.525,
+          "trainExamples": 334
+        },
+        {
+          "t": 1789272000,
+          "predicted": 0.5165615374055622,
+          "actual": 0.515,
+          "baseline": 0.515,
+          "trainExamples": 335
+        },
+        {
+          "t": 1789358400,
+          "predicted": 0.5144872769946747,
+          "actual": 0.515,
+          "baseline": 0.515,
+          "trainExamples": 336
+        },
+        {
+          "t": 1789444800,
+          "predicted": 0.5144931516247986,
+          "actual": 0.485,
+          "baseline": 0.515,
+          "trainExamples": 337
+        },
+        {
+          "t": 1789531200,
+          "predicted": 0.490938477844774,
+          "actual": 0.455,
+          "baseline": 0.485,
+          "trainExamples": 338
+        },
+        {
+          "t": 1789617600,
+          "predicted": 0.4591486860419354,
+          "actual": 0.445,
+          "baseline": 0.455,
+          "trainExamples": 339
+        },
+        {
+          "t": 1789704000,
+          "predicted": 0.4444781802245506,
+          "actual": 0.425,
+          "baseline": 0.445,
+          "trainExamples": 340
+        },
+        {
+          "t": 1789790400,
+          "predicted": 0.4265917415262434,
+          "actual": 0.415,
+          "baseline": 0.425,
+          "trainExamples": 341
+        },
+        {
+          "t": 1789876800,
+          "predicted": 0.4158736341133665,
+          "actual": 0.415,
+          "baseline": 0.415,
+          "trainExamples": 342
+        },
+        {
+          "t": 1789963200,
+          "predicted": 0.4148785173372038,
+          "actual": 0.405,
+          "baseline": 0.415,
+          "trainExamples": 343
+        },
+        {
+          "t": 1790049600,
+          "predicted": 0.40733112571781704,
+          "actual": 0.395,
+          "baseline": 0.405,
+          "trainExamples": 344
+        },
+        {
+          "t": 1790136000,
+          "predicted": 0.3958374306767001,
+          "actual": 0.375,
+          "baseline": 0.395,
+          "trainExamples": 345
+        },
+        {
+          "t": 1790222400,
+          "predicted": 0.37468130968296975,
+          "actual": 0.355,
+          "baseline": 0.375,
+          "trainExamples": 346
+        },
+        {
+          "t": 1790308800,
+          "predicted": 0.35292538713812355,
+          "actual": 0.385,
+          "baseline": 0.355,
+          "trainExamples": 347
+        },
+        {
+          "t": 1790395200,
+          "predicted": 0.3782512894221753,
+          "actual": 0.385,
+          "baseline": 0.385,
+          "trainExamples": 348
+        },
+        {
+          "t": 1790481600,
+          "predicted": 0.3855207155862307,
+          "actual": 0.385,
+          "baseline": 0.385,
+          "trainExamples": 349
+        },
+        {
+          "t": 1790568000,
+          "predicted": 0.3869608603110773,
+          "actual": 0.385,
+          "baseline": 0.385,
+          "trainExamples": 350
+        },
+        {
+          "t": 1790654400,
+          "predicted": 0.3845907336847537,
+          "actual": 0.385,
+          "baseline": 0.385,
+          "trainExamples": 351
+        },
+        {
+          "t": 1790740800,
+          "predicted": 0.38446334659720593,
+          "actual": 0.385,
+          "baseline": 0.385,
+          "trainExamples": 352
+        },
+        {
+          "t": 1790827200,
+          "predicted": 0.3840973221858574,
+          "actual": 0.375,
+          "baseline": 0.385,
+          "trainExamples": 353
+        },
+        {
+          "t": 1790913600,
+          "predicted": 0.3746754967440473,
+          "actual": 0.375,
+          "baseline": 0.375,
+          "trainExamples": 354
+        },
+        {
+          "t": 1791000000,
+          "predicted": 0.37268988523707075,
+          "actual": 0.375,
+          "baseline": 0.375,
+          "trainExamples": 355
+        },
+        {
+          "t": 1791086400,
+          "predicted": 0.37276124950615064,
+          "actual": 0.365,
+          "baseline": 0.375,
+          "trainExamples": 356
+        }
+      ]
+    }
+  }
+}
