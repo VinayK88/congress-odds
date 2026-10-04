@@ -6,18 +6,18 @@
       "chamber": "house",
       "source": "Polymarket",
       "url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
-      "fetchedAt": "2026-10-04T02:40:27.342Z",
+      "fetchedAt": "2026-10-04T07:52:32.137Z",
       "parties": {
         "democratic": {
           "probability": 0.935,
           "marketId": "562802",
-          "updatedAt": "2026-10-04T02:39:02.323932Z",
+          "updatedAt": "2026-10-04T07:50:53.679305Z",
           "closed": false
         },
         "republican": {
-          "probability": 0.065,
+          "probability": 0.075,
           "marketId": "562803",
-          "updatedAt": "2026-10-04T02:39:02.323932Z",
+          "updatedAt": "2026-10-04T07:50:53.679305Z",
           "closed": false
         }
       }
@@ -26,18 +26,18 @@
       "chamber": "senate",
       "source": "Polymarket",
       "url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
-      "fetchedAt": "2026-10-04T02:40:27.343Z",
+      "fetchedAt": "2026-10-04T07:52:32.168Z",
       "parties": {
         "democratic": {
           "probability": 0.645,
           "marketId": "562793",
-          "updatedAt": "2026-10-04T02:34:53.542141Z",
+          "updatedAt": "2026-10-04T07:50:53.679305Z",
           "closed": false
         },
         "republican": {
           "probability": 0.355,
           "marketId": "562794",
-          "updatedAt": "2026-10-04T02:32:54.778239Z",
+          "updatedAt": "2026-10-04T07:50:53.679305Z",
           "closed": false
         }
       }
