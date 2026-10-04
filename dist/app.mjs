@@ -1,3 +1,4 @@
+import {renderLab,renderPulse} from './lab.mjs?v=20261004-lab';
 import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus} from './data-core.mjs';
 let data={sources:{},errors:{}},model,history;
 const liveFailures={};
@@ -30,7 +31,7 @@ function render(){
   tr.append(status);tbody.append(tr);
  }
  document.getElementById('copy').disabled=!Object.keys(data.sources).length;
- renderModel();renderHistory();
+ renderModel();renderHistory();renderPulse(data,history,consensus);
 }
 function renderModel(){
  const status=document.getElementById('model-status'),cards=document.getElementById('model-cards'),rows=document.getElementById('model-rows');cards.replaceChildren();rows.replaceChildren();
@@ -42,14 +43,15 @@ function renderModel(){
   const odds=el('div',undefined,'odds');const current=[];
   for(const [party,suffix] of [['democratic','D'],['republican','R']]){
    const m=model.series[`${tickers[chamber]}-2026-${suffix}`];if(!m)continue;current.push(m);
-   const block=el('div');block.append(el('span',party==='democratic'?'Democrats':'Republicans','party-label'),el('p',pct(m.forecast),`number ${party==='democratic'?'blue':'red'}`),el('span',`Last close ${pct(m.lastClose)}`,'fine'));odds.append(block);
+   const block=el('div');block.append(el('span',party==='democratic'?'Democrats':'Republicans','party-label'),el('p',pct(m.forecast),`number ${party==='democratic'?'blue':'red'}`),el('span',`Last close ${pct(m.lastClose)}`,'fine'),el('small',m.benchmarks?.[m.selectedModel]?.name??'Ridge','method-chip'));odds.append(block);
    const tr=el('tr');for(const value of [`${chamber==='house'?'House':'Senate'} · ${suffix}`,`${m.maePP.toFixed(2)} pp`,`${m.baselineMaePP.toFixed(2)} pp`,m.testDays,m.trainingExamples])tr.append(el('td',String(value)));rows.append(tr);
   }
   card.append(odds);if(current.length){const m=current[0];card.append(el('p',`Target: ${date(m.forecastFor)} · Data through ${date(m.dataThrough)}`,'fine'));
    const wins=current.filter(m=>m.maePP<m.baselineMaePP).length;
-   card.append(el('p',wins===2?'Lower backtest error than no-change for both contracts.':wins===0?'No-change beat this model for both contracts in the backtest.':'Mixed backtest results: only one contract beat no-change.','model-result'));
+   card.append(el('p',wins===2?'Lower backtest error than no-change for both contracts.':wins===0?'No improvement over no-change for these selected forecasts.':'Mixed backtest results: only one contract beat no-change.','model-result'));
   }cards.append(card);
  }
+ renderLab(model);
 }
 function renderHistory(){
  const box=document.getElementById('history-chart');box.replaceChildren();if(!history?.series){box.append(el('p','History unavailable.','fine'));return;}
@@ -65,10 +67,14 @@ function renderHistory(){
 }
 let busy=false;
 async function saved(){await Promise.all(['latest','model','history'].map(async key=>{try{const r=await fetch(`./data/${key}.json`,{cache:'no-store'});if(!r.ok)throw Error();const value=await r.json();if(key==='latest'&&value.schemaVersion===2)data=value;if(key==='model')model=value;if(key==='history')history=value;}catch{}}));}
-async function refresh(){if(busy)return;busy=true;const button=document.getElementById('refresh');button.disabled=true;button.textContent='Refreshing…';await saved();render();
+async function refresh(manual=false){if(busy)return;busy=true;const button=document.getElementById('refresh');button.disabled=true;button.textContent='Refreshing…';await saved();render();
  await Promise.all(Object.entries(slugs).map(async([chamber,slug])=>{try{const r=await fetch(`https://gamma-api.polymarket.com/events/slug/${slug}`,{signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error();data.sources.polymarket??={};data.sources.polymarket[chamber]=parseEvent(await r.json(),chamber);delete data.errors?.[`polymarket/${chamber}`];liveFailures[`polymarket/${chamber}`]=false;}catch{liveFailures[`polymarket/${chamber}`]=true;}}));
- render();button.disabled=false;button.textContent='↻ Refresh odds';busy=false;
+ render();button.disabled=false;button.textContent='↻ Refresh odds';busy=false;if(manual)chime();
 }
-document.getElementById('refresh').addEventListener('click',refresh);document.getElementById('source').addEventListener('change',render);for(const id of ['history-chamber','history-days'])document.getElementById(id).addEventListener('change',renderHistory);
+document.getElementById('refresh').addEventListener('click',()=>refresh(true));document.getElementById('source').addEventListener('change',render);for(const id of ['history-chamber','history-days'])document.getElementById(id).addEventListener('change',renderHistory);
 document.getElementById('copy').addEventListener('click',async()=>{const text=markdown(data,model),status=document.getElementById('copy-status');try{await navigator.clipboard.writeText(text);status.textContent='Copied source comparisons and model results with timestamps.';}catch{const a=el('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/markdown'}));a.download='congress-odds-README.md';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);status.textContent='Downloaded README snapshot.';}});
-await refresh();setInterval(refresh,300000);setInterval(render,60000);
+let soundOn=false,audioContext;
+function chime(){if(!soundOn||!audioContext)return;try{audioContext.resume();const oscillator=audioContext.createOscillator(),gain=audioContext.createGain();oscillator.connect(gain);gain.connect(audioContext.destination);oscillator.frequency.value=660;gain.gain.setValueAtTime(.035,audioContext.currentTime);gain.gain.exponentialRampToValueAtTime(.001,audioContext.currentTime+.12);oscillator.start();oscillator.stop(audioContext.currentTime+.13);}catch{}}
+document.getElementById('sound-toggle').addEventListener('click',()=>{try{if(!audioContext)audioContext=new (window.AudioContext||window.webkitAudioContext)();soundOn=!soundOn;const button=document.getElementById('sound-toggle');button.textContent=soundOn?'Sound on':'Sound off';button.setAttribute('aria-pressed',String(soundOn));chime();}catch{document.getElementById('sound-toggle').textContent='Sound unavailable';}});
+for(const id of ['lab-contract','lab-model','lab-scale'])document.getElementById(id).addEventListener('change',()=>{renderLab(model);chime();});
+await refresh();setInterval(()=>refresh(),300000);setInterval(render,60000);

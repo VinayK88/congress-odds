@@ -7,6 +7,7 @@ import numpy as np
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Ridge
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 
 ROOT=Path(__file__).resolve().parent.parent
 DATA=ROOT/'dist/data'
@@ -34,37 +35,63 @@ def continuous(rows, first, last):
     # Exchange daily boundaries can move by an hour for daylight saving time.
     return all(82800<=rows[j]['t']-rows[j-1]['t']<=90000 for j in range(first+1,last+1))
 
-def estimator(): return make_pipeline(StandardScaler(),Ridge(alpha=10.0))
+MODEL_NAMES={'baseline':'No change','ridge':'Ridge','forest':'Random forest','boost':'Gradient boosting','ensemble':'ML ensemble'}
+
+def estimator(key='ridge'):
+    if key=='ridge': return make_pipeline(StandardScaler(),Ridge(alpha=10.0))
+    if key=='forest': return RandomForestRegressor(n_estimators=64,max_depth=4,min_samples_leaf=8,random_state=42,n_jobs=1)
+    if key=='boost': return GradientBoostingRegressor(n_estimators=60,max_depth=2,learning_rate=.03,min_samples_leaf=8,random_state=42)
+    raise ValueError(key)
+
+def metrics(predictions, actual, baseline):
+    errors=np.array(predictions)-actual
+    movement=np.array(actual)-baseline
+    nonflat=np.abs(movement)>1e-8
+    return {'maePP':float(np.mean(np.abs(errors))*100),'rmsePP':float(np.sqrt(np.mean(errors**2))*100),
+            'directionAccuracy':float(np.mean(np.sign(np.array(predictions)[nonflat]-np.array(baseline)[nonflat])==np.sign(movement[nonflat]))*100) if nonflat.any() else None,
+            'directionDays':int(nonflat.sum())}
 
 def fit(rows,chamber,party,ticker):
     values=np.array([r['p'] for r in rows]);X=[];y=[];indices=[]
     for i in range(7,len(rows)-1):
         if continuous(rows,i-7,i+1):
             X.append(features(values,i));y.append(values[i+1]-values[i]);indices.append(i)
-    if len(X)<120 or not continuous(rows,len(rows)-8,len(rows)-1):
-        raise ValueError(f'{ticker}: insufficient contiguous history (need 120 training examples)')
-    X=np.array(X);y=np.array(y);n=len(y);start=max(60,n-60)
-    predicted=[];actual=[];baseline=[];backtest=[]
-    for k in range(start,n):
-        # Only labels already observed at this forecast origin are in training.
-        model=estimator().fit(X[:k],y[:k]);i=indices[k]
-        guess=float(np.clip(values[i]+model.predict(X[k:k+1])[0],0,1))
-        predicted.append(guess);actual.append(float(values[i+1]));baseline.append(float(values[i]))
-        backtest.append({'t':rows[i+1]['t'],'predicted':guess,'actual':float(values[i+1]),'baseline':float(values[i]),'trainExamples':k})
-    final=estimator().fit(X,y)
-    forecast=float(np.clip(values[-1]+final.predict([features(values,len(values)-1)])[0],0,1))
-    mae=float(np.mean(np.abs(np.array(predicted)-actual))*100)
-    baseline_mae=float(np.mean(np.abs(np.array(baseline)-actual))*100)
-    return {'chamber':chamber,'party':party,'ticker':ticker,'forecast':forecast,
+    if len(X)<150 or not continuous(rows,len(rows)-8,len(rows)-1):
+        raise ValueError(f'{ticker}: need 150 valid training examples and a contiguous final feature window')
+    X=np.array(X);y=np.array(y);n=len(y);test_start=n-60;selection_start=test_start-30
+    predictions={key:[] for key in MODEL_NAMES};actual=[];baseline=[]
+    for k in range(selection_start,n):
+        i=indices[k];origin=float(values[i]);baseline.append(origin);actual.append(float(values[i+1]))
+        guesses={'baseline':origin}
+        for key in ['ridge','forest','boost']:
+            fitted=estimator(key).fit(X[:k],y[:k])
+            guesses[key]=float(np.clip(origin+fitted.predict(X[k:k+1])[0],0,1))
+        guesses['ensemble']=float(np.mean([guesses[key] for key in ['ridge','forest','boost']]))
+        for key in predictions: predictions[key].append(guesses[key])
+    validation={key:float(np.mean(np.abs(np.array(p[:30])-actual[:30]))*100) for key,p in predictions.items()}
+    # Choose before seeing the 60-day test window. Baseline wins exact ties.
+    selected=min(validation,key=validation.get)
+    benchmarks={};importance=[]
+    for key in MODEL_NAMES:
+        if key=='baseline': forecast=float(values[-1])
+        elif key=='ensemble': forecast=float(np.mean([benchmarks[k]['forecast'] for k in ['ridge','forest','boost']]))
+        else:
+            final=estimator(key).fit(X,y)
+            forecast=float(np.clip(values[-1]+final.predict([features(values,len(values)-1)])[0],0,1))
+            if key=='forest': importance=[{'feature':f,'importance':float(v)} for f,v in zip(FEATURES,final.feature_importances_)]
+        backtest=[{'t':rows[indices[k]+1]['t'],'predicted':predictions[key][k-selection_start],
+                   'actual':float(values[indices[k]+1]),'baseline':float(values[indices[k]]),'trainExamples':k} for k in range(test_start,n)]
+        benchmarks[key]={'name':MODEL_NAMES[key],'forecast':forecast,'validationMaePP':validation[key],
+                         **metrics(predictions[key][30:],actual[30:],baseline[30:]),'backtest':backtest}
+    chosen=benchmarks[selected]
+    return {'chamber':chamber,'party':party,'ticker':ticker,'forecast':chosen['forecast'],
             'forecastFor':iso(rows[-1]['t']+86400),'dataThrough':iso(rows[-1]['t']),
-            'lastClose':float(values[-1]),'maePP':mae,'baselineMaePP':baseline_mae,
-            'testDays':len(backtest),'trainingExamples':n,'historyDays':len(rows),
-            'testStart':iso(backtest[0]['t']),'testEnd':iso(backtest[-1]['t']),
-            'coefficients':final.named_steps['ridge'].coef_.tolist(),
-            'intercept':float(final.named_steps['ridge'].intercept_),
-            'featureMeans':final.named_steps['standardscaler'].mean_.tolist(),
-            'featureScales':final.named_steps['standardscaler'].scale_.tolist(),
-            'backtest':backtest}
+            'lastClose':float(values[-1]),'maePP':chosen['maePP'],'baselineMaePP':benchmarks['baseline']['maePP'],
+            'testDays':60,'trainingExamples':n,'historyDays':len(rows),
+            'testStart':iso(chosen['backtest'][0]['t']),'testEnd':iso(chosen['backtest'][-1]['t']),
+            'selectedModel':selected,'selectionDays':30,'selectionStart':iso(rows[indices[selection_start]+1]['t']),
+            'selectionEnd':iso(rows[indices[test_start-1]+1]['t']),
+            'benchmarks':benchmarks,'featureImportance':importance,'backtest':chosen['backtest']}
 
 def fetch_series(item,now):
     chamber,party,ticker=item;series=ticker.split('-')[0]
@@ -84,13 +111,13 @@ def main():
     now=int(time.time());path=DATA/'model.json'
     if path.exists():
         prior=json.loads(path.read_text())
-        if prior.get('series') and all(datetime.fromisoformat(v['forecastFor'].replace('Z','+00:00')).timestamp()>now for v in prior['series'].values()):
+        if prior.get('schemaVersion')==2 and prior.get('series') and all(datetime.fromisoformat(v['forecastFor'].replace('Z','+00:00')).timestamp()>now for v in prior['series'].values()):
             print('Daily model forecasts still current; reusing completed training.');return
     items=[(c,p,f'{s}-2026-{suffix}') for c,s in [('house','CONTROLH'),('senate','CONTROLS')] for p,suffix in [('democratic','D'),('republican','R')]]
     with ThreadPoolExecutor(max_workers=4) as pool: results=list(pool.map(lambda item:fetch_series(item,now),items))
-    model={'schemaVersion':1,'trainedAt':iso(now),'algorithm':'StandardScaler + Ridge (alpha=10)',
+    model={'schemaVersion':2,'trainedAt':iso(now),'algorithm':'Ridge, random forest, gradient boosting and equal-weight ML ensemble; validation selection includes no-change',
            'target':'Next daily Kalshi closing Yes bid/ask midpoint','features':FEATURES,
-           'validation':'Expanding-window one-step forecasts on the last 60 valid daily examples; fixed alpha, no random split.',
+           'validation':'30 expanding-window validation days select one candidate, followed by 60 untouched test days; fixed hyperparameters. Models refit daily using available past labels.',
            'series':{ticker:m for ticker,rows,m in results}}
     history={'source':'Kalshi daily candlesticks, closing Yes bid/ask midpoint','fetchedAt':iso(now),'series':{ticker:rows for ticker,rows,m in results}}
     for name,data in [('history',history),('model',model)]:

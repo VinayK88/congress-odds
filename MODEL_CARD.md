@@ -6,7 +6,7 @@ Explore short-term market-price dynamics, separately from current election-contr
 
 ## Data
 
-Public Kalshi daily candlesticks (`period_interval=1440`) over the preceding 365 days. Closing best Yes bid and ask are averaged. Null, crossed, boundary (0/1) and incomplete/future candles are excluded. Timestamps are deduplicated and sorted. Examples require eight days of contiguous features plus the following target day; daily gaps of 23–25 hours allow exchange daylight saving changes. Larger gaps are excluded rather than imputed. At least 120 valid training examples are required. History must end within 36 hours of retrieval.
+Public Kalshi daily candlesticks (`period_interval=1440`) over the preceding 365 days. Closing best Yes bid and ask are averaged. Null, crossed, boundary (0/1) and incomplete/future candles are excluded. Timestamps are deduplicated and sorted. Examples require eight days of contiguous features plus the following target day; daily gaps of 23–25 hours allow exchange daylight saving changes. Larger gaps are excluded rather than imputed. At least 150 valid training examples are required. History must end within 36 hours of retrieval.
 
 The source gives exchange-defined daily boundaries. The displayed forecast timestamp is the last completed boundary plus 24 hours, which can differ by one hour when the next boundary changes for daylight saving time. Published history contains the exact timestamps and midpoint prices used. Historical quotes may be illiquid; market microstructure and revisions can affect results.
 
@@ -20,13 +20,29 @@ For each contract, inputs at day t are:
 4. Change since t−7.
 5. Population standard deviation of the seven daily changes ending at t.
 
-`StandardScaler` and `Ridge(alpha=10.0)` fit the next-day price change. The predicted change is added to the current midpoint and clipped to [0,1]. Alpha is fixed, with no tuning against the displayed holdout. Each forecast is trained on all valid historical labeled examples available through its origin. Party forecasts are independent and not normalized. Saved model JSON includes coefficients, scaler parameters, intercept and feature names for inspection.
+All models predict the next daily price change, added to the latest observed midpoint and clipped to [0,1]. Fixed hyperparameters:
 
-## Evaluation
+| Candidate | Configuration |
+| --- | --- |
+| Ridge | StandardScaler fitted on training rows + Ridge, alpha 10 |
+| Random forest | 64 trees, max depth 4, min leaf size 8, seed 42 |
+| Gradient boosting | 60 trees, depth 2, learning rate 0.03, min leaf size 8, seed 42 |
+| ML ensemble | Equal average of the three clipped price forecasts |
+| No change | Previous daily midpoint |
 
-Expanding-window, one-day-ahead validation over the last 60 valid examples (at least 60 earlier training examples). Each scaler and model is refit using only labels already observed at the test forecast origin. No random train/test split. The no-change baseline predicts the previous daily midpoint. The reported metric is mean absolute error × 100, in percentage points. Per-day actuals, predictions, baseline and training counts are saved in model JSON.
+Every contract has its own fits. Party forecasts are independent and not normalized. Final forecasts are refit on all available labeled history after evaluation.
 
-Backtest days may not be contiguous if data is missing. The final model uses the evaluation period as training data only after those outcomes have occurred, to make a later forecast. The historical holdout measures short-term price error, not accuracy of election probabilities. There are no election-outcome labels, reliability diagrams, calibrated confidence intervals or claims of causal explanation. Repeated inspection of these results is not a substitute for a locked prospective evaluation.
+## Selection and evaluation
+
+Thirty expanding-window validation observations immediately precede the sixty test observations. The candidate with the lowest validation MAE is selected; exact ties prefer no-change. Selection is frozen for the test window. At each validation or test origin, all estimators and scalers are refit using only labels observed at that origin. Earlier test labels may be used for later forecasts, as in daily operation, without reselecting the candidate. The minimum initial fit uses 60 examples.
+
+The subsequent 60-day test reports mean absolute error and root mean squared error × 100 in percentage points. Directional hit rate measures the sign of the forecast change against the actual change on non-flat days only (actual change magnitude > 1e-8). A no-change prediction is a miss on those moving days; no eligible days produces null. This is not election accuracy.
+
+The leaderboard sorts test MAE for inspection but never uses that rank to change the selected method. Per-day predictions, actuals, baseline, training counts, validation score and date boundaries are saved for every candidate. Backtest days can be non-contiguous when inputs are missing. No random split, test-based hyperparameter tuning or calibrated uncertainty interval is used.
+
+Displayed forest feature importance is normalized impurity reduction from the latest forest fit. It is model-specific, can be biased and shared among correlated inputs, and does not establish causal drivers. If no splits occur all importances are zero. It is not an out-of-sample explanation or the importance of the selected model when another method is chosen.
+
+Detail charts use a clearly labeled zoomed probability axis with an optional full 0–100% scale. Market pulse sparklines use local scales; source-spread meters use full 0–100% scales. No uncertainty band or probability calibration is implied. Repeated inspection of backtests is not a substitute for a locked prospective evaluation.
 
 ## Refresh and limits
 

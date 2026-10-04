@@ -19,16 +19,16 @@ Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. Pre
 
 ### Experimental machine learning — next daily Kalshi price
 
-Ridge regression forecasts the next daily closing bid/ask midpoint, **not the election result**. Error is walk-forward mean absolute error in percentage points; lower is better.
+Ridge, random forest, gradient boosting and their ensemble forecast the next daily closing bid/ask midpoint, **not the election result**. An earlier 30-day validation period selects the displayed method, including a no-change baseline. Error is walk-forward mean absolute error in percentage points; lower is better.
 
-| Contract | Model forecast | Forecast for (UTC) | Model MAE | No-change MAE | Test days |
-| :-- | --: | :-- | --: | --: | --: |
-| house / democratic | 91.8% | 2026-10-05T04:00:00Z | 0.28 | 0.25 | 60 |
-| house / republican | 8.2% | 2026-10-05T04:00:00Z | 0.32 | 0.28 | 60 |
-| senate / democratic | 63.6% | 2026-10-05T04:00:00Z | 0.71 | 0.68 | 60 |
-| senate / republican | 36.5% | 2026-10-05T04:00:00Z | 0.73 | 0.63 | 60 |
+| Contract | Selected method | Forecast | Forecast for (UTC) | Test MAE | No-change MAE | Test days |
+| :-- | :-- | --: | :-- | --: | --: | --: |
+| house / democratic | No change | 91.9% | 2026-10-05T04:00:00Z | 0.25 | 0.25 | 60 |
+| house / republican | No change | 8.2% | 2026-10-05T04:00:00Z | 0.28 | 0.28 | 60 |
+| senate / democratic | No change | 63.5% | 2026-10-05T04:00:00Z | 0.68 | 0.68 | 60 |
+| senate / republican | No change | 36.5% | 2026-10-05T04:00:00Z | 0.63 | 0.63 | 60 |
 
-Model trained: 2026-10-04T08:14:26Z. Forecasts expire at their target time. Uses Kalshi history only; no polling or election-outcome training. See the dashboard and model card for limitations.
+Model trained: 2026-10-04T08:45:01Z. Forecasts expire at their target time. Uses Kalshi history only; no polling or election-outcome training. See the dashboard and model card for limitations.
 
 <!-- CONGRESS_ODDS:END -->
 
@@ -45,9 +45,11 @@ Sources: [Polymarket API](https://docs.polymarket.com/api-reference/events/get-e
 
 ## Machine learning
 
-Four ridge regressions forecast the **next daily closing Kalshi Yes bid/ask midpoint**: one for each party in each chamber. Features are current price, 1/3/7-day changes and 7-day volatility. Models learn next-day price changes from up to 365 daily observations; they do not learn election outcomes. No polls or fundamentals are currently included.
+Three model families—**ridge regression, random forest and gradient boosting**—plus their equal-weight ensemble forecast the **next daily closing Kalshi Yes bid/ask midpoint** for each party and chamber. Five inputs capture current price, momentum and volatility. These are market-price models, not trained election-outcome probabilities.
 
-The dashboard reports expanding-window backtests over the last 60 valid daily examples against a no-change baseline. Lower MAE is better. The model can lose to this baseline, and the UI displays that result. Models do not contribute to the market average. See [MODEL_CARD.md](MODEL_CARD.md) for target, validation and limitations; downloadable history and backtest predictions are in `dist/data/`.
+A 30-day expanding-window validation period selects a candidate by MAE, including the no-change baseline. A separate later 60-day expanding-window test reports MAE, RMSE and directional hit rate without reselecting on test performance. The selected method can be no-change. Models use only observations available at each forecast origin.
+
+The interactive forecast lab includes a test-error ranking, model/contract selectors, predicted-versus-actual charts with detail/full scales, and random-forest feature importance. Market pulse cards show 7-day Democratic price changes and cross-source spreads. Optional UI sounds are off by default and play only for user interactions. See [MODEL_CARD.md](MODEL_CARD.md) for assumptions and [downloadable backtests](dist/data/model.json).
 
 ## Automatic updates
 

@@ -10,7 +10,11 @@ class ModelTests(unittest.TestCase):
         altered=[dict(r) for r in rows]
         for r in altered[-10:]: r['p']=.9
         b=m.fit(altered,'house','democratic','TEST')
-        self.assertEqual(a['backtest'][:-10],b['backtest'][:-10])
+        self.assertEqual(a['selectedModel'],b['selectedModel'])
+        for key in a['benchmarks']:
+            self.assertEqual(a['benchmarks'][key]['validationMaePP'],b['benchmarks'][key]['validationMaePP'])
+            self.assertEqual(a['benchmarks'][key]['backtest'][:-10],b['benchmarks'][key]['backtest'][:-10])
+        self.assertLess(a['selectionEnd'],a['testStart'])
         self.assertEqual(a['testDays'],60)
         self.assertTrue(0<=a['forecast']<=1)
     def test_missing_candles_are_not_bridged(self):
