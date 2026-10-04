@@ -1,5 +1,5 @@
 import {renderLab,renderPulse} from './lab.mjs?v=20261004-lab';
-import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus} from './data-core.mjs';
+import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus} from './data-core.mjs?v=20261004-lab';
 let data={sources:{},errors:{}},model,history;
 const liveFailures={};
 const date=t=>new Date(t).toLocaleString(undefined,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
