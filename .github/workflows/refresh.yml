@@ -35,7 +35,7 @@ jobs:
         run: pip install -r scripts/requirements.txt
       - name: Validate parsers and model chronology
         run: |
-          node --test scripts/data-core.test.mjs
+          node --test scripts/*.test.mjs
           python scripts/test_model.py
       - name: Retrieve verified source data
         run: node scripts/update-data.mjs

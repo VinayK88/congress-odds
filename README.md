@@ -51,6 +51,12 @@ A 30-day expanding-window validation period selects a candidate by MAE, includin
 
 The interactive forecast lab includes a test-error ranking, model/contract selectors, predicted-versus-actual charts with detail/full scales, and random-forest feature importance. Market pulse cards show 7-day Democratic price changes and cross-source spreads. Optional UI sounds are off by default and play only for user interactions. See [MODEL_CARD.md](MODEL_CARD.md) for assumptions and [downloadable backtests](dist/data/model.json).
 
+## Interactive race map and what-if simulator
+
+Explore all 35 Senate contests (including Florida and Ohio specials) and 435 House districts on a schematic state tile map. Assign Democratic-aligned, Republican-aligned or other outcomes and watch seat totals update. Includes Senate holdovers, a configurable VP tie-break, an optional current Senate seat-party preset, local saving and JSON import/export.
+
+These are **user-built scenarios, not forecasts or election results**. House choices start unassigned. The static race manifest was verified on 2026-10-05 and is separate from hourly market updates. See [scenario rules and sources](SCENARIOS.md).
+
 ## Automatic updates
 
 - GitHub Actions runs hourly at minute 17, retrieves all five source/chamber pairs, updates data and this README's marked section, commits changes and deploys GitHub Pages. GitHub schedules may be delayed or disabled in inactive repositories.
@@ -67,7 +73,7 @@ Requires Node.js 22+ and Python 3.11+:
 
 ```sh
 pip install -r scripts/requirements.txt
-node --test scripts/data-core.test.mjs
+node --test scripts/*.test.mjs
 python scripts/test_model.py
 node scripts/update-data.mjs
 python scripts/train-model.py

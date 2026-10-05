@@ -78,3 +78,6 @@ function chime(){if(!soundOn||!audioContext)return;try{audioContext.resume();con
 document.getElementById('sound-toggle').addEventListener('click',()=>{try{if(!audioContext)audioContext=new (window.AudioContext||window.webkitAudioContext)();soundOn=!soundOn;const button=document.getElementById('sound-toggle');button.textContent=soundOn?'Sound on':'Sound off';button.setAttribute('aria-pressed',String(soundOn));chime();}catch{document.getElementById('sound-toggle').textContent='Sound unavailable';}});
 for(const id of ['lab-contract','lab-model','lab-scale'])document.getElementById(id).addEventListener('change',()=>{renderLab(model);chime();});
 await refresh();setInterval(()=>refresh(),300000);setInterval(render,60000);
+
+document.getElementById("race-simulator").addEventListener("click",event=>{if(event.target.closest("button"))chime();});
+document.getElementById("race-simulator").addEventListener("change",event=>{if(event.target.matches("select"))chime();});
