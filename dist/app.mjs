@@ -1,7 +1,12 @@
+import {fetchJson,validateLatest,validateHistory,validateModel,mergeLatest} from './reliability.mjs?v=20261006-robust';
 import {renderLab,renderPulse} from './lab.mjs?v=20261004-lab';
-import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus} from './data-core.mjs?v=20261004-lab';
+import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus} from './data-core.mjs?v=20261006-robust';
 let data={sources:{},errors:{}},model,history;
-const liveFailures={};
+const liveFailures={},fileFailures={};
+let lastCheck,cacheAvailable=true;
+const validators={latest:validateLatest,model:validateModel,history:validateHistory};
+function cache(key,value){try{localStorage.setItem('congress-cache-'+key,JSON.stringify(value));}catch{cacheAvailable=false;}}
+for(const key of Object.keys(validators)){try{const raw=localStorage.getItem('congress-cache-'+key);if(!raw||raw.length>2000000)continue;const value=validators[key](JSON.parse(raw));if(key==='latest')data=value;else if(key==='model')model=value;else history=value;}catch{}}
 const date=t=>new Date(t).toLocaleString(undefined,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
 const shortDate=t=>new Date(t*1000).toLocaleDateString(undefined,{month:'short',day:'numeric',timeZone:'UTC'});
 const el=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
@@ -31,7 +36,7 @@ function render(){
   tr.append(status);tbody.append(tr);
  }
  document.getElementById('copy').disabled=!Object.keys(data.sources).length;
- renderModel();renderHistory();renderPulse(data,history,consensus);
+ renderModel();renderHistory();renderPulse(data,history,consensus);renderHealth();
 }
 function renderModel(){
  const status=document.getElementById('model-status'),cards=document.getElementById('model-cards'),rows=document.getElementById('model-rows');cards.replaceChildren();rows.replaceChildren();
@@ -66,10 +71,36 @@ function renderHistory(){
  const caption=document.getElementById('history-caption');caption.replaceChildren(document.createTextNode(`Daily history retrieved ${date(history.fetchedAt)}. `));const a=el('a','Download daily values');a.href='data/history.json';caption.append(a);
 }
 let busy=false;
-async function saved(){await Promise.all(['latest','model','history'].map(async key=>{try{const r=await fetch(`./data/${key}.json`,{cache:'no-store'});if(!r.ok)throw Error();const value=await r.json();if(key==='latest'&&value.schemaVersion===2)data=value;if(key==='model')model=value;if(key==='history')history=value;}catch{}}));}
-async function refresh(manual=false){if(busy)return;busy=true;const button=document.getElementById('refresh');button.disabled=true;button.textContent='Refreshing…';await saved();render();
- await Promise.all(Object.entries(slugs).map(async([chamber,slug])=>{try{const r=await fetch(`https://gamma-api.polymarket.com/events/slug/${slug}`,{signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error();data.sources.polymarket??={};data.sources.polymarket[chamber]=parseEvent(await r.json(),chamber);delete data.errors?.[`polymarket/${chamber}`];liveFailures[`polymarket/${chamber}`]=false;}catch{liveFailures[`polymarket/${chamber}`]=true;}}));
- render();button.disabled=false;button.textContent='↻ Refresh odds';busy=false;if(manual)chime();
+function renderHealth(){
+ const available=['house','senate'].reduce((n,c)=>n+(consensus(data,c)?.included.length||0),0);
+ const issues=Object.keys(fileFailures).filter(k=>fileFailures[k]);
+ const liveError=Object.values(liveFailures).some(Boolean);
+ const offline=navigator.onLine===false;
+ const box=document.getElementById('data-health');
+ box.classList.toggle('degraded',offline||available<5||issues.length>0||liveError);
+ box.textContent=`${offline?'Offline · ':''}${available}/5 recent, open market snapshots. ${lastCheck?'Last refresh check '+date(lastCheck)+'.':'Checking live sources…'} ${issues.length?'Could not update '+issues.join(', ')+'; retaining last valid data. ':''}${liveError?'Direct Polymarket refresh failed; saved snapshots remain visible. ':''}${!cacheAvailable?'Browser caching unavailable. ':''}Stale snapshots keep their original timestamps and are excluded from the average.`;
+}
+async function saved(){await Promise.all(Object.keys(validators).map(async key=>{
+ try{
+  const value=validators[key](await fetchJson(`./data/${key}.json`,{attempts:1}));
+  if(key==='latest')data=mergeLatest(data,value);
+  else if(key==='model'&&(!model||Date.parse(value.trainedAt)>=Date.parse(model.trainedAt)))model=value;
+  else if(key==='history'&&(!history||Date.parse(value.fetchedAt)>=Date.parse(history.fetchedAt)))history=value;
+  fileFailures[key]=false;cache(key,key==='latest'?data:key==='model'?model:history);
+ }catch{fileFailures[key]=true;}
+}));}
+async function live(){await Promise.all(Object.entries(slugs).map(async([chamber,slug])=>{
+ try{
+  const c=parseEvent(await fetchJson(`https://gamma-api.polymarket.com/events/slug/${slug}`),chamber);
+  data=mergeLatest(data,{sources:{polymarket:{[chamber]:c}},errors:{}});liveFailures[`polymarket/${chamber}`]=false;
+ }catch{liveFailures[`polymarket/${chamber}`]=true;}
+}));}
+async function refresh(manual=false){
+ if(busy)return;busy=true;const button=document.getElementById('refresh');button.disabled=true;button.textContent='Refreshing…';
+ try{await Promise.all([saved(),live()]);lastCheck=new Date().toISOString();if(Object.keys(data.sources).length)cache('latest',data);render();}
+ catch{document.getElementById('data-health').textContent='Refresh could not finish. Your last valid snapshots and scenarios are retained; try Refresh odds again.';}
+ finally{button.disabled=false;button.textContent='↻ Refresh odds';busy=false;}
+ if(manual)chime();
 }
 document.getElementById('refresh').addEventListener('click',()=>refresh(true));document.getElementById('source').addEventListener('change',render);for(const id of ['history-chamber','history-days'])document.getElementById(id).addEventListener('change',renderHistory);
 document.getElementById('copy').addEventListener('click',async()=>{const text=markdown(data,model),status=document.getElementById('copy-status');try{await navigator.clipboard.writeText(text);status.textContent='Copied source comparisons and model results with timestamps.';}catch{const a=el('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/markdown'}));a.download='congress-odds-README.md';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);status.textContent='Downloaded README snapshot.';}});
@@ -77,7 +108,9 @@ let soundOn=false,audioContext;
 function chime(){if(!soundOn||!audioContext)return;try{audioContext.resume();const oscillator=audioContext.createOscillator(),gain=audioContext.createGain();oscillator.connect(gain);gain.connect(audioContext.destination);oscillator.frequency.value=660;gain.gain.setValueAtTime(.035,audioContext.currentTime);gain.gain.exponentialRampToValueAtTime(.001,audioContext.currentTime+.12);oscillator.start();oscillator.stop(audioContext.currentTime+.13);}catch{}}
 document.getElementById('sound-toggle').addEventListener('click',()=>{try{if(!audioContext)audioContext=new (window.AudioContext||window.webkitAudioContext)();soundOn=!soundOn;const button=document.getElementById('sound-toggle');button.textContent=soundOn?'Sound on':'Sound off';button.setAttribute('aria-pressed',String(soundOn));chime();}catch{document.getElementById('sound-toggle').textContent='Sound unavailable';}});
 for(const id of ['lab-contract','lab-model','lab-scale'])document.getElementById(id).addEventListener('change',()=>{renderLab(model);chime();});
-await refresh();setInterval(()=>refresh(),300000);setInterval(render,60000);
+render();refresh();setInterval(()=>{if(!document.hidden)refresh();},300000);setInterval(()=>{if(!document.hidden)render();},60000);
+window.addEventListener('online',()=>refresh());window.addEventListener('offline',renderHealth);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&(!lastCheck||Date.now()-Date.parse(lastCheck)>300000))refresh();});
 
 document.getElementById("race-simulator").addEventListener("click",event=>{if(event.target.closest("button,[data-state]"))chime();});
 document.getElementById("race-simulator").addEventListener("change",event=>{if(event.target.matches("select"))chime();});

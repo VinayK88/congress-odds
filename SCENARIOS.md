@@ -24,6 +24,6 @@ The display calls an outright numerical majority at 51 of 100 Senate seats or 21
 
 ## Persistence and portability
 
-Choices for both chambers and the VP assumption save in the browser's local storage under `congress-odds-scenario-v1`. Download and import JSON to move a scenario between devices. Imports require schema version 1, known race IDs and allowed party values; invalid files leave the current scenario unchanged. Clear choices resets only the selected chamber. Device data and scenario files are not uploaded or included in the hourly README.
+Choices for both chambers and the VP assumption save in the browser's local storage under `congress-odds-scenario-v1`. Download and import JSON to move a scenario between devices. Imports require schema version 1, known race IDs and allowed party values; invalid files leave the current scenario unchanged. Clear choices resets only the selected chamber. Undo/redo recovers up to 50 edits, imports, presets or clears within the current page session; undo history is not persisted across reloads. A copyable JSON field is available if a browser blocks downloads. A warning appears when another tab saves a different scenario; it does not silently overwrite the current view. Device data and scenario files are not uploaded or included in the hourly README.
 
 Run `node --test scripts/*.test.mjs` to verify manifest uniqueness, seat conservation, majority thresholds, VP ties and import validation.

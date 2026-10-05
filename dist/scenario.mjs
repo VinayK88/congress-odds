@@ -1,3 +1,4 @@
+import {createScenarioHistory} from './scenario-history.mjs';
 import {mapMarkup,stateSummary} from './state-map.mjs';
 import {STATES,VERIFIED_ON} from './race-data.mjs';
 import {PARTIES,races,emptyScenario,validateScenario,seatPartyPreset,tally} from './scenario-core.mjs';
@@ -7,8 +8,9 @@ const KEY='congress-odds-scenario-v1';
 let scenario=emptyScenario(),chamber='senate',selected='GA',district='GA-S';
 let exportURL;
 let storageMessage='Your scenarios save on this device.';
-try { const saved=localStorage.getItem(KEY);if(saved)scenario=validateScenario(JSON.parse(saved)); }
+try { const saved=localStorage.getItem(KEY);if(saved){if(saved.length>100000)throw new Error('Oversized scenario');scenario=validateScenario(JSON.parse(saved));} }
 catch { storageMessage='Saved scenario unavailable. Starting with unassigned races.'; }
+const scenarioHistory=createScenarioHistory(scenario);
 function save() { try{localStorage.setItem(KEY,JSON.stringify(scenario));storageMessage='Scenario saved on this device.';}catch{storageMessage='Device storage unavailable. Download your scenario to keep it.';} }
 root.innerHTML=`<div class="section-heading"><div><p class="eyebrow">BUILD YOUR PATH TO A MAJORITY</p><h2>The balance is in your hands.</h2></div><span class="model-badge">2026 SCENARIO LAB</span></div>
 <p class="section-intro">Choose winners across 35 Senate races and all 435 House districts. Watch the seats add up. <strong>Your scenario is a what-if exercise, not a forecast or election result.</strong></p>
@@ -16,7 +18,8 @@ root.innerHTML=`<div class="section-heading"><div><p class="eyebrow">BUILD YOUR 
 <div class="scenario-board"><div class="scenario-score" id="scenario-score" aria-live="polite" aria-atomic="true"></div><div id="seat-dots" class="seat-dots" aria-hidden="true"></div><p id="scenario-base" class="fine"></p></div>
 <div class="scenario-layout"><div class="scenario-map-panel"><div class="scenario-map-heading"><h3>Pick a state. Shape the chamber.</h3><label class="sr-only" for="scenario-state">Choose state</label><select id="scenario-state">${STATES.map(s=>`<option value="${s.code}">${s.name}</option>`).join('')}</select></div><p class="fine">Click a state on the map · Alaska and Hawaii shown as insets</p><div id="state-map" class="state-map"></div><p id="map-hover" class="map-hover" aria-live="polite"></p><div class="scenario-legend"><span><i class="scenario-key party-D"></i>Democratic</span><span><i class="scenario-key party-R"></i>Republican</span><span><i class="scenario-key party-O"></i>Other</span><span><i class="scenario-key party-U"></i>Unassigned</span></div><p class="fine" id="map-caption"></p></div>
 <aside class="race-editor"><p class="eyebrow">YOUR RACE CALL</p><h3 id="editor-state"></h3><p id="editor-context" class="fine"></p><div id="district-list" class="district-list" role="group" aria-label="Districts in selected state"></div><h4 id="editor-race"></h4><div id="party-choices" class="party-choices" role="group" aria-label="Assign selected race">${Object.entries(PARTIES).map(([key,name])=>`<button type="button" data-party="${key}" aria-pressed="false"><i class="scenario-key party-${key}"></i>${name}</button>`).join('')}</div><fieldset id="fill-state"><legend>Assign every district in this state</legend><button type="button" data-fill="D">All Democratic</button><button type="button" data-fill="R">All Republican</button><button type="button" data-fill="U">Clear state</button></fieldset></aside></div>
-<div class="scenario-actions"><button type="button" id="scenario-preset">Use current Senate seat parties</button><button type="button" id="scenario-reset">Clear Senate choices</button><a id="scenario-export" download="congress-odds-scenario.json">Download scenario</a><label class="scenario-import">Import scenario<input type="file" id="scenario-import" accept="application/json,.json"></label></div><p class="fine" id="scenario-save" role="status"></p>
+<div class="scenario-actions"><button type="button" id="scenario-undo" disabled>Undo</button><button type="button" id="scenario-redo" disabled>Redo</button><button type="button" id="scenario-preset">Use current Senate seat parties</button><button type="button" id="scenario-reset">Clear Senate choices</button><a id="scenario-export" download="congress-odds-scenario.json">Download scenario</a><label class="scenario-import">Import scenario<input type="file" id="scenario-import" accept="application/json,.json"></label></div><p class="fine" id="scenario-save" role="status"></p>
+<details class="scenario-json"><summary>Copy scenario JSON if downloads are unavailable</summary><label for="scenario-json">Portable scenario for both chambers</label><textarea id="scenario-json" readonly spellcheck="false" rows="5"></textarea><button type="button" id="scenario-copy">Copy scenario JSON</button></details>
 <details class="model-details"><summary>Seat counts, sources &amp; scenario assumptions</summary><p>The Senate starts with 65 seats not on the 2026 ballot: 34 Democratic-aligned (32 Democrats and two independents) and 31 Republicans. Assign the 33 Class II seats plus Florida and Ohio special elections. The optional current-party preset assigns the 35 contested seats to their seat-holding parties as of ${VERIFIED_ON}; it is not a prediction or candidate list.</p><p>House district numbers cover all 435 voting seats using 2020 Census apportionment. Every House seat starts unassigned. The geographic map shows state boundaries; choose a state to access its House districts. District boundaries, candidates and race ratings are not mapped. Non-voting delegates are excluded.</p><p>Control here means a numerical majority of the full chamber: 218 House seats or 51 Senate seats. In a fully assigned 50–50 Democratic/Republican Senate, the chosen VP breaks the tie (Republican by default). Other or unaffiliated winners are not assigned to a coalition. Assign an independent to a bloc only if that is your scenario assumption. Vacancies, defections, Speaker votes and coalition negotiations are not modeled.</p><p>Sources verified ${VERIFIED_ON}: <a href="https://www.senate.gov/senators/Class_II.htm">Senate Class II</a> · <a href="https://www.senate.gov/general/contact_information/senators_cfm.xml">Senate roster</a> · <a href="https://www.270towin.com/2026-senate-election/">2026 special-election coverage</a> · <a href="https://www.census.gov/library/visualizations/2021/dec/2020-apportionment-map.html">Census apportionment</a> · <a href="https://www.senate.gov/legislative/TieVotes.htm">VP tie-break authority</a>. This static race manifest is not updated by the hourly market refresh. Map geometry: <a href="https://github.com/topojson/us-atlas">us-atlas 3.0.1, Census 2017 state boundaries</a> (<a href="us-atlas-LICENSE.txt">ISC license</a>). Alaska and Hawaii are repositioned and Alaska is scaled down.</p></details>`;
 function render() {
   const {counts,total,majority,control,tie}=tally(scenario,chamber);
@@ -45,11 +48,14 @@ function render() {
   $('#fill-state').hidden=chamber!=='house';$('#scenario-preset').hidden=chamber!=='senate';
   $('#scenario-reset').textContent=`Clear ${chamber==='senate'?'Senate':'House'} choices`;
   $('#scenario-save').textContent=storageMessage;
+  $('#scenario-undo').disabled=!scenarioHistory.canUndo;$('#scenario-redo').disabled=!scenarioHistory.canRedo;
   if(exportURL)URL.revokeObjectURL(exportURL);
-  exportURL=URL.createObjectURL(new Blob([JSON.stringify({...validateScenario(scenario),exportedAt:new Date().toISOString(),manifestVerified:VERIFIED_ON},null,2)],{type:'application/json'}));
+  const portable=JSON.stringify({...validateScenario(scenario),manifestVerified:VERIFIED_ON},null,2);
+  $('#scenario-json').value=portable;
+  exportURL=URL.createObjectURL(new Blob([portable],{type:'application/json'}));
   $('#scenario-export').href=exportURL;
 }
-function update() {save();render();}
+function update() {scenario=scenarioHistory.commit(scenario);save();render();}
 // Preserve keyboard focus when map and district controls are rebuilt.
 root.addEventListener('click',event=>{
   const b=event.target.closest('button,[data-state]');if(!b)return;
@@ -67,6 +73,15 @@ for(const type of ['pointerover','focusin'])$('#state-map').addEventListener(typ
   const state=event.target.closest('[data-state]');if(state)$('#map-hover').textContent=stateSummary(chamber,scenario,state.dataset.state).text;
 });
 $('#state-map').addEventListener('pointerleave',()=>{$('#map-hover').textContent=stateSummary(chamber,scenario,selected).text;});
+$('#scenario-undo').addEventListener('click',()=>{scenario=scenarioHistory.undo();save();render();});
+$('#scenario-redo').addEventListener('click',()=>{scenario=scenarioHistory.redo();save();render();});
+$('#scenario-copy').addEventListener('click',async()=>{
+ try{await navigator.clipboard.writeText($('#scenario-json').value);$('#scenario-save').textContent='Scenario JSON copied. Save it as a .json file to import later.';}
+ catch{$('#scenario-json').focus();$('#scenario-json').select();$('#scenario-save').textContent='Scenario JSON selected. Use your browser’s Copy command to copy it.';}
+});
+window.addEventListener('storage',event=>{
+ if(event.key===KEY&&event.newValue!==JSON.stringify(scenario)){$('#scenario-save').textContent='A different scenario was saved in another tab. Download or copy your current choices before reloading; your next edit will save this tab’s version.';}
+});
 $('#scenario-state').addEventListener('change',e=>{selected=e.target.value;render();});
 $('#scenario-vp').addEventListener('change',e=>{scenario.vp=e.target.value;update();});
 $('#scenario-preset').addEventListener('click',()=>{scenario.senate=seatPartyPreset();update();});

@@ -60,12 +60,22 @@ These are **user-built scenarios, not forecasts or election results**. House cho
 ## Automatic updates
 
 - GitHub Actions runs hourly at minute 17, retrieves all five source/chamber pairs, updates data and this README's marked section, commits changes and deploys GitHub Pages. GitHub schedules may be delayed or disabled in inactive repositories.
-- Source failures retain the previous snapshot **and its original retrieval timestamp**. A stale snapshot is visibly labeled and excluded from the market average. If every source fails, the workflow fails without writing new source data.
+- Source failures retain the previous snapshot **and its original retrieval timestamp**. A stale snapshot is visibly labeled and excluded from the market average. If every source fails, the retrieval step reports a warning and retains the validated previous snapshots; the site can still publish code fixes and marks old quotes stale.
 - Daily ML training runs after the previous forecast horizon expires. Training failure preserves the older model with its original dates; the website labels expired forecasts. The workflow reports a warning but still publishes fresh source prices.
 - The open website reloads saved snapshots and refreshes Polymarket directly every five minutes. Kalshi and PredictIt are refreshed by Actions, avoiding dependence on browser cross-origin permissions.
 - No keys or credentials are shipped to the browser. GitHub Pages uses the GitHub Actions source in repository settings.
 
 Retrieval time is not a trade timestamp. Polymarket's record-update timestamp is preserved in JSON. Kalshi's market metadata time is not used as a quote time; PredictIt's timezone-unspecified timestamp is retained verbatim, not interpreted as UTC.
+
+## Reliability and recovery
+
+- Every browser request has a deadline, including JSON parsing. Temporary network/server failures retry with bounded backoff; invalid JSON and permanent HTTP errors do not repeatedly retry.
+- Market, model and history payloads are validated before replacing displayed data. Older snapshots cannot overwrite newer quotes. Probabilities, source links, timestamps, chart order and model chronology are checked.
+- Last valid snapshots are cached on the device when browser storage is available, preserving their original dates. Cached stale quotes never become eligible merely because they were reloaded. This is data recovery, not a guarantee that the whole website can open offline.
+- A visible data-status line reports source availability and refresh failures. Refresh controls recover after a failure. Hidden tabs pause polling and refresh when active again; reconnection triggers a refresh.
+- Scenario edits, bulk assignments, resets and imports support 50 undo/redo steps per page session. Choices still persist between visits. Copyable JSON provides a fallback when downloads are blocked; invalid imports preserve current choices.
+- Pull requests run parser, reliability, scenario and model-chronology tests. Deployment also validates snapshots and local asset references. Failed source retrieval or model-dependency installation retains validated prior data; malformed artifacts stop publication.
+- Refresh jobs have time limits and skip publication if the default branch advances while they run, avoiding an older snapshot of the code replacing a newer change. No force pushes are used.
 
 ## Local use
 
@@ -75,6 +85,7 @@ Requires Node.js 22+ and Python 3.11+:
 pip install -r scripts/requirements.txt
 node --test scripts/*.test.mjs
 python scripts/test_model.py
+node scripts/validate-build.mjs
 node scripts/update-data.mjs
 python scripts/train-model.py
 node scripts/update-readme.mjs

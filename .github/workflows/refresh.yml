@@ -19,6 +19,9 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      publish: ${{ steps.save.outputs.publish }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,39 +35,77 @@ jobs:
           cache: pip
           cache-dependency-path: scripts/requirements.txt
       - name: Install model dependencies
+        id: dependencies
+        continue-on-error: true
         run: pip install -r scripts/requirements.txt
-      - name: Validate parsers and model chronology
+      - name: Validate parsers, recovery logic and saved snapshots
         run: |
           node --test scripts/*.test.mjs
-          python scripts/test_model.py
+          node scripts/validate-build.mjs
+      - name: Validate model chronology
+        if: steps.dependencies.outcome == 'success'
+        run: python scripts/test_model.py
       - name: Retrieve verified source data
+        id: markets
+        continue-on-error: true
         run: node scripts/update-data.mjs
+      - name: Report market refresh failure
+        if: steps.markets.outcome == 'failure'
+        run: echo "::warning::Market retrieval failed. Publishing the validated previous snapshots with original timestamps; stale quotes are excluded on the site."
       - name: Train daily model
+        if: steps.dependencies.outcome == 'success'
+        timeout-minutes: 10
         id: model
         continue-on-error: true
         run: python scripts/train-model.py
       - name: Report training failure
-        if: steps.model.outcome == 'failure'
+        if: steps.model.outcome == 'failure' || steps.dependencies.outcome == 'failure'
         run: echo "::warning::Model training failed. Retaining timestamped previous forecasts; expired forecasts are labeled on the site."
       - name: Update README comparisons and model results
         run: node scripts/update-readme.mjs
+      - name: Validate generated snapshots before publication
+        run: node scripts/validate-build.mjs
       - name: Save snapshots and README
+        id: save
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin "$DEFAULT_BRANCH" --depth=1
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse FETCH_HEAD)" ]; then
+            echo "::notice::Newer code is on the default branch. Skipping this older publication; the next refresh uses the latest code."
+            echo 'publish=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           git add dist/data/*.json README.md
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh Congress control probabilities'
-            git push
+            if ! git push origin "HEAD:$DEFAULT_BRANCH"; then
+              git fetch origin "$DEFAULT_BRANCH" --depth=1
+              if [ "$(git rev-parse HEAD^)" != "$(git rev-parse FETCH_HEAD)" ]; then
+                echo "::notice::The branch advanced during refresh. Skipping this older deployment."
+                echo 'publish=false' >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+              echo '::error::Could not save refreshed data.'
+              exit 1
+            fi
           fi
+          echo 'publish=true' >> "$GITHUB_OUTPUT"
       - name: Package current source download
+        if: steps.save.outputs.publish == 'true'
         run: python scripts/package-source.py
       - uses: actions/configure-pages@v5
+        if: steps.save.outputs.publish == 'true'
       - uses: actions/upload-pages-artifact@v3
+        if: steps.save.outputs.publish == 'true'
         with:
           path: dist
   deploy:
     needs: refresh
+    if: needs.refresh.outputs.publish == 'true'
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     environment:
       name: github-pages

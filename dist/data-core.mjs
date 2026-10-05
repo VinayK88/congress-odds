@@ -30,9 +30,9 @@ export function parsePredictIt(market,fetchedAt=new Date().toISOString()){
  for(const [key,id] of [['democratic',31947],['republican',31948]]){
  const matches=market.contracts.filter(c=>c.id===id);if(matches.length!==1)throw Error('Missing PredictIt contract');const c=matches[0];result[key]={probability:midpoint(c.bestSellYesCost,c.bestBuyYesCost),marketId:c.id,closed:c.status!=='Open'};
  }
- return {chamber:'senate',source:'PredictIt',url:market.url,fetchedAt,priceMethod:'Yes bid/ask midpoint',sourceTimestampRaw:market.timeStamp,parties:result};
+ return {chamber:'senate',source:'PredictIt',url:'https://www.predictit.org/markets/detail/8155/Which-party-will-control-the-Senate-after-the-2026-election',fetchedAt,priceMethod:'Yes bid/ask midpoint',sourceTimestampRaw:market.timeStamp,parties:result};
 }
-export function isStale(c,now=Date.now()){return !c||!Number.isFinite(Date.parse(c.fetchedAt))||now-Date.parse(c.fetchedAt)>7200000;}
+export function isStale(c,now=Date.now()){return !c||!Number.isFinite(Date.parse(c.fetchedAt))||Date.parse(c.fetchedAt)>now+300000||now-Date.parse(c.fetchedAt)>7200000;}
 export function consensus(data,chamber,now=Date.now()){
  const included=sources.map(s=>data.sources?.[s]?.[chamber]).filter(c=>c&&!isStale(c,now)&&!parties.some(p=>c.parties[p].closed));
  if(!included.length)return null;
