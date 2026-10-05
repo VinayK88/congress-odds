@@ -53,7 +53,7 @@ The interactive forecast lab includes a test-error ranking, model/contract selec
 
 ## Interactive race map and what-if simulator
 
-Explore all 35 Senate contests (including Florida and Ohio specials) and 435 House districts on a schematic state tile map. Assign Democratic-aligned, Republican-aligned or other outcomes and watch seat totals update. Includes Senate holdovers, a configurable VP tie-break, an optional current Senate seat-party preset, local saving and JSON import/export.
+Explore all 35 Senate contests (including Florida and Ohio specials) and 435 House districts on a geographic U.S. map with clickable states and Alaska/Hawaii insets. Assign Democratic-aligned, Republican-aligned or other outcomes and watch seat totals update. Includes Senate holdovers, a configurable VP tie-break, an optional current Senate seat-party preset, local saving and JSON import/export.
 
 These are **user-built scenarios, not forecasts or election results**. House choices start unassigned. The static race manifest was verified on 2026-10-05 and is separate from hourly market updates. See [scenario rules and sources](SCENARIOS.md).
 

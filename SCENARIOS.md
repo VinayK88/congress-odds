@@ -1,6 +1,6 @@
 # 2026 seat scenario simulator
 
-The interactive state tiles and House district selector are a deterministic **what-if tool**. They do not produce probabilities, race ratings, polling estimates or election results. User choices never change the market dashboard or train the market-price models.
+The interactive geographic state map and House district selector are a deterministic **what-if tool**. They do not produce probabilities, race ratings, polling estimates or election results. User choices never change the market dashboard or train the market-price models.
 
 ## Manifest and sources
 
@@ -12,7 +12,7 @@ Verified **2026-10-05**, stored in `dist/race-data.mjs`:
 - [Census apportionment map](https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-map01.pdf): all 435 voting House seats across 50 states. At-large districts use the suffix `AL`; numbered districts use `01`, `02`, etc. Non-voting delegates are excluded.
 - [Senate VP tie votes](https://www.senate.gov/legislative/TieVotes.htm): the VP breaks Senate ties. The default assumes a Republican VP; users can change this or disable the tie-break assumption.
 
-The manifest is a manually verified snapshot. The hourly market workflow does **not** update race lists, holdover parties, district boundaries or caucus assumptions. Review it when vacancies or special elections change the seat roster. State tile coordinates are schematic and do not represent district boundaries or relative state area.
+The manifest is a manually verified snapshot. The hourly market workflow does **not** update race lists, holdover parties, district boundaries or caucus assumptions. Review it when vacancies or special elections change the seat roster. Map paths use Census 2017 state boundaries redistributed as us-atlas 3.0.1 under the ISC license (see `dist/us-atlas-LICENSE.txt`). The Albers USA projection places Alaska and Hawaii in insets and scales Alaska down. State borders are geographic; House district boundaries are not drawn. Selecting a state opens its district-number controls. House map colors show the fraction of assigned seats in each bloc, not geographic district locations or vote shares. The geometry is bundled locally, so no map API key or third-party runtime request is needed. Rebuild it with `scripts/build-state-map.mjs` using the pinned topology URL in that script.
 
 ## Counting rules
 

@@ -79,5 +79,5 @@ document.getElementById('sound-toggle').addEventListener('click',()=>{try{if(!au
 for(const id of ['lab-contract','lab-model','lab-scale'])document.getElementById(id).addEventListener('change',()=>{renderLab(model);chime();});
 await refresh();setInterval(()=>refresh(),300000);setInterval(render,60000);
 
-document.getElementById("race-simulator").addEventListener("click",event=>{if(event.target.closest("button"))chime();});
+document.getElementById("race-simulator").addEventListener("click",event=>{if(event.target.closest("button,[data-state]"))chime();});
 document.getElementById("race-simulator").addEventListener("change",event=>{if(event.target.matches("select"))chime();});

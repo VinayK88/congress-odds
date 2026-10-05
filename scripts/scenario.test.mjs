@@ -35,3 +35,14 @@ test('import round-trips choices and rejects malformed data without mutation',()
  for(const input of [null,{}, {...s,vp:'X'}, {...s,house:[]},{...s,house:{'CA-53':'D'}},{...s,senate:{'CA-S':'R'}},{...s,house:{'CA-01':'toString'}}, JSON.parse('{"version":1,"vp":"R","house":{"__proto__":"D"},"senate":{}}')])assert.throws(()=>validateScenario(input));
  assert.equal(s.house['CA-01'],'D');
 });
+
+test('geographic map covers the same 50 states and reports seat assignments',async()=>{
+ const {STATE_SHAPES}=await import('../dist/state-shapes.mjs');
+ const {stateSummary,mapMarkup}=await import('../dist/state-map.mjs');
+ assert.deepEqual(Object.keys(STATE_SHAPES).sort(),STATES.map(s=>s.code).sort());
+ for(const shape of Object.values(STATE_SHAPES)){assert.ok(shape.d.startsWith('M'));assert.ok(shape.d.endsWith('Z'));assert.ok(Number.isFinite(shape.x)&&Number.isFinite(shape.y));assert.ok(!shape.d.includes('NaN'));}
+ const s=emptyScenario();s.house['CA-01']='D';s.house['CA-02']='R';
+ assert.deepEqual(stateSummary('house',s,'CA').counts,{D:1,R:1,O:0,U:50});
+ assert.equal(stateSummary('senate',s,'CA').total,0);
+ const svg=mapMarkup('house',s,'CA');assert.ok(svg.includes('viewBox="-70 0 1060 625"'));assert.ok(svg.includes('state-paint-CA'));
+});
