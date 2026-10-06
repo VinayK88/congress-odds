@@ -9,11 +9,11 @@ Compare Democratic and Republican chances of controlling the 2026 U.S. House and
 
 | Chamber | Source | Democrats | Republicans | Retrieved (UTC) |
 | :-- | :-- | --: | --: | :-- |
-| House | [Polymarket](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 92.5% | 7.5% | 2026-10-06T00:50:23.056Z |
-| House | [Kalshi](https://kalshi.com/markets/controlh/house-winner/controlh-2026) | 91.5% | 8.8% | 2026-10-06T00:50:23.060Z |
-| Senate | [Polymarket](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 65.5% | 34.5% | 2026-10-06T00:50:23.057Z |
-| Senate | [Kalshi](https://kalshi.com/markets/controls/senate-winner/controls-2026) | 64.5% | 35.5% | 2026-10-06T00:50:23.059Z |
-| Senate | [PredictIt](https://www.predictit.org/markets/detail/8155/Which-party-will-control-the-Senate-after-the-2026-election) | 64.5% | 36.5% | 2026-10-06T00:50:23.223Z |
+| House | [Polymarket](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 92.5% | 7.5% | 2026-10-06T07:35:59.741Z |
+| House | [Kalshi](https://kalshi.com/markets/controlh/house-winner/controlh-2026) | 91.5% | 8.8% | 2026-10-06T07:35:59.709Z |
+| Senate | [Polymarket](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 65.5% | 34.5% | 2026-10-06T07:35:59.754Z |
+| Senate | [Kalshi](https://kalshi.com/markets/controls/senate-winner/controls-2026) | 64.5% | 35.5% | 2026-10-06T07:35:59.744Z |
+| Senate | [PredictIt](https://www.predictit.org/markets/detail/8155/Which-party-will-control-the-Senate-after-the-2026-election) | 65.5% | 39.5% | 2026-10-06T07:36:00.045Z |
 
 Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. PredictIt Senate only; no direct House contract is configured. Prices are independent and may not total 100%. Market rules differ; these are not vote shares or guaranteed results.
 
@@ -23,12 +23,12 @@ Ridge, random forest, gradient boosting and their ensemble forecast the next dai
 
 | Contract | Selected method | Forecast | Forecast for (UTC) | Test MAE | No-change MAE | Test days |
 | :-- | :-- | --: | :-- | --: | --: | --: |
-| house / democratic | No change | 91.4% | 2026-10-06T04:00:00Z | 0.26 | 0.26 | 60 |
-| house / republican | No change | 8.5% | 2026-10-06T04:00:00Z | 0.29 | 0.29 | 60 |
-| senate / democratic | No change | 63.5% | 2026-10-06T04:00:00Z | 0.65 | 0.65 | 60 |
-| senate / republican | No change | 35.5% | 2026-10-06T04:00:00Z | 0.65 | 0.65 | 60 |
+| house / democratic | No change | 91.5% | 2026-10-07T04:00:00Z | 0.26 | 0.26 | 60 |
+| house / republican | No change | 8.8% | 2026-10-07T04:00:00Z | 0.29 | 0.29 | 60 |
+| senate / democratic | No change | 64.5% | 2026-10-07T04:00:00Z | 0.63 | 0.63 | 60 |
+| senate / republican | No change | 35.5% | 2026-10-07T04:00:00Z | 0.63 | 0.63 | 60 |
 
-Model trained: 2026-10-05T06:24:49Z. Forecasts expire at their target time. Uses Kalshi history only; no polling or election-outcome training. See the dashboard and model card for limitations.
+Model trained: 2026-10-06T07:36:00Z. Forecasts expire at their target time. Uses Kalshi history only; no polling or election-outcome training. See the dashboard and model card for limitations.
 
 <!-- CONGRESS_ODDS:END -->
 
