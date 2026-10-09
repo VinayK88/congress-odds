@@ -9,11 +9,11 @@ Compare Democratic and Republican chances of controlling the 2026 U.S. House and
 
 | Chamber | Source | Democrats | Republicans | Retrieved (UTC) |
 | :-- | :-- | --: | --: | :-- |
-| House | [Polymarket](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 90.5% | 9.5% | 2026-10-09T16:14:15.614Z |
-| House | [Kalshi](https://kalshi.com/markets/controlh/house-winner/controlh-2026) | 90.1% | 10.0% | 2026-10-09T16:14:15.599Z |
-| Senate | [Polymarket](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 63.5% | 36.5% | 2026-10-09T16:14:15.612Z |
-| Senate | [Kalshi](https://kalshi.com/markets/controls/senate-winner/controls-2026) | 60.5% | 38.5% | 2026-10-09T16:14:15.609Z |
-| Senate | [PredictIt](https://www.predictit.org/markets/detail/8155/Which-party-will-control-the-Senate-after-the-2026-election) | 63.5% | 39.0% | 2026-10-09T16:14:16.924Z |
+| House | [Polymarket](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 90.5% | 9.5% | 2026-10-09T20:57:20.160Z |
+| House | [Kalshi](https://kalshi.com/markets/controlh/house-winner/controlh-2026) | 90.1% | 10.0% | 2026-10-09T20:57:20.157Z |
+| Senate | [Polymarket](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 62.5% | 36.5% | 2026-10-09T20:57:20.174Z |
+| Senate | [Kalshi](https://kalshi.com/markets/controls/senate-winner/controls-2026) | 60.5% | 39.5% | 2026-10-09T20:57:20.155Z |
+| Senate | [PredictIt](https://www.predictit.org/markets/detail/8155/Which-party-will-control-the-Senate-after-the-2026-election) | 62.5% | 41.0% | 2026-10-09T20:57:20.225Z |
 
 Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. PredictIt Senate only; no direct House contract is configured. Prices are independent and may not total 100%. Market rules differ; these are not vote shares or guaranteed results.
 
