@@ -47,6 +47,7 @@ function render(){
  $('#candidate-status').textContent=snapshot?`${named} named market outcomes · ${all.filter(r=>r.chamber==='senate').length}/35 Senate races · ${all.filter(r=>r.chamber==='house').length}/435 House races · ${photos} photo links. ${fresh}/${all.length} snapshots retrieved within 2 hours.${failed?' Refresh failed; retaining the previous snapshot.':''}${Object.keys(snapshot.errors||{}).length?' Some source requests failed; affected timestamps are retained.':''}`:failed?'Candidate data unavailable.':'Retrieving source-backed profiles…';
  renderSidebar();
 }
+export function getCandidateSnapshot(){return snapshot;}
 export function renderRaceCandidates(next){selection=next;renderSidebar();}
 function renderSidebar(){
  const box=$('#race-candidate-profiles');if(!box||!selection)return;box.replaceChildren();
@@ -64,7 +65,7 @@ async function refresh(){
  if(loading)return;loading=true;const button=$('#candidate-refresh');if(button){button.disabled=true;button.textContent='Refreshing…';}
  try{const next=validateCandidates(await fetchJson('./data/candidates.json',{timeoutMs:12000,attempts:2}));if(!snapshot||Date.parse(next.updatedAt)>=Date.parse(snapshot.updatedAt))snapshot=next;failed=false;try{localStorage.setItem('congress-candidates-v1',JSON.stringify(snapshot));}catch{}}
  catch{failed=true;}
- finally{loading=false;if(button){button.disabled=false;button.textContent='Refresh profiles';}render();}
+ finally{loading=false;if(button){button.disabled=false;button.textContent='Refresh profiles';}render();window.dispatchEvent(new Event('candidate-data-updated'));}
 }
 if(gallery){
  for(const state of STATES){const option=make('option',state.name);option.value=state.code;$('#candidate-state').append(option);}

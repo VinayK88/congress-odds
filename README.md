@@ -102,3 +102,9 @@ python -m http.server 8000 --directory dist
 ```
 
 The README marker pair must occur exactly once. `dist/` is the complete static website. The source download is built during deployment and is not committed. The workflow updates this repository's README, not another profile README or the repository About description.
+
+## Current-probability map
+
+The race explorer opens in **Market odds** mode and uses the hourly Polymarket race snapshots also shown in candidate profiles. Senate states show the leading eligible contract, with four probability shades (under 60%, 60–79.9%, 80–94.9%, and 95%+). House state bands count district market leaders; they are not statewide probabilities, projected winners, or a chamber-control forecast. Click a state, then a House district, to inspect candidate names, available portraits, odds, and settlement rules.
+
+Ties, unknown leading parties, incomplete quotes and snapshots older than two hours are neutral. States without a Senate contest are pale and dashed. The page checks for new snapshots every five minutes and reevaluates freshness every minute while visible. **Your scenario** preserves saved manual choices separately; source odds never overwrite them. Race markets may be party/nominee contracts that follow replacement nominees. The map does not blend chamber-wide Kalshi or PredictIt prices into individual race probabilities.
