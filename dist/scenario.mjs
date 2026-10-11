@@ -1,5 +1,5 @@
 import {marketStateSummary,raceLeader,marketTotals} from './market-map.mjs?v=20261012-totals';
-import {renderRaceCandidates,getCandidateSnapshot} from './candidates.mjs?v=20261012-market-map';
+import {renderRaceCandidates,getCandidateSnapshot} from './candidates.mjs?v=20261012-directory';
 import {createScenarioHistory} from './scenario-history.mjs';
 import {mapMarkup,stateSummary} from './state-map.mjs?v=20261012-market-map';
 import {STATES,VERIFIED_ON} from './race-data.mjs';
