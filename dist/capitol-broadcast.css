@@ -1,0 +1,308 @@
+/*
+  Congress Odds / Capitol Broadcast Edition, 2026
+  Visual-only treatment: market prices are not votes, seat counts, or results.
+  This layer intentionally preserves the underlying market and scenario behavior.
+*/
+
+/* Broad editorial language: a Capitol seal, U.S. flag motif, and restrained serif headlines. */
+:root { --civic-gold:#e8c178; --civic-ink:#091934; --civic-stroke:#c6d5e9; }
+.election-ribbon{
+  min-height:44px;
+  background:repeating-linear-gradient(90deg,#0b1b37 0 14px,#0e2040 14px 28px);
+}
+.election-ribbon::after{
+  content:"★  ★  ★  ★  ★";
+  color:#cfa95e;opacity:.65;position:absolute;top:15px;left:49%;
+  font-size:10px;letter-spacing:12px;pointer-events:none
+}
+.brand{gap:0;white-space:nowrap}
+.brand-mark{
+  border:2px solid #d8b66e;
+  box-shadow:0 0 0 3px #d8b66e28,inset 0 0 0 3px #102446,inset 0 0 0 4px #d8b66e77;
+  transform:rotate(-10deg);
+}
+.brand:after{
+  content:"2026";
+  border:1px solid #ddc48c;
+  border-radius:3px;
+  background:#f7f1e6;color:#7d5d2a;
+  margin-left:12px;padding:5px 6px;font-size:9px;font-weight:900;letter-spacing:1px
+}
+.masthead nav a{transition:color .18s}
+.masthead nav a:hover{color:#ae2745}
+.masthead{border-bottom:2px solid #c6ad7a}
+.election-headline-bar{
+  background:#102642;color:#ecf2fb;
+  border-bottom:1px solid #284467;
+  box-shadow:0 8px 20px #0b1f3f1d;
+}
+.election-headline-inner{
+  max-width:1320px;padding:0 44px;margin:auto;
+  display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:24px;
+  min-height:61px;
+}
+.flag-mark{
+  width:44px;height:29px;position:relative;display:block;flex:0 0 auto;
+  background:repeating-linear-gradient(to bottom,#b12d47 0 2.23px,#fff 2.23px 4.46px);
+  border:1px solid #fff8;border-radius:2px;box-shadow:0 3px 10px #0005;
+}
+.flag-mark:before{
+  content:"✦ ✦\A ✦ ✦\A ✦ ✦";white-space:pre;
+  display:block;width:21px;height:16px;
+  font-size:5px;letter-spacing:1px;line-height:5px;text-align:center;
+  background:#1c4d8f;color:#fff;
+}
+.election-bulletin-label{font-size:11px;letter-spacing:2px;font-weight:850;text-transform:uppercase;color:#f8e1aa;white-space:nowrap}
+.election-bulletin-line{display:flex;justify-content:center;align-items:center;gap:14px;font-size:10px;letter-spacing:1.25px;font-weight:700;color:#c8d9f1;text-transform:uppercase;min-width:0}
+.election-bulletin-line span:nth-child(even){color:#d6a752}
+.election-bulletin-line a{text-decoration:none;color:inherit}
+.election-bulletin-line a:hover{color:#fff;text-decoration:underline}
+.election-bulletin-edition{
+  border:1px solid #d8ba824b;border-radius:5px;padding:9px 13px;
+  color:#e5c58b;font-size:10px;font-weight:850;letter-spacing:1.4px;white-space:nowrap
+}
+.heading{
+  border-radius:14px;
+  border:2px solid #b69a693b;
+  border-bottom:0;
+  min-height:590px;
+  background:
+   linear-gradient(110deg,#081830ee 0%,#11294bea 52%,#1b294bdc 100%),
+   repeating-linear-gradient(45deg,#fff1 0 2px,transparent 2px 13px),
+   #101d37;
+}
+.heading::before{
+  opacity:.2;
+  background-image:repeating-linear-gradient(90deg,transparent 0 46px,#e9b76514 46px 47px),radial-gradient(#eacb8b 1px,transparent 1.5px);
+  background-size:100% 100%,30px 30px;
+}
+.heading::after{height:8px;background:linear-gradient(90deg,#1a5caf 0 44%,#fff 44% 56%,#bf2b48 56% 100%)}
+.heading .hero-copy{z-index:2}
+.hero-tag{background:#e5c17c12;border:1px solid #e7c17e80;color:#edd39c}
+.hero-tag .tag-pip{background:#ecc778}
+.hero-patriotic-stars{display:flex;gap:16px;align-items:center;margin:-4px 0 17px;color:#eac77f;font-size:16px;letter-spacing:5px}
+.hero-patriotic-stars:before,.hero-patriotic-stars:after{content:"";height:2px;width:45px;background:#e8c17a7e}
+.heading .eyebrow{font-weight:800;color:#e5b762;letter-spacing:3px}
+.heading h1{font-size:clamp(68px,6.8vw,104px);font-weight:790;letter-spacing:-.068em;max-width:750px}
+.heading h1 em{color:#efd399}
+.heading .intro{color:#dbe7f8}
+.hero-facts{display:flex;align-items:center;flex-wrap:wrap;gap:19px 23px}
+.hero-facts strong{font-weight:810;color:#fff;font-size:33px}
+.hero-facts span{color:#d0dded}
+.hero-facts .hero-clock strong{color:#e9bf78}
+.hero-facts .hero-clock strong.is-held{font-size:20px}
+.hero-facts .hero-clock{padding-left:2px}
+.hero-actions a:first-child{border:1px solid #e2b967;background:linear-gradient(135deg,#f4d490,#eac174);box-shadow:0 6px 20px #e8bd5e23}
+.hero-actions a:last-child{border-color:#adc4e19c}
+.refresh-box button{border:1px solid #d8e2f466;background:#edf3f61e}
+.hero-art.hero-logo{align-self:stretch;display:flex;justify-content:center;overflow:visible}
+.hero-art.hero-logo:before{
+  inset:4% -2%;
+  border:2px solid #d8b46caa;
+  border-radius:50%;
+  background:radial-gradient(circle,#d3ac6040 0,#d3ac6014 43%,transparent 70%);
+  box-shadow:0 0 0 11px #e5c1770a,0 0 0 24px #ffffff05,0 0 0 27px #e5c17721;
+}
+.hero-art.hero-logo:after{
+  content:"★   ★   UNITED STATES CAPITOL   ★   ★";
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:max-content;max-width:100%;
+  color:#edd8a8;letter-spacing:2.3px;font-size:10px;font-weight:800;
+  background:#132b4ce5;border:1px solid #d3b4778c;border-radius:30px;
+  padding:10px 18px;white-space:nowrap
+}
+.hero-art.hero-logo img{max-height:430px;box-shadow:0 28px 48px #01091696;border:2px solid #e0c58c77;object-fit:cover}
+.hero-watermark{
+  position:absolute;top:5%;right:-1%;font-size:clamp(95px,12vw,180px);
+  line-height:1;font-weight:900;letter-spacing:-.1em;color:#ffffff09;
+  pointer-events:none;z-index:0;
+}
+.coverage-strip{
+  border:1px solid #bdc9d9;background:#fff;
+  box-shadow:0 9px 18px #1024470b;letter-spacing:1.5px;
+}
+.coverage-strip span:first-child{color:#173458}
+.coverage-strip span:nth-child(2){font-weight:900;color:#132b4f}
+.explore-dock{border:1px solid #c1cee0}
+.explore-dock a[aria-current],.explore-dock a:hover{border-radius:22px}
+.explore-dock a[aria-current]{background:#172f54}
+.control-heading,.section-heading{position:relative}
+.control-heading>.eyebrow,.section-heading>.eyebrow{color:#855e2e}
+.control-heading h2,.section-heading h2,.model-section>.section-heading h2{
+  font-family:Georgia,"Times New Roman",serif;
+  letter-spacing:-.047em;
+  font-weight:700;
+}
+.civic-section-name{
+ display:flex;align-items:center;gap:14px;margin:2px 0 22px;
+ color:#876334;font-size:10px;font-weight:850;letter-spacing:2px;text-transform:uppercase
+}
+.civic-section-name:after{content:"";height:1px;background:#d3b37f66;flex:1}
+.civic-section-name .section-stars{font-size:12px;letter-spacing:5px}
+.electoral-brief{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  margin:14px 0 28px;background:#ccdae9;
+  border:1px solid #ccdae9;border-radius:15px;overflow:hidden;
+  box-shadow:0 9px 25px #10244708
+}
+.electoral-brief-item{
+ display:flex;justify-content:space-between;align-items:center;
+ gap:20px;padding:15px 25px;background:linear-gradient(145deg,#fff,#f5f8fc);
+}
+.electoral-brief-item span{font-size:10px;color:#5b6a84;letter-spacing:1.1px;font-weight:800;text-transform:uppercase}
+.electoral-brief-item strong{
+ color:#132e53;font-size:18px;letter-spacing:-.04em;font-weight:850;white-space:nowrap
+}
+.chamber{border:1px solid #cddbec;padding:32px 31px 29px;border-radius:18px}
+.chamber::before{height:7px}
+.chamber:after{
+ content:"";
+ position:absolute;bottom:-35px;right:-40px;
+ width:170px;height:170px;border:24px double #b8c8db18;border-radius:50%;pointer-events:none
+}
+.chamber .card-top{align-items:flex-start}
+.chamber-ident{display:flex;gap:13px;align-items:center;margin-bottom:7px}
+.chamber-symbol{
+  width:42px;height:42px;display:flex;justify-content:center;align-items:center;
+  border:2px solid #d5ad68;border-radius:50%;
+  background:#11284b;color:#f7dca6;font-size:23px;line-height:1;flex-shrink:0
+}
+.chamber-symbol.house:after{content:"";}
+.chamber-ident .card-kicker{margin-bottom:6px;color:#805c29;font-size:9px;font-weight:850}
+.chamber-ident h2{font-family:Georgia,"Times New Roman",serif;font-weight:700;line-height:1.1;font-size:25px}
+#house .chamber-symbol{background:#162a4c}
+#senate .chamber-symbol{background:#172f54}
+.chamber .status{border-radius:8px;font-size:9px;text-transform:uppercase;letter-spacing:.3px;padding:7px 9px}
+.chamber .card-subtitle{margin:12px 0 25px}
+.party-monogram{
+ display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;
+ font-size:10px;font-weight:900;letter-spacing:0;line-height:1;color:#fff
+}
+.party-monogram.D{background:#215fbb}.party-monogram.R{background:#bd314e}
+.chamber .party-label .dot{display:none}
+.chamber .odds>div{border-radius:12px;background:linear-gradient(150deg,#e6efff,#f5f9ff);border:1px solid #c6daff}
+.chamber .odds>div+div{background:linear-gradient(150deg,#ffe7ec,#fff8f9);border:1px solid #f3ccd6}
+.chamber .odds .number{margin-top:18px;font-weight:800;font-variant-numeric:tabular-nums}
+.chamber .outlook{background:#f1f5fb;border-left:3px solid #d6ac62;font-size:12px}
+.chamber .card-bottom{position:relative;z-index:1}
+.pulse-board .pulse-tile{border-top:4px solid #c9ad7c}
+.pulse-board .pulse-tile:nth-child(2n){border-top-color:#406fb9}
+.pulse-board .pulse-tile:nth-child(3n){border-top-color:#bf4059}
+#race-simulator{padding-top:10px}
+.map-broadcast-banner{
+ display:flex;justify-content:space-between;align-items:center;gap:20px;
+ padding:14px 19px;margin:14px 0 26px;
+ border-radius:10px;
+ background:linear-gradient(100deg,#0a1931,#1e3c69 53%,#102442 100%);
+ border:1px solid #d4af6640;color:#f3e9d6;box-shadow:0 10px 24px #1427431a
+}
+.map-broadcast-banner strong{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#f1d19a}
+.map-broadcast-banner span{font-size:10px;letter-spacing:1px;font-weight:700;text-transform:uppercase;color:#d3e2f6}
+.map-broadcast-banner .banner-stars{font-size:14px;letter-spacing:5px;color:#e0b872;white-space:nowrap}
+.scenario-board{
+  border-radius:15px 15px 0 0;
+  border-top:5px solid #d1a85c;
+  background:linear-gradient(135deg,#09192f 0,#142e56 47%,#0c213f 100%);
+}
+.scenario-board:before{
+  content:"CONGRESSIONAL SEAT CONTROL";
+  display:block;color:#f2d294;
+  font-size:10px;font-weight:850;letter-spacing:2.3px;
+  padding-bottom:18px;margin-bottom:20px;border-bottom:1px solid #f5d59a36
+}
+.scenario-board .scenario-totals strong.blue{color:#84b8ff}
+.scenario-board .scenario-totals strong.red{color:#ff879e}
+.scenario-board .scenario-totals span{letter-spacing:1.8px;font-weight:900}
+.scenario-board .scenario-center b{font-family:Georgia,"Times New Roman",serif;font-size:22px}
+.scenario-board .market-seat-bar{height:19px;border:1px solid #ffffff22}
+.scenario-board .market-seat-totals{color:#fff}
+.seat-dots i{border-radius:50%}
+.house-dots i{border-radius:2px}
+.scenario-map-panel{background:linear-gradient(150deg,#fff,#f7f9fd)}
+.scenario-map-heading h3{font-family:Georgia,"Times New Roman",serif}
+.race-editor{background:#f1f5fa}
+.market-map-legend{margin-top:12px;padding-top:15px;border-top:1px solid #dce4ee}
+.candidates-section .candidate-race{position:relative;overflow:hidden;border-radius:15px}
+.candidates-section .candidate-race:before{
+ content:"";position:absolute;left:0;top:0;right:0;height:5px;
+ background:linear-gradient(90deg,#246ac8 0 47%,#ececef 47% 53%,#ca3b58 53%);
+}
+.candidate-race-heading h3{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.03em}
+.candidate-card{border-radius:12px}
+.candidate-D{border-top:3px solid #2767c7}
+.candidate-R{border-top:3px solid #c53654}
+.candidate-party{letter-spacing:1.3px;font-weight:900}
+.candidate-filters{background:#e9edf4;border-radius:14px}
+.comparison .table-wrap,.model-section .lab-panel,.model-card,#history-chart{border-radius:15px}
+.model-badge{color:#1c3e68;background:#e5ecf7;border:1px solid #cfdcef;font-weight:800}
+.model-section,.history-section,.comparison{position:relative}
+.model-section:before,.history-section:before{
+ content:"★";position:absolute;top:19px;right:0;
+ font-size:70px;color:#d6b67820;pointer-events:none
+}
+.lower .method,.lower .readme{border-radius:12px}
+.lower .method .eyebrow,.lower .readme-heading{color:#86663a}
+footer{padding-top:26px;align-items:center}
+footer>span:last-child{font-size:10px;font-weight:650;letter-spacing:.2px}
+@media(max-width:1100px){
+ .election-headline-inner{padding:0 28px;gap:14px}
+ .election-bulletin-line{gap:9px;font-size:9px}
+ .heading h1{font-size:clamp(60px,6vw,92px)}
+ .hero-art.hero-logo img{max-height:360px}
+ .chamber-ident h2{font-size:22px}
+}
+@media(max-width:900px){
+ .election-headline-inner{grid-template-columns:auto 1fr auto}
+ .election-bulletin-line{display:none}
+ .heading h1{font-size:clamp(56px,6.8vw,83px)}
+ .hero-art.hero-logo:after{letter-spacing:1.4px;font-size:8px}
+ .chamber .odds .number{font-size:clamp(38px,5vw,62px)}
+ .chamber-symbol{width:37px;height:37px}
+}
+@media(max-width:700px){
+ .election-headline-inner{min-height:52px;padding:0 18px;gap:12px}
+ .election-bulletin-label{font-size:10px;letter-spacing:1.2px}
+ .election-bulletin-edition{font-size:9px;padding:8px}
+ .flag-mark{width:36px;height:24px;background:repeating-linear-gradient(to bottom,#b12d47 0 1.85px,#fff 1.85px 3.7px)}
+ .flag-mark:before{width:18px;height:14px;font-size:4px;line-height:4px}
+ .heading{min-height:0;border-radius:16px}
+ .heading h1{font-size:clamp(55px,13vw,84px)}
+ .hero-patriotic-stars{justify-content:center;margin-bottom:18px}
+ .hero-art.hero-logo:before{inset:2% 4%}
+ .hero-art.hero-logo:after{bottom:-6px}
+ .hero-art.hero-logo img{max-height:300px}
+ .hero-watermark{font-size:110px}
+ .electoral-brief{grid-template-columns:1fr}
+ .electoral-brief-item{padding:13px 17px}
+ .map-broadcast-banner{flex-direction:column;gap:7px;text-align:center}
+ .map-broadcast-banner .banner-stars{font-size:11px}
+ .chamber .card-top{gap:10px}
+ .chamber-ident h2{font-size:23px}
+ .chamber .odds .number{font-size:clamp(45px,11vw,72px)}
+ .scenario-board:before{font-size:9px}
+}
+@media(max-width:480px){
+ .election-headline-inner{grid-template-columns:auto 1fr}
+ .election-bulletin-edition{display:none}
+ .brand:after{display:none}
+ .hero-patriotic-stars{font-size:13px;letter-spacing:3px}
+ .hero-patriotic-stars:before,.hero-patriotic-stars:after{width:22px}
+ .heading h1{font-size:clamp(52px,12.5vw,74px)}
+ .hero-facts{gap:10px 16px;justify-content:center}
+ .hero-facts div{min-width:72px}
+ .hero-facts strong{font-size:27px}
+ .hero-facts .hero-clock strong.is-held{font-size:14px}
+ .hero-facts span{font-size:8px}
+ .hero-facts i{height:27px}
+ .hero-art.hero-logo:after{font-size:7px;letter-spacing:1px;padding:8px 12px}
+ .chamber-ident h2{font-size:20px}
+ .chamber-symbol{width:34px;height:34px;font-size:19px}
+ .chamber .status{font-size:8px}
+ .chamber .odds>div{padding:12px 8px}
+ .chamber .odds .number{font-size:clamp(36px,10vw,53px)}
+ .party-monogram{width:20px;height:20px}
+ .chamber .party-label{font-size:9px;gap:5px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
