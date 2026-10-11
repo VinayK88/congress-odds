@@ -1,4 +1,4 @@
-import {STATES} from './race-data.mjs';
+import {STATES,HOLDOVERS} from './race-data.mjs';
 import {races} from './scenario-core.mjs';
 import {candidateFresh} from './candidate-core.mjs';
 export const MARKET_COLORS={D:['#bed3f3','#82a9df','#477bc3','#235aaa'],R:['#efc1c7','#df8e99','#c95868','#b73643'],O:['#e2d9bd','#c6b787','#a5915c','#82724d'],U:'#d7d5ce'};
@@ -26,4 +26,12 @@ export function marketStateSummary(chamber,snapshot,code,now=Date.now()){
  if(chamber==='house')text=`${state.name}: district market leaders — ${counts.D} Democratic, ${counts.R} Republican, ${counts.O} other, ${counts.U} unclear or unavailable. Counts, not win probabilities.`;
  else if(leaders.length){const l=leaders[0];fill=leaderColor(l);text=l.party==='U'?`${state.name}: ${l.reason}`:`${state.name}: ${l.candidate.name||l.candidate.label} leads at ${(l.probability*100).toFixed(1)}% (${l.candidate.scope==='party'?'party / nominee':'individual'} contract).`;}
  return {state,counts,total:rr.length,text,fill,leaders};
+}
+
+export function marketTotals(chamber,snapshot,now=Date.now()){
+ const contested={D:0,R:0,O:0,U:0},byId=new Map((snapshot?.races||[]).map(r=>[r.id,r]));
+ for(const race of races(chamber))contested[raceLeader(byId.get(race.id),now).party]++;
+ const holdovers=chamber==='senate'?{...HOLDOVERS}:{D:0,R:0,O:0,U:0};
+ const counts=Object.fromEntries(Object.keys(contested).map(p=>[p,contested[p]+holdovers[p]]));
+ return {counts,contested,holdovers,total:chamber==='senate'?100:435,majority:chamber==='senate'?51:218};
 }
