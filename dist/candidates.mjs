@@ -42,9 +42,20 @@ function render(){
  for(const r of items.slice(0,limit))gallery.append(raceCard(r));
  if(!items.length)gallery.append(make('p',snapshot?'No matching race profiles. Try another state or candidate name.':failed?'Candidate data could not load. Try Refresh profiles.':'Loading candidate profiles…','candidate-empty'));
  $('#candidate-more').hidden=items.length<=limit;
- $('#candidate-results').textContent=snapshot?`Showing ${Math.min(limit,items.length)} of ${items.length} matching races.`:'';
+ $('#candidate-results').textContent=snapshot?`Showing ${Math.min(limit,items.length)} of ${items.length} matching ${$('#candidate-chamber').value==='senate'?'Senate':'House'} races`:'';
  const all=snapshot?.races||[],named=all.flatMap(r=>r.candidates).filter(c=>c.name).length,photos=all.flatMap(r=>r.candidates).filter(c=>c.image).length,fresh=all.filter(r=>candidateFresh(r)).length;
- $('#candidate-status').textContent=snapshot?`${named} named market outcomes · ${all.filter(r=>r.chamber==='senate').length}/35 Senate races · ${all.filter(r=>r.chamber==='house').length}/435 House races · ${photos} photo links. ${fresh}/${all.length} snapshots retrieved within 2 hours.${failed?' Refresh failed; retaining the previous snapshot.':''}${Object.keys(snapshot.errors||{}).length?' Some source requests failed; affected timestamps are retained.':''}`:failed?'Candidate data unavailable.':'Retrieving source-backed profiles…';
+ const status=$('#candidate-status');
+ if(snapshot){
+  status.replaceChildren(make('span','MARKET COVERAGE','candidate-status-heading'));
+  for(const [value,klass] of [
+   [`${all.filter(r=>r.chamber==='senate').length}/35 Senate races`,''],
+   [`${all.filter(r=>r.chamber==='house').length}/435 House districts`,''],
+   [`${named} named market outcomes`,''],
+   [`${fresh}/${all.length} recent snapshots`,fresh===all.length?'candidate-stat-fresh':'candidate-stat-warning']
+  ])status.append(make('span',value,'candidate-stat '+klass));
+  if(failed||Object.keys(snapshot.errors||{}).length)status.append(make('span',failed?'Refresh failed · previous snapshot retained':'Some sources unavailable · original timestamps retained','candidate-stat candidate-stat-warning'));
+  status.title=`${photos} source image links · Snapshot retrieval freshness is measured against a 2-hour window. Market listings are not a certified candidate roster.`;
+ }else status.textContent=failed?'Candidate data unavailable. Try Refresh profiles.':'Retrieving source-backed market profiles…';
  renderSidebar();
 }
 export function getCandidateSnapshot(){return snapshot;}
@@ -72,6 +83,15 @@ if(gallery){
  for(const id of ['candidate-chamber','candidate-state','candidate-sort'])$('#'+id).addEventListener('change',()=>{limit=6;render();});
  $('#candidate-search').addEventListener('input',()=>{limit=6;render();});
  $('#candidate-more').addEventListener('click',()=>{limit+=6;render();});$('#candidate-refresh').addEventListener('click',refresh);
+ $('#candidate-reset').addEventListener('click',()=>{
+  $('#candidate-chamber').value='senate';
+  $('#candidate-state').value='';
+  $('#candidate-search').value='';
+  $('#candidate-sort').value='volume';
+  limit=6;
+  render();
+  $('#candidate-search').focus({preventScroll:true});
+ });
  try{const cached=localStorage.getItem('congress-candidates-v1');if(cached&&cached.length<3000000)snapshot=validateCandidates(JSON.parse(cached));}catch{}
  render();refresh();setInterval(()=>{if(!document.hidden)refresh();},300000);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)render();});
