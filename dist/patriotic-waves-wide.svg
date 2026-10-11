@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Subtle patriotic stars and stripes background">
+<defs>
+ <linearGradient id="base" x1="0" y1="0" x2="0.95" y2="1"><stop stop-color="#dce8fb"/><stop offset=".37" stop-color="#edf2fb"/><stop offset=".70" stop-color="#f8f8fc"/><stop offset="1" stop-color="#edf2fa"/></linearGradient>
+ <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7fa6de" stop-opacity=".22"/><stop offset=".70" stop-color="#adc4e8" stop-opacity=".09"/><stop offset="1" stop-color="#d8e4f8" stop-opacity="0"/></linearGradient>
+ <linearGradient id="red" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#c75a6d" stop-opacity=".18"/><stop offset=".5" stop-color="#dd8290" stop-opacity=".12"/><stop offset="1" stop-color="#b84e64" stop-opacity=".08"/></linearGradient>
+ <linearGradient id="white" x1="0" y1="0" x2="1" y2=".5"><stop stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity=".14"/></linearGradient>
+ <path id="star" d="M0-11 2.65-3.6 10.5-3.4 4.15 1.5 6.5 9-0 4.8-6.5 9-4.15 1.5-10.5-3.4-2.65-3.6Z" fill="#fff"/>
+ </defs><rect width="1600" height="900" fill="url(#base)"/>
+<path d="M-80-50H1070Q670 170 710 390T0 620Z" fill="url(#blue)"/>
+<g><use href="#star" transform="translate(100 90) scale(3.9)" opacity="0.36"/><use href="#star" transform="translate(260 55) scale(3.3)" opacity="0.25"/><use href="#star" transform="translate(432 116) scale(3.2)" opacity="0.26"/><use href="#star" transform="translate(560 46) scale(2.5)" opacity="0.25"/><use href="#star" transform="translate(720 125) scale(2.6)" opacity="0.17"/><use href="#star" transform="translate(60 252) scale(3.4)" opacity="0.2"/><use href="#star" transform="translate(240 224) scale(3.1)" opacity="0.26"/><use href="#star" transform="translate(395 265) scale(3.7)" opacity="0.2"/><use href="#star" transform="translate(585 249) scale(2.8)" opacity="0.15"/><use href="#star" transform="translate(750 295) scale(2.5)" opacity="0.11"/><use href="#star" transform="translate(110 420) scale(3.1)" opacity="0.14"/><use href="#star" transform="translate(325 415) scale(3.4)" opacity="0.17"/><use href="#star" transform="translate(530 432) scale(2.9)" opacity="0.14"/></g>
+<path d="M-220 415C260 550 530 550 890 348S1410 72 1770 145L1770 270C1400 174 1150 335 920 482S290 685-210 560Z" fill="url(#white)"/>
+<path d="M-220 560C260 685 590 617 930 480S1470 220 1780 295L1780 404C1480 347 1220 470 966 609S240 814-220 716Z" fill="url(#red)"/>
+<path d="M-220 716C280 814 610 745 978 606S1480 405 1780 437L1780 526C1440 505 1230 595 1010 728S310 918-220 850Z" fill="url(#white)"/>
+<path d="M-220 855C240 922 660 850 1005 732S1480 538 1780 562V670C1490 642 1220 733 1040 836S410 1050-220 1012Z" fill="url(#red)"/>
+</svg>

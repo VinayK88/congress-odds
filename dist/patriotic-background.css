@@ -1,0 +1,26 @@
+/* Calm, nonpartisan U.S.-flag-inspired background derived from the approved soft stars-and-stripes direction.
+   This is a responsive, lightweight vector recreation rather than an embedded raster image. */
+html { background-color: #edf3fb; }
+body {
+  background-color: #edf3fb;
+  background-image: url("./patriotic-waves-wide.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* Existing white cards retain their surfaces and contrast over the soft artwork. */
+@media (max-width: 720px) {
+  body {
+    background-image: url("./patriotic-waves-mobile.svg");
+    background-position: center top;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+}
+@media (prefers-contrast: more) {
+  body { background-image: none; background-color: #f4f7fc; }
+}
+@media print {
+  body { background-image: none; background-color: #fff; }
+}
