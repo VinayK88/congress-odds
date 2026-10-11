@@ -1,5 +1,6 @@
+import {attachInspector} from './chart-inspector.mjs?v=20261011-interactive';
 import {fetchJson,validateLatest,validateHistory,validateModel,mergeLatest} from './reliability.mjs?v=20261006-robust';
-import {renderLab,renderPulse} from './lab.mjs?v=20261004-lab';
+import {renderLab,renderPulse} from './lab.mjs?v=20261011-interactive';
 import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus} from './data-core.mjs?v=20261006-robust';
 let data={sources:{},errors:{}},model,history;
 const liveFailures={},fileFailures={};
@@ -67,7 +68,11 @@ function renderHistory(){
  for(const p of [0,.25,.5,.75,1]){const y=225-p*195;add('line',{x1:48,x2:973,y1:y,y2:y,stroke:'#29354b'});add('text',{x:39,y:y+4,fill:'#99a7be','font-size':12,'text-anchor':'end'},`${p*100}%`);}
  series.forEach((all,index)=>{const points=all.filter(p=>p.t>=start);let path='';for(let i=0;i<points.length;i++){const p=points[i],gap=i===0||p.t-points[i-1].t>90000;path+=`${gap?'M':'L'}${48+(p.t-start)/(end-start)*925},${225-p.p*195} `;}add('path',{d:path,fill:'none',stroke:index?'#ff8795':'#73a6ff','stroke-width':2.5});});
  for(const [x,t,anchor]of [[48,start,'start'],[510,(start+end)/2,'middle'],[973,end,'end']])add('text',{x,y:253,fill:'#99a7be','font-size':12,'text-anchor':anchor},shortDate(t));
- box.append(svg);box.setAttribute('aria-label',`${chamber} Democratic and Republican daily market prices from ${shortDate(start)} to ${shortDate(end)}, 0 to 100 percent scale. Downloadable daily values linked below.`);
+ box.append(svg);
+ const byDate=series.map(all=>new Map(all.map(p=>[p.t,p.p])));
+ const dates=[...new Set(series.flat().filter(p=>p.t>=start).map(p=>p.t))].sort((a,b)=>a-b);
+ attachInspector(box,svg,dates.map(t=>({t,x:48+(t-start)/(end-start)*925,values:byDate.map((values,i)=>({label:i?'Republicans':'Democrats',value:values.has(t)?pct(values.get(t)):'No observation',tone:i?'red':'blue'}))})),{label:chamber+' price history',bottom:225});
+ box.setAttribute('aria-label',`${chamber} Democratic and Republican daily market prices from ${shortDate(start)} to ${shortDate(end)}, 0 to 100 percent scale. Downloadable daily values linked below.`);
  const caption=document.getElementById('history-caption');caption.replaceChildren(document.createTextNode(`Daily history retrieved ${date(history.fetchedAt)}. `));const a=el('a','Download daily values');a.href='data/history.json';caption.append(a);
 }
 let busy=false;
