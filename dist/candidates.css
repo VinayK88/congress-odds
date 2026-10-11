@@ -1,0 +1,32 @@
+.candidates-section{border-top:1px solid var(--navy);padding:40px 0;scroll-margin-top:15px}
+.candidate-filters{display:grid;grid-template-columns:140px 180px 1fr 180px auto;gap:12px;align-items:end;padding:20px;background:#eae5d9;border:1px solid var(--line);border-radius:16px;margin:22px 0 16px}
+.candidate-filters label{display:grid;gap:8px;font-size:10px;font-weight:600;color:var(--muted)}
+.candidate-filters select,.candidate-filters input{width:100%;min-width:0;height:42px;border:1px solid #c8c4b8;border-radius:8px;background:var(--surface);padding:10px 12px;color:var(--text);font:13px var(--font-system)}
+.candidate-filters button,#candidate-more,#race-candidate-profiles>button{min-height:42px;padding:10px 15px;border:1px solid var(--navy);border-radius:8px;background:var(--navy);color:white;font:600 12px var(--font-system);cursor:pointer}
+.candidate-gallery{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:22px 0}
+.candidate-race{padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--surface);min-width:0}
+.candidate-race-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px}
+.candidate-race-heading .eyebrow{font-size:9px;margin:0 0 8px}.candidate-race-heading h3{font-size:22px;letter-spacing:-.03em;margin:0;font-weight:600}
+.candidate-fresh{font-size:9px;padding:6px 8px;border-radius:20px;color:#45674b;background:#edf3e8;white-space:nowrap}.candidate-fresh.is-stale{color:#88580a;background:#fff0cf}
+.candidate-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.candidate-card{--candidate-color:#85734e;min-width:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f8f5ee}
+.candidate-D{--candidate-color:var(--blue)}.candidate-R{--candidate-color:var(--red)}
+.candidate-portrait{position:relative;aspect-ratio:1.25;display:flex;align-items:center;justify-content:center;flex-direction:column;background:linear-gradient(145deg,#e0dfd8,#f4f0e6);overflow:hidden;border-bottom:3px solid var(--candidate-color)}
+.candidate-initials{font-size:44px;font-weight:600;letter-spacing:-.06em;color:#89909a}.photo-fallback{font-size:9px;color:var(--muted);margin-top:6px}
+.candidate-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 24%}
+.candidate-body{padding:16px}.candidate-party{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--candidate-color)}
+.candidate-card h4{font-size:20px;line-height:1.2;letter-spacing:-.035em;font-weight:600;margin:8px 0 16px;overflow-wrap:anywhere}
+.candidate-odds{display:flex;flex-direction:column;gap:5px}.candidate-odds strong{font-size:37px;line-height:1;letter-spacing:-.055em;font-variant-numeric:tabular-nums;color:var(--candidate-color)}
+.candidate-odds span,.candidate-note{font-size:10px;color:var(--muted);line-height:1.5}
+.candidate-track{height:5px;border-radius:5px;background:#dfe0dd;overflow:hidden;margin:12px 0}.candidate-track i{display:block;height:100%;background:var(--candidate-color)}
+.candidate-contract{display:block;font-size:9px;color:#5a6270;margin:10px 0}.candidate-body>a{font-size:10px;color:var(--text);text-underline-offset:3px}.candidate-credit{display:block;margin-top:9px;font-size:8px;color:var(--muted)}
+.candidate-retrieved{font-size:9px;color:var(--muted);line-height:1.6;margin:16px 0 0}
+.candidate-empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:14px;padding:36px;text-align:center;color:var(--muted)}
+.candidate-method{font-size:12px;line-height:1.8;color:var(--muted);margin-top:22px}.candidate-method summary{font-weight:600}
+#race-candidate-profiles{border-top:1px solid var(--line);margin-top:24px;padding-top:4px}
+.candidate-compact{display:grid;grid-template-columns:64px 1fr;margin:12px 0;align-items:start;background:var(--surface)}
+.candidate-compact .candidate-portrait{aspect-ratio:.8;border:0;border-right:3px solid var(--candidate-color)}
+.candidate-compact .candidate-initials{font-size:24px}.candidate-compact .photo-fallback{font-size:7px;text-align:center}
+.candidate-compact .candidate-body{padding:10px}.candidate-compact h4{font-size:15px;margin:5px 0 9px}.candidate-compact .candidate-odds strong{font-size:26px}.candidate-compact .candidate-odds span{font-size:9px}.candidate-compact .candidate-track{margin:8px 0}.candidate-compact .candidate-contract{font-size:8px;margin:7px 0}.candidate-compact .candidate-body>a{font-size:9px}
+@media(max-width:1050px){.candidate-filters{grid-template-columns:1fr 1fr}.candidate-search-field{grid-column:1/-1}.candidate-gallery{gap:16px}.candidate-race{padding:16px}.candidate-pair{gap:10px}.candidate-body{padding:12px}.candidate-card h4{font-size:18px}.candidate-fresh{font-size:8px}}
+@media(max-width:700px){.candidate-gallery{grid-template-columns:1fr}.candidate-filters{padding:15px;gap:10px}.candidate-filters select,.candidate-filters input{font-size:16px}.candidate-pair{gap:12px}.candidate-race-heading h3{font-size:21px}.candidate-odds strong{font-size:32px}.explore-dock a{font-size:9px;padding:11px 6px}.candidate-portrait{aspect-ratio:1.1}}

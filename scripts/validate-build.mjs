@@ -1,7 +1,8 @@
+import {validateCandidates} from '../dist/candidate-core.mjs';
 import {readFile,readdir,access} from 'node:fs/promises';
 import {validateLatest,validateHistory,validateModel} from '../dist/reliability.mjs';
 const root=new URL('../dist/',import.meta.url);
-for(const [key,validate] of Object.entries({latest:validateLatest,model:validateModel,history:validateHistory}))validate(JSON.parse(await readFile(new URL(`data/${key}.json`,root),'utf8')));
+for(const [key,validate] of Object.entries({latest:validateLatest,model:validateModel,history:validateHistory,candidates:validateCandidates}))validate(JSON.parse(await readFile(new URL(`data/${key}.json`,root),'utf8')));
 for(const name of await readdir(root)){
  if(!name.endsWith('.mjs'))continue;
  const text=await readFile(new URL(name,root),'utf8');

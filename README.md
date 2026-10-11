@@ -57,6 +57,14 @@ Explore all 35 Senate contests (including Florida and Ohio specials) and 435 Hou
 
 These are **user-built scenarios, not forecasts or election results**. House choices start unassigned. The static race manifest was verified on 2026-10-05 and is separate from hourly market updates. See [scenario rules and sources](SCENARIOS.md).
 
+## Candidate names, photos and race odds
+
+[Explore candidate profiles](https://vinayk88.github.io/congress-odds/#candidates). Filter Senate and House profiles by state, search candidate names or districts, and see source-backed portraits and Yes outcome prices. Choosing a state or House district on the map shows its profiles beside the scenario editor.
+
+The hourly workflow discovers 2026 general-election race markets through Polymarket's Senate/House tags. Direct individual-candidate contracts take priority over party contracts for the same race. Party/nominee contracts are labeled because they may follow a replacement nominee. Profiles are market listings, not a certified ballot roster; unnamed outcomes and missing photos are explicit. Closed markets do not display a current probability, and snapshots older than two hours are marked stale.
+
+Images come from Polymarket or public-domain congressional portraits in [unitedstates/images](https://github.com/unitedstates/images), matched by full name and state using [congress-legislators](https://github.com/unitedstates/congress-legislators). Failed images fall back to initials. [Download timestamped candidate data](dist/data/candidates.json).
+
 ## Automatic updates
 
 - GitHub Actions runs hourly at minute 17, retrieves all five source/chamber pairs, updates data and this README's marked section, commits changes and deploys GitHub Pages. GitHub schedules may be delayed or disabled in inactive repositories.

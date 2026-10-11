@@ -52,6 +52,13 @@ jobs:
       - name: Report market refresh failure
         if: steps.markets.outcome == 'failure'
         run: echo "::warning::Market retrieval failed. Publishing the validated previous snapshots with original timestamps; stale quotes are excluded on the site."
+      - name: Refresh candidate names, photos and race odds
+        id: candidates
+        continue-on-error: true
+        run: node scripts/update-candidates.mjs
+      - name: Report candidate refresh failure
+        if: steps.candidates.outcome == 'failure'
+        run: echo "::warning::Candidate refresh failed. Retaining previous profiles with their original retrieval timestamps."
       - name: Train daily model
         if: steps.dependencies.outcome == 'success'
         timeout-minutes: 10
