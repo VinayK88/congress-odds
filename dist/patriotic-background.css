@@ -9,8 +9,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
-/* Keep charts, odds, and interactive controls readable above the soft artwork. */
-main, .candidates-section, #race-simulator { background-color: transparent; }
+/* Existing white cards retain their surfaces and contrast over the soft artwork. */
 @media (max-width: 720px) {
   body {
     background-image: url("./patriotic-waves-mobile.svg");
