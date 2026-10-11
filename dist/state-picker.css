@@ -1,0 +1,188 @@
+/*
+ * Congress Odds / Premium State Picker
+ * This preserves the real native select: keyboard navigation, type-to-select,
+ * assistive technology, and touch platform menus remain fully functional.
+ */
+#race-simulator .scenario-map-heading {
+  gap:18px 24px;
+  align-items:center;
+}
+#race-simulator .state-picker {
+  width:258px;
+  max-width:100%;
+  flex:0 1 258px;
+  min-width:190px;
+}
+#race-simulator .state-picker-label {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin:0 0 8px;
+  color:#63718b;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-weight:800;
+  font-size:10px;
+  line-height:1.2;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+#race-simulator .state-picker-label span {
+  font-size:12px;
+  line-height:1;
+  color:#c8a362;
+  letter-spacing:0;
+}
+#race-simulator .state-picker-control {
+  position:relative;
+  display:flex;
+  align-items:center;
+  width:100%;
+  height:60px;
+  border:1px solid #c2cfe2;
+  border-radius:16px;
+  background:linear-gradient(125deg,rgba(255,255,255,.99),rgba(249,251,255,.96));
+  box-shadow:0 5px 18px rgba(15,39,76,.075),inset 0 1px #fff;
+  overflow:hidden;
+  isolation:isolate;
+  transition:border-color .2s ease,background .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+#race-simulator .state-picker-control:after {
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:14px;
+  right:14px;
+  height:3px;
+  border-radius:6px 6px 0 0;
+  background:linear-gradient(90deg,#2b63be 0 43%,#e9edf3 43% 57%,#bf3855 57% 100%);
+  opacity:.68;
+  pointer-events:none;
+}
+#race-simulator .state-picker-emblem {
+  position:absolute;
+  top:50%;
+  left:12px;
+  width:32px;
+  height:32px;
+  transform:translateY(-50%);
+  display:grid;
+  place-items:center;
+  color:#ebc884;
+  background:linear-gradient(145deg,#203e68,#102640);
+  border:1px solid #d2b175b3;
+  border-radius:10px;
+  font-size:18px;
+  line-height:1;
+  pointer-events:none;
+  z-index:1;
+}
+#race-simulator select#scenario-state {
+  display:block;
+  position:relative;
+  z-index:2;
+  appearance:none;
+  -webkit-appearance:none;
+  width:100%;
+  max-width:none;
+  height:100%;
+  min-height:60px;
+  margin:0;
+  border:0;
+  border-radius:16px;
+  outline:0;
+  box-shadow:none;
+  background:transparent;
+  padding:0 86px 0 55px;
+  color:#173153;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.2;
+  font-weight:680;
+  letter-spacing:-.35px;
+  text-overflow:ellipsis;
+  cursor:pointer;
+}
+#race-simulator select#scenario-state::-ms-expand {
+  display:none;
+}
+#race-simulator .state-picker-code {
+  position:absolute;
+  top:50%;
+  right:42px;
+  z-index:3;
+  transform:translateY(-50%);
+  display:grid;
+  place-items:center;
+  height:24px;
+  min-width:31px;
+  padding:0 5px;
+  border:1px solid #d4deed;
+  border-radius:7px;
+  background:#edf3fb;
+  color:#385e8f;
+  font-size:10px;
+  font-weight:850;
+  line-height:1;
+  letter-spacing:.45px;
+  pointer-events:none;
+}
+#race-simulator .state-picker-chevron {
+  position:absolute;
+  top:50%;
+  right:14px;
+  z-index:3;
+  transform:translateY(-50%);
+  color:#2d4566;
+  pointer-events:none;
+  transition:transform .18s ease,color .18s ease;
+}
+@media(hover:hover) {
+  #race-simulator .state-picker-control:hover {
+    border-color:#8fa9cf;
+    background:#fff;
+    box-shadow:0 9px 24px rgba(14,43,85,.12),inset 0 1px #fff;
+  }
+  #race-simulator .state-picker-control:hover .state-picker-chevron {
+    color:#1859b6;
+    transform:translateY(-35%);
+  }
+}
+#race-simulator .state-picker-control:focus-within {
+  outline:3px solid #d2a554;
+  outline-offset:3px;
+  border-color:#3d72be;
+  box-shadow:0 0 0 5px #d5e6ff78,0 8px 23px rgba(26,64,122,.12);
+  background:#fff;
+}
+#race-simulator .state-picker-control:focus-within .state-picker-chevron {
+  color:#1859b6;
+}
+#race-simulator select#scenario-state:focus-visible {
+  outline:none;
+}
+#race-simulator select#scenario-state option {
+  background:#fff;
+  color:#172e4c;
+}
+@media(max-width:900px) {
+  #race-simulator .state-picker {width:232px;flex-basis:232px;}
+}
+@media(max-width:640px) {
+  #race-simulator .scenario-map-heading {align-items:flex-start;gap:17px;}
+  #race-simulator .state-picker {width:100%;min-width:0;flex:1 1 100%;}
+  #race-simulator .state-picker-control {height:58px;}
+  #race-simulator select#scenario-state {min-height:58px;font-size:16px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  #race-simulator .state-picker-control,
+  #race-simulator .state-picker-chevron {transition:none!important;transform:none!important;}
+  #race-simulator .state-picker-emblem,
+  #race-simulator .state-picker-code {transform:translateY(-50%)!important;}
+  #race-simulator .state-picker-chevron {transform:translateY(-50%)!important;}
+}
+@media(prefers-contrast:more) {
+  #race-simulator .state-picker-control {background:#fff;border:2px solid #253e61;}
+  #race-simulator .state-picker-code {background:#fff;color:#0b2e61;}
+}
