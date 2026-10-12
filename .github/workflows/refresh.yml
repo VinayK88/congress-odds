@@ -4,6 +4,9 @@ on:
     # 5-minute trigger grid; lightweight cadence job skips slots outside
     # the election-week policy. Times are best-effort with GitHub Actions.
     - cron: '2-59/5 * * * *'
+    # Redundant hourly fallback: this schedule worked before the 5-minute
+    # upgrade and helps if GitHub skips the high-frequency trigger.
+    - cron: '17 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
