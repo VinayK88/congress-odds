@@ -2,6 +2,7 @@ import {marketStateSummary,raceLeader,marketTotals,marketCoverage} from './marke
 import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
 import {renderRaceCandidates,getCandidateSnapshot} from './candidates.mjs?v=20261012-countdown';
 import {briefingForState,renderStateBriefing} from './state-briefing.mjs';
+import {refreshRaceHistory,renderRaceHistory} from './race-history-view.mjs';
 import {createScenarioHistory} from './scenario-history.mjs';
 import {mapMarkup,stateSummary} from './state-map.mjs?v=20261012-clarity';
 import {STATES,VERIFIED_ON} from './race-data.mjs';
@@ -78,7 +79,17 @@ function render() {
   if(!rr.some(r=>r.id===district))district=rr[0]?.id||null;
   const race=rr.find(r=>r.id===district);
   const briefing=$('#state-briefing');briefing.hidden=!market;
-  if(market)renderStateBriefing(briefing,briefingForState(chamber,selected,district,snapshot));
+  if(market){
+    const view=briefingForState(chamber,selected,district,snapshot);
+    renderStateBriefing(briefing,view);
+    if(view.raceId){
+      const history=document.createElement('section');
+      history.className='race-history-panel';
+      history.setAttribute('aria-label','Recorded market price history');
+      briefing.append(history);
+      renderRaceHistory(history,view.raceId);
+    }
+  }
   $('#editor-state').textContent=state.name;
   $('#editor-context').textContent=chamber==='house'?`${state.houseSeats} voting district${state.houseSeats===1?'':'s'}. ${market?'Select a district for candidate odds.':'Select a district, then choose its outcome.'}`:state.senateParty?`${state.special?'Special election':'Regular Class II election'} · current seat party: ${state.senateParty==='D'?'Democratic':'Republican'}.`:'No Senate seat on the 2026 ballot. Choose another state or switch to House.';
   $('#district-list').hidden=chamber!=='house';
@@ -152,6 +163,8 @@ $('#scenario-import').addEventListener('change',async e=>{
 render();
 
 function refreshMap(){if(mode!=='market')return;const active=document.activeElement,state=active?.dataset?.state,districtId=active?.dataset?.district;render();if(state)$(`[data-state="${state}"]`)?.focus({preventScroll:true});else if(districtId)$(`[data-district="${districtId}"]`)?.focus({preventScroll:true});}
-window.addEventListener('candidate-data-updated',refreshMap);
+window.addEventListener('candidate-data-updated',()=>{refreshMap();refreshRaceHistory();});
+window.addEventListener('race-history-updated',refreshMap);
+refreshRaceHistory();
 setInterval(()=>{if(!document.hidden)refreshMap();},60000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshMap();});
