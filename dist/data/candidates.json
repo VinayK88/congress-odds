@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "electionYear": 2026,
   "source": "Polymarket Gamma API",
-  "updatedAt": "2026-10-12T16:46:23.868Z",
+  "updatedAt": "2026-10-12T16:47:56.990Z",
   "errors": {},
   "races": [
     {
@@ -12,7 +12,7 @@
       "title": "AK-AL House Election Winner",
       "eventId": "190688",
       "url": "https://polymarket.com/event/ak-al-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 58912.49220899998,
       "candidates": [
         {
@@ -80,7 +80,7 @@
       "title": "Alaska Senate Election Winner",
       "eventId": "59233",
       "url": "https://polymarket.com/event/alaska-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 1249583.055367,
       "candidates": [
         {
@@ -190,7 +190,7 @@
       "title": "AL-01 House Election Winner",
       "eventId": "190871",
       "url": "https://polymarket.com/event/al-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 48546.042259999995,
       "candidates": [
         {
@@ -230,7 +230,7 @@
       "title": "AL-02 House Election Winner",
       "eventId": "190872",
       "url": "https://polymarket.com/event/al-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 79358.212094,
       "candidates": [
         {
@@ -270,7 +270,7 @@
       "title": "AL-03 House Election Winner",
       "eventId": "190873",
       "url": "https://polymarket.com/event/al-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 44618.966907999995,
       "candidates": [
         {
@@ -310,7 +310,7 @@
       "title": "AL-04 House Election Winner",
       "eventId": "190874",
       "url": "https://polymarket.com/event/al-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 38822.897458,
       "candidates": [
         {
@@ -350,7 +350,7 @@
       "title": "AL-05 House Election Winner",
       "eventId": "190875",
       "url": "https://polymarket.com/event/al-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 67443.764362,
       "candidates": [
         {
@@ -390,7 +390,7 @@
       "title": "AL-06 House Election Winner",
       "eventId": "190876",
       "url": "https://polymarket.com/event/al-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 26288.507523999997,
       "candidates": [
         {
@@ -430,7 +430,7 @@
       "title": "AL-07 House Election Winner",
       "eventId": "190877",
       "url": "https://polymarket.com/event/al-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 93795.083705,
       "candidates": [
         {
@@ -470,7 +470,7 @@
       "title": "Alabama Senate Election Winner",
       "eventId": "57637",
       "url": "https://polymarket.com/event/alabama-senate-election-winner-154",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 13123.730888999999,
       "candidates": [
         {
@@ -510,7 +510,7 @@
       "title": "AR-01 House Election Winner",
       "eventId": "190878",
       "url": "https://polymarket.com/event/ar-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 27128.942130999996,
       "candidates": [
         {
@@ -550,7 +550,7 @@
       "title": "AR-02 House Election Winner",
       "eventId": "190879",
       "url": "https://polymarket.com/event/ar-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 34394.84845,
       "candidates": [
         {
@@ -590,7 +590,7 @@
       "title": "AR-03 House Election Winner",
       "eventId": "190880",
       "url": "https://polymarket.com/event/ar-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 22273.992609999998,
       "candidates": [
         {
@@ -630,7 +630,7 @@
       "title": "AR-04 House Election Winner",
       "eventId": "190881",
       "url": "https://polymarket.com/event/ar-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 24273.729613,
       "candidates": [
         {
@@ -670,7 +670,7 @@
       "title": "Arkansas Senate Election Winner",
       "eventId": "57639",
       "url": "https://polymarket.com/event/arkansas-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 38889.626525,
       "candidates": [
         {
@@ -710,7 +710,7 @@
       "title": "AZ-01 House Election Winner",
       "eventId": "106050",
       "url": "https://polymarket.com/event/az-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 64955.614779999996,
       "candidates": [
         {
@@ -750,7 +750,7 @@
       "title": "AZ-02 House Election Winner",
       "eventId": "106055",
       "url": "https://polymarket.com/event/az-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 10928.752242,
       "candidates": [
         {
@@ -790,7 +790,7 @@
       "title": "AZ-03 House Election Winner",
       "eventId": "190882",
       "url": "https://polymarket.com/event/az-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 53043.50844900001,
       "candidates": [
         {
@@ -830,7 +830,7 @@
       "title": "AZ-04 House Election Winner",
       "eventId": "190884",
       "url": "https://polymarket.com/event/az-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 40160.186845,
       "candidates": [
         {
@@ -870,7 +870,7 @@
       "title": "AZ-05 House Election Winner",
       "eventId": "190888",
       "url": "https://polymarket.com/event/az-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 38716.490253,
       "candidates": [
         {
@@ -910,7 +910,7 @@
       "title": "AZ-06 House Election Winner",
       "eventId": "106056",
       "url": "https://polymarket.com/event/az-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 13737.142186,
       "candidates": [
         {
@@ -950,7 +950,7 @@
       "title": "AZ-07 House Election Winner",
       "eventId": "190889",
       "url": "https://polymarket.com/event/az-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 39591.566097,
       "candidates": [
         {
@@ -990,7 +990,7 @@
       "title": "AZ-08 House Election Winner",
       "eventId": "190890",
       "url": "https://polymarket.com/event/az-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 16270.16754,
       "candidates": [
         {
@@ -1030,7 +1030,7 @@
       "title": "AZ-09 House Election Winner",
       "eventId": "190891",
       "url": "https://polymarket.com/event/az-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 36604.082758000004,
       "candidates": [
         {
@@ -1070,7 +1070,7 @@
       "title": "CA-01 House Election Winner",
       "eventId": "190892",
       "url": "https://polymarket.com/event/ca-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 37930.342881,
       "candidates": [
         {
@@ -1110,7 +1110,7 @@
       "title": "CA-02 House Election Winner",
       "eventId": "190893",
       "url": "https://polymarket.com/event/ca-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 21767.885507000003,
       "candidates": [
         {
@@ -1150,7 +1150,7 @@
       "title": "CA-03 House Election Winner",
       "eventId": "190894",
       "url": "https://polymarket.com/event/ca-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 43788.302131,
       "candidates": [
         {
@@ -1190,7 +1190,7 @@
       "title": "CA-04 House Election Winner (by individual)",
       "eventId": "674583",
       "url": "https://polymarket.com/event/ca-04-house-election-winner-by-individual-20260630172946503",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 15185.033089999997,
       "candidates": [
         {
@@ -1230,7 +1230,7 @@
       "title": "CA-05 House Election Winner",
       "eventId": "190896",
       "url": "https://polymarket.com/event/ca-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 18242.344651,
       "candidates": [
         {
@@ -1270,7 +1270,7 @@
       "title": "CA-06 House Election Winner",
       "eventId": "190897",
       "url": "https://polymarket.com/event/ca-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 60460.114,
       "candidates": [
         {
@@ -1310,7 +1310,7 @@
       "title": "CA-07 House Election Winner (by individual)",
       "eventId": "674585",
       "url": "https://polymarket.com/event/ca-07-house-election-winner-by-individual-20260706153650362",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 22637.551355,
       "candidates": [
         {
@@ -1350,7 +1350,7 @@
       "title": "CA-08 House Election Winner",
       "eventId": "190899",
       "url": "https://polymarket.com/event/ca-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 56688.77258300002,
       "candidates": [
         {
@@ -1390,7 +1390,7 @@
       "title": "CA-09 House Election Winner",
       "eventId": "190900",
       "url": "https://polymarket.com/event/ca-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 24107.829756,
       "candidates": [
         {
@@ -1430,7 +1430,7 @@
       "title": "CA-10 House Election Winner",
       "eventId": "190901",
       "url": "https://polymarket.com/event/ca-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 26689.843815999997,
       "candidates": [
         {
@@ -1470,7 +1470,7 @@
       "title": "CA-11 House Election Winner (Individual)",
       "eventId": "686285",
       "url": "https://polymarket.com/event/ca-11-house-election-winner-individual-20260710015446690",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 19751.321579,
       "candidates": [
         {
@@ -1510,7 +1510,7 @@
       "title": "CA-12 House Election Winner (Individual)",
       "eventId": "686300",
       "url": "https://polymarket.com/event/ca-12-house-election-winner-individual-20260710020058719",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 5738.656238,
       "candidates": [
         {
@@ -1550,7 +1550,7 @@
       "title": "CA-13 House Election Winner",
       "eventId": "106057",
       "url": "https://polymarket.com/event/ca-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 45662.36629099999,
       "candidates": [
         {
@@ -1590,7 +1590,7 @@
       "title": "CA-14 House Election Winner (Individual)",
       "eventId": "686301",
       "url": "https://polymarket.com/event/ca-14-house-election-winner-individual-20260710020305940",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 26078.897370000002,
       "candidates": [
         {
@@ -1630,7 +1630,7 @@
       "title": "CA-15 House Election Winner",
       "eventId": "190905",
       "url": "https://polymarket.com/event/ca-15-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 123311.8411,
       "candidates": [
         {
@@ -1670,7 +1670,7 @@
       "title": "CA-16 House Election Winner",
       "eventId": "190906",
       "url": "https://polymarket.com/event/ca-16-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 107718.76963100002,
       "candidates": [
         {
@@ -1710,7 +1710,7 @@
       "title": "CA-17 House Election Winner",
       "eventId": "131745",
       "url": "https://polymarket.com/event/ca-17-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 16338.738062,
       "candidates": [
         {
@@ -1750,7 +1750,7 @@
       "title": "CA-18 House Election Winner",
       "eventId": "190907",
       "url": "https://polymarket.com/event/ca-18-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 49852.720456999996,
       "candidates": [
         {
@@ -1790,7 +1790,7 @@
       "title": "CA-19 House Election Winner",
       "eventId": "190908",
       "url": "https://polymarket.com/event/ca-19-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 50108.297416,
       "candidates": [
         {
@@ -1830,7 +1830,7 @@
       "title": "CA-20 House Election Winner",
       "eventId": "190909",
       "url": "https://polymarket.com/event/ca-20-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 49847.71731500001,
       "candidates": [
         {
@@ -1870,7 +1870,7 @@
       "title": "CA-21 House Election Winner",
       "eventId": "190910",
       "url": "https://polymarket.com/event/ca-21-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 38975.768113,
       "candidates": [
         {
@@ -1910,7 +1910,7 @@
       "title": "CA-22 House Election Winner",
       "eventId": "90270",
       "url": "https://polymarket.com/event/which-party-will-win-the-house-race-for-the-ca-22-seat",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 26670.607172000004,
       "candidates": [
         {
@@ -1950,7 +1950,7 @@
       "title": "CA-23 House Election Winner",
       "eventId": "190911",
       "url": "https://polymarket.com/event/ca-23-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 90049.168291,
       "candidates": [
         {
@@ -1990,7 +1990,7 @@
       "title": "CA-24 House Election Winner",
       "eventId": "190912",
       "url": "https://polymarket.com/event/ca-24-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 51938.98977900001,
       "candidates": [
         {
@@ -2030,7 +2030,7 @@
       "title": "CA-25 House Election Winner",
       "eventId": "190913",
       "url": "https://polymarket.com/event/ca-25-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 26400.402105,
       "candidates": [
         {
@@ -2070,7 +2070,7 @@
       "title": "CA-26 House Election Winner",
       "eventId": "190914",
       "url": "https://polymarket.com/event/ca-26-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 36216.711976,
       "candidates": [
         {
@@ -2110,7 +2110,7 @@
       "title": "CA-27 House Election Winner",
       "eventId": "90272",
       "url": "https://polymarket.com/event/which-party-will-win-the-house-race-for-the-ca-27-seat",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 22808.105668000004,
       "candidates": [
         {
@@ -2150,7 +2150,7 @@
       "title": "CA-28 House Election Winner",
       "eventId": "190915",
       "url": "https://polymarket.com/event/ca-28-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 142157.729488,
       "candidates": [
         {
@@ -2190,7 +2190,7 @@
       "title": "CA-29 House Election Winner (Individual)",
       "eventId": "686303",
       "url": "https://polymarket.com/event/ca-29-house-election-winner-individual-20260710020355243",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 6248.974937999999,
       "candidates": [
         {
@@ -2230,7 +2230,7 @@
       "title": "CA-30 House Election Winner",
       "eventId": "190917",
       "url": "https://polymarket.com/event/ca-30-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 33164.749917,
       "candidates": [
         {
@@ -2270,7 +2270,7 @@
       "title": "CA-31 House Election Winner",
       "eventId": "190918",
       "url": "https://polymarket.com/event/ca-31-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 18399.836264,
       "candidates": [
         {
@@ -2310,7 +2310,7 @@
       "title": "CA-32 House Election Winner",
       "eventId": "190919",
       "url": "https://polymarket.com/event/ca-32-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 29038.803913000003,
       "candidates": [
         {
@@ -2350,7 +2350,7 @@
       "title": "CA-33 House Election Winner",
       "eventId": "190920",
       "url": "https://polymarket.com/event/ca-33-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 21443.728951,
       "candidates": [
         {
@@ -2390,7 +2390,7 @@
       "title": "CA-34 House Election Winner (Individual)",
       "eventId": "686319",
       "url": "https://polymarket.com/event/ca-34-house-election-winner-individual-20260710020736883",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 27566.85660000001,
       "candidates": [
         {
@@ -2430,7 +2430,7 @@
       "title": "CA-35 House Election Winner",
       "eventId": "190922",
       "url": "https://polymarket.com/event/ca-35-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 46088.378274999995,
       "candidates": [
         {
@@ -2470,7 +2470,7 @@
       "title": "CA-36 House Election Winner",
       "eventId": "190923",
       "url": "https://polymarket.com/event/ca-36-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 85890.30711999998,
       "candidates": [
         {
@@ -2510,7 +2510,7 @@
       "title": "CA-37 House Election Winner (Individual)",
       "eventId": "686320",
       "url": "https://polymarket.com/event/ca-37-house-election-winner-individual-20260710020839627",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 35084.117690999985,
       "candidates": [
         {
@@ -2550,7 +2550,7 @@
       "title": "CA-38 House Election Winner",
       "eventId": "190925",
       "url": "https://polymarket.com/event/ca-38-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 65738.85469800001,
       "candidates": [
         {
@@ -2590,7 +2590,7 @@
       "title": "CA-39 House Election Winner",
       "eventId": "190926",
       "url": "https://polymarket.com/event/ca-39-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 58855.0206,
       "candidates": [
         {
@@ -2630,7 +2630,7 @@
       "title": "CA-40 House Election Winner (Individual)",
       "eventId": "686321",
       "url": "https://polymarket.com/event/ca-40-house-election-winner-individual-20260710020901480",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 11724.165669000002,
       "candidates": [
         {
@@ -2670,7 +2670,7 @@
       "title": "CA-41 House Election Winner",
       "eventId": "191376",
       "url": "https://polymarket.com/event/ca-41-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 22561.67283,
       "candidates": [
         {
@@ -2710,7 +2710,7 @@
       "title": "CA-42 House Election Winner",
       "eventId": "191377",
       "url": "https://polymarket.com/event/ca-42-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 42930.270304000005,
       "candidates": [
         {
@@ -2750,7 +2750,7 @@
       "title": "CA-43 House Election Winner",
       "eventId": "191378",
       "url": "https://polymarket.com/event/ca-43-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 32685.644186000005,
       "candidates": [
         {
@@ -2790,7 +2790,7 @@
       "title": "CA-44 House Election Winner",
       "eventId": "191379",
       "url": "https://polymarket.com/event/ca-44-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 47197.10496300001,
       "candidates": [
         {
@@ -2830,7 +2830,7 @@
       "title": "CA-45 House Election Winner",
       "eventId": "191380",
       "url": "https://polymarket.com/event/ca-45-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 44045.389202000006,
       "candidates": [
         {
@@ -2870,7 +2870,7 @@
       "title": "CA-46 House Election Winner",
       "eventId": "191381",
       "url": "https://polymarket.com/event/ca-46-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 51154.311007,
       "candidates": [
         {
@@ -2910,7 +2910,7 @@
       "title": "CA-47 House Election Winner",
       "eventId": "191382",
       "url": "https://polymarket.com/event/ca-47-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 29003.265658000008,
       "candidates": [
         {
@@ -2950,7 +2950,7 @@
       "title": "CA-48 House Election Winner",
       "eventId": "191383",
       "url": "https://polymarket.com/event/ca-48-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 42982.408822,
       "candidates": [
         {
@@ -2990,7 +2990,7 @@
       "title": "CA-49 House Election Winner",
       "eventId": "191384",
       "url": "https://polymarket.com/event/ca-49-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 28423.938787,
       "candidates": [
         {
@@ -3030,7 +3030,7 @@
       "title": "CA-50 House Election Winner",
       "eventId": "191385",
       "url": "https://polymarket.com/event/ca-50-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 69375.00591,
       "candidates": [
         {
@@ -3070,7 +3070,7 @@
       "title": "CA-51 House Election Winner",
       "eventId": "191386",
       "url": "https://polymarket.com/event/ca-51-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 34288.328054000005,
       "candidates": [
         {
@@ -3110,7 +3110,7 @@
       "title": "CA-52 House Election Winner",
       "eventId": "191387",
       "url": "https://polymarket.com/event/ca-52-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 51119.70596400001,
       "candidates": [
         {
@@ -3150,7 +3150,7 @@
       "title": "CO-01 House Election Winner",
       "eventId": "191388",
       "url": "https://polymarket.com/event/co-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 43745.455249,
       "candidates": [
         {
@@ -3190,7 +3190,7 @@
       "title": "CO-02 House Election Winner",
       "eventId": "191389",
       "url": "https://polymarket.com/event/co-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 43909.10776400001,
       "candidates": [
         {
@@ -3230,7 +3230,7 @@
       "title": "CO-03 House Election Winner",
       "eventId": "106058",
       "url": "https://polymarket.com/event/co-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 22459.229948000004,
       "candidates": [
         {
@@ -3270,7 +3270,7 @@
       "title": "CO-04 House Election Winner",
       "eventId": "191390",
       "url": "https://polymarket.com/event/co-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 46590.519729,
       "candidates": [
         {
@@ -3310,7 +3310,7 @@
       "title": "CO-05 House Election Winner",
       "eventId": "191391",
       "url": "https://polymarket.com/event/co-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 21460.461995,
       "candidates": [
         {
@@ -3350,7 +3350,7 @@
       "title": "CO-06 House Election Winner",
       "eventId": "191392",
       "url": "https://polymarket.com/event/co-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 31109.449323,
       "candidates": [
         {
@@ -3390,7 +3390,7 @@
       "title": "CO-07 House Election Winner",
       "eventId": "191393",
       "url": "https://polymarket.com/event/co-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 28046.008358999996,
       "candidates": [
         {
@@ -3430,7 +3430,7 @@
       "title": "CO-08 House Election Winner",
       "eventId": "106059",
       "url": "https://polymarket.com/event/co-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 24559.640512,
       "candidates": [
         {
@@ -3470,7 +3470,7 @@
       "title": "Colorado Senate Election Winner",
       "eventId": "57640",
       "url": "https://polymarket.com/event/colorado-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 51353.33795,
       "candidates": [
         {
@@ -3510,7 +3510,7 @@
       "title": "CT-01 House Election Winner",
       "eventId": "191394",
       "url": "https://polymarket.com/event/ct-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 12960.019069999998,
       "candidates": [
         {
@@ -3550,7 +3550,7 @@
       "title": "CT-02 House Election Winner",
       "eventId": "191395",
       "url": "https://polymarket.com/event/ct-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 18809.681455,
       "candidates": [
         {
@@ -3590,7 +3590,7 @@
       "title": "CT-03 House Election Winner",
       "eventId": "191396",
       "url": "https://polymarket.com/event/ct-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 30793.292715,
       "candidates": [
         {
@@ -3630,7 +3630,7 @@
       "title": "CT-04 House Election Winner",
       "eventId": "191397",
       "url": "https://polymarket.com/event/ct-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 48923.45115700001,
       "candidates": [
         {
@@ -3670,7 +3670,7 @@
       "title": "CT-05 House Election Winner",
       "eventId": "106067",
       "url": "https://polymarket.com/event/ct-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 9099.86279,
       "candidates": [
         {
@@ -3710,7 +3710,7 @@
       "title": "DE-AL House Election Winner",
       "eventId": "191398",
       "url": "https://polymarket.com/event/de-al-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 48313.919158,
       "candidates": [
         {
@@ -3750,7 +3750,7 @@
       "title": "Delaware Senate Election Winner",
       "eventId": "57641",
       "url": "https://polymarket.com/event/delaware-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 31776.22377000001,
       "candidates": [
         {
@@ -3790,7 +3790,7 @@
       "title": "FL-01 House Election Winner",
       "eventId": "191399",
       "url": "https://polymarket.com/event/fl-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 118031.833462,
       "candidates": [
         {
@@ -3830,7 +3830,7 @@
       "title": "FL-02 House Election Winner",
       "eventId": "191400",
       "url": "https://polymarket.com/event/fl-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 16748.031235,
       "candidates": [
         {
@@ -3870,7 +3870,7 @@
       "title": "FL-03 House Election Winner",
       "eventId": "191401",
       "url": "https://polymarket.com/event/fl-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 38774.187376999995,
       "candidates": [
         {
@@ -3910,7 +3910,7 @@
       "title": "FL-04 House Election Winner",
       "eventId": "191402",
       "url": "https://polymarket.com/event/fl-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 28840.289293999995,
       "candidates": [
         {
@@ -3950,7 +3950,7 @@
       "title": "FL-05 House Election Winner",
       "eventId": "191403",
       "url": "https://polymarket.com/event/fl-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 17422.470649,
       "candidates": [
         {
@@ -3990,7 +3990,7 @@
       "title": "FL-06 House Election Winner",
       "eventId": "191404",
       "url": "https://polymarket.com/event/fl-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 36313.30716,
       "candidates": [
         {
@@ -4030,7 +4030,7 @@
       "title": "FL-07 House Election Winner",
       "eventId": "191405",
       "url": "https://polymarket.com/event/fl-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 28529.953739,
       "candidates": [
         {
@@ -4070,7 +4070,7 @@
       "title": "FL-08 House Election Winner",
       "eventId": "191406",
       "url": "https://polymarket.com/event/fl-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 54941.11757799999,
       "candidates": [
         {
@@ -4110,7 +4110,7 @@
       "title": "FL-09 House Election Winner",
       "eventId": "191407",
       "url": "https://polymarket.com/event/fl-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 25256.021972,
       "candidates": [
         {
@@ -4150,7 +4150,7 @@
       "title": "FL-10 House Election Winner",
       "eventId": "191408",
       "url": "https://polymarket.com/event/fl-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 23676.057523,
       "candidates": [
         {
@@ -4190,7 +4190,7 @@
       "title": "FL-11 House Election Winner",
       "eventId": "191409",
       "url": "https://polymarket.com/event/fl-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 25118.825375,
       "candidates": [
         {
@@ -4230,7 +4230,7 @@
       "title": "FL-12 House Election Winner",
       "eventId": "191410",
       "url": "https://polymarket.com/event/fl-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 63583.730036999994,
       "candidates": [
         {
@@ -4270,7 +4270,7 @@
       "title": "FL-13 House Election Winner",
       "eventId": "106073",
       "url": "https://polymarket.com/event/fl-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 12705.232159,
       "candidates": [
         {
@@ -4310,7 +4310,7 @@
       "title": "FL-14 House Election Winner",
       "eventId": "191411",
       "url": "https://polymarket.com/event/fl-14-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 65777.587156,
       "candidates": [
         {
@@ -4350,7 +4350,7 @@
       "title": "FL-15 House Election Winner",
       "eventId": "191412",
       "url": "https://polymarket.com/event/fl-15-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 33607.218093,
       "candidates": [
         {
@@ -4390,7 +4390,7 @@
       "title": "FL-16 House Election Winner",
       "eventId": "191413",
       "url": "https://polymarket.com/event/fl-16-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 27184.865535,
       "candidates": [
         {
@@ -4430,7 +4430,7 @@
       "title": "FL-17 House Election Winner",
       "eventId": "191414",
       "url": "https://polymarket.com/event/fl-17-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 32200.623332000003,
       "candidates": [
         {
@@ -4470,7 +4470,7 @@
       "title": "FL-18 House Election Winner",
       "eventId": "191415",
       "url": "https://polymarket.com/event/fl-18-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 39295.17129300001,
       "candidates": [
         {
@@ -4510,7 +4510,7 @@
       "title": "FL-19 House Election Winner",
       "eventId": "191416",
       "url": "https://polymarket.com/event/fl-19-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 28486.599050999997,
       "candidates": [
         {
@@ -4550,7 +4550,7 @@
       "title": "FL-20 House Election Winner",
       "eventId": "191417",
       "url": "https://polymarket.com/event/fl-20-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 42916.50206100001,
       "candidates": [
         {
@@ -4590,7 +4590,7 @@
       "title": "FL-21 House Election Winner",
       "eventId": "191418",
       "url": "https://polymarket.com/event/fl-21-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 16101.000808,
       "candidates": [
         {
@@ -4630,7 +4630,7 @@
       "title": "FL-22 House Election Winner",
       "eventId": "191419",
       "url": "https://polymarket.com/event/fl-22-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 54599.36810600001,
       "candidates": [
         {
@@ -4670,7 +4670,7 @@
       "title": "FL-23 House Election Winner",
       "eventId": "106074",
       "url": "https://polymarket.com/event/fl-23-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 26919.054488,
       "candidates": [
         {
@@ -4710,7 +4710,7 @@
       "title": "FL-24 House Election Winner",
       "eventId": "191420",
       "url": "https://polymarket.com/event/fl-24-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 34738.774007,
       "candidates": [
         {
@@ -4750,7 +4750,7 @@
       "title": "FL-25 House Election Winner",
       "eventId": "191421",
       "url": "https://polymarket.com/event/fl-25-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 33907.18627499999,
       "candidates": [
         {
@@ -4790,7 +4790,7 @@
       "title": "FL-26 House Election Winner",
       "eventId": "191422",
       "url": "https://polymarket.com/event/fl-26-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 83488.100498,
       "candidates": [
         {
@@ -4830,7 +4830,7 @@
       "title": "FL-27 House Election Winner",
       "eventId": "191423",
       "url": "https://polymarket.com/event/fl-27-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 36819.780537,
       "candidates": [
         {
@@ -4870,7 +4870,7 @@
       "title": "FL-28 House Election Winner",
       "eventId": "191424",
       "url": "https://polymarket.com/event/fl-28-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 60708.87396600001,
       "candidates": [
         {
@@ -4910,7 +4910,7 @@
       "title": "Florida Senate Election Winner",
       "eventId": "57681",
       "url": "https://polymarket.com/event/florida-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 223640.517103,
       "candidates": [
         {
@@ -4950,7 +4950,7 @@
       "title": "GA-01 House Election Winner",
       "eventId": "191425",
       "url": "https://polymarket.com/event/ga-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 21641.460136,
       "candidates": [
         {
@@ -4990,7 +4990,7 @@
       "title": "GA-02 House Election Winner",
       "eventId": "191426",
       "url": "https://polymarket.com/event/ga-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 27225.932446000003,
       "candidates": [
         {
@@ -5030,7 +5030,7 @@
       "title": "GA-03 House Election Winner",
       "eventId": "191427",
       "url": "https://polymarket.com/event/ga-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 26784.473717,
       "candidates": [
         {
@@ -5070,7 +5070,7 @@
       "title": "GA-04 House Election Winner",
       "eventId": "191428",
       "url": "https://polymarket.com/event/ga-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 48203.892946,
       "candidates": [
         {
@@ -5110,7 +5110,7 @@
       "title": "GA-05 House Election Winner",
       "eventId": "191429",
       "url": "https://polymarket.com/event/ga-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 53728.61511200001,
       "candidates": [
         {
@@ -5150,7 +5150,7 @@
       "title": "GA-06 House Election Winner",
       "eventId": "191430",
       "url": "https://polymarket.com/event/ga-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 23916.656528000003,
       "candidates": [
         {
@@ -5190,7 +5190,7 @@
       "title": "GA-07 House Election Winner",
       "eventId": "191431",
       "url": "https://polymarket.com/event/ga-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 41380.98882200001,
       "candidates": [
         {
@@ -5230,7 +5230,7 @@
       "title": "GA-08 House Election Winner",
       "eventId": "191432",
       "url": "https://polymarket.com/event/ga-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 50403.825961,
       "candidates": [
         {
@@ -5270,7 +5270,7 @@
       "title": "GA-09 House Election Winner",
       "eventId": "191433",
       "url": "https://polymarket.com/event/ga-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 35592.888559,
       "candidates": [
         {
@@ -5310,7 +5310,7 @@
       "title": "GA-10 House Election Winner",
       "eventId": "191434",
       "url": "https://polymarket.com/event/ga-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 48673.207611,
       "candidates": [
         {
@@ -5350,7 +5350,7 @@
       "title": "GA-11 House Election Winner",
       "eventId": "191435",
       "url": "https://polymarket.com/event/ga-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 58353.761328,
       "candidates": [
         {
@@ -5390,7 +5390,7 @@
       "title": "GA-12 House Election Winner",
       "eventId": "191436",
       "url": "https://polymarket.com/event/ga-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 56960.684054000005,
       "candidates": [
         {
@@ -5430,7 +5430,7 @@
       "title": "GA-13 House Election Winner",
       "eventId": "191437",
       "url": "https://polymarket.com/event/ga-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 39455.279925,
       "candidates": [
         {
@@ -5470,7 +5470,7 @@
       "title": "GA-14 House Election Winner",
       "eventId": "191438",
       "url": "https://polymarket.com/event/ga-14-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 19279.641387000003,
       "candidates": [
         {
@@ -5510,7 +5510,7 @@
       "title": "Georgia Senate Election Winner",
       "eventId": "57642",
       "url": "https://polymarket.com/event/georgia-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 222495.142026,
       "candidates": [
         {
@@ -5550,7 +5550,7 @@
       "title": "HI-01 House Election Winner",
       "eventId": "191439",
       "url": "https://polymarket.com/event/hi-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 46851.947509000005,
       "candidates": [
         {
@@ -5590,7 +5590,7 @@
       "title": "HI-02 House Election Winner",
       "eventId": "191440",
       "url": "https://polymarket.com/event/hi-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 80219.76926200002,
       "candidates": [
         {
@@ -5630,7 +5630,7 @@
       "title": "IA-01 House Election Winner",
       "eventId": "106077",
       "url": "https://polymarket.com/event/ia-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 41635.585093,
       "candidates": [
         {
@@ -5670,7 +5670,7 @@
       "title": "IA-02 House Election Winner",
       "eventId": "191441",
       "url": "https://polymarket.com/event/ia-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 29692.522760000007,
       "candidates": [
         {
@@ -5710,7 +5710,7 @@
       "title": "IA-03 House Election Winner",
       "eventId": "106082",
       "url": "https://polymarket.com/event/ia-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 11367.836882,
       "candidates": [
         {
@@ -5750,7 +5750,7 @@
       "title": "IA-04 House Election Winner",
       "eventId": "191442",
       "url": "https://polymarket.com/event/ia-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 56090.69603,
       "candidates": [
         {
@@ -5790,7 +5790,7 @@
       "title": "Iowa Senate Election Winner",
       "eventId": "57647",
       "url": "https://polymarket.com/event/iowa-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 869315.4660710001,
       "candidates": [
         {
@@ -5830,7 +5830,7 @@
       "title": "ID-01 House Election Winner",
       "eventId": "191443",
       "url": "https://polymarket.com/event/id-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 48666.80064,
       "candidates": [
         {
@@ -5870,7 +5870,7 @@
       "title": "ID-02 House Election Winner",
       "eventId": "191444",
       "url": "https://polymarket.com/event/id-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 39110.962521,
       "candidates": [
         {
@@ -5910,7 +5910,7 @@
       "title": "Idaho Senate Election Winner",
       "eventId": "57643",
       "url": "https://polymarket.com/event/idaho-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 140434.90311099993,
       "candidates": [
         {
@@ -5964,7 +5964,7 @@
       "title": "IL-01 House Election Winner",
       "eventId": "191445",
       "url": "https://polymarket.com/event/il-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 60464.186114,
       "candidates": [
         {
@@ -6004,7 +6004,7 @@
       "title": "IL-02 House Election Winner",
       "eventId": "191446",
       "url": "https://polymarket.com/event/il-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 36410.215319,
       "candidates": [
         {
@@ -6044,7 +6044,7 @@
       "title": "IL-03 House Election Winner",
       "eventId": "191447",
       "url": "https://polymarket.com/event/il-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 51716.179627000005,
       "candidates": [
         {
@@ -6084,7 +6084,7 @@
       "title": "IL-04 House Election Winner",
       "eventId": "191448",
       "url": "https://polymarket.com/event/il-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 61815.62079199999,
       "candidates": [
         {
@@ -6124,7 +6124,7 @@
       "title": "IL-05 House Election Winner",
       "eventId": "191449",
       "url": "https://polymarket.com/event/il-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 28732.610357999998,
       "candidates": [
         {
@@ -6164,7 +6164,7 @@
       "title": "IL-06 House Election Winner",
       "eventId": "191450",
       "url": "https://polymarket.com/event/il-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 43199.201386,
       "candidates": [
         {
@@ -6204,7 +6204,7 @@
       "title": "IL-07 House Election Winner",
       "eventId": "191451",
       "url": "https://polymarket.com/event/il-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 26843.648543999996,
       "candidates": [
         {
@@ -6244,7 +6244,7 @@
       "title": "IL-08 House Election Winner",
       "eventId": "191452",
       "url": "https://polymarket.com/event/il-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 22112.897424,
       "candidates": [
         {
@@ -6284,7 +6284,7 @@
       "title": "IL-09 House Election Winner",
       "eventId": "191453",
       "url": "https://polymarket.com/event/il-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.014Z",
+      "fetchedAt": "2026-10-12T16:47:56.061Z",
       "volume": 31953.370644999995,
       "candidates": [
         {
@@ -6324,7 +6324,7 @@
       "title": "IL-10 House Election Winner",
       "eventId": "191454",
       "url": "https://polymarket.com/event/il-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 33585.72632999999,
       "candidates": [
         {
@@ -6364,7 +6364,7 @@
       "title": "IL-11 House Election Winner",
       "eventId": "191455",
       "url": "https://polymarket.com/event/il-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 46728.304605000005,
       "candidates": [
         {
@@ -6404,7 +6404,7 @@
       "title": "IL-12 House Election Winner",
       "eventId": "191456",
       "url": "https://polymarket.com/event/il-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 25324.070271,
       "candidates": [
         {
@@ -6444,7 +6444,7 @@
       "title": "IL-13 House Election Winner",
       "eventId": "191457",
       "url": "https://polymarket.com/event/il-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 21238.238968999998,
       "candidates": [
         {
@@ -6484,7 +6484,7 @@
       "title": "IL-14 House Election Winner",
       "eventId": "191458",
       "url": "https://polymarket.com/event/il-14-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 25502.166412,
       "candidates": [
         {
@@ -6524,7 +6524,7 @@
       "title": "IL-15 House Election Winner",
       "eventId": "191459",
       "url": "https://polymarket.com/event/il-15-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 44213.313399000006,
       "candidates": [
         {
@@ -6564,7 +6564,7 @@
       "title": "IL-16 House Election Winner",
       "eventId": "191460",
       "url": "https://polymarket.com/event/il-16-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 68755.73412400001,
       "candidates": [
         {
@@ -6604,7 +6604,7 @@
       "title": "IL-17 House Election Winner",
       "eventId": "106075",
       "url": "https://polymarket.com/event/il-17-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 32342.66233,
       "candidates": [
         {
@@ -6644,7 +6644,7 @@
       "title": "Illinois Senate Election Winner",
       "eventId": "57646",
       "url": "https://polymarket.com/event/illinois-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 35640.57529100001,
       "candidates": [
         {
@@ -6684,7 +6684,7 @@
       "title": "IN-01 House Election Winner",
       "eventId": "106076",
       "url": "https://polymarket.com/event/in-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 23422.804666999997,
       "candidates": [
         {
@@ -6724,7 +6724,7 @@
       "title": "IN-02 House Election Winner",
       "eventId": "191461",
       "url": "https://polymarket.com/event/in-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 33912.105673,
       "candidates": [
         {
@@ -6764,7 +6764,7 @@
       "title": "IN-03 House Election Winner",
       "eventId": "191462",
       "url": "https://polymarket.com/event/in-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 39383.272108,
       "candidates": [
         {
@@ -6804,7 +6804,7 @@
       "title": "IN-04 House Election Winner",
       "eventId": "191463",
       "url": "https://polymarket.com/event/in-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 39311.05288,
       "candidates": [
         {
@@ -6844,7 +6844,7 @@
       "title": "IN-05 House Election Winner",
       "eventId": "191464",
       "url": "https://polymarket.com/event/in-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 31609.63006,
       "candidates": [
         {
@@ -6884,7 +6884,7 @@
       "title": "IN-06 House Election Winner",
       "eventId": "191465",
       "url": "https://polymarket.com/event/in-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 37780.216393,
       "candidates": [
         {
@@ -6924,7 +6924,7 @@
       "title": "IN-07 House Election Winner",
       "eventId": "191466",
       "url": "https://polymarket.com/event/in-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 45736.450129000004,
       "candidates": [
         {
@@ -6964,7 +6964,7 @@
       "title": "IN-08 House Election Winner",
       "eventId": "191467",
       "url": "https://polymarket.com/event/in-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 42549.826904,
       "candidates": [
         {
@@ -7004,7 +7004,7 @@
       "title": "IN-09 House Election Winner",
       "eventId": "191468",
       "url": "https://polymarket.com/event/in-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 36373.497067,
       "candidates": [
         {
@@ -7044,7 +7044,7 @@
       "title": "KS-01 House Election Winner",
       "eventId": "191469",
       "url": "https://polymarket.com/event/ks-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 36737.60573000001,
       "candidates": [
         {
@@ -7084,7 +7084,7 @@
       "title": "KS-02 House Election Winner",
       "eventId": "191470",
       "url": "https://polymarket.com/event/ks-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 17229.45084,
       "candidates": [
         {
@@ -7124,7 +7124,7 @@
       "title": "KS-03 House Election Winner",
       "eventId": "191471",
       "url": "https://polymarket.com/event/ks-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 33895.218186,
       "candidates": [
         {
@@ -7164,7 +7164,7 @@
       "title": "KS-04 House Election Winner",
       "eventId": "191472",
       "url": "https://polymarket.com/event/ks-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 86051.66181599999,
       "candidates": [
         {
@@ -7204,7 +7204,7 @@
       "title": "Kansas Senate Election Winner",
       "eventId": "57648",
       "url": "https://polymarket.com/event/kansas-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 883454.107938,
       "candidates": [
         {
@@ -7244,7 +7244,7 @@
       "title": "KY-01 House Election Winner",
       "eventId": "191473",
       "url": "https://polymarket.com/event/ky-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 50421.17625700001,
       "candidates": [
         {
@@ -7284,7 +7284,7 @@
       "title": "KY-02 House Election Winner",
       "eventId": "191474",
       "url": "https://polymarket.com/event/ky-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 18351.304001,
       "candidates": [
         {
@@ -7324,7 +7324,7 @@
       "title": "KY-03 House Election Winner",
       "eventId": "191475",
       "url": "https://polymarket.com/event/ky-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 47379.359784,
       "candidates": [
         {
@@ -7364,7 +7364,7 @@
       "title": "KY-04 House Election Winner",
       "eventId": "191476",
       "url": "https://polymarket.com/event/ky-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 46078.479432,
       "candidates": [
         {
@@ -7404,7 +7404,7 @@
       "title": "KY-05 House Election Winner",
       "eventId": "191477",
       "url": "https://polymarket.com/event/ky-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 68362.378585,
       "candidates": [
         {
@@ -7444,7 +7444,7 @@
       "title": "KY-06 House Election Winner",
       "eventId": "191478",
       "url": "https://polymarket.com/event/ky-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 56014.76647599999,
       "candidates": [
         {
@@ -7484,7 +7484,7 @@
       "title": "Kentucky Senate Election Winner",
       "eventId": "57649",
       "url": "https://polymarket.com/event/kentucky-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 36770.121842,
       "candidates": [
         {
@@ -7524,7 +7524,7 @@
       "title": "LA-01 House Election Winner",
       "eventId": "191479",
       "url": "https://polymarket.com/event/la-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 52626.326244,
       "candidates": [
         {
@@ -7564,7 +7564,7 @@
       "title": "LA-02 House Election Winner",
       "eventId": "191480",
       "url": "https://polymarket.com/event/la-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 62125.524967,
       "candidates": [
         {
@@ -7604,7 +7604,7 @@
       "title": "LA-03 House Election Winner",
       "eventId": "191481",
       "url": "https://polymarket.com/event/la-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 35520.776429,
       "candidates": [
         {
@@ -7644,7 +7644,7 @@
       "title": "LA-04 House Election Winner",
       "eventId": "191482",
       "url": "https://polymarket.com/event/la-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 18327.196143,
       "candidates": [
         {
@@ -7684,7 +7684,7 @@
       "title": "LA-05 House Election Winner",
       "eventId": "191483",
       "url": "https://polymarket.com/event/la-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 25737.606472000003,
       "candidates": [
         {
@@ -7724,7 +7724,7 @@
       "title": "LA-06 House Election Winner",
       "eventId": "191484",
       "url": "https://polymarket.com/event/la-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 75111.68942,
       "candidates": [
         {
@@ -7764,7 +7764,7 @@
       "title": "Louisiana Senate Election Winner",
       "eventId": "59203",
       "url": "https://polymarket.com/event/louisiana-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 48747.83608,
       "candidates": [
         {
@@ -7804,7 +7804,7 @@
       "title": "MA-01 House Election Winner",
       "eventId": "191485",
       "url": "https://polymarket.com/event/ma-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 56016.819403,
       "candidates": [
         {
@@ -7844,7 +7844,7 @@
       "title": "MA-02 House Election Winner",
       "eventId": "191486",
       "url": "https://polymarket.com/event/ma-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 74739.911262,
       "candidates": [
         {
@@ -7884,7 +7884,7 @@
       "title": "MA-03 House Election Winner",
       "eventId": "191487",
       "url": "https://polymarket.com/event/ma-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 23338.157581,
       "candidates": [
         {
@@ -7924,7 +7924,7 @@
       "title": "MA-04 House Election Winner",
       "eventId": "191488",
       "url": "https://polymarket.com/event/ma-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 48599.823432,
       "candidates": [
         {
@@ -7964,7 +7964,7 @@
       "title": "MA-05 House Election Winner",
       "eventId": "191489",
       "url": "https://polymarket.com/event/ma-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 37439.57054999999,
       "candidates": [
         {
@@ -8004,7 +8004,7 @@
       "title": "MA-06 House Election Winner",
       "eventId": "191490",
       "url": "https://polymarket.com/event/ma-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 27182.575892999997,
       "candidates": [
         {
@@ -8044,7 +8044,7 @@
       "title": "MA-07 House Election Winner",
       "eventId": "191491",
       "url": "https://polymarket.com/event/ma-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 36452.968731999994,
       "candidates": [
         {
@@ -8084,7 +8084,7 @@
       "title": "MA-08 House Election Winner",
       "eventId": "191492",
       "url": "https://polymarket.com/event/ma-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 27858.386961,
       "candidates": [
         {
@@ -8124,7 +8124,7 @@
       "title": "MA-09 House Election Winner",
       "eventId": "191493",
       "url": "https://polymarket.com/event/ma-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 28255.40339,
       "candidates": [
         {
@@ -8164,7 +8164,7 @@
       "title": "Massachusetts Senate Election Winner",
       "eventId": "57655",
       "url": "https://polymarket.com/event/massachusetts-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 50031.850692999986,
       "candidates": [
         {
@@ -8204,7 +8204,7 @@
       "title": "MD-01 House Election Winner",
       "eventId": "191494",
       "url": "https://polymarket.com/event/md-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 74865.92317600001,
       "candidates": [
         {
@@ -8244,7 +8244,7 @@
       "title": "MD-02 House Election Winner",
       "eventId": "191495",
       "url": "https://polymarket.com/event/md-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 24642.443058,
       "candidates": [
         {
@@ -8284,7 +8284,7 @@
       "title": "MD-03 House Election Winner",
       "eventId": "191496",
       "url": "https://polymarket.com/event/md-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 53132.57791500001,
       "candidates": [
         {
@@ -8324,7 +8324,7 @@
       "title": "MD-04 House Election Winner",
       "eventId": "191497",
       "url": "https://polymarket.com/event/md-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 48045.89846899999,
       "candidates": [
         {
@@ -8364,7 +8364,7 @@
       "title": "MD-05 House Election Winner",
       "eventId": "191498",
       "url": "https://polymarket.com/event/md-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 24385.241585000003,
       "candidates": [
         {
@@ -8404,7 +8404,7 @@
       "title": "MD-06 House Election Winner",
       "eventId": "191499",
       "url": "https://polymarket.com/event/md-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 34991.71297400001,
       "candidates": [
         {
@@ -8444,7 +8444,7 @@
       "title": "MD-07 House Election Winner",
       "eventId": "191500",
       "url": "https://polymarket.com/event/md-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 24451.836831,
       "candidates": [
         {
@@ -8484,7 +8484,7 @@
       "title": "MD-08 House Election Winner",
       "eventId": "191501",
       "url": "https://polymarket.com/event/md-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 28022.507059,
       "candidates": [
         {
@@ -8524,7 +8524,7 @@
       "title": "ME-01 House Election Winner",
       "eventId": "191502",
       "url": "https://polymarket.com/event/me-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 47757.81523600001,
       "candidates": [
         {
@@ -8564,7 +8564,7 @@
       "title": "ME-02 House Election Winner",
       "eventId": "726881",
       "url": "https://polymarket.com/event/me-02-house-election-winner-20260720160226434",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 29906.61325,
       "candidates": [
         {
@@ -8604,7 +8604,7 @@
       "title": "Maine Senate Election Winner",
       "eventId": "57650",
       "url": "https://polymarket.com/event/maine-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 2224090.6755150007,
       "candidates": [
         {
@@ -8644,7 +8644,7 @@
       "title": "MI-01 House Election Winner",
       "eventId": "191503",
       "url": "https://polymarket.com/event/mi-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 23706.360370000002,
       "candidates": [
         {
@@ -8684,7 +8684,7 @@
       "title": "MI-02 House Election Winner",
       "eventId": "191504",
       "url": "https://polymarket.com/event/mi-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 54125.658816999996,
       "candidates": [
         {
@@ -8724,7 +8724,7 @@
       "title": "MI-03 House Election Winner",
       "eventId": "106096",
       "url": "https://polymarket.com/event/mi-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 51262.75528200001,
       "candidates": [
         {
@@ -8764,7 +8764,7 @@
       "title": "MI-04 House Election Winner",
       "eventId": "106097",
       "url": "https://polymarket.com/event/mi-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 11442.699171,
       "candidates": [
         {
@@ -8804,7 +8804,7 @@
       "title": "MI-05 House Election Winner",
       "eventId": "191505",
       "url": "https://polymarket.com/event/mi-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 30490.139225000006,
       "candidates": [
         {
@@ -8844,7 +8844,7 @@
       "title": "MI-06 House Election Winner",
       "eventId": "191506",
       "url": "https://polymarket.com/event/mi-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 53588.181631,
       "candidates": [
         {
@@ -8884,7 +8884,7 @@
       "title": "MI-07 House Election Winner",
       "eventId": "106102",
       "url": "https://polymarket.com/event/mi-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 36621.423277,
       "candidates": [
         {
@@ -8924,7 +8924,7 @@
       "title": "MI-08 House Election Winner",
       "eventId": "106104",
       "url": "https://polymarket.com/event/mi-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 25205.768240999998,
       "candidates": [
         {
@@ -8964,7 +8964,7 @@
       "title": "MI-09 House Election Winner",
       "eventId": "191507",
       "url": "https://polymarket.com/event/mi-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 37715.07138100001,
       "candidates": [
         {
@@ -9004,7 +9004,7 @@
       "title": "MI-10 House Election Winner",
       "eventId": "106106",
       "url": "https://polymarket.com/event/mi-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 8847.692020999999,
       "candidates": [
         {
@@ -9044,7 +9044,7 @@
       "title": "MI-11 House Election Winner",
       "eventId": "191508",
       "url": "https://polymarket.com/event/mi-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 81678.598509,
       "candidates": [
         {
@@ -9084,7 +9084,7 @@
       "title": "MI-12 House Election Winner",
       "eventId": "191509",
       "url": "https://polymarket.com/event/mi-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 40875.086431,
       "candidates": [
         {
@@ -9124,7 +9124,7 @@
       "title": "MI-13 House Election Winner",
       "eventId": "191510",
       "url": "https://polymarket.com/event/mi-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 50823.26103,
       "candidates": [
         {
@@ -9164,7 +9164,7 @@
       "title": "Michigan Senate Election Winner",
       "eventId": "57658",
       "url": "https://polymarket.com/event/michigan-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 1606296.6547899996,
       "candidates": [
         {
@@ -9204,7 +9204,7 @@
       "title": "MN-01 House Election Winner",
       "eventId": "191511",
       "url": "https://polymarket.com/event/mn-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 53792.941806,
       "candidates": [
         {
@@ -9244,7 +9244,7 @@
       "title": "MN-02 House Election Winner",
       "eventId": "106107",
       "url": "https://polymarket.com/event/mn-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 59713.010198,
       "candidates": [
         {
@@ -9284,7 +9284,7 @@
       "title": "MN-03 House Election Winner",
       "eventId": "191512",
       "url": "https://polymarket.com/event/mn-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 29510.944046,
       "candidates": [
         {
@@ -9324,7 +9324,7 @@
       "title": "MN-04 House Election Winner",
       "eventId": "191513",
       "url": "https://polymarket.com/event/mn-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 28212.171550999996,
       "candidates": [
         {
@@ -9364,7 +9364,7 @@
       "title": "MN-05 House Election Winner",
       "eventId": "191514",
       "url": "https://polymarket.com/event/mn-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 61500.13269599999,
       "candidates": [
         {
@@ -9404,7 +9404,7 @@
       "title": "MN-06 House Election Winner",
       "eventId": "191515",
       "url": "https://polymarket.com/event/mn-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 68003.023006,
       "candidates": [
         {
@@ -9444,7 +9444,7 @@
       "title": "MN-07 House Election Winner",
       "eventId": "191516",
       "url": "https://polymarket.com/event/mn-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 34852.035837,
       "candidates": [
         {
@@ -9484,7 +9484,7 @@
       "title": "MN-08 House Election Winner",
       "eventId": "191517",
       "url": "https://polymarket.com/event/mn-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 21398.745086000006,
       "candidates": [
         {
@@ -9524,7 +9524,7 @@
       "title": "Minnesota Senate Election Winner",
       "eventId": "57659",
       "url": "https://polymarket.com/event/minnesota-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 218877.522513,
       "candidates": [
         {
@@ -9564,7 +9564,7 @@
       "title": "MO-01 House Election Winner",
       "eventId": "191518",
       "url": "https://polymarket.com/event/mo-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 36850.887407,
       "candidates": [
         {
@@ -9604,7 +9604,7 @@
       "title": "MO-02 House Election Winner",
       "eventId": "191519",
       "url": "https://polymarket.com/event/mo-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 47219.194705999995,
       "candidates": [
         {
@@ -9644,7 +9644,7 @@
       "title": "MO-03 House Election Winner",
       "eventId": "191520",
       "url": "https://polymarket.com/event/mo-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 42096.14436400001,
       "candidates": [
         {
@@ -9684,7 +9684,7 @@
       "title": "MO-04 House Election Winner",
       "eventId": "191521",
       "url": "https://polymarket.com/event/mo-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 61952.287474000004,
       "candidates": [
         {
@@ -9724,7 +9724,7 @@
       "title": "MO-05 House Election Winner",
       "eventId": "106112",
       "url": "https://polymarket.com/event/mo-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 79556.26025899999,
       "candidates": [
         {
@@ -9764,7 +9764,7 @@
       "title": "MO-06 House Election Winner",
       "eventId": "191522",
       "url": "https://polymarket.com/event/mo-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 54012.826510000006,
       "candidates": [
         {
@@ -9804,7 +9804,7 @@
       "title": "MO-07 House Election Winner",
       "eventId": "191523",
       "url": "https://polymarket.com/event/mo-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 38802.391818000004,
       "candidates": [
         {
@@ -9844,7 +9844,7 @@
       "title": "MO-08 House Election Winner",
       "eventId": "191524",
       "url": "https://polymarket.com/event/mo-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 46175.421142,
       "candidates": [
         {
@@ -9884,7 +9884,7 @@
       "title": "MS-01 House Election Winner",
       "eventId": "191525",
       "url": "https://polymarket.com/event/ms-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 117731.891126,
       "candidates": [
         {
@@ -9924,7 +9924,7 @@
       "title": "MS-02 House Election Winner",
       "eventId": "191526",
       "url": "https://polymarket.com/event/ms-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 45732.447496999994,
       "candidates": [
         {
@@ -9964,7 +9964,7 @@
       "title": "MS-03 House Election Winner",
       "eventId": "191527",
       "url": "https://polymarket.com/event/ms-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 62841.16225299999,
       "candidates": [
         {
@@ -10004,7 +10004,7 @@
       "title": "MS-04 House Election Winner",
       "eventId": "191528",
       "url": "https://polymarket.com/event/ms-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 40766.384819,
       "candidates": [
         {
@@ -10044,7 +10044,7 @@
       "title": "Mississippi Senate Election Winner",
       "eventId": "57678",
       "url": "https://polymarket.com/event/mississippi-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 138209.97815800004,
       "candidates": [
         {
@@ -10084,7 +10084,7 @@
       "title": "MT-01 House Election Winner",
       "eventId": "106114",
       "url": "https://polymarket.com/event/mt-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 65919.728468,
       "candidates": [
         {
@@ -10124,7 +10124,7 @@
       "title": "MT-02 House Election Winner",
       "eventId": "191529",
       "url": "https://polymarket.com/event/mt-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 68848.10959999998,
       "candidates": [
         {
@@ -10164,7 +10164,7 @@
       "title": "Montana Senate Election Winner",
       "eventId": "57660",
       "url": "https://polymarket.com/event/montana-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 163408.95712600002,
       "candidates": [
         {
@@ -10218,7 +10218,7 @@
       "title": "NC-01 House Election Winner",
       "eventId": "106174",
       "url": "https://polymarket.com/event/nc-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 19195.842459000003,
       "candidates": [
         {
@@ -10258,7 +10258,7 @@
       "title": "NC-02 House Election Winner",
       "eventId": "191530",
       "url": "https://polymarket.com/event/nc-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 27942.727321000002,
       "candidates": [
         {
@@ -10298,7 +10298,7 @@
       "title": "NC-03 House Election Winner",
       "eventId": "191531",
       "url": "https://polymarket.com/event/nc-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 26232.036544000002,
       "candidates": [
         {
@@ -10338,7 +10338,7 @@
       "title": "NC-04 House Election Winner",
       "eventId": "191532",
       "url": "https://polymarket.com/event/nc-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 84097.68870400001,
       "candidates": [
         {
@@ -10378,7 +10378,7 @@
       "title": "NC-05 House Election Winner",
       "eventId": "191533",
       "url": "https://polymarket.com/event/nc-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 45683.747735000004,
       "candidates": [
         {
@@ -10418,7 +10418,7 @@
       "title": "NC-06 House Election Winner",
       "eventId": "191534",
       "url": "https://polymarket.com/event/nc-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 52780.190457,
       "candidates": [
         {
@@ -10458,7 +10458,7 @@
       "title": "NC-07 House Election Winner",
       "eventId": "191535",
       "url": "https://polymarket.com/event/nc-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 29521.577163,
       "candidates": [
         {
@@ -10498,7 +10498,7 @@
       "title": "NC-08 House Election Winner",
       "eventId": "191536",
       "url": "https://polymarket.com/event/nc-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 33931.490158,
       "candidates": [
         {
@@ -10538,7 +10538,7 @@
       "title": "NC-09 House Election Winner",
       "eventId": "191537",
       "url": "https://polymarket.com/event/nc-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 30625.258992999996,
       "candidates": [
         {
@@ -10578,7 +10578,7 @@
       "title": "NC-10 House Election Winner",
       "eventId": "191538",
       "url": "https://polymarket.com/event/nc-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 12137.690914,
       "candidates": [
         {
@@ -10618,7 +10618,7 @@
       "title": "NC-11 House Election Winner",
       "eventId": "106177",
       "url": "https://polymarket.com/event/nc-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 24543.774112000003,
       "candidates": [
         {
@@ -10658,7 +10658,7 @@
       "title": "NC-12 House Election Winner",
       "eventId": "191539",
       "url": "https://polymarket.com/event/nc-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 66265.974523,
       "candidates": [
         {
@@ -10698,7 +10698,7 @@
       "title": "NC-13 House Election Winner",
       "eventId": "191540",
       "url": "https://polymarket.com/event/nc-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 9839.784157,
       "candidates": [
         {
@@ -10738,7 +10738,7 @@
       "title": "NC-14 House Election Winner",
       "eventId": "191541",
       "url": "https://polymarket.com/event/nc-14-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 35149.404426,
       "candidates": [
         {
@@ -10778,7 +10778,7 @@
       "title": "North Carolina Senate Election Winner",
       "eventId": "57664",
       "url": "https://polymarket.com/event/north-carolina-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 221072.62891200004,
       "candidates": [
         {
@@ -10818,7 +10818,7 @@
       "title": "ND-AL House Election Winner",
       "eventId": "191542",
       "url": "https://polymarket.com/event/nd-al-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 60906.075418,
       "candidates": [
         {
@@ -10858,7 +10858,7 @@
       "title": "NE-01 House Election Winner",
       "eventId": "191543",
       "url": "https://polymarket.com/event/ne-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 46590.740196,
       "candidates": [
         {
@@ -10898,7 +10898,7 @@
       "title": "NE-02 House Election Winner",
       "eventId": "106115",
       "url": "https://polymarket.com/event/ne-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 47522.642106,
       "candidates": [
         {
@@ -10938,7 +10938,7 @@
       "title": "NE-03 House Election Winner",
       "eventId": "191544",
       "url": "https://polymarket.com/event/ne-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 15940.512671,
       "candidates": [
         {
@@ -10978,7 +10978,7 @@
       "title": "Nebraska Senate Election Winner",
       "eventId": "59204",
       "url": "https://polymarket.com/event/nebraska-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 586556.494038,
       "candidates": [
         {
@@ -11032,7 +11032,7 @@
       "title": "NH-01 House Election Winner",
       "eventId": "106119",
       "url": "https://polymarket.com/event/nh-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 49011.640231,
       "candidates": [
         {
@@ -11072,7 +11072,7 @@
       "title": "NH-02 House Election Winner",
       "eventId": "106130",
       "url": "https://polymarket.com/event/nh-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 21220.377585000002,
       "candidates": [
         {
@@ -11112,7 +11112,7 @@
       "title": "New Hampshire Senate Election Winner",
       "eventId": "57661",
       "url": "https://polymarket.com/event/new-hampshire-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 327796.174415,
       "candidates": [
         {
@@ -11152,7 +11152,7 @@
       "title": "NJ-01 House Election Winner",
       "eventId": "191545",
       "url": "https://polymarket.com/event/nj-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 53794.214772,
       "candidates": [
         {
@@ -11192,7 +11192,7 @@
       "title": "NJ-02 House Election Winner",
       "eventId": "191546",
       "url": "https://polymarket.com/event/nj-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 38295.039378999994,
       "candidates": [
         {
@@ -11232,7 +11232,7 @@
       "title": "NJ-03 House Election Winner",
       "eventId": "191547",
       "url": "https://polymarket.com/event/nj-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 40402.182891,
       "candidates": [
         {
@@ -11272,7 +11272,7 @@
       "title": "NJ-04 House Election Winner",
       "eventId": "191548",
       "url": "https://polymarket.com/event/nj-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 19554.857802,
       "candidates": [
         {
@@ -11312,7 +11312,7 @@
       "title": "NJ-05 House Election Winner",
       "eventId": "106134",
       "url": "https://polymarket.com/event/nj-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 31685.583534999998,
       "candidates": [
         {
@@ -11352,7 +11352,7 @@
       "title": "NJ-06 House Election Winner",
       "eventId": "191549",
       "url": "https://polymarket.com/event/nj-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 34603.546098,
       "candidates": [
         {
@@ -11392,7 +11392,7 @@
       "title": "NJ-07 House Election Winner",
       "eventId": "106135",
       "url": "https://polymarket.com/event/nj-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 44338.134548,
       "candidates": [
         {
@@ -11432,7 +11432,7 @@
       "title": "NJ-08 House Election Winner",
       "eventId": "191550",
       "url": "https://polymarket.com/event/nj-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 49298.93511100001,
       "candidates": [
         {
@@ -11472,7 +11472,7 @@
       "title": "NJ-09 House Election Winner",
       "eventId": "106136",
       "url": "https://polymarket.com/event/nj-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 40337.436569000005,
       "candidates": [
         {
@@ -11512,7 +11512,7 @@
       "title": "NJ-10 House Election Winner",
       "eventId": "191551",
       "url": "https://polymarket.com/event/nj-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 57845.84404800001,
       "candidates": [
         {
@@ -11552,7 +11552,7 @@
       "title": "NJ-11 House Election Winner",
       "eventId": "191552",
       "url": "https://polymarket.com/event/nj-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 47473.828397,
       "candidates": [
         {
@@ -11592,7 +11592,7 @@
       "title": "NJ-12 House Election Winner",
       "eventId": "191553",
       "url": "https://polymarket.com/event/nj-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.062Z",
+      "fetchedAt": "2026-10-12T16:47:56.170Z",
       "volume": 30319.067457,
       "candidates": [
         {
@@ -11632,7 +11632,7 @@
       "title": "New Jersey Senate Election Winner",
       "eventId": "57662",
       "url": "https://polymarket.com/event/new-jersey-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 21561.066099,
       "candidates": [
         {
@@ -11672,7 +11672,7 @@
       "title": "NM-01 House Election Winner",
       "eventId": "191554",
       "url": "https://polymarket.com/event/nm-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 44688.566321,
       "candidates": [
         {
@@ -11712,7 +11712,7 @@
       "title": "NM-02 House Election Winner",
       "eventId": "106137",
       "url": "https://polymarket.com/event/nm-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 70272.531688,
       "candidates": [
         {
@@ -11752,7 +11752,7 @@
       "title": "NM-03 House Election Winner",
       "eventId": "191555",
       "url": "https://polymarket.com/event/nm-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 53694.66090299999,
       "candidates": [
         {
@@ -11792,7 +11792,7 @@
       "title": "New Mexico Senate Election Winner",
       "eventId": "57663",
       "url": "https://polymarket.com/event/new-mexico-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 26798.309341000004,
       "candidates": [
         {
@@ -11832,7 +11832,7 @@
       "title": "NV-01 House Election Winner",
       "eventId": "106116",
       "url": "https://polymarket.com/event/nv-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 32599.737071,
       "candidates": [
         {
@@ -11872,7 +11872,7 @@
       "title": "NV-02 House Election Winner",
       "eventId": "191556",
       "url": "https://polymarket.com/event/nv-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 39284.381948999995,
       "candidates": [
         {
@@ -11912,7 +11912,7 @@
       "title": "NV-03 House Election Winner",
       "eventId": "106117",
       "url": "https://polymarket.com/event/nv-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 8155.148026000001,
       "candidates": [
         {
@@ -11952,7 +11952,7 @@
       "title": "NV-04 House Election Winner",
       "eventId": "106118",
       "url": "https://polymarket.com/event/nv-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 19938.868498000003,
       "candidates": [
         {
@@ -11992,7 +11992,7 @@
       "title": "NY-01 House Election Winner",
       "eventId": "191557",
       "url": "https://polymarket.com/event/ny-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 51460.01425100001,
       "candidates": [
         {
@@ -12032,7 +12032,7 @@
       "title": "NY-02 House Election Winner",
       "eventId": "191558",
       "url": "https://polymarket.com/event/ny-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 19133.732344,
       "candidates": [
         {
@@ -12072,7 +12072,7 @@
       "title": "NY-03 House Election Winner",
       "eventId": "106138",
       "url": "https://polymarket.com/event/ny-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 42125.737055000005,
       "candidates": [
         {
@@ -12112,7 +12112,7 @@
       "title": "NY-04 House Election Winner",
       "eventId": "106169",
       "url": "https://polymarket.com/event/ny-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 14814.950932000002,
       "candidates": [
         {
@@ -12152,7 +12152,7 @@
       "title": "NY-05 House Election Winner",
       "eventId": "191559",
       "url": "https://polymarket.com/event/ny-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 64243.375619,
       "candidates": [
         {
@@ -12192,7 +12192,7 @@
       "title": "NY-06 House Election Winner",
       "eventId": "191560",
       "url": "https://polymarket.com/event/ny-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 27509.027148,
       "candidates": [
         {
@@ -12232,7 +12232,7 @@
       "title": "NY-07 House Election Winner",
       "eventId": "191561",
       "url": "https://polymarket.com/event/ny-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 31215.568887999998,
       "candidates": [
         {
@@ -12272,7 +12272,7 @@
       "title": "NY-08 House Election Winner",
       "eventId": "191562",
       "url": "https://polymarket.com/event/ny-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 32668.727162,
       "candidates": [
         {
@@ -12312,7 +12312,7 @@
       "title": "NY-09 House Election Winner",
       "eventId": "191563",
       "url": "https://polymarket.com/event/ny-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 61396.54848899999,
       "candidates": [
         {
@@ -12352,7 +12352,7 @@
       "title": "NY-10 House Election Winner",
       "eventId": "191564",
       "url": "https://polymarket.com/event/ny-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 54868.10043500001,
       "candidates": [
         {
@@ -12392,7 +12392,7 @@
       "title": "NY-11 House Election Winner",
       "eventId": "191565",
       "url": "https://polymarket.com/event/ny-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 35184.07564699999,
       "candidates": [
         {
@@ -12432,7 +12432,7 @@
       "title": "NY-12 House Election Winner",
       "eventId": "191566",
       "url": "https://polymarket.com/event/ny-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 34559.870881999996,
       "candidates": [
         {
@@ -12472,7 +12472,7 @@
       "title": "NY-13 House Election Winner",
       "eventId": "191567",
       "url": "https://polymarket.com/event/ny-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 39924.916803,
       "candidates": [
         {
@@ -12512,7 +12512,7 @@
       "title": "NY-14 House Election Winner",
       "eventId": "191568",
       "url": "https://polymarket.com/event/ny-14-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 57908.726908,
       "candidates": [
         {
@@ -12552,7 +12552,7 @@
       "title": "NY-15 House Election Winner",
       "eventId": "191569",
       "url": "https://polymarket.com/event/ny-15-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 48943.238068000006,
       "candidates": [
         {
@@ -12592,7 +12592,7 @@
       "title": "NY-16 House Election Winner",
       "eventId": "191570",
       "url": "https://polymarket.com/event/ny-16-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 41670.499163,
       "candidates": [
         {
@@ -12632,7 +12632,7 @@
       "title": "NY-17 House Election Winner",
       "eventId": "106170",
       "url": "https://polymarket.com/event/ny-17-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 65130.621493,
       "candidates": [
         {
@@ -12672,7 +12672,7 @@
       "title": "NY-18 House Election Winner",
       "eventId": "106171",
       "url": "https://polymarket.com/event/ny-18-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 44856.46548700001,
       "candidates": [
         {
@@ -12712,7 +12712,7 @@
       "title": "NY-19 House Election Winner",
       "eventId": "106172",
       "url": "https://polymarket.com/event/ny-19-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 35573.292984,
       "candidates": [
         {
@@ -12752,7 +12752,7 @@
       "title": "NY-20 House Election Winner",
       "eventId": "191571",
       "url": "https://polymarket.com/event/ny-20-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 46941.28683800001,
       "candidates": [
         {
@@ -12792,7 +12792,7 @@
       "title": "NY-21 House Election Winner",
       "eventId": "191572",
       "url": "https://polymarket.com/event/ny-21-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 93655.21044099997,
       "candidates": [
         {
@@ -12832,7 +12832,7 @@
       "title": "NY-22 House Election Winner",
       "eventId": "106173",
       "url": "https://polymarket.com/event/ny-22-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 26787.416753999994,
       "candidates": [
         {
@@ -12872,7 +12872,7 @@
       "title": "NY-23 House Election Winner",
       "eventId": "191573",
       "url": "https://polymarket.com/event/ny-23-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 51252.794136,
       "candidates": [
         {
@@ -12912,7 +12912,7 @@
       "title": "NY-24 House Election Winner",
       "eventId": "191574",
       "url": "https://polymarket.com/event/ny-24-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 42974.686525000005,
       "candidates": [
         {
@@ -12952,7 +12952,7 @@
       "title": "NY-25 House Election Winner",
       "eventId": "191575",
       "url": "https://polymarket.com/event/ny-25-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 41575.203082,
       "candidates": [
         {
@@ -12992,7 +12992,7 @@
       "title": "NY-26 House Election Winner",
       "eventId": "191576",
       "url": "https://polymarket.com/event/ny-26-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 42659.633802,
       "candidates": [
         {
@@ -13032,7 +13032,7 @@
       "title": "OH-01 House Election Winner",
       "eventId": "106178",
       "url": "https://polymarket.com/event/oh-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 41739.509911999994,
       "candidates": [
         {
@@ -13072,7 +13072,7 @@
       "title": "OH-02 House Election Winner",
       "eventId": "191577",
       "url": "https://polymarket.com/event/oh-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 60978.63488899999,
       "candidates": [
         {
@@ -13112,7 +13112,7 @@
       "title": "OH-03 House Election Winner",
       "eventId": "191578",
       "url": "https://polymarket.com/event/oh-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 58854.229432,
       "candidates": [
         {
@@ -13152,7 +13152,7 @@
       "title": "OH-04 House Election Winner",
       "eventId": "191579",
       "url": "https://polymarket.com/event/oh-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 23383.182597,
       "candidates": [
         {
@@ -13192,7 +13192,7 @@
       "title": "OH-05 House Election Winner",
       "eventId": "191580",
       "url": "https://polymarket.com/event/oh-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 53461.873395,
       "candidates": [
         {
@@ -13232,7 +13232,7 @@
       "title": "OH-06 House Election Winner",
       "eventId": "191581",
       "url": "https://polymarket.com/event/oh-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 82768.700734,
       "candidates": [
         {
@@ -13272,7 +13272,7 @@
       "title": "OH-07 House Election Winner",
       "eventId": "191582",
       "url": "https://polymarket.com/event/oh-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 90257.42198699998,
       "candidates": [
         {
@@ -13312,7 +13312,7 @@
       "title": "OH-08 House Election Winner",
       "eventId": "191583",
       "url": "https://polymarket.com/event/oh-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 14827.0043,
       "candidates": [
         {
@@ -13352,7 +13352,7 @@
       "title": "OH-09 House Election Winner",
       "eventId": "106183",
       "url": "https://polymarket.com/event/oh-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 42070.43223,
       "candidates": [
         {
@@ -13392,7 +13392,7 @@
       "title": "OH-10 House Election Winner",
       "eventId": "191584",
       "url": "https://polymarket.com/event/oh-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 50509.542987999994,
       "candidates": [
         {
@@ -13432,7 +13432,7 @@
       "title": "OH-11 House Election Winner",
       "eventId": "191585",
       "url": "https://polymarket.com/event/oh-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 38926.059917000006,
       "candidates": [
         {
@@ -13472,7 +13472,7 @@
       "title": "OH-12 House Election Winner",
       "eventId": "191586",
       "url": "https://polymarket.com/event/oh-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 39711.874591,
       "candidates": [
         {
@@ -13512,7 +13512,7 @@
       "title": "OH-13 House Election Winner",
       "eventId": "106184",
       "url": "https://polymarket.com/event/oh-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 42114.427842,
       "candidates": [
         {
@@ -13552,7 +13552,7 @@
       "title": "OH-14 House Election Winner",
       "eventId": "191587",
       "url": "https://polymarket.com/event/oh-14-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 74666.12828399999,
       "candidates": [
         {
@@ -13592,7 +13592,7 @@
       "title": "OH-15 House Election Winner",
       "eventId": "191588",
       "url": "https://polymarket.com/event/oh-15-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 16431.294164000003,
       "candidates": [
         {
@@ -13632,7 +13632,7 @@
       "title": "Ohio Senate Election Winner",
       "eventId": "57682",
       "url": "https://polymarket.com/event/ohio-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 1147317.4021790002,
       "candidates": [
         {
@@ -13672,7 +13672,7 @@
       "title": "OK-01 House Election Winner",
       "eventId": "191589",
       "url": "https://polymarket.com/event/ok-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 42927.172603,
       "candidates": [
         {
@@ -13712,7 +13712,7 @@
       "title": "OK-02 House Election Winner",
       "eventId": "191594",
       "url": "https://polymarket.com/event/ok-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 33511.878682999995,
       "candidates": [
         {
@@ -13752,7 +13752,7 @@
       "title": "OK-03 House Election Winner",
       "eventId": "191595",
       "url": "https://polymarket.com/event/ok-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 106437.74013600001,
       "candidates": [
         {
@@ -13792,7 +13792,7 @@
       "title": "OK-04 House Election Winner",
       "eventId": "191596",
       "url": "https://polymarket.com/event/ok-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 35040.683321,
       "candidates": [
         {
@@ -13832,7 +13832,7 @@
       "title": "OK-05 House Election Winner",
       "eventId": "191597",
       "url": "https://polymarket.com/event/ok-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 20504.149530000002,
       "candidates": [
         {
@@ -13872,7 +13872,7 @@
       "title": "Oklahoma Senate Election Winner",
       "eventId": "57679",
       "url": "https://polymarket.com/event/oklahoma-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 26681.286272999994,
       "candidates": [
         {
@@ -13912,7 +13912,7 @@
       "title": "OR-01 House Election Winner",
       "eventId": "191598",
       "url": "https://polymarket.com/event/or-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 27552.185981,
       "candidates": [
         {
@@ -13952,7 +13952,7 @@
       "title": "OR-02 House Election Winner",
       "eventId": "191599",
       "url": "https://polymarket.com/event/or-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 17511.529139,
       "candidates": [
         {
@@ -13992,7 +13992,7 @@
       "title": "OR-03 House Election Winner",
       "eventId": "191600",
       "url": "https://polymarket.com/event/or-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 20901.323671,
       "candidates": [
         {
@@ -14032,7 +14032,7 @@
       "title": "OR-04 House Election Winner",
       "eventId": "191601",
       "url": "https://polymarket.com/event/or-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 33690.342008,
       "candidates": [
         {
@@ -14072,7 +14072,7 @@
       "title": "OR-05 House Election Winner",
       "eventId": "106185",
       "url": "https://polymarket.com/event/or-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 34162.085838,
       "candidates": [
         {
@@ -14112,7 +14112,7 @@
       "title": "OR-06 House Election Winner",
       "eventId": "191602",
       "url": "https://polymarket.com/event/or-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 26861.540914,
       "candidates": [
         {
@@ -14152,7 +14152,7 @@
       "title": "Oregon Senate Election Winner",
       "eventId": "57667",
       "url": "https://polymarket.com/event/oregon-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 7355.257825,
       "candidates": [
         {
@@ -14192,7 +14192,7 @@
       "title": "PA-01 House Election Winner",
       "eventId": "106186",
       "url": "https://polymarket.com/event/pa-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 33898.999087000004,
       "candidates": [
         {
@@ -14232,7 +14232,7 @@
       "title": "PA-02 House Election Winner",
       "eventId": "191603",
       "url": "https://polymarket.com/event/pa-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 40294.37217800001,
       "candidates": [
         {
@@ -14272,7 +14272,7 @@
       "title": "PA-03 House Election Winner",
       "eventId": "191604",
       "url": "https://polymarket.com/event/pa-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 33705.728671,
       "candidates": [
         {
@@ -14312,7 +14312,7 @@
       "title": "PA-04 House Election Winner",
       "eventId": "191605",
       "url": "https://polymarket.com/event/pa-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 21766.289684,
       "candidates": [
         {
@@ -14352,7 +14352,7 @@
       "title": "PA-05 House Election Winner",
       "eventId": "191606",
       "url": "https://polymarket.com/event/pa-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 38716.897249,
       "candidates": [
         {
@@ -14392,7 +14392,7 @@
       "title": "PA-06 House Election Winner",
       "eventId": "191607",
       "url": "https://polymarket.com/event/pa-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 39132.58297300001,
       "candidates": [
         {
@@ -14432,7 +14432,7 @@
       "title": "PA-07 House Election Winner",
       "eventId": "106187",
       "url": "https://polymarket.com/event/pa-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 34769.607064,
       "candidates": [
         {
@@ -14472,7 +14472,7 @@
       "title": "PA-08 House Election Winner",
       "eventId": "106211",
       "url": "https://polymarket.com/event/pa-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 18988.060770000004,
       "candidates": [
         {
@@ -14512,7 +14512,7 @@
       "title": "PA-09 House Election Winner",
       "eventId": "191608",
       "url": "https://polymarket.com/event/pa-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 22635.168033,
       "candidates": [
         {
@@ -14552,7 +14552,7 @@
       "title": "PA-10 House Election Winner",
       "eventId": "106216",
       "url": "https://polymarket.com/event/pa-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 12461.933002000002,
       "candidates": [
         {
@@ -14592,7 +14592,7 @@
       "title": "PA-11 House Election Winner",
       "eventId": "191609",
       "url": "https://polymarket.com/event/pa-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 52454.203562,
       "candidates": [
         {
@@ -14632,7 +14632,7 @@
       "title": "PA-12 House Election Winner",
       "eventId": "191610",
       "url": "https://polymarket.com/event/pa-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 24598.91772400001,
       "candidates": [
         {
@@ -14672,7 +14672,7 @@
       "title": "PA-13 House Election Winner",
       "eventId": "191611",
       "url": "https://polymarket.com/event/pa-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 17868.990591,
       "candidates": [
         {
@@ -14712,7 +14712,7 @@
       "title": "PA-14 House Election Winner",
       "eventId": "191612",
       "url": "https://polymarket.com/event/pa-14-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 33033.681117,
       "candidates": [
         {
@@ -14752,7 +14752,7 @@
       "title": "PA-15 House Election Winner",
       "eventId": "191613",
       "url": "https://polymarket.com/event/pa-15-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 30068.569846,
       "candidates": [
         {
@@ -14792,7 +14792,7 @@
       "title": "PA-16 House Election Winner",
       "eventId": "191614",
       "url": "https://polymarket.com/event/pa-16-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 56597.335487,
       "candidates": [
         {
@@ -14832,7 +14832,7 @@
       "title": "PA-17 House Election Winner",
       "eventId": "106217",
       "url": "https://polymarket.com/event/pa-17-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 22563.686663999993,
       "candidates": [
         {
@@ -14872,7 +14872,7 @@
       "title": "RI-01 House Election Winner",
       "eventId": "191615",
       "url": "https://polymarket.com/event/ri-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 43654.137474,
       "candidates": [
         {
@@ -14912,7 +14912,7 @@
       "title": "RI-02 House Election Winner",
       "eventId": "191616",
       "url": "https://polymarket.com/event/ri-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 48777.48777900001,
       "candidates": [
         {
@@ -14952,7 +14952,7 @@
       "title": "Rhode Island Senate Election Winner",
       "eventId": "57668",
       "url": "https://polymarket.com/event/rhode-island-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 26597.682592,
       "candidates": [
         {
@@ -14992,7 +14992,7 @@
       "title": "SC-01 House Election Winner",
       "eventId": "191617",
       "url": "https://polymarket.com/event/sc-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 79326.99847899999,
       "candidates": [
         {
@@ -15032,7 +15032,7 @@
       "title": "SC-02 House Election Winner",
       "eventId": "191618",
       "url": "https://polymarket.com/event/sc-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 48863.73325500001,
       "candidates": [
         {
@@ -15072,7 +15072,7 @@
       "title": "SC-03 House Election Winner",
       "eventId": "191619",
       "url": "https://polymarket.com/event/sc-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 54046.338029,
       "candidates": [
         {
@@ -15112,7 +15112,7 @@
       "title": "SC-04 House Election Winner",
       "eventId": "191620",
       "url": "https://polymarket.com/event/sc-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 47775.954535,
       "candidates": [
         {
@@ -15152,7 +15152,7 @@
       "title": "SC-05 House Election Winner",
       "eventId": "191621",
       "url": "https://polymarket.com/event/sc-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 10922.086752,
       "candidates": [
         {
@@ -15192,7 +15192,7 @@
       "title": "SC-06 House Election Winner",
       "eventId": "191622",
       "url": "https://polymarket.com/event/sc-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 44182.310817,
       "candidates": [
         {
@@ -15232,7 +15232,7 @@
       "title": "SC-07 House Election Winner",
       "eventId": "191623",
       "url": "https://polymarket.com/event/sc-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 53946.026171,
       "candidates": [
         {
@@ -15272,7 +15272,7 @@
       "title": "South Carolina Senate Election Winner",
       "eventId": "57669",
       "url": "https://polymarket.com/event/south-carolina-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 764775.1673060001,
       "candidates": [
         {
@@ -15312,7 +15312,7 @@
       "title": "SD-AL House Election Winner",
       "eventId": "191624",
       "url": "https://polymarket.com/event/sd-al-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 37070.732841000005,
       "candidates": [
         {
@@ -15352,7 +15352,7 @@
       "title": "South Dakota Senate Election Winner",
       "eventId": "57670",
       "url": "https://polymarket.com/event/south-dakota-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 55110.33627700001,
       "candidates": [
         {
@@ -15406,7 +15406,7 @@
       "title": "TN-01 House Election Winner",
       "eventId": "191625",
       "url": "https://polymarket.com/event/tn-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 27365.222067,
       "candidates": [
         {
@@ -15446,7 +15446,7 @@
       "title": "TN-02 House Election Winner",
       "eventId": "191626",
       "url": "https://polymarket.com/event/tn-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 34819.406931000005,
       "candidates": [
         {
@@ -15486,7 +15486,7 @@
       "title": "TN-03 House Election Winner",
       "eventId": "191627",
       "url": "https://polymarket.com/event/tn-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 44802.906846,
       "candidates": [
         {
@@ -15526,7 +15526,7 @@
       "title": "TN-04 House Election Winner",
       "eventId": "191628",
       "url": "https://polymarket.com/event/tn-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 90472.80711800001,
       "candidates": [
         {
@@ -15566,7 +15566,7 @@
       "title": "TN-05 House Election Winner",
       "eventId": "191629",
       "url": "https://polymarket.com/event/tn-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 66727.853453,
       "candidates": [
         {
@@ -15606,7 +15606,7 @@
       "title": "TN-06 House Election Winner",
       "eventId": "191630",
       "url": "https://polymarket.com/event/tn-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 22469.137669,
       "candidates": [
         {
@@ -15646,7 +15646,7 @@
       "title": "TN-07 House Election Winner",
       "eventId": "191631",
       "url": "https://polymarket.com/event/tn-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 35986.762667,
       "candidates": [
         {
@@ -15686,7 +15686,7 @@
       "title": "TN-08 House Election Winner",
       "eventId": "191632",
       "url": "https://polymarket.com/event/tn-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 44166.640967,
       "candidates": [
         {
@@ -15726,7 +15726,7 @@
       "title": "TN-09 House Election Winner",
       "eventId": "191633",
       "url": "https://polymarket.com/event/tn-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 46748.593057000006,
       "candidates": [
         {
@@ -15766,7 +15766,7 @@
       "title": "Tennessee Senate Election Winner",
       "eventId": "57671",
       "url": "https://polymarket.com/event/tennessee-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 95047.18346900001,
       "candidates": [
         {
@@ -15806,7 +15806,7 @@
       "title": "TX-01 House Election Winner",
       "eventId": "191634",
       "url": "https://polymarket.com/event/tx-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 60077.53041400001,
       "candidates": [
         {
@@ -15846,7 +15846,7 @@
       "title": "TX-02 House Election Winner",
       "eventId": "191635",
       "url": "https://polymarket.com/event/tx-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 30811.045263,
       "candidates": [
         {
@@ -15886,7 +15886,7 @@
       "title": "TX-03 House Election Winner",
       "eventId": "191636",
       "url": "https://polymarket.com/event/tx-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 42120.82569199999,
       "candidates": [
         {
@@ -15926,7 +15926,7 @@
       "title": "TX-04 House Election Winner",
       "eventId": "191637",
       "url": "https://polymarket.com/event/tx-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 55977.672724,
       "candidates": [
         {
@@ -15966,7 +15966,7 @@
       "title": "TX-05 House Election Winner",
       "eventId": "191638",
       "url": "https://polymarket.com/event/tx-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 64817.656044,
       "candidates": [
         {
@@ -16006,7 +16006,7 @@
       "title": "TX-06 House Election Winner",
       "eventId": "191639",
       "url": "https://polymarket.com/event/tx-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 83542.390205,
       "candidates": [
         {
@@ -16046,7 +16046,7 @@
       "title": "TX-07 House Election Winner",
       "eventId": "191640",
       "url": "https://polymarket.com/event/tx-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 30595.533531,
       "candidates": [
         {
@@ -16086,7 +16086,7 @@
       "title": "TX-08 House Election Winner",
       "eventId": "191641",
       "url": "https://polymarket.com/event/tx-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 35184.940667,
       "candidates": [
         {
@@ -16126,7 +16126,7 @@
       "title": "TX-09 House Election Winner",
       "eventId": "106218",
       "url": "https://polymarket.com/event/tx-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 36231.297693,
       "candidates": [
         {
@@ -16166,7 +16166,7 @@
       "title": "TX-10 House Election Winner",
       "eventId": "191642",
       "url": "https://polymarket.com/event/tx-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 36860.449407,
       "candidates": [
         {
@@ -16206,7 +16206,7 @@
       "title": "TX-11 House Election Winner",
       "eventId": "191643",
       "url": "https://polymarket.com/event/tx-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 35589.896327999995,
       "candidates": [
         {
@@ -16246,7 +16246,7 @@
       "title": "TX-12 House Election Winner",
       "eventId": "191644",
       "url": "https://polymarket.com/event/tx-12-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 56178.67789,
       "candidates": [
         {
@@ -16286,7 +16286,7 @@
       "title": "TX-13 House Election Winner",
       "eventId": "191645",
       "url": "https://polymarket.com/event/tx-13-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 19335.386441,
       "candidates": [
         {
@@ -16326,7 +16326,7 @@
       "title": "TX-14 House Election Winner",
       "eventId": "191646",
       "url": "https://polymarket.com/event/tx-14-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 31728.637495000003,
       "candidates": [
         {
@@ -16366,7 +16366,7 @@
       "title": "TX-15 House Election Winner",
       "eventId": "106219",
       "url": "https://polymarket.com/event/tx-15-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 54735.31234700001,
       "candidates": [
         {
@@ -16406,7 +16406,7 @@
       "title": "TX-16 House Election Winner",
       "eventId": "191647",
       "url": "https://polymarket.com/event/tx-16-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 27128.900426,
       "candidates": [
         {
@@ -16446,7 +16446,7 @@
       "title": "TX-17 House Election Winner",
       "eventId": "191648",
       "url": "https://polymarket.com/event/tx-17-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 52304.51672200001,
       "candidates": [
         {
@@ -16486,7 +16486,7 @@
       "title": "TX-18 House Election Winner",
       "eventId": "106220",
       "url": "https://polymarket.com/event/tx-18-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 16682.341376,
       "candidates": [
         {
@@ -16526,7 +16526,7 @@
       "title": "TX-19 House Election Winner",
       "eventId": "191649",
       "url": "https://polymarket.com/event/tx-19-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 30977.735012000005,
       "candidates": [
         {
@@ -16566,7 +16566,7 @@
       "title": "TX-20 House Election Winner",
       "eventId": "191650",
       "url": "https://polymarket.com/event/tx-20-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 39451.295744,
       "candidates": [
         {
@@ -16606,7 +16606,7 @@
       "title": "TX-21 House Election Winner",
       "eventId": "191651",
       "url": "https://polymarket.com/event/tx-21-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 65550.224145,
       "candidates": [
         {
@@ -16646,7 +16646,7 @@
       "title": "TX-22 House Election Winner",
       "eventId": "191652",
       "url": "https://polymarket.com/event/tx-22-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 30392.769854000002,
       "candidates": [
         {
@@ -16686,7 +16686,7 @@
       "title": "TX-23 House Election Winner",
       "eventId": "191653",
       "url": "https://polymarket.com/event/tx-23-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 78898.41645899999,
       "candidates": [
         {
@@ -16726,7 +16726,7 @@
       "title": "TX-24 House Election Winner",
       "eventId": "191654",
       "url": "https://polymarket.com/event/tx-24-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 63675.04216600001,
       "candidates": [
         {
@@ -16766,7 +16766,7 @@
       "title": "TX-25 House Election Winner",
       "eventId": "191655",
       "url": "https://polymarket.com/event/tx-25-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 34548.914004,
       "candidates": [
         {
@@ -16806,7 +16806,7 @@
       "title": "TX-26 House Election Winner",
       "eventId": "191656",
       "url": "https://polymarket.com/event/tx-26-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 56724.205226,
       "candidates": [
         {
@@ -16846,7 +16846,7 @@
       "title": "TX-27 House Election Winner",
       "eventId": "191657",
       "url": "https://polymarket.com/event/tx-27-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.153Z",
+      "fetchedAt": "2026-10-12T16:47:56.295Z",
       "volume": 49922.867184999996,
       "candidates": [
         {
@@ -16886,7 +16886,7 @@
       "title": "TX-28 House Election Winner",
       "eventId": "106221",
       "url": "https://polymarket.com/event/tx-28-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 11504.149058,
       "candidates": [
         {
@@ -16926,7 +16926,7 @@
       "title": "TX-29 House Election Winner",
       "eventId": "191658",
       "url": "https://polymarket.com/event/tx-29-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 19929.999734999998,
       "candidates": [
         {
@@ -16966,7 +16966,7 @@
       "title": "TX-30 House Election Winner",
       "eventId": "191659",
       "url": "https://polymarket.com/event/tx-30-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 48541.064583,
       "candidates": [
         {
@@ -17006,7 +17006,7 @@
       "title": "TX-31 House Election Winner",
       "eventId": "191660",
       "url": "https://polymarket.com/event/tx-31-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 60385.859673,
       "candidates": [
         {
@@ -17046,7 +17046,7 @@
       "title": "TX-32 House Election Winner",
       "eventId": "106222",
       "url": "https://polymarket.com/event/tx-32-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 46169.004738999996,
       "candidates": [
         {
@@ -17086,7 +17086,7 @@
       "title": "TX-33 House Election Winner",
       "eventId": "191661",
       "url": "https://polymarket.com/event/tx-33-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 16999.297966,
       "candidates": [
         {
@@ -17126,7 +17126,7 @@
       "title": "TX-34 House Election Winner",
       "eventId": "106223",
       "url": "https://polymarket.com/event/tx-34-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 11122.015363,
       "candidates": [
         {
@@ -17166,7 +17166,7 @@
       "title": "TX-35 House Election Winner",
       "eventId": "106228",
       "url": "https://polymarket.com/event/tx-35-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 44334.453811,
       "candidates": [
         {
@@ -17206,7 +17206,7 @@
       "title": "TX-36 House Election Winner",
       "eventId": "191662",
       "url": "https://polymarket.com/event/tx-36-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 44285.59536,
       "candidates": [
         {
@@ -17246,7 +17246,7 @@
       "title": "TX-37 House Election Winner",
       "eventId": "191663",
       "url": "https://polymarket.com/event/tx-37-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 45167.105436000005,
       "candidates": [
         {
@@ -17286,7 +17286,7 @@
       "title": "TX-38 House Election Winner",
       "eventId": "191664",
       "url": "https://polymarket.com/event/tx-38-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 29696.612407000004,
       "candidates": [
         {
@@ -17326,7 +17326,7 @@
       "title": "Texas Senate Election Winner",
       "eventId": "57672",
       "url": "https://polymarket.com/event/texas-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 3416285.947730001,
       "candidates": [
         {
@@ -17366,7 +17366,7 @@
       "title": "UT-01 House Election Winner",
       "eventId": "106229",
       "url": "https://polymarket.com/event/ut-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 51960.247268,
       "candidates": [
         {
@@ -17406,7 +17406,7 @@
       "title": "UT-02 House Election Winner",
       "eventId": "106230",
       "url": "https://polymarket.com/event/ut-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 23391.753556000003,
       "candidates": [
         {
@@ -17446,7 +17446,7 @@
       "title": "UT-03 House Election Winner",
       "eventId": "106231",
       "url": "https://polymarket.com/event/ut-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 16966.048927999997,
       "candidates": [
         {
@@ -17486,7 +17486,7 @@
       "title": "UT-04 House Election Winner",
       "eventId": "191665",
       "url": "https://polymarket.com/event/ut-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 59966.52797200001,
       "candidates": [
         {
@@ -17526,7 +17526,7 @@
       "title": "VA-01 House Election Winner",
       "eventId": "106232",
       "url": "https://polymarket.com/event/va-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 64914.39670800001,
       "candidates": [
         {
@@ -17566,7 +17566,7 @@
       "title": "VA-02 House Election Winner",
       "eventId": "106233",
       "url": "https://polymarket.com/event/va-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 48179.148166,
       "candidates": [
         {
@@ -17606,7 +17606,7 @@
       "title": "VA-03 House Election Winner",
       "eventId": "191666",
       "url": "https://polymarket.com/event/va-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 68691.792172,
       "candidates": [
         {
@@ -17646,7 +17646,7 @@
       "title": "VA-04 House Election Winner",
       "eventId": "191667",
       "url": "https://polymarket.com/event/va-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 42221.75116000001,
       "candidates": [
         {
@@ -17686,7 +17686,7 @@
       "title": "VA-05 House Election Winner",
       "eventId": "191668",
       "url": "https://polymarket.com/event/va-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 119665.86236700001,
       "candidates": [
         {
@@ -17726,7 +17726,7 @@
       "title": "VA-06 House Election Winner",
       "eventId": "191669",
       "url": "https://polymarket.com/event/va-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 120353.69651100002,
       "candidates": [
         {
@@ -17766,7 +17766,7 @@
       "title": "VA-07 House Election Winner",
       "eventId": "106234",
       "url": "https://polymarket.com/event/va-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 16840.526630999997,
       "candidates": [
         {
@@ -17806,7 +17806,7 @@
       "title": "VA-08 House Election Winner",
       "eventId": "191670",
       "url": "https://polymarket.com/event/va-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 41264.848888,
       "candidates": [
         {
@@ -17846,7 +17846,7 @@
       "title": "VA-09 House Election Winner",
       "eventId": "191671",
       "url": "https://polymarket.com/event/va-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 66586.613476,
       "candidates": [
         {
@@ -17886,7 +17886,7 @@
       "title": "VA-10 House Election Winner",
       "eventId": "106235",
       "url": "https://polymarket.com/event/va-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 7904.680772000001,
       "candidates": [
         {
@@ -17926,7 +17926,7 @@
       "title": "VA-11 House Election Winner",
       "eventId": "191672",
       "url": "https://polymarket.com/event/va-11-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 29387.059448,
       "candidates": [
         {
@@ -17966,7 +17966,7 @@
       "title": "Virginia Senate Election Winner",
       "eventId": "57673",
       "url": "https://polymarket.com/event/virginia-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 23709.174160000002,
       "candidates": [
         {
@@ -18006,7 +18006,7 @@
       "title": "VT-AL House Election Winner",
       "eventId": "191673",
       "url": "https://polymarket.com/event/vt-al-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 51311.382167,
       "candidates": [
         {
@@ -18046,7 +18046,7 @@
       "title": "WA-01 House Election Winner",
       "eventId": "191674",
       "url": "https://polymarket.com/event/wa-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 46447.053888,
       "candidates": [
         {
@@ -18086,7 +18086,7 @@
       "title": "WA-02 House Election Winner",
       "eventId": "191675",
       "url": "https://polymarket.com/event/wa-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 32463.376257,
       "candidates": [
         {
@@ -18126,7 +18126,7 @@
       "title": "WA-03 House Election Winner",
       "eventId": "106236",
       "url": "https://polymarket.com/event/wa-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 41357.232825,
       "candidates": [
         {
@@ -18166,7 +18166,7 @@
       "title": "WA-04 House Election Winner",
       "eventId": "191676",
       "url": "https://polymarket.com/event/wa-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 60404.64973700001,
       "candidates": [
         {
@@ -18206,7 +18206,7 @@
       "title": "WA-05 House Election Winner",
       "eventId": "191677",
       "url": "https://polymarket.com/event/wa-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 59765.76332999999,
       "candidates": [
         {
@@ -18246,7 +18246,7 @@
       "title": "WA-06 House Election Winner",
       "eventId": "191678",
       "url": "https://polymarket.com/event/wa-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 45054.83912900001,
       "candidates": [
         {
@@ -18286,7 +18286,7 @@
       "title": "WA-07 House Election Winner",
       "eventId": "191679",
       "url": "https://polymarket.com/event/wa-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 34610.854889,
       "candidates": [
         {
@@ -18326,7 +18326,7 @@
       "title": "WA-08 House Election Winner",
       "eventId": "106241",
       "url": "https://polymarket.com/event/wa-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 28863.845196000002,
       "candidates": [
         {
@@ -18366,7 +18366,7 @@
       "title": "WA-09 House Election Winner",
       "eventId": "191680",
       "url": "https://polymarket.com/event/wa-09-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 55488.356590999996,
       "candidates": [
         {
@@ -18406,7 +18406,7 @@
       "title": "WA-10 House Election Winner",
       "eventId": "191681",
       "url": "https://polymarket.com/event/wa-10-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 36962.424126,
       "candidates": [
         {
@@ -18446,7 +18446,7 @@
       "title": "WI-01 House Election Winner",
       "eventId": "106242",
       "url": "https://polymarket.com/event/wi-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 17025.379266999997,
       "candidates": [
         {
@@ -18486,7 +18486,7 @@
       "title": "WI-02 House Election Winner",
       "eventId": "191682",
       "url": "https://polymarket.com/event/wi-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 103807.198588,
       "candidates": [
         {
@@ -18526,7 +18526,7 @@
       "title": "WI-03 House Election Winner",
       "eventId": "106243",
       "url": "https://polymarket.com/event/wi-03-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.928Z",
+      "fetchedAt": "2026-10-12T16:47:55.999Z",
       "volume": 7725.992292999998,
       "candidates": [
         {
@@ -18566,7 +18566,7 @@
       "title": "WI-04 House Election Winner",
       "eventId": "191683",
       "url": "https://polymarket.com/event/wi-04-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 37029.186818,
       "candidates": [
         {
@@ -18606,7 +18606,7 @@
       "title": "WI-05 House Election Winner",
       "eventId": "191684",
       "url": "https://polymarket.com/event/wi-05-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 88950.07947500002,
       "candidates": [
         {
@@ -18646,7 +18646,7 @@
       "title": "WI-06 House Election Winner",
       "eventId": "191685",
       "url": "https://polymarket.com/event/wi-06-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 38438.65009799999,
       "candidates": [
         {
@@ -18686,7 +18686,7 @@
       "title": "WI-07 House Election Winner",
       "eventId": "191686",
       "url": "https://polymarket.com/event/wi-07-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 57944.608071999995,
       "candidates": [
         {
@@ -18726,7 +18726,7 @@
       "title": "WI-08 House Election Winner",
       "eventId": "191687",
       "url": "https://polymarket.com/event/wi-08-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 26864.846790000003,
       "candidates": [
         {
@@ -18766,7 +18766,7 @@
       "title": "WV-01 House Election Winner",
       "eventId": "191688",
       "url": "https://polymarket.com/event/wv-01-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 62427.697060000006,
       "candidates": [
         {
@@ -18806,7 +18806,7 @@
       "title": "WV-02 House Election Winner",
       "eventId": "191690",
       "url": "https://polymarket.com/event/wv-02-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 100387.348592,
       "candidates": [
         {
@@ -18846,7 +18846,7 @@
       "title": "West Virginia Senate Election Winner",
       "eventId": "57674",
       "url": "https://polymarket.com/event/west-virginia-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 16466.470464,
       "candidates": [
         {
@@ -18886,7 +18886,7 @@
       "title": "WY-AL House Election Winner",
       "eventId": "191691",
       "url": "https://polymarket.com/event/wy-al-house-election-winner",
-      "fetchedAt": "2026-10-12T16:46:23.234Z",
+      "fetchedAt": "2026-10-12T16:47:56.402Z",
       "volume": 48963.397411000005,
       "candidates": [
         {
@@ -18926,7 +18926,7 @@
       "title": "Wyoming Senate Election Winner",
       "eventId": "57675",
       "url": "https://polymarket.com/event/wyoming-senate-election-winner",
-      "fetchedAt": "2026-10-12T16:46:22.816Z",
+      "fetchedAt": "2026-10-12T16:47:55.755Z",
       "volume": 19945.722137999997,
       "candidates": [
         {
