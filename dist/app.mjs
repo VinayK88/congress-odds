@@ -66,9 +66,9 @@ function renderHistory(){
  const end=Math.max(...series.flat().map(p=>p.t)),start=end-(days-1)*86400;
  const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 1000 270');
  const add=(tag,attrs,text)=>{const e=document.createElementNS(ns,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text)e.textContent=text;svg.append(e);return e;};
- for(const p of [0,.25,.5,.75,1]){const y=225-p*195;add('line',{x1:48,x2:973,y1:y,y2:y,stroke:'#29354b'});add('text',{x:39,y:y+4,fill:'#99a7be','font-size':12,'text-anchor':'end'},`${p*100}%`);}
- series.forEach((all,index)=>{const points=all.filter(p=>p.t>=start);let path='';for(let i=0;i<points.length;i++){const p=points[i],gap=i===0||p.t-points[i-1].t>90000;path+=`${gap?'M':'L'}${48+(p.t-start)/(end-start)*925},${225-p.p*195} `;}add('path',{d:path,fill:'none',stroke:index?'#ff8795':'#73a6ff','stroke-width':2.5});});
- for(const [x,t,anchor]of [[48,start,'start'],[510,(start+end)/2,'middle'],[973,end,'end']])add('text',{x,y:253,fill:'#99a7be','font-size':12,'text-anchor':anchor},shortDate(t));
+ for(const p of [0,.25,.5,.75,1]){const y=225-p*195;add('line',{x1:48,x2:973,y1:y,y2:y,stroke:'var(--line)'});add('text',{x:39,y:y+4,fill:'var(--muted)','font-size':12,'text-anchor':'end'},`${p*100}%`);}
+ series.forEach((all,index)=>{const points=all.filter(p=>p.t>=start);let path='';for(let i=0;i<points.length;i++){const p=points[i],gap=i===0||p.t-points[i-1].t>90000;path+=`${gap?'M':'L'}${48+(p.t-start)/(end-start)*925},${225-p.p*195} `;}add('path',{d:path,fill:'none',stroke:index?'var(--red)':'var(--blue)','stroke-width':3});});
+ for(const [x,t,anchor]of [[48,start,'start'],[510,(start+end)/2,'middle'],[973,end,'end']])add('text',{x,y:253,fill:'var(--muted)','font-size':12,'text-anchor':anchor},shortDate(t));
  box.append(svg);
  const byDate=series.map(all=>new Map(all.map(p=>[p.t,p.p])));
  const dates=[...new Set(series.flat().filter(p=>p.t>=start).map(p=>p.t))].sort((a,b)=>a-b);
