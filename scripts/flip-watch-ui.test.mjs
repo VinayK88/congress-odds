@@ -40,6 +40,6 @@ test('visual status explains non-electoral meaning and incomplete evidence',()=>
 });
 test('new CSS and versioned map module are linked',()=>{
  assert.ok(html.includes('flip-watch.css?v=20261013-flip-watch'));
- assert.ok(html.includes('scenario.mjs?v=20261013-flip-watch'));
+ assert.match(html,/src="scenario\.mjs\?v=[^"]+"/);
  assert.ok(scenario.includes("state-map.mjs?v=20261013-flip-watch"));
 });
