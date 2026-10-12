@@ -27,6 +27,15 @@ export function scheduledSlotDue(minutes,now=new Date()) {
  const slot=Math.floor(((utcMinutes-2+1440)%1440)/5);
  return slot%(minutes/5)===0;
 }
+// Compare actual published snapshot times, not the runner's current clock minute.
+// GitHub Actions scheduled jobs may start late, even beyond their nominal slot.
+export function snapshotDue(timestamp, minutes, now=new Date()) {
+ if(!Number.isFinite(minutes)||minutes<=0)throw Error('Refresh interval must be positive');
+ const last=Date.parse(timestamp);
+ if(!Number.isFinite(last))return true;
+ const grace=Math.min(60000,minutes*6000);
+ return now.getTime()-last>=minutes*60000-grace;
+}
 export function formatMinutes(minutes) {
  if(minutes===60)return 'hourly';
  if(minutes%60===0)return `every ${minutes/60} hours`;
