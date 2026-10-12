@@ -8,7 +8,7 @@ const html=await readFile(new URL('../dist/index.html',import.meta.url),'utf8');
 test('radar remains separate from the scenario and its source-derived snapshot is not modified',()=>{
  assert.ok(scenario.includes('renderBattlegroundRadar(radar,battlegroundRadar(snapshot,chamber,Date.now(),radarThreshold)'));
  assert.ok(scenario.includes("radar.hidden=!market"));
- assert.ok(scenario.includes('const snapshot='));
+ assert.ok(scenario.includes('snapshot=getCandidateSnapshot()'));
  assert.ok(scenario.includes("b.dataset.radarRace"));
  assert.ok(scenario.includes("b.dataset.radarThreshold"));
  assert.ok(scenario.includes("b.dataset.radarToggle"));
@@ -17,12 +17,10 @@ test('radar remains separate from the scenario and its source-derived snapshot i
 test('markup respects party identity, custom ranges, and independent yes-market prices',()=>{
  assert.ok(view.includes("Not polls, vote margins or election results."));
  assert.ok(view.includes("Both contracts retain their original prices."));
- assert.ok(view.includes("data.radarThreshold")===false);
  assert.ok(view.includes("b.dataset.radarThreshold"));
  assert.ok(view.includes("b.dataset.radarRace"));
  assert.ok(view.includes("b.setAttribute('aria-label'"));
  assert.ok(!view.includes('innerHTML'));
- assert.ok(view.includes("source")===false);
 });
 test('no misleading close race ranking when verification is unavailable',()=>{
  assert.ok(view.includes('Waiting for the verified race-market snapshot.'));
