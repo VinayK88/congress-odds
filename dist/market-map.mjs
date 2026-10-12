@@ -1,7 +1,7 @@
 import {STATES,HOLDOVERS} from './race-data.mjs';
 import {races} from './scenario-core.mjs';
 import {candidateFresh} from './candidate-core.mjs';
-export const MARKET_COLORS={D:['#bed3f3','#82a9df','#477bc3','#235aaa'],R:['#efc1c7','#df8e99','#c95868','#b73643'],O:['#e2d9bd','#c6b787','#a5915c','#82724d'],U:'#d7d5ce'};
+export const MARKET_COLORS={D:['#bed3f3','#82a9df','#477bc3','#235aaa'],R:['#efc1c7','#df8e99','#c95868','#b73643'],O:['#e2d9bd','#c6b787','#a5915c','#82724d'],U:'#d5deea'};
 export function raceLeader(race,now=Date.now()){
  const neutral=reason=>({party:'U',probability:null,reason,candidate:null});
  if(!race)return neutral('No market data');
@@ -26,6 +26,21 @@ export function marketStateSummary(chamber,snapshot,code,now=Date.now()){
  if(chamber==='house')text=`${state.name}: district market leaders — ${counts.D} Democratic, ${counts.R} Republican, ${counts.O} other, ${counts.U} unclear or unavailable. Counts, not win probabilities.`;
  else if(leaders.length){const l=leaders[0];fill=leaderColor(l);text=l.party==='U'?`${state.name}: ${l.reason}`:`${state.name}: ${l.candidate.name||l.candidate.label} leads at ${(l.probability*100).toFixed(1)}% (${l.candidate.scope==='party'?'party / nominee':'individual'} contract).`;}
  return {state,counts,total:rr.length,text,fill,leaders};
+}
+
+// Explain the difference between an unopposed/non-contested state, an expired
+// snapshot, and a race with insufficient eligible quotes. No projected winners.
+export function marketCoverage(chamber,snapshot,now=Date.now()){
+ const all=races(chamber),listed=new Map((snapshot?.races||[]).map(r=>[r.id,r]));
+ const coveredStates=new Set(all.map(r=>r.state));
+ const result={total:all.length,clear:0,stale:0,unclear:0,noContest:chamber==='senate'?STATES.length-coveredStates.size:0};
+ for(const race of all){
+  const lead=raceLeader(listed.get(race.id),now);
+  if(lead.party!=='U')result.clear++;
+  else if(lead.reason==='Stale snapshot')result.stale++;
+  else result.unclear++;
+ }
+ return result;
 }
 
 export function marketTotals(chamber,snapshot,now=Date.now()){
