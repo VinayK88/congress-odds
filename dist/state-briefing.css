@@ -1,0 +1,162 @@
+/* Congress Odds: source-backed, nonpartisan state briefing. */
+#race-simulator .state-briefing {
+  margin:22px 0 4px;
+  padding:20px 19px 17px;
+  border:1px solid #cbd8e9;
+  border-radius:18px;
+  background:linear-gradient(155deg,#fff 0%,#f8fbff 100%);
+  box-shadow:0 8px 26px #1939580e;
+  color:#1a3152;
+}
+#race-simulator .state-briefing[hidden] {display:none!important;}
+#race-simulator .briefing-heading {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:end;
+  gap:6px 16px;
+  padding-bottom:13px;
+  margin-bottom:13px;
+  border-bottom:1px solid #e1e8f3;
+}
+#race-simulator .briefing-kicker {
+  margin:0 0 4px;
+  font-size:9px;
+  font-weight:850;
+  letter-spacing:1.6px;
+  color:#92662d;
+}
+#race-simulator .briefing-title {
+  margin:0;
+  font:700 clamp(20px,2.2vw,25px)/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing:-.04em;
+  color:#172e50;
+}
+#race-simulator .briefing-freshness {
+  font-size:10px;
+  font-weight:700;
+  color:#286347;
+  background:#eaf5ee;
+  border:1px solid #cae1d2;
+  padding:6px 9px;
+  border-radius:999px;
+}
+#race-simulator .briefing-freshness.is-stale {
+  color:#855320;
+  border-color:#ead2a5;
+  background:#fff5e5;
+}
+#race-simulator .briefing-caption {
+  font-size:10px;
+  line-height:1.5;
+  color:#536883;
+  margin:0 0 12px;
+}
+#race-simulator .briefing-empty {
+  margin:6px 0 12px;
+  padding:13px 15px;
+  border-radius:11px;
+  border:1px dashed #cbd8e8;
+  background:#f4f7fb;
+  color:#475e7a;
+  font-size:12px;
+  line-height:1.65;
+}
+#race-simulator .briefing-counts {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:7px;
+  margin:0 0 10px;
+}
+#race-simulator .briefing-count {
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  padding:10px 8px;
+  background:#f5f7fb;
+  border:1px solid #dde5f0;
+  border-radius:10px;
+  min-width:0;
+}
+#race-simulator .briefing-count strong {
+  font-size:20px;line-height:1.1;
+  font-variant-numeric:tabular-nums;
+  color:#253c5d;
+}
+#race-simulator .briefing-count span {color:#536883;font-size:9px;}
+#race-simulator .briefing-count.party-D {background:#edf4ff;border-color:#ccdef5;}
+#race-simulator .briefing-count.party-D strong {color:#235aaa;}
+#race-simulator .briefing-count.party-R {background:#fff2f5;border-color:#efd2d9;}
+#race-simulator .briefing-count.party-R strong {color:#b73643;}
+#race-simulator .briefing-count.party-O {background:#fff8eb;border-color:#ebdbc0;}
+#race-simulator .briefing-count.party-U {background:#f2f4f7;border-color:#d6e0ec;}
+#race-simulator .briefing-quotes {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+}
+#race-simulator .briefing-quote {
+  display:grid;
+  grid-template-columns:43px minmax(0,1fr);
+  gap:10px;
+  align-content:start;
+  padding:13px;
+  min-width:0;
+  border:1px solid #d7e1ef;
+  border-radius:13px;
+  background:#fff;
+}
+#race-simulator .briefing-quote.party-D {border-top:3px solid #235aaa;}
+#race-simulator .briefing-quote.party-R {border-top:3px solid #b73643;}
+#race-simulator .briefing-quote.party-U,
+#race-simulator .briefing-quote.party-I,
+#race-simulator .briefing-quote.party-O {border-top:3px solid #8a7550;}
+#race-simulator .briefing-avatar {
+  position:relative;
+  display:grid;place-items:center;
+  width:43px;height:43px;
+  border:1px solid #c8d6e8;
+  border-radius:11px;
+  background:#eaf0f8;
+  overflow:hidden;
+}
+#race-simulator .briefing-initials {font-weight:800;font-size:13px;color:#456180;}
+#race-simulator .briefing-avatar img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+#race-simulator .briefing-quote-content {min-width:0;}
+#race-simulator .briefing-party-code {font-size:9px;font-weight:700;color:#526884;line-height:1.2;}
+#race-simulator .briefing-candidate-name {
+  display:block;
+  margin:3px 0 2px;
+  font-size:12px;
+  line-height:1.25;
+  font-weight:750;
+  color:#192f50;
+  overflow-wrap:anywhere;
+}
+#race-simulator .briefing-quote-meta {display:block;color:#5c718c;font-size:9px;line-height:1.35;}
+#race-simulator .briefing-gauge {grid-column:1/-1;}
+#race-simulator .briefing-number {font-size:22px;letter-spacing:-.04em;font-weight:750;font-variant-numeric:tabular-nums;color:#253d5c;}
+#race-simulator .briefing-quote.party-D .briefing-number {color:#235aaa;}
+#race-simulator .briefing-quote.party-R .briefing-number {color:#b73643;}
+#race-simulator .briefing-track {margin-top:6px;height:7px;border-radius:8px;background:#e7edf4;overflow:hidden;}
+#race-simulator .briefing-track span {display:block;height:100%;background:#8798ae;border-radius:8px;}
+#race-simulator .briefing-quote.party-D .briefing-track span {background:#235aaa;}
+#race-simulator .briefing-quote.party-R .briefing-track span {background:#b73643;}
+#race-simulator .briefing-market-link {grid-column:1/-1;font-size:10px;font-weight:750;color:#2158a2;text-decoration:none;}
+#race-simulator .briefing-source {display:inline-block;margin-top:14px;font-size:11px;font-weight:700;color:#2058a6;text-decoration:underline;text-underline-offset:3px;}
+#race-simulator .briefing-market-link:hover,#race-simulator .briefing-source:hover {text-decoration:underline;}
+#race-simulator .briefing-market-link:focus-visible,#race-simulator .briefing-source:focus-visible {outline:3px solid #a8742e;outline-offset:3px;}
+@media(max-width:1000px) {
+  #race-simulator .briefing-quotes {grid-template-columns:1fr;}
+}
+@media(max-width:680px) {
+  #race-simulator .state-briefing {padding:16px 12px;border-radius:14px;}
+  #race-simulator .briefing-count {padding:9px 6px;}
+  #race-simulator .briefing-count span {font-size:8px;}
+  #race-simulator .briefing-quote {grid-template-columns:40px minmax(0,1fr);}
+}
+@media(prefers-contrast:more) {
+  #race-simulator .state-briefing {background:#fff;border-color:#3d526f;}
+  #race-simulator .briefing-quote {border-color:#526782;}
+  #race-simulator .briefing-count {border-color:#526782;}
+}
