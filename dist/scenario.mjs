@@ -2,7 +2,7 @@ import {marketStateSummary,raceLeader,marketTotals,marketCoverage} from './marke
 import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
 import {renderRaceCandidates,getCandidateSnapshot} from './candidates.mjs?v=20261012-countdown';
 import {briefingForState,renderStateBriefing} from './state-briefing.mjs';
-import {refreshRaceHistory,renderRaceHistory} from './race-history-view.mjs';
+import {refreshRaceHistory,renderRaceHistory} from './race-history-view.mjs?v=20261013-insights';
 import {createScenarioHistory} from './scenario-history.mjs';
 import {mapMarkup,stateSummary} from './state-map.mjs?v=20261012-clarity';
 import {STATES,VERIFIED_ON} from './race-data.mjs';
