@@ -1,0 +1,145 @@
+/*
+ * Congress Odds / Cohesive Color System (2026)
+ * Applied last: one semantic color layer over the legacy themed styles.
+ * Democratic = blue; Republican = red; gold = editorial; grey = unknown.
+ * Market data and probability logic are unchanged.
+ */
+:root {
+  --bg:#f0f4fa;
+  --surface:#ffffff;
+  --text:#172c49;
+  --muted:#556781;
+  --line:#d6e0ec;
+  --navy:#102541;
+  --blue:#235aaa;
+  --red:#b73643;
+  --gold:#93652c;
+  --party-dem:#235aaa;
+  --party-rep:#b73643;
+  --party-dem-light:#eaf2ff;
+  --party-rep-light:#fff0f3;
+  --civic-gold:#e1bb76;
+  --color-unknown:#d5deea;
+  --shadow-soft:0 12px 33px #152d510d;
+}
+::selection {background:#c9dcf7;color:#152b49;}
+/* The header remains a dark, neutral election desk. */
+.masthead,.election-headline-bar {border-bottom-color:#b99c66;}
+.heading {
+  background:
+    radial-gradient(ellipse at 84% 87%,#ae365225,transparent 45%),
+    radial-gradient(ellipse at 12% 13%,#3e72b72d,transparent 48%),
+    linear-gradient(125deg,#0c1c33,#172f52 62%,#132440);
+}
+.heading .intro {color:#dce7f6;}
+.heading .hero-tag {color:#f5dcab;border-color:#eac78366;}
+.coverage-strip {background:#ffffffed;border-color:#d5e1ed;color:#4d617d;}
+.explore-dock {border-color:#6884a166;}
+.explore-dock a[aria-current] {color:#142a48;background:#fff;}
+/* One neutral tint for UI chrome and consistent higher-contrast labels. */
+.control-heading h2,.section-heading h2,
+.chamber .card-top h2,.candidate-race-heading h3,
+.scenario-map-heading h3 {color:#172c49;}
+.control-heading .eyebrow,.section-heading .eyebrow,
+.card-kicker,.candidate-search-eyebrow {color:var(--gold);}
+.fine,.section-intro,.card-subtitle,.scenario-map-heading>p {color:#556781;}
+.source-switcher,.chamber-switch,.map-mode-switch {background:#e8eef6;border-color:#d4dfed;}
+.source-switcher button:not([aria-pressed=true]),
+.chamber-switch button:not([aria-pressed=true]) {color:#384c68;}
+.source-switcher button[aria-pressed=true],
+.chamber-switch button[aria-pressed=true] {
+  color:white;background:#142d50;border-color:#142d50;
+}
+.edition-tile,.candidate-directory,.chamber,.candidate-race,
+.model-card,.lab-panel,.pulse-tile {border-color:#d6e0ec;}
+.edition-tile-meta,.candidate-search-eyebrow {letter-spacing:1px;}
+.edition-tile h3,.candidate-race-heading h3 {color:#172c49;}
+.edition-tile p,.candidate-retrieved {color:#556781;}
+/* The two parties get equal contrast, size and visual weight. */
+.chamber .odds>div {
+  background:linear-gradient(155deg,#eaf2ff,#f8fbff);
+  border-color:#c8dcf5;
+}
+.chamber .odds>div+div {
+  background:linear-gradient(155deg,#fff0f3,#fff9fb);
+  border-color:#edcbd3;
+}
+.chamber .number.blue,.chamber .odds .blue,
+.candidate-D .candidate-odds strong,.blue {color:var(--party-dem);}
+.chamber .number.red,.chamber .odds .red,
+.candidate-R .candidate-odds strong,.red {color:var(--party-rep);}
+.party-monogram.D {background:var(--party-dem);color:white;}
+.party-monogram.R {background:var(--party-rep);color:white;}
+.fill.dem {background:linear-gradient(90deg,#235aaa,#5b8fda);}
+.fill.rep {background:linear-gradient(90deg,#b73643,#dd788e);}
+.track,.candidate-track,.rank-track {background:#e1e8f1;}
+.chamber .outlook {background:#f2f6fc;border-left:3px solid #b3935a;color:#273d59;}
+.candidate-gallery .candidate-D {background:linear-gradient(180deg,#edf4ff,#fff 66%);border-color:#cfe0f7;}
+.candidate-gallery .candidate-R {background:linear-gradient(180deg,#fff1f4,#fff 66%);border-color:#efd2da;}
+.candidate-gallery .candidate-D .candidate-portrait {outline-color:#9cbbe7;}
+.candidate-gallery .candidate-R .candidate-portrait {outline-color:#e1a5b7;}
+/* UI selections are legible without relying on color alone: labels and pressed states remain. */
+#race-simulator {--scenario-D:#235aaa;--scenario-R:#b73643;--scenario-O:#82724d;--scenario-U:#d5deea;}
+#race-simulator .party-choices button[aria-pressed=true][data-party="D"] {
+  background:#e8f1ff;border-color:var(--party-dem);
+  box-shadow:0 0 0 2px #235aaa26;color:#173f83;
+}
+#race-simulator .party-choices button[aria-pressed=true][data-party="R"] {
+  background:#fff0f4;border-color:var(--party-rep);
+  box-shadow:0 0 0 2px #b7364326;color:#832539;
+}
+#race-simulator .party-choices button[aria-pressed=true][data-party="O"] {
+  background:#fbf4e7;border-color:#9c7a42;color:#604722;
+}
+#race-simulator .party-choices button[aria-pressed=true][data-party="U"] {
+  background:#edf1f7;border-color:#5b6d86;color:#30465f;
+}
+#race-simulator .district-chip.assigned-D {background:#e5f0ff;color:#164886;border-color:#b6d2f4;}
+#race-simulator .district-chip.assigned-R {background:#ffebf0;color:#8c2940;border-color:#e9bcc9;}
+#race-simulator .district-chip.assigned-U {background:#edf2f8;color:#40546e;}
+#race-simulator .district-chip[aria-pressed=true] {outline:2px solid #93652c;outline-offset:1px;}
+#race-simulator .state-map {background-color:#f7f9fe;}
+#race-simulator .map-hover,#race-simulator .market-map-legend {
+  border-color:#d5e0ec;background:#fff;color:#324761;
+}
+#race-simulator .selected-state-outline {stroke:#9b6b2b;}
+/* Probability gradient belongs to the party; unknowns remain grey. */
+#race-simulator .probability-key i {border:1px solid #29436020;}
+#race-simulator .scenario-board {
+  background:linear-gradient(127deg,#0d203c,#173454 56%,#102641);
+}
+#race-simulator .scenario-board .scenario-totals .blue {color:#a8caff;}
+#race-simulator .scenario-board .scenario-totals .red {color:#ffb2be;}
+#race-simulator .scenario-board .scenario-totals small {color:#cfdaeb;}
+/* Warm gold marks model predictions; blue/red are reserved for political series. */
+#backtest-chart .actual-line,.chart-legend .line-key.observed {stroke:#223c5a;border-color:#223c5a;}
+#backtest-chart .prediction-line,.chart-legend .line-key.predicted {stroke:#9a6e2f;border-color:#9a6e2f;}
+#history-chart .inspect-line {stroke:#8e6a33;}
+#history-chart svg {background:#ffffff;}
+#history-chart .chart-inspector {background:#f2f6fc;color:#273c5a;}
+#feature-bars .rank-fill {background:#4b668b;}
+#leaderboard .rank-fill {background:#66809f;}
+#leaderboard [aria-pressed=true] .rank-fill {background:#94703e;}
+#leaderboard [aria-pressed=true] {background:#f9f2e6;border-color:#c6a16a;}
+/* Status is communicated by words, icons and contrast, not color alone. */
+.data-health {background:#ecf5ef;border-color:#bcd7c6;color:#24543c;}
+.data-health.degraded,#model-status.warning {
+  background:#fff5e7;border-color:#e1c695;color:#744c17;
+}
+.status:not(.stale) {background:#ecf5ef;color:#25533c;}
+.status.stale,.candidate-fresh.is-stale {
+  background:#fff2e1;color:#83551e;border-color:#e7c99b;
+}
+#candidate-status .candidate-stat {color:#405673;background:#fff;}
+#candidate-status .candidate-stat-warning {color:#744d1e;background:#fff7e9;}
+#candidate-status .candidate-stat-fresh {color:#286349;background:#eef8f1;}
+.candidate-directory .candidate-filters input::placeholder {color:#68788d;}
+#race-simulator .state-picker-label {color:#475f7d;}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,
+#race-simulator .state-picker-control:focus-within {outline-color:#a8742e;}
+@media(prefers-contrast:more) {
+  .chamber .odds>div,.candidate-gallery .candidate-D {background:#fff;border-color:var(--blue);}
+  .chamber .odds>div+div,.candidate-gallery .candidate-R {background:#fff;border-color:var(--red);}
+  .candidate-gallery .candidate-R,.candidate-gallery .candidate-D {outline:1px solid currentColor;}
+  .data-health,.status,.candidate-fresh {border-width:2px;}
+}
