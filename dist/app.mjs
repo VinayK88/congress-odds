@@ -1,7 +1,8 @@
 import {attachInspector} from './chart-inspector.mjs?v=20261011-interactive';
 import {fetchJson,validateLatest,validateHistory,validateModel,mergeLatest} from './reliability.mjs?v=20261006-robust';
-import {renderLab,renderPulse} from './lab.mjs?v=20261011-interactive';
-import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus} from './data-core.mjs?v=20261006-robust';
+import {renderLab,renderPulse} from './lab.mjs?v=20261012-audit';
+import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus,marketGapDescription} from './data-core.mjs?v=20261012-audit';
+import {forecastExpired} from './forecast-view.mjs';
 let data={sources:{},errors:{}},model,history;
 const liveFailures={},fileFailures={};
 let lastCheck,cacheAvailable=true;
@@ -17,10 +18,9 @@ function render(){
   const card=document.getElementById(chamber),avg=consensus(data,chamber),c=selected==='consensus'?avg:data.sources[selected]?.[chamber];
   for(const party of parties){const number=card.querySelector(`[data-party="${party}"]`);number.replaceChildren(document.createTextNode(c?(c.parties[party].probability*100).toFixed(1):'—'));if(c)number.append(el('span','%'));card.querySelector(`[data-bar="${party}"]`).style.width=c?pct(c.parties[party].probability):'0%';}
   const status=card.querySelector('.status');const stale=selected!=='consensus'&&isStale(c);const closed=c&&parties.some(p=>c.parties[p].closed);
-  status.textContent=!c?'Unavailable':selected==='consensus'?`${c.included.length} sources`:closed?'Market closed':stale?'Stale data':'Recent fetch';status.classList.toggle('stale',!c||stale||closed);
+  status.textContent=!c?'Unavailable':selected==='consensus'?`${c.included.length} sources`:closed?'Market closed':stale?'Stale data':'Recent retrieval';status.classList.toggle('stale',!c||stale||closed);
   card.querySelector('.card-subtitle').textContent=selected==='consensus'?'Equal-weight market average':`${names[selected]} · market-implied chance`;
-  const gap=c?(c.parties.democratic.probability-c.parties.republican.probability)*100:0;
-  card.querySelector('.outlook').textContent=!c?'No eligible data for this view':`${gap>=0?'Democrats':'Republicans'} lead by ${Math.abs(gap).toFixed(1)} percentage points.`;
+  card.querySelector('.outlook').textContent=!c?'No eligible data for this view':marketGapDescription(c.parties.democratic.probability,c.parties.republican.probability);
   card.querySelector('.retrieved').textContent=!c?'No current snapshot':selected==='consensus'?`Includes ${c.included.map(x=>x.source).join(' + ')}`:`Retrieved ${date(c.fetchedAt)}`;
   card.querySelector('.source-time').textContent=selected==='consensus'?'Open sources retrieved within the last 2 hours':c?.priceMethod??'';
   const link=card.querySelector('.card-bottom a');link.href=selected==='consensus'?'#comparison':c?.url??'#comparison';link.textContent=selected==='consensus'?'Compare sources':'View market';link.target=selected==='consensus'?'_self':'_blank';
@@ -41,8 +41,8 @@ function render(){
 }
 function renderModel(){
  const status=document.getElementById('model-status'),cards=document.getElementById('model-cards'),rows=document.getElementById('model-rows');cards.replaceChildren();rows.replaceChildren();
- if(!model?.series){status.textContent='Model unavailable. Market data remains available above.';return;}
- const expired=Object.values(model.series).some(m=>Date.parse(m.forecastFor)<Date.now());
+ if(!model?.series){status.textContent='Model unavailable. Market data remains available above.';status.classList.remove('warning');return;}
+ const expired=Object.values(model.series).some(m=>forecastExpired(m.forecastFor));
  status.textContent=`Trained ${date(model.trainedAt)} · ${expired?'Forecast horizon has passed; awaiting daily retraining.':'Forecasts use the latest completed daily candles.'}`;status.classList.toggle('warning',expired);
  for(const chamber of Object.keys(slugs)){
   const card=el('article',undefined,'model-card');card.append(el('h3',chamber==='house'?'House · next daily close':'Senate · next daily close'));
@@ -52,7 +52,7 @@ function renderModel(){
    const block=el('div');block.append(el('span',party==='democratic'?'Democrats':'Republicans','party-label'),el('p',pct(m.forecast),`number ${party==='democratic'?'blue':'red'}`),el('span',`Last close ${pct(m.lastClose)}`,'fine'),el('small',m.benchmarks?.[m.selectedModel]?.name??'Ridge','method-chip'));odds.append(block);
    const tr=el('tr');for(const value of [`${chamber==='house'?'House':'Senate'} · ${suffix}`,`${m.maePP.toFixed(2)} pp`,`${m.baselineMaePP.toFixed(2)} pp`,m.testDays,m.trainingExamples])tr.append(el('td',String(value)));rows.append(tr);
   }
-  card.append(odds);if(current.length){const m=current[0];card.append(el('p',`Target: ${date(m.forecastFor)} · Data through ${date(m.dataThrough)}`,'fine'));
+  card.append(odds);if(current.length){const m=current[0];card.append(el('p',`Target: ${date(m.forecastFor)} · Data through ${date(m.dataThrough)}`,'fine'));if(current.some(item=>forecastExpired(item.forecastFor)))card.append(el('p','Forecast target passed · shown for historical reference, not a current next-day forecast.','fine forecast-expired'));
    const wins=current.filter(m=>m.maePP<m.baselineMaePP).length;
    card.append(el('p',wins===2?'Lower backtest error than no-change for both contracts.':wins===0?'No improvement over no-change for these selected forecasts.':'Mixed backtest results: only one contract beat no-change.','model-result'));
   }cards.append(card);
@@ -60,7 +60,7 @@ function renderModel(){
  renderLab(model);
 }
 function renderHistory(){
- const box=document.getElementById('history-chart');box.replaceChildren();if(!history?.series){box.append(el('p','History unavailable.','fine'));return;}
+ const box=document.getElementById('history-chart');box.replaceChildren();if(!history?.series){box.append(el('p','History unavailable.','fine'));document.getElementById('history-caption').textContent='No validated history snapshot is available.';return;}
  const chamber=document.getElementById('history-chamber').value,days=Number(document.getElementById('history-days').value),series=['D','R'].map(p=>history.series[`${tickers[chamber]}-2026-${p}`]??[]);
  const end=Math.max(...series.flat().map(p=>p.t)),start=end-(days-1)*86400;
  const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 1000 270');
@@ -71,9 +71,10 @@ function renderHistory(){
  box.append(svg);
  const byDate=series.map(all=>new Map(all.map(p=>[p.t,p.p])));
  const dates=[...new Set(series.flat().filter(p=>p.t>=start).map(p=>p.t))].sort((a,b)=>a-b);
+ if(dates.length<2)box.append(el('p','Only one or no daily observations fall within this range. Choose a longer window to compare trends.','fine chart-gap-notice'));
  attachInspector(box,svg,dates.map(t=>({t,x:48+(t-start)/(end-start)*925,values:byDate.map((values,i)=>({label:i?'Republicans':'Democrats',value:values.has(t)?pct(values.get(t)):'No observation',tone:i?'red':'blue'}))})),{label:chamber+' price history',bottom:225});
  box.setAttribute('aria-label',`${chamber} Democratic and Republican daily market prices from ${shortDate(start)} to ${shortDate(end)}, 0 to 100 percent scale. Downloadable daily values linked below.`);
- const caption=document.getElementById('history-caption');caption.replaceChildren(document.createTextNode(`Daily history retrieved ${date(history.fetchedAt)}. `));const a=el('a','Download daily values');a.href='data/history.json';caption.append(a);
+ const caption=document.getElementById('history-caption');const historyOld=Date.now()-Date.parse(history.fetchedAt)>26*3600000;caption.replaceChildren(document.createTextNode(`Daily history retrieved ${date(history.fetchedAt)}.${historyOld?' History snapshot is over 26 hours old; check the next data refresh.':''} `));const a=el('a','Download daily values');a.href='data/history.json';caption.append(a);
 }
 let busy=false;
 function renderHealth(){
