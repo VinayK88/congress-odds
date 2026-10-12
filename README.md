@@ -4,6 +4,8 @@
 
 Compare Democratic and Republican chances of controlling the 2026 U.S. House and Senate across **Polymarket, Kalshi and PredictIt**. Includes an equal-weight market average, daily history chart and experimental machine learning forecasts.
 
+**Adaptive updates (U.S. Eastern dates):** hourly through Oct 19; every 30 minutes Oct 20–26; every 15 minutes Oct 27–31; every 5 minutes Nov 1–3. Candidate profiles are refreshed at most every 15 minutes in the final phase, and the experimental Kalshi-price model retrains only when its daily target expires. Scheduled GitHub Actions are best-effort, not guaranteed real-time quotes; each displayed price retains its retrieval timestamp. After Election Day, refreshes slow down.
+
 <!-- CONGRESS_ODDS:START -->
 ## 2026 U.S. Congress control probabilities
 
