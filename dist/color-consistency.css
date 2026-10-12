@@ -41,7 +41,9 @@
 .chamber .card-top h2,.candidate-race-heading h3,
 .scenario-map-heading h3 {color:#172c49;}
 .control-heading .eyebrow,.section-heading .eyebrow,
-.card-kicker,.candidate-search-eyebrow {color:var(--gold);}
+.card-kicker {color:var(--gold);}
+/* Editorial gold on dark surfaces must stay light, not the darker text gold. */
+.candidate-search-heading .candidate-search-eyebrow {color:#f3d79c;}
 .fine,.section-intro,.card-subtitle,.scenario-map-heading>p {color:#556781;}
 .source-switcher,.chamber-switch,.map-mode-switch {background:#e8eef6;border-color:#d4dfed;}
 .source-switcher button:not([aria-pressed=true]),
