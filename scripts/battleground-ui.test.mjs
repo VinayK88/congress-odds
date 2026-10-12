@@ -28,7 +28,7 @@ test('no misleading close race ranking when verification is unavailable',()=>{
  assert.ok(view.includes('No comparable races fall within'));
 });
 test('responsive styles and cache versions are available on the live page',()=>{
- assert.ok(html.includes('battleground.css?v=20261013-radar'));
+ assert.match(html,/href="battleground\.css\?v=[^"]+"/);
  assert.match(html,/src="scenario\.mjs\?v=[^"]+"/);
  assert.ok(html.indexOf('battleground.css')>html.indexOf('flip-watch.css'));
  assert.ok(css.includes('@media(max-width:680px)'));
