@@ -1,3 +1,4 @@
+import {forecastExpired} from './forecast-view.mjs';
 export const slugs={house:'which-party-will-win-the-house-in-2026',senate:'which-party-will-win-the-senate-in-2026'};
 export const parties=['democratic','republican'];
 export const sources=['polymarket','kalshi','predictit'];
@@ -39,10 +40,17 @@ export function consensus(data,chamber,now=Date.now()){
  return {included,parties:Object.fromEntries(parties.map(p=>[p,{probability:included.reduce((s,c)=>s+c.parties[p].probability,0)/included.length}]))};
 }
 export const pct=x=>`${(x*100).toFixed(1)}%`;
-export function markdown(data,model){
+export function marketGapDescription(democratic,republican) {
+ const gap=(democratic-republican)*100;
+ if(!Number.isFinite(gap)) return 'No comparable market quotes available.';
+ if(Math.abs(gap)<.05) return 'Market quotes are tied at displayed precision.';
+ return `${gap>0?'Democrats':'Republicans'} lead by ${Math.abs(gap).toFixed(1)} percentage points in market quotes.`;
+}
+
+export function markdown(data,model,now=Date.now()){
  const lines=['<!-- CONGRESS_ODDS:START -->','## 2026 U.S. Congress control probabilities','','| Chamber | Source | Democrats | Republicans | Retrieved (UTC) |','| :-- | :-- | --: | --: | :-- |'];
  for(const chamber of Object.keys(slugs))for(const source of sources){const c=data.sources?.[source]?.[chamber];if(c)lines.push(`| ${chamber==='house'?'House':'Senate'} | [${c.source}](${c.url})${isStale(c)?' (stale)':''}${parties.some(p=>c.parties[p].closed)?' (closed)':''} | ${pct(c.parties.democratic.probability)} | ${pct(c.parties.republican.probability)} | ${c.fetchedAt} |`);}
  lines.push('','Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. PredictIt Senate only; no direct House contract is configured. Prices are independent and may not total 100%. Market rules differ; these are not vote shares or guaranteed results.');
- if(model?.series){lines.push('','### Experimental machine learning — next daily Kalshi price','','Ridge, random forest, gradient boosting and their ensemble forecast the next daily closing bid/ask midpoint, **not the election result**. An earlier 30-day validation period selects the displayed method, including a no-change baseline. Error is walk-forward mean absolute error in percentage points; lower is better.','', '| Contract | Selected method | Forecast | Forecast for (UTC) | Test MAE | No-change MAE | Test days |','| :-- | :-- | --: | :-- | --: | --: | --: |');for(const m of Object.values(model.series))lines.push(`| ${m.chamber} / ${m.party} | ${m.benchmarks?.[m.selectedModel]?.name??'Ridge'} | ${pct(m.forecast)} | ${m.forecastFor} | ${m.maePP.toFixed(2)} | ${m.baselineMaePP.toFixed(2)} | ${m.testDays} |`);lines.push('',`Model trained: ${model.trainedAt}. Forecasts expire at their target time. Uses Kalshi history only; no polling or election-outcome training. See the dashboard and model card for limitations.`);}
+ if(model?.series){lines.push('','### Experimental machine learning — next daily Kalshi price','','Ridge, random forest, gradient boosting and their ensemble forecast the next daily closing bid/ask midpoint, **not the election result**. An earlier 30-day validation period selects the displayed method, including a no-change baseline. Error is walk-forward mean absolute error in percentage points; lower is better.','', '| Contract | Selected method | Forecast | Forecast for (UTC) | Test MAE | No-change MAE | Test days |','| :-- | :-- | --: | :-- | --: | --: | --: |');for(const m of Object.values(model.series))lines.push(`| ${m.chamber} / ${m.party} | ${m.benchmarks?.[m.selectedModel]?.name??'Ridge'} | ${pct(m.forecast)} | ${m.forecastFor}${forecastExpired(m.forecastFor,now)?' (expired)':''} | ${m.maePP.toFixed(2)} | ${m.baselineMaePP.toFixed(2)} | ${m.testDays} |`);lines.push('',`Model trained: ${model.trainedAt}. Forecasts expire at their target time. Uses Kalshi history only; no polling or election-outcome training. See the dashboard and model card for limitations.`);}
  lines.push('','<!-- CONGRESS_ODDS:END -->');return lines.join('\n');
 }
