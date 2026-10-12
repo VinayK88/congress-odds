@@ -1,4 +1,5 @@
 import {attachInspector} from './chart-inspector.mjs?v=20261011-interactive';
+import {inspectedForecast} from './forecast-view.mjs';
 const names={baseline:'No change',ridge:'Ridge',forest:'Random forest',boost:'Gradient boosting',ensemble:'ML ensemble'};
 const featureNames={level:'Current price',change_1d:'1-day momentum',change_3d:'3-day momentum',change_7d:'7-day momentum',volatility_7d:'7-day volatility'};
 const el=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
@@ -9,15 +10,23 @@ export function renderLab(model){
  const contract=document.getElementById('lab-contract').value,m=model?.series?.[contract];
  for(const id of ['lab-metrics','leaderboard','feature-bars','model-rows','backtest-chart'])document.getElementById(id).replaceChildren();
  if(!m?.benchmarks){document.getElementById('leaderboard').append(el('p','Expanded model results are not available yet.','fine'));return;}
- const key=document.getElementById('lab-model').value==='selected'?m.selectedModel:document.getElementById('lab-model').value,b=m.benchmarks[key];
+ const inspection=inspectedForecast(m,document.getElementById('lab-model').value);
+ const key=inspection?.inspectedModel??m.selectedModel,b=m.benchmarks[key];
  const metrics=document.getElementById('lab-metrics');
- for(const [label,value,sub] of [['Validation choice',names[m.selectedModel],'Chosen on 30 earlier days'],['Selected test MAE',m.maePP.toFixed(2)+' pp','Compared with '+m.baselineMaePP.toFixed(2)+' pp no-change'],['Training examples',String(m.trainingExamples),'Per contract · expanding window'],['Next daily close',pct(m.forecast),names[m.selectedModel]+' forecast']]){const tile=el('div',undefined,'metric-tile');tile.append(el('span',label),el('strong',value),el('small',sub));metrics.append(tile);}
+ const forecastLabel=inspection?.isSelection?'Validation-selected forecast':'Inspected model · comparison only';
+ const forecastSub=(inspection?.expired?'Target passed · historical forecast':'Target '+day(Date.parse(m.forecastFor)/1000))+' · '+names[key];
+ for(const [label,value,sub] of [
+  ['Validation choice',names[m.selectedModel],'Chosen on 30 earlier days'],
+  ['Selected test MAE',m.maePP.toFixed(2)+' pp','Compared with '+m.baselineMaePP.toFixed(2)+' pp no-change'],
+  ['Training examples',String(m.trainingExamples),'Per contract · expanding window'],
+  [forecastLabel,pct(inspection?.inspectedForecast??m.forecast),forecastSub]
+ ]){const tile=el('div',undefined,'metric-tile');tile.append(el('span',label),el('strong',value),el('small',sub));if(inspection?.expired&&label===forecastLabel)tile.classList.add('metric-expired');metrics.append(tile);}
  const ranked=Object.entries(m.benchmarks).sort((a,b)=>a[1].maePP-b[1].maePP),max=Math.max(...ranked.map(([,b])=>b.maePP));
  for(const [k,b]of ranked){const pick=el('button',undefined,'rank-pick');pick.type='button';pick.setAttribute('aria-label','Inspect '+names[k]+' backtest');pick.setAttribute('aria-pressed',String(k===key));pick.append(barRow(names[k]+(k===m.selectedModel?' · selected':''),b.maePP,max,b.maePP.toFixed(2)+' pp',k===m.selectedModel));pick.addEventListener('click',()=>{document.getElementById('lab-model').value=k;document.getElementById('lab-model').dispatchEvent(new Event('change',{bubbles:true}));document.querySelector('#leaderboard [aria-pressed="true"]')?.focus({preventScroll:true});});document.getElementById('leaderboard').append(pick);const tr=el('tr');for(const v of [names[k],b.validationMaePP.toFixed(2),b.maePP.toFixed(2),b.rmsePP.toFixed(2),b.directionAccuracy===null?'N/A':b.directionAccuracy.toFixed(1)+'% ('+b.directionDays+' days)',pct(b.forecast)])tr.append(el('td',v));document.getElementById('model-rows').append(tr);}
  document.getElementById('selection-note').textContent=`Validation: ${day(Date.parse(m.selectionStart)/1000)}–${day(Date.parse(m.selectionEnd)/1000)}. Test: ${day(Date.parse(m.testStart)/1000)}–${day(Date.parse(m.testEnd)/1000)}. Ranked by test MAE; ranking does not change the validation choice.`;
  for(const f of [...m.featureImportance].sort((a,b)=>b.importance-a.importance))document.getElementById('feature-bars').append(barRow(featureNames[f.feature],f.importance,1,(f.importance*100).toFixed(1)+'%'));
  drawBacktest(b.backtest,names[key],document.getElementById('lab-scale').value==='full');
- document.getElementById('backtest-caption').textContent=`${names[key]} · ${m.testDays} test days · MAE ${b.maePP.toFixed(2)} pp · RMSE ${b.rmsePP.toFixed(2)} pp. ${document.getElementById('lab-scale').value==='full'?'Full probability scale.':'Detail scale is zoomed; use the selector for 0–100%.'} Move across the chart or use the date slider for exact values. Click a model above to inspect its backtest.`;
+ document.getElementById('backtest-caption').textContent=`${names[key]} · ${m.testDays} test days · MAE ${b.maePP.toFixed(2)} pp · RMSE ${b.rmsePP.toFixed(2)} pp. ${inspection?.isSelection?'This is the validation-selected method.':'Comparison only: the published forecast remains from '+names[m.selectedModel]+'.'} ${inspection?.expired?'The next-close target has passed; this is a historical forecast. ':''}${document.getElementById('lab-scale').value==='full'?'Full probability scale.':'Detail scale is zoomed; use the selector for 0–100%.'} Move across the chart or use the date slider for exact values. Click a model above to inspect its backtest.`;
 }
 function drawBacktest(points,name,full){
  const box=document.getElementById('backtest-chart'),ns='http://www.w3.org/2000/svg';
