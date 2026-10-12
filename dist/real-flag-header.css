@@ -1,0 +1,24 @@
+/* Authentic 50-star, 13-stripe US flag artwork in the Capitol Report.
+   The SVG is an original geometry recreation at the official 19:10 proportions.
+   All headline content and navigation remain separate, accessible HTML. */
+.election-headline-inner img.flag-mark {
+  display: block;
+  flex: 0 0 auto;
+  width: 57px;
+  height: 30px;
+  aspect-ratio: 19 / 10;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 3px;
+  object-fit: cover;
+  background: transparent;
+  box-shadow: 0 3px 8px #07152c68, 0 0 0 1px rgba(232,201,146,.16);
+}
+.election-headline-inner img.flag-mark::before {
+  content: none;
+}
+@media (max-width: 700px) {
+  .election-headline-inner img.flag-mark { width: 46px; height: 24px; }
+}
+@media (prefers-contrast: more) {
+  .election-headline-inner img.flag-mark { border-color: #fff; }
+}
