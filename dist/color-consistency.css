@@ -123,6 +123,17 @@
 #leaderboard .rank-fill {background:#66809f;}
 #leaderboard [aria-pressed=true] .rank-fill {background:#94703e;}
 #leaderboard [aria-pressed=true] {background:#f9f2e6;border-color:#c6a16a;}
+/* Clearly explain neutral map colors when all source quotes are expired. */
+#race-simulator #market-map-status.is-stale {
+  border:1px solid #d8b888;
+  border-left:4px solid #93652c;
+  border-radius:12px;
+  background:#fff8eb;
+  color:#634821;
+  padding:13px 16px;
+  font-weight:650;
+  line-height:1.7;
+}
 /* Status is communicated by words, icons and contrast, not color alone. */
 .data-health {background:#ecf5ef;border-color:#bcd7c6;color:#24543c;}
 .data-health.degraded,#model-status.warning {
