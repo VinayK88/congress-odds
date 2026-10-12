@@ -1,6 +1,6 @@
 import {marketStateSummary,raceLeader,marketTotals} from './market-map.mjs?v=20261012-totals';
 import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
-import {renderRaceCandidates,getCandidateSnapshot} from './candidates.mjs?v=20261012-directory';
+import {renderRaceCandidates,getCandidateSnapshot} from './candidates.mjs?v=20261012-countdown';
 import {createScenarioHistory} from './scenario-history.mjs';
 import {mapMarkup,stateSummary} from './state-map.mjs?v=20261012-market-map';
 import {STATES,VERIFIED_ON} from './race-data.mjs';
