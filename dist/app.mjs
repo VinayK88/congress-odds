@@ -1,4 +1,5 @@
 import {attachInspector} from './chart-inspector.mjs?v=20261011-interactive';
+import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
 import {fetchJson,validateLatest,validateHistory,validateModel,mergeLatest} from './reliability.mjs?v=20261006-robust';
 import {renderLab,renderPulse} from './lab.mjs?v=20261012-audit';
 import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus,marketGapDescription} from './data-core.mjs?v=20261012-audit';
@@ -84,7 +85,7 @@ function renderHealth(){
  const offline=navigator.onLine===false;
  const box=document.getElementById('data-health');
  box.classList.toggle('degraded',offline||available<5||issues.length>0||liveError);
- box.textContent=`${offline?'Offline · ':''}${available}/5 recent, open market snapshots. ${lastCheck?'Last refresh check '+date(lastCheck)+'.':'Checking live sources…'} ${issues.length?'Could not update '+issues.join(', ')+'; retaining last valid data. ':''}${liveError?'Direct Polymarket refresh failed; saved snapshots remain visible. ':''}${!cacheAvailable?'Browser caching unavailable. ':''}Stale snapshots keep their original timestamps and are excluded from the average.`;
+ box.textContent=`${offline?'Offline · ':''}${available}/5 recent, open market snapshots. Published updates scheduled ${formatMinutes(refreshCadence().publishMinutes)}; browser checks ${formatMinutes(refreshCadence().browserMinutes)}. ${lastCheck?'Last refresh check '+date(lastCheck)+'.':'Checking live sources…'} ${issues.length?'Could not update '+issues.join(', ')+'; retaining last valid data. ':''}${liveError?'Direct Polymarket refresh failed; saved snapshots remain visible. ':''}${!cacheAvailable?'Browser caching unavailable. ':''}Stale snapshots keep their original timestamps and are excluded from the average.`;
 }
 async function saved(){await Promise.all(Object.keys(validators).map(async key=>{
  try{
@@ -114,9 +115,16 @@ let soundOn=false,audioContext;
 function chime(){if(!soundOn||!audioContext)return;try{audioContext.resume();const oscillator=audioContext.createOscillator(),gain=audioContext.createGain();oscillator.connect(gain);gain.connect(audioContext.destination);oscillator.frequency.value=660;gain.gain.setValueAtTime(.035,audioContext.currentTime);gain.gain.exponentialRampToValueAtTime(.001,audioContext.currentTime+.12);oscillator.start();oscillator.stop(audioContext.currentTime+.13);}catch{}}
 document.getElementById('sound-toggle').addEventListener('click',()=>{try{if(!audioContext)audioContext=new (window.AudioContext||window.webkitAudioContext)();soundOn=!soundOn;const button=document.getElementById('sound-toggle');button.textContent=soundOn?'Sound on':'Sound off';button.setAttribute('aria-pressed',String(soundOn));chime();}catch{document.getElementById('sound-toggle').textContent='Sound unavailable';}});
 for(const id of ['lab-contract','lab-model','lab-scale'])document.getElementById(id).addEventListener('change',()=>{renderLab(model);chime();});
-render();refresh();setInterval(()=>{if(!document.hidden)refresh();},300000);setInterval(()=>{if(!document.hidden)render();},60000);
+function browserRefreshDue() {return !lastCheck || Date.now()-Date.parse(lastCheck)>=refreshCadence().browserMinutes*60000;}
+function updateCadenceText() {
+ const cadence=refreshCadence(),hint=document.getElementById('refresh-policy');
+ if(hint)hint.textContent=`Published: ${formatMinutes(cadence.publishMinutes)} · Live Polymarket checks: ${formatMinutes(cadence.browserMinutes)}`;
+}
+updateCadenceText();render();refresh();
+setInterval(()=>{if(!document.hidden&&browserRefreshDue())refresh();},30000);
+setInterval(()=>{if(!document.hidden){updateCadenceText();render();}},60000);
 window.addEventListener('online',()=>refresh());window.addEventListener('offline',renderHealth);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden&&(!lastCheck||Date.now()-Date.parse(lastCheck)>300000))refresh();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateCadenceText();if(browserRefreshDue())refresh();else render();}});
 
 document.getElementById("race-simulator").addEventListener("click",event=>{if(event.target.closest("button,[data-state]"))chime();});
 document.getElementById("race-simulator").addEventListener("change",event=>{if(event.target.matches("select"))chime();});
