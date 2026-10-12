@@ -5,6 +5,8 @@ import {briefingForState,renderStateBriefing} from './state-briefing.mjs';
 import {refreshRaceHistory,renderRaceHistory,getRaceHistory} from './race-history-view.mjs?v=20261013-insights';
 import {marketLeaderFlips} from './market-flips.mjs';
 import {renderFlipWatch} from './flip-watch-view.mjs';
+import {battlegroundRadar} from './battleground-core.mjs';
+import {renderBattlegroundRadar} from './battleground-view.mjs';
 import {createScenarioHistory} from './scenario-history.mjs';
 import {mapMarkup,stateSummary} from './state-map.mjs?v=20261013-flip-watch';
 import {STATES,VERIFIED_ON} from './race-data.mjs';
@@ -12,7 +14,7 @@ import {PARTIES,races,emptyScenario,validateScenario,seatPartyPreset,tally} from
 const root=document.querySelector('#race-simulator');
 const $=s=>root.querySelector(s);
 const KEY='congress-odds-scenario-v1';
-let scenario=emptyScenario(),chamber='senate',selected='GA',district='GA-S',mode='market',mapFocus=false,flipWindow=168,highlightFlips=true;
+let scenario=emptyScenario(),chamber='senate',selected='GA',district='GA-S',mode='market',mapFocus=false,flipWindow=168,highlightFlips=true,radarThreshold=10,radarOpen=true;
 let exportURL;
 let storageMessage='Your scenarios save on this device.';
 try { const saved=localStorage.getItem(KEY);if(saved){if(saved.length>100000)throw new Error('Oversized scenario');scenario=validateScenario(JSON.parse(saved));} }
@@ -22,7 +24,7 @@ function save() { try{localStorage.setItem(KEY,JSON.stringify(scenario));storage
 root.innerHTML=`<div class="section-heading"><div><p class="eyebrow">EXPLORE THE ELECTORAL LANDSCAPE</p><h2>Every race. A changing picture.</h2></div><span class="model-badge">2026 RACE EXPLORER</span></div>
 <p class="section-intro">Explore the latest available market odds across 35 Senate races and 435 House districts. Select a state to see candidates and their chances, or switch to Your scenario to build your own path to a majority.</p>
 <div class="map-broadcast-banner"><strong>★ 2026 CONGRESSIONAL ATLAS</strong><span>435 House districts · 35 Senate contests</span><span class="banner-stars" aria-hidden="true">★ ★ ★</span></div>
-<div class="map-mode-switch chamber-switch" role="group" aria-label="Map view"><button type="button" data-map-mode="market" aria-pressed="true">Market odds</button><button type="button" data-map-mode="scenario" aria-pressed="false">Your scenario</button></div><div id="market-map-status" class="market-map-status" role="status"></div><section id="flip-watch" class="flip-watch" aria-label="Market leader flip watch"></section><div class="scenario-toolbar"><div class="chamber-switch" role="group" aria-label="Map chamber"><button type="button" data-chamber="senate" aria-pressed="true">Senate · 100 seats</button><button type="button" data-chamber="house" aria-pressed="false">House · 435 seats</button></div><label id="vp-field">Senate tie-break <select id="scenario-vp" aria-label="Senate tie-break"><option value="R">Republican VP</option><option value="D">Democratic VP</option><option value="none">No tie-break assumed</option></select></label></div>
+<div class="map-mode-switch chamber-switch" role="group" aria-label="Map view"><button type="button" data-map-mode="market" aria-pressed="true">Market odds</button><button type="button" data-map-mode="scenario" aria-pressed="false">Your scenario</button></div><div id="market-map-status" class="market-map-status" role="status"></div><section id="battleground-radar" class="battleground-radar" aria-label="Tight market races"></section><section id="flip-watch" class="flip-watch" aria-label="Market leader flip watch"></section><div class="scenario-toolbar"><div class="chamber-switch" role="group" aria-label="Map chamber"><button type="button" data-chamber="senate" aria-pressed="true">Senate · 100 seats</button><button type="button" data-chamber="house" aria-pressed="false">House · 435 seats</button></div><label id="vp-field">Senate tie-break <select id="scenario-vp" aria-label="Senate tie-break"><option value="R">Republican VP</option><option value="D">Democratic VP</option><option value="none">No tie-break assumed</option></select></label></div>
 <div id="market-seat-totals" class="scenario-board market-seat-totals" aria-live="polite" aria-atomic="true"></div>
 <div class="scenario-board"><div class="scenario-score" id="scenario-score" aria-live="polite" aria-atomic="true"></div><div id="majority-paths" class="majority-paths"></div><div id="seat-dots" class="seat-dots" aria-hidden="true"></div><p id="scenario-base" class="fine"></p></div>
 <div class="scenario-layout"><div class="scenario-map-panel"><div class="scenario-map-heading"><h3>Pick a state. Shape the chamber.</h3><button type="button" id="map-focus-toggle" class="map-focus-toggle" aria-pressed="false" aria-controls="state-map" title="Give the map more space">⤢ Focus map</button><div class="state-picker"><label class="state-picker-label" for="scenario-state">SELECT STATE <span aria-hidden="true">★</span></label><div class="state-picker-control"><span class="state-picker-emblem" aria-hidden="true">★</span><select id="scenario-state" aria-label="Select state to explore on the map">${STATES.map(s=>`<option value="${s.code}">${s.name}</option>`).join('')}</select><span id="state-picker-code" class="state-picker-code" aria-hidden="true">GA</span><svg class="state-picker-chevron" aria-hidden="true" focusable="false" viewBox="0 0 20 20" width="20" height="20"><path d="m5 7 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div><p class="fine">Click a state on the map · Alaska and Hawaii shown as insets</p><div id="state-map" class="state-map"></div><p id="map-hover" class="map-hover" aria-live="polite"></p><div class="scenario-legend" id="scenario-legend"><span><i class="scenario-key party-D"></i>Democratic</span><span><i class="scenario-key party-R"></i>Republican</span><span><i class="scenario-key party-O"></i>Other</span><span><i class="scenario-key party-U"></i>Unassigned</span></div><div id="market-map-legend" class="market-map-legend"></div><div id="map-symbol-guide" class="map-symbol-guide" role="group" aria-label="Map symbol key"><span><i class="map-symbol no-contest-symbol" aria-hidden="true"></i>No Senate contest</span><span><i class="map-symbol missing-symbol" aria-hidden="true"></i>Unavailable or stale</span><span><i class="map-symbol selected-symbol" aria-hidden="true"></i>Selected state</span><button id="map-house-shortcut" type="button" hidden>Explore House districts here →</button></div><p class="fine" id="map-caption"></p><section id="state-briefing" class="state-briefing" role="region" aria-label="Selected state race briefing"></section></div>
@@ -38,6 +40,8 @@ function render() {
   const flipStats=marketLeaderFlips(historyArchive,chamber,Date.now(),flipWindow);
   const flipWatch=$('#flip-watch');flipWatch.hidden=!market;
   if(market)renderFlipWatch(flipWatch,flipStats,{ready:Boolean(historyArchive),highlight:highlightFlips});
+  const radar=$('#battleground-radar');radar.hidden=!market;
+  if(market)renderBattlegroundRadar(radar,battlegroundRadar(snapshot,chamber,Date.now(),radarThreshold),{ready:Boolean(snapshot),open:radarOpen});
   root.classList.toggle('map-focus',mapFocus);
   const focusToggle=$('#map-focus-toggle');
   focusToggle.setAttribute('aria-pressed',String(mapFocus));
@@ -118,7 +122,21 @@ function update() {scenario=scenarioHistory.commit(scenario);save();render();}
 // Preserve keyboard focus when map and district controls are rebuilt.
 root.addEventListener('click',event=>{
   const b=event.target.closest('button,[data-state]');if(!b)return;
-  if(b.dataset.flipWindow){
+  if(b.dataset.radarToggle){
+    radarOpen=!radarOpen;render();$('[data-radar-toggle]')?.focus({preventScroll:true});
+  }
+  else if(b.dataset.radarThreshold){
+    radarThreshold=Number(b.dataset.radarThreshold);render();$('[data-radar-threshold="'+radarThreshold+'"]')?.focus({preventScroll:true});
+  }
+  else if(b.dataset.radarRace){
+    const race=races(chamber).find(r=>r.id===b.dataset.radarRace);
+    if(race){
+      selected=race.state;district=race.id;render();
+      $('#scenario-state').focus({preventScroll:true});
+      $('#state-map').scrollIntoView({block:'start'});
+    }
+  }
+  else if(b.dataset.flipWindow){
     flipWindow=Number(b.dataset.flipWindow);
     render();$('[data-flip-window="'+flipWindow+'"]')?.focus({preventScroll:true});
   }
