@@ -1,10 +1,11 @@
-// Client-side calendar countdown. No election data, predictions or external API.
+// Client-side countdown uses US Eastern election date, consistent with the adaptive refresh policy.
+import {electionDateET} from './refresh-cadence.mjs';
 const days = document.getElementById('election-days');
 const label = document.getElementById('election-days-label');
 function updateElectionCalendar(){
   if (!days || !label) return;
-  const today = new Date();
-  const calendarDay = Date.UTC(today.getFullYear(),today.getMonth(),today.getDate());
+  const [year,month,day] = electionDateET().split('-').map(Number);
+  const calendarDay = Date.UTC(year,month-1,day);
   const electionDay = Date.UTC(2026,10,3);
   const remaining = Math.round((electionDay-calendarDay)/86400000);
   if (remaining > 0) {
