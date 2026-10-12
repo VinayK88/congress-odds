@@ -9,7 +9,7 @@ import {PARTIES,races,emptyScenario,validateScenario,seatPartyPreset,tally} from
 const root=document.querySelector('#race-simulator');
 const $=s=>root.querySelector(s);
 const KEY='congress-odds-scenario-v1';
-let scenario=emptyScenario(),chamber='senate',selected='GA',district='GA-S',mode='market';
+let scenario=emptyScenario(),chamber='senate',selected='GA',district='GA-S',mode='market',mapFocus=false;
 let exportURL;
 let storageMessage='Your scenarios save on this device.';
 try { const saved=localStorage.getItem(KEY);if(saved){if(saved.length>100000)throw new Error('Oversized scenario');scenario=validateScenario(JSON.parse(saved));} }
@@ -22,7 +22,7 @@ root.innerHTML=`<div class="section-heading"><div><p class="eyebrow">EXPLORE THE
 <div class="map-mode-switch chamber-switch" role="group" aria-label="Map view"><button type="button" data-map-mode="market" aria-pressed="true">Market odds</button><button type="button" data-map-mode="scenario" aria-pressed="false">Your scenario</button></div><div id="market-map-status" class="market-map-status" role="status"></div><div class="scenario-toolbar"><div class="chamber-switch" role="group" aria-label="Map chamber"><button type="button" data-chamber="senate" aria-pressed="true">Senate · 100 seats</button><button type="button" data-chamber="house" aria-pressed="false">House · 435 seats</button></div><label id="vp-field">Senate tie-break <select id="scenario-vp" aria-label="Senate tie-break"><option value="R">Republican VP</option><option value="D">Democratic VP</option><option value="none">No tie-break assumed</option></select></label></div>
 <div id="market-seat-totals" class="scenario-board market-seat-totals" aria-live="polite" aria-atomic="true"></div>
 <div class="scenario-board"><div class="scenario-score" id="scenario-score" aria-live="polite" aria-atomic="true"></div><div id="majority-paths" class="majority-paths"></div><div id="seat-dots" class="seat-dots" aria-hidden="true"></div><p id="scenario-base" class="fine"></p></div>
-<div class="scenario-layout"><div class="scenario-map-panel"><div class="scenario-map-heading"><h3>Pick a state. Shape the chamber.</h3><div class="state-picker"><label class="state-picker-label" for="scenario-state">SELECT STATE <span aria-hidden="true">★</span></label><div class="state-picker-control"><span class="state-picker-emblem" aria-hidden="true">★</span><select id="scenario-state" aria-label="Select state to explore on the map">${STATES.map(s=>`<option value="${s.code}">${s.name}</option>`).join('')}</select><span id="state-picker-code" class="state-picker-code" aria-hidden="true">GA</span><svg class="state-picker-chevron" aria-hidden="true" focusable="false" viewBox="0 0 20 20" width="20" height="20"><path d="m5 7 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div><p class="fine">Click a state on the map · Alaska and Hawaii shown as insets</p><div id="state-map" class="state-map"></div><p id="map-hover" class="map-hover" aria-live="polite"></p><div class="scenario-legend" id="scenario-legend"><span><i class="scenario-key party-D"></i>Democratic</span><span><i class="scenario-key party-R"></i>Republican</span><span><i class="scenario-key party-O"></i>Other</span><span><i class="scenario-key party-U"></i>Unassigned</span></div><div id="market-map-legend" class="market-map-legend"></div><div id="map-symbol-guide" class="map-symbol-guide" role="group" aria-label="Map symbol key"><span><i class="map-symbol no-contest-symbol" aria-hidden="true"></i>No Senate contest</span><span><i class="map-symbol missing-symbol" aria-hidden="true"></i>Unavailable or stale</span><span><i class="map-symbol selected-symbol" aria-hidden="true"></i>Selected state</span><button id="map-house-shortcut" type="button" hidden>Explore House districts here →</button></div><p class="fine" id="map-caption"></p><section id="state-briefing" class="state-briefing" role="region" aria-label="Selected state race briefing"></section></div>
+<div class="scenario-layout"><div class="scenario-map-panel"><div class="scenario-map-heading"><h3>Pick a state. Shape the chamber.</h3><button type="button" id="map-focus-toggle" class="map-focus-toggle" aria-pressed="false" aria-controls="state-map" title="Give the map more space">⤢ Focus map</button><div class="state-picker"><label class="state-picker-label" for="scenario-state">SELECT STATE <span aria-hidden="true">★</span></label><div class="state-picker-control"><span class="state-picker-emblem" aria-hidden="true">★</span><select id="scenario-state" aria-label="Select state to explore on the map">${STATES.map(s=>`<option value="${s.code}">${s.name}</option>`).join('')}</select><span id="state-picker-code" class="state-picker-code" aria-hidden="true">GA</span><svg class="state-picker-chevron" aria-hidden="true" focusable="false" viewBox="0 0 20 20" width="20" height="20"><path d="m5 7 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div><p class="fine">Click a state on the map · Alaska and Hawaii shown as insets</p><div id="state-map" class="state-map"></div><p id="map-hover" class="map-hover" aria-live="polite"></p><div class="scenario-legend" id="scenario-legend"><span><i class="scenario-key party-D"></i>Democratic</span><span><i class="scenario-key party-R"></i>Republican</span><span><i class="scenario-key party-O"></i>Other</span><span><i class="scenario-key party-U"></i>Unassigned</span></div><div id="market-map-legend" class="market-map-legend"></div><div id="map-symbol-guide" class="map-symbol-guide" role="group" aria-label="Map symbol key"><span><i class="map-symbol no-contest-symbol" aria-hidden="true"></i>No Senate contest</span><span><i class="map-symbol missing-symbol" aria-hidden="true"></i>Unavailable or stale</span><span><i class="map-symbol selected-symbol" aria-hidden="true"></i>Selected state</span><button id="map-house-shortcut" type="button" hidden>Explore House districts here →</button></div><p class="fine" id="map-caption"></p><section id="state-briefing" class="state-briefing" role="region" aria-label="Selected state race briefing"></section></div>
 <aside class="race-editor"><p class="eyebrow">YOUR RACE CALL</p><h3 id="editor-state"></h3><p id="editor-context" class="fine"></p><div id="district-list" class="district-list" role="group" aria-label="Districts in selected state"></div><h4 id="editor-race"></h4><div id="party-choices" class="party-choices" role="group" aria-label="Assign selected race">${Object.entries(PARTIES).map(([key,name])=>`<button type="button" data-party="${key}" aria-pressed="false"><i class="scenario-key party-${key}"></i>${name}</button>`).join('')}</div><fieldset id="fill-state"><legend>Assign every district in this state</legend><button type="button" data-fill="D">All Democratic</button><button type="button" data-fill="R">All Republican</button><button type="button" data-fill="U">Clear state</button></fieldset><div id="race-candidate-profiles"></div></aside></div>
 <div class="scenario-actions"><button type="button" id="scenario-undo" disabled>Undo</button><button type="button" id="scenario-redo" disabled>Redo</button><button type="button" id="scenario-preset">Use current Senate seat parties</button><button type="button" id="scenario-reset">Clear Senate choices</button><a id="scenario-export" download="congress-odds-scenario.json">Download scenario</a><label class="scenario-import">Import scenario<input type="file" id="scenario-import" accept="application/json,.json"></label></div><p class="fine" id="scenario-save" role="status"></p>
 <details class="scenario-json"><summary>Copy scenario JSON if downloads are unavailable</summary><label for="scenario-json">Portable scenario for both chambers</label><textarea id="scenario-json" readonly spellcheck="false" rows="5"></textarea><button type="button" id="scenario-copy">Copy scenario JSON</button></details>
@@ -31,6 +31,10 @@ function summary(code){return mode==='market'?marketStateSummary(chamber,getCand
 function render() {
   const market=mode==='market',snapshot=getCandidateSnapshot();
   root.dataset.mapMode=mode;
+  root.classList.toggle('map-focus',mapFocus);
+  const focusToggle=$('#map-focus-toggle');
+  focusToggle.setAttribute('aria-pressed',String(mapFocus));
+  focusToggle.textContent=mapFocus?'↙ Standard layout':'⤢ Focus map';
   for(const selector of ['.scenario-board:not(.market-seat-totals)','.scenario-actions','#scenario-save','.scenario-json','#scenario-legend'])$(selector).hidden=market;
   $('#market-seat-totals').hidden=!market;
   const mt=marketTotals(chamber,snapshot);
@@ -58,7 +62,13 @@ function render() {
   $('#vp-field').hidden=market||chamber!=='senate';$('#scenario-vp').value=scenario.vp;
   $('#scenario-state').value=selected;
   $('#state-picker-code').textContent=selected;
-  $('#state-map').innerHTML=mapMarkup(chamber,scenario,selected,{summary,market});
+  const stateMap=$('#state-map');
+  stateMap.innerHTML=mapMarkup(chamber,scenario,selected,{summary,market});
+  // Always recreate this presentation-only peek when the map SVG is refreshed.
+  const peek=document.createElement('div');peek.id='map-peek';peek.className='map-peek';
+  peek.setAttribute('aria-hidden','true');peek.hidden=true;
+  peek.append(document.createElement('strong'),document.createElement('span'));
+  stateMap.append(peek);
   $('#map-hover').textContent=summary(selected).text;
   $('#map-caption').textContent=market?(chamber==='senate'?'Color shows the highest quoted eligible contract and its probability, not an election result. Party / nominee contracts can follow a replacement nominee.':'Color bands show the count of district market leaders, not a statewide win probability or projected seat total. Choose a district for its candidate odds. District boundaries are not drawn.'):chamber==='senate'?'State colors show your Senate choices. Pale, dashed states have no Senate contest in 2026.':'State color bands show the share of districts you assigned to each bloc. Click a state to choose individual House districts.';
   const state=STATES.find(s=>s.code===selected),rr=races(chamber,selected);
@@ -91,7 +101,8 @@ function update() {scenario=scenarioHistory.commit(scenario);save();render();}
 // Preserve keyboard focus when map and district controls are rebuilt.
 root.addEventListener('click',event=>{
   const b=event.target.closest('button,[data-state]');if(!b)return;
-  if(b.id==='map-house-shortcut'){chamber='house';render();$('#scenario-state').focus({preventScroll:true});}
+  if(b.id==='map-focus-toggle'){mapFocus=!mapFocus;render();$('#map-focus-toggle').focus({preventScroll:true});}
+  else if(b.id==='map-house-shortcut'){chamber='house';render();$('#scenario-state').focus({preventScroll:true});}
   else if(b.dataset.mapMode){mode=b.dataset.mapMode;render();}
   else if(b.dataset.chamber){chamber=b.dataset.chamber;render();}
   else if(b.dataset.state){selected=b.dataset.state;render();$(`[data-state="${selected}"]`).focus();}
@@ -103,10 +114,22 @@ root.addEventListener('keydown',event=>{
   const state=event.target.closest('.map-state');
   if(state && ['Enter',' '].includes(event.key)){event.preventDefault();selected=state.dataset.state;render();$(`[data-state="${selected}"]`).focus();}
 });
+function showMapPeek(code){
+  const detail=summary(code),peek=$('#map-peek');
+  if(!peek||!detail?.state)return;
+  peek.querySelector('strong').textContent=detail.state.name;
+  peek.querySelector('span').textContent=detail.text;
+  peek.hidden=false;
+}
+function hideMapPeek(){const peek=$('#map-peek');if(peek)peek.hidden=true;}
 for(const type of ['pointerover','focusin'])$('#state-map').addEventListener(type,event=>{
-  const state=event.target.closest('[data-state]');if(state)$('#map-hover').textContent=summary(state.dataset.state).text;
+  const state=event.target.closest('[data-state]');
+  if(state){const detail=summary(state.dataset.state);$('#map-hover').textContent=detail.text;showMapPeek(state.dataset.state);}
 });
-$('#state-map').addEventListener('pointerleave',()=>{$('#map-hover').textContent=summary(selected).text;});
+$('#state-map').addEventListener('pointerleave',()=>{$('#map-hover').textContent=summary(selected).text;hideMapPeek();});
+$('#state-map').addEventListener('focusout',event=>{
+  if(!$('#state-map').contains(event.relatedTarget)){hideMapPeek();$('#map-hover').textContent=summary(selected).text;}
+});
 $('#scenario-undo').addEventListener('click',()=>{scenario=scenarioHistory.undo();save();render();});
 $('#scenario-redo').addEventListener('click',()=>{scenario=scenarioHistory.redo();save();render();});
 $('#scenario-copy').addEventListener('click',async()=>{
