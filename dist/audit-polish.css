@@ -1,0 +1,43 @@
+/* Small clarity fixes from the October presentation/content audit. */
+#model-status.warning {
+  display:block;
+  width:fit-content;
+  max-width:100%;
+  padding:12px 15px;
+  color:#81551e;
+  background:#fff6e8;
+  border:1px solid #ecd5ad;
+  border-left:3px solid #bb8b43;
+  border-radius:12px;
+}
+.model-card .forecast-expired {
+  margin:12px 0;
+  padding:9px 12px;
+  border-radius:10px;
+  border:1px solid #ead9b9;
+  background:#fff9eb;
+  color:#765528;
+  font-size:11px;
+}
+.lab-metrics .metric-expired {
+  background:#fff7e9;
+}
+.lab-metrics .metric-expired span,
+.lab-metrics .metric-expired small {
+  color:#745325;
+}
+.chart-gap-notice {
+  padding:10px 13px;
+  border:1px solid #e7d6b7;
+  border-radius:10px;
+  background:#fffaef;
+  color:#70552d;
+}
+@media(prefers-contrast:more){
+  #model-status.warning,.model-card .forecast-expired,
+  .lab-metrics .metric-expired,.chart-gap-notice {
+    border-color:#77531b;
+    color:#46300e;
+    background:#fff;
+  }
+}
