@@ -1,8 +1,9 @@
 import {STATES} from './race-data.mjs';
+import {refreshCadence} from './refresh-cadence.mjs';
 import {fetchJson} from './reliability.mjs?v=20261006-robust';
 import {validateCandidates,candidateFresh,PARTY_LABELS} from './candidate-core.mjs?v=20261011-candidates';
 const $=s=>document.querySelector(s),make=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
-const gallery=$('#candidate-gallery');let snapshot,limit=6,selection,loading=false,failed=false;
+const gallery=$('#candidate-gallery');let snapshot,limit=6,selection,loading=false,failed=false,lastRefreshAttempt=0;
 const stateName=code=>STATES.find(s=>s.code===code)?.name||code;
 const date=t=>new Date(t).toLocaleString(undefined,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
 function odds(c){return c.probability===null?'—':c.probability>0&&c.probability<.001?'<0.1%':(c.probability*100).toFixed(1)+'%';}
@@ -73,7 +74,7 @@ function renderSidebar(){
  });box.append(button);
 }
 async function refresh(){
- if(loading)return;loading=true;const button=$('#candidate-refresh');if(button){button.disabled=true;button.textContent='Refreshing…';}
+ if(loading)return;loading=true;lastRefreshAttempt=Date.now();const button=$('#candidate-refresh');if(button){button.disabled=true;button.textContent='Refreshing…';}
  try{const next=validateCandidates(await fetchJson('./data/candidates.json',{timeoutMs:12000,attempts:2}));if(!snapshot||Date.parse(next.updatedAt)>=Date.parse(snapshot.updatedAt))snapshot=next;failed=false;try{localStorage.setItem('congress-candidates-v1',JSON.stringify(snapshot));}catch{}}
  catch{failed=true;}
  finally{loading=false;if(button){button.disabled=false;button.textContent='Refresh profiles';}render();window.dispatchEvent(new Event('candidate-data-updated'));}
@@ -93,6 +94,8 @@ if(gallery){
   $('#candidate-search').focus({preventScroll:true});
  });
  try{const cached=localStorage.getItem('congress-candidates-v1');if(cached&&cached.length<3000000)snapshot=validateCandidates(JSON.parse(cached));}catch{}
- render();refresh();setInterval(()=>{if(!document.hidden)refresh();},300000);
- document.addEventListener('visibilitychange',()=>{if(!document.hidden)render();});
+ function profilesDue(){return Date.now()-lastRefreshAttempt>=refreshCadence().browserProfilesMinutes*60000;}
+ render();refresh();
+ setInterval(()=>{if(!document.hidden&&profilesDue())refresh();},30000);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden){if(profilesDue())refresh();else render();}});
 }
