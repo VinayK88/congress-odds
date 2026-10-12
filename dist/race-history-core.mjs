@@ -83,7 +83,7 @@ export function raceHistorySeries(history,raceId,contractIds,now=Date.now(),wind
  if(!history||!VALID_RACES.has(raceId))return [];
  const entry=history.races?.[raceId];
  if(!entry)return [];
- const threshold=now-Math.max(1,windowHours)*3600000;
+ const threshold=now-Math.max(0.01,windowHours)*3600000;
  return contractIds.map(id=>{
   const key=String(id);
   return {
