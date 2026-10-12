@@ -27,9 +27,9 @@ test('new timeline UI uses readable and responsive cards',()=>{
  assert.equal((css.match(/\{/g)||[]).length,(css.match(/\}/g)||[]).length);
 });
 test('fresh modules and styles are wired without breaking existing map briefing',()=>{
- assert.ok(index.includes('race-history-polish.css?v=20261013-insights'));
+ assert.match(index,/href="race-history-polish\.css\?v=[^"]+"/);
  assert.match(index,/src="scenario\.mjs\?v=[^"]+"/);
- assert.match(scenario,/race-history-view\.mjs\?v=20261013-insights/);
+ assert.match(scenario,/from ['"]\.\/race-history-view\.mjs(?:\?v=[^'"]+)?['"]/);
  assert.ok(scenario.includes('renderStateBriefing(briefing,view)'));
  assert.ok(scenario.includes('renderRaceHistory(history,view.raceId)'));
 });
