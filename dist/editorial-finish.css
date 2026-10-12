@@ -215,3 +215,145 @@ footer {margin-top:28px}
   #reading-progress,#back-to-top,.edition-tiles {display:none!important}
   .candidates-section,.comparison,.model-section,.history-section{box-shadow:none;background:#fff}
 }
+
+/* Civic + system typography. Preserve the directory, flag art and native state picker. */
+.brand-mark {
+  border-radius:12px;border:1px solid #c5a569;transform:none;
+  box-shadow:0 3px 10px #14284816;background:#10213a;width:42px;height:42px;
+}
+.brand-mark svg {width:34px;height:34px}
+.brand:after {border-radius:6px;font-weight:650;letter-spacing:.7px}
+.masthead nav a {font-weight:550}
+.heading {
+  border-radius:32px;border:1px solid #34445e;min-height:580px;
+  padding:48px 52px;gap:34px;grid-template-columns:1.12fr 1fr;
+  background:radial-gradient(ellipse at 4% 10%,#1e3b64 0,transparent 58%),radial-gradient(ellipse at 100% 80%,#692a4160 0,transparent 48%),#0b192d;
+  box-shadow:0 22px 56px #0c1c3220;
+}
+.heading:before {opacity:.11}
+.heading:after {height:4px;left:0;right:0}
+.heading .hero-patriotic-stars,.heading .eyebrow {display:none}
+.hero-tag {font-size:9px;font-weight:600;letter-spacing:.8px;padding:9px 12px;margin-bottom:24px}
+.heading h1 {
+  font:650 clamp(56px,5.8vw,78px)/1.01 var(--font-system);
+  letter-spacing:-.058em;max-width:none;margin-bottom:23px;
+}
+.heading h1 em {color:#e7c78d;text-shadow:none;font-weight:600}
+.heading .intro {font-size:16px;color:#c3d0e2;line-height:1.7;letter-spacing:-.01em;margin-bottom:23px}
+.hero-facts {gap:18px;margin-bottom:25px}
+.hero-facts strong {font:600 30px/1.1 var(--font-system);letter-spacing:-.04em}
+.hero-facts span {font-size:8px;letter-spacing:1px;margin-top:7px;color:#b5c5dc}
+.hero-actions {gap:10px;margin-bottom:20px}
+.hero-actions a {font-weight:500;font-size:13px;box-shadow:none}
+.hero-actions a:first-child {background:#e4c58b;color:#102039;border-color:#e4c58b;font-weight:600;box-shadow:0 4px 15px #00000015}
+.hero-actions a:last-child {background:#ffffff05;color:#e6ecf6;border-color:#8290a45e}
+.hero-actions a:hover {transform:translateY(-1px)}
+.refresh-box button {background:#ffffff06;border-color:#7b8ca557;color:#c9d5e7}
+.refresh-box>span {color:#a7b9d1}
+.hero-art.hero-logo {
+  align-self:center;transform:none;display:flex;justify-content:center;
+  padding:28px 16px 55px;border-radius:28px;isolation:isolate;
+}
+.hero-art.hero-logo:before {
+  inset:0;border:1px solid #b7c9e329;border-radius:28px;
+  background:linear-gradient(145deg,#17304f66,#0b192d99);
+  box-shadow:0 20px 40px #00000017;
+}
+.hero-art.hero-logo img {
+  border:1px solid #c8aa7059;border-radius:20px;transform:none;
+  width:100%;height:auto;max-height:none;object-fit:contain;
+  box-shadow:0 18px 36px #00000028;margin:0;
+}
+.hero-art.hero-logo:after {
+  bottom:17px;border:0;background:none;padding:0;
+  font-size:8px;letter-spacing:1.5px;font-weight:600;color:#c8b78f;
+}
+.hero-watermark {display:none}
+.coverage-strip {border-radius:0 0 16px 16px}
+.explore-dock {
+  background:#11233de8;border-color:#334863;box-shadow:0 10px 30px #10213926;
+  backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);
+}
+.explore-dock a {color:#c3d0e1;font-weight:550}
+.explore-dock a[aria-current] {background:#f0f3f8;color:#152d50;box-shadow:none}
+.explore-dock a:hover:not([aria-current]) {background:#314560;color:#fff}
+.control-heading h2,.section-heading h2,.model-section>.section-heading h2,
+.chamber-ident h2,.scenario-map-heading h3,.candidate-race-heading h3 {
+  font-family:var(--font-system);font-weight:650;letter-spacing:-.045em;
+}
+.control-heading h2,.section-heading h2 {line-height:1.1}
+.edition-tile {border-radius:20px;min-height:138px}
+.edition-tile h3 {font-weight:650;font-size:22px}
+.edition-tile-meta {font-weight:650;letter-spacing:1px}
+.edition-tile:after {opacity:.5}
+.chamber {border-radius:26px;box-shadow:0 12px 30px #1024470b}
+.chamber:before {height:4px}
+.chamber:after {display:none}
+.chamber-ident h2 {font-size:26px}
+.chamber-symbol {border-width:1px;border-radius:12px;width:40px;height:40px;font-size:21px}
+.chamber .status {border-radius:20px;font-weight:600}
+.chamber .odds>div,.chamber .odds>div+div {border-radius:18px}
+.chamber .odds .number {font-weight:650;letter-spacing:-.06em}
+.party-monogram {font-weight:700}
+.scenario-board {border-radius:28px 28px 0 0;border-top-width:3px;padding:30px 36px}
+.scenario-board:before {content:'MARKET SNAPSHOT · SEAT TALLY';font-size:9px;letter-spacing:1.7px;font-weight:600;padding-bottom:16px;margin-bottom:22px}
+[data-map-mode=scenario] .scenario-board:before {content:'YOUR SCENARIO · SEAT TALLY'}
+.scenario-board .scenario-totals .blue {color:#9dc7ff}
+.scenario-board .scenario-totals .red {color:#ffa5b5}
+.scenario-board .scenario-totals strong {font-size:82px;font-weight:600;letter-spacing:-.055em}
+.scenario-board .scenario-totals span {letter-spacing:1px;font-weight:600;font-size:10px}
+.scenario-board .scenario-center b {font:500 21px/1.4 var(--font-system);letter-spacing:-.02em;color:#fff}
+.scenario-board .scenario-center>span {color:#e3c793}
+.scenario-board .scenario-totals small,.scenario-board .fine {color:#c4d0e2}
+.scenario-board .market-seat-bar {height:14px;border:0}
+.scenario-layout,[data-map-mode=market] .scenario-layout {border-radius:0 0 28px 28px}
+.map-broadcast-banner {border-radius:14px}
+.scenario-map-heading h3 {font-size:25px}
+.candidates-section .candidate-race {border-radius:24px}
+.candidate-card {border-radius:18px}
+.candidate-odds strong {font-weight:650}
+.candidate-card h4 {font-weight:600}
+.candidate-compact {border-radius:18px}
+.comparison .table-wrap,.model-section .lab-panel,.model-card,#history-chart {border-radius:22px}
+.model-card h3,.lab-panel h3,.lab-toolbar h3 {font-weight:600;letter-spacing:-.03em}
+.model-badge {font-weight:600}
+@media(max-width:1100px){
+  .heading{padding:40px 32px;gap:26px}.heading h1{font-size:64px}
+  .hero-tag{font-size:8px;letter-spacing:.3px}.hero-art.hero-logo{padding:24px 12px 50px}
+  .hero-art.hero-logo:after{letter-spacing:.7px}.hero-facts{gap:15px}
+  .hero-facts strong{font-size:28px}.hero-actions a{font-size:12px}
+}
+@media(max-width:900px){
+  .heading{grid-template-columns:1.12fr 1fr;padding:36px 28px;gap:22px}
+  .heading h1{font-size:56px}.heading .intro{font-size:14px}
+  .hero-tag{white-space:normal;line-height:1.6}.hero-facts{gap:12px}
+  .hero-facts strong{font-size:25px}.hero-facts span{font-size:7px}
+  .hero-actions a{font-size:11px;padding:12px 14px}
+  .scenario-board{padding:28px}.chamber-ident h2{font-size:24px}
+}
+@media(max-width:700px){
+  .heading{grid-template-columns:1fr;padding:34px 24px 26px;gap:27px;border-radius:26px;min-height:0}
+  .heading h1{font-size:clamp(49px,12vw,72px)}.heading .intro{font-size:15px}
+  .hero-tag{font-size:8px;max-width:100%;margin-bottom:23px}
+  .hero-facts{justify-content:center;gap:17px}.hero-facts strong{font-size:29px}.hero-facts span{font-size:8px}
+  .hero-actions{justify-content:center}.hero-actions a{font-size:12px;padding:13px 16px}
+  .hero-art.hero-logo{display:flex;width:100%;max-width:420px;margin:0 auto;padding:21px 12px 45px}
+  .hero-art.hero-logo:before{inset:0;border-radius:22px}.hero-art.hero-logo:after{bottom:14px;font-size:7px;letter-spacing:1px}
+  .explore-dock a{font-size:10px;padding:11px 7px}
+  .edition-tile{min-height:130px;border-radius:16px}.edition-tile h3{font-size:19px}
+  .chamber-ident h2{font-size:23px}.chamber-symbol{width:34px;height:34px;font-size:18px;border-radius:10px}
+  .scenario-board{padding:26px 20px;border-radius:24px 24px 0 0}
+  .scenario-board .scenario-totals strong{font-size:59px}
+  .scenario-board .scenario-totals span{font-size:8px;letter-spacing:.5px}
+  .scenario-board .scenario-center b{font-size:15px}
+  .scenario-layout,[data-map-mode=market] .scenario-layout{border-radius:0 0 24px 24px}
+  .scenario-map-heading h3{font-size:23px}
+}
+@media(max-width:420px){
+  .heading{padding:30px 20px 25px}.hero-actions{gap:8px}.hero-actions a{font-size:11px;padding:12px 13px}
+  .hero-facts{gap:12px}.hero-facts span{font-size:7px}.hero-facts strong{font-size:27px}
+  .scenario-board{padding:24px 16px}.scenario-board .scenario-totals strong{font-size:48px}
+  .scenario-board .scenario-center b{font-size:13px}.scenario-board .scenario-totals span{font-size:8px;letter-spacing:.2px}
+}
+@media(prefers-reduced-transparency:reduce){.explore-dock{background:#11233d;backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){.hero-actions a:hover{transform:none}}
