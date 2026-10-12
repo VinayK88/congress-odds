@@ -6,7 +6,7 @@ import {refreshRaceHistory,renderRaceHistory,getRaceHistory} from './race-histor
 import {marketLeaderFlips} from './market-flips.mjs';
 import {renderFlipWatch} from './flip-watch-view.mjs';
 import {createScenarioHistory} from './scenario-history.mjs';
-import {mapMarkup,stateSummary} from './state-map.mjs?v=20261012-clarity';
+import {mapMarkup,stateSummary} from './state-map.mjs?v=20261013-flip-watch';
 import {STATES,VERIFIED_ON} from './race-data.mjs';
 import {PARTIES,races,emptyScenario,validateScenario,seatPartyPreset,tally} from './scenario-core.mjs';
 const root=document.querySelector('#race-simulator');
