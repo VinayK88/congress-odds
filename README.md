@@ -57,22 +57,22 @@ The interactive forecast lab includes a test-error ranking, model/contract selec
 
 Explore all 35 Senate contests (including Florida and Ohio specials) and 435 House districts on a geographic U.S. map with clickable states and Alaska/Hawaii insets. Assign Democratic-aligned, Republican-aligned or other outcomes and watch seat totals update. Includes Senate holdovers, a configurable VP tie-break, an optional current Senate seat-party preset, local saving and JSON import/export.
 
-These are **user-built scenarios, not forecasts or election results**. House choices start unassigned. The static race manifest was verified on 2026-10-05 and is separate from hourly market updates. See [scenario rules and sources](SCENARIOS.md).
+These are **user-built scenarios, not forecasts or election results**. House choices start unassigned. The static race manifest was verified on 2026-10-05 and is separate from scheduled market updates. See [scenario rules and sources](SCENARIOS.md).
 
 ## Candidate names, photos and race odds
 
 [Explore candidate profiles](https://vinayk88.github.io/congress-odds/#candidates). Filter Senate and House profiles by state, search candidate names or districts, and see source-backed portraits and Yes outcome prices. Choosing a state or House district on the map shows its profiles beside the scenario editor.
 
-The hourly workflow discovers 2026 general-election race markets through Polymarket's Senate/House tags. Direct individual-candidate contracts take priority over party contracts for the same race. Party/nominee contracts are labeled because they may follow a replacement nominee. Profiles are market listings, not a certified ballot roster; unnamed outcomes and missing photos are explicit. Closed markets do not display a current probability, and snapshots older than two hours are marked stale.
+The adaptive workflow discovers 2026 general-election race markets through Polymarket's Senate/House tags. Direct individual-candidate contracts take priority over party contracts for the same race. Party/nominee contracts are labeled because they may follow a replacement nominee. Profiles are market listings, not a certified ballot roster; unnamed outcomes and missing photos are explicit. Closed markets do not display a current probability, and snapshots older than two hours are marked stale.
 
 Images come from Polymarket or public-domain congressional portraits in [unitedstates/images](https://github.com/unitedstates/images), matched by full name and state using [congress-legislators](https://github.com/unitedstates/congress-legislators). Failed images fall back to initials. [Download timestamped candidate data](dist/data/candidates.json).
 
 ## Automatic updates
 
-- GitHub Actions runs hourly at minute 17, retrieves all five source/chamber pairs, updates data and this README's marked section, commits changes and deploys GitHub Pages. GitHub schedules may be delayed or disabled in inactive repositories.
+- GitHub Actions checks a five-minute trigger grid but skips refresh slots until due: hourly through Oct 19, 30 minutes Oct 20–26, 15 minutes Oct 27–31, and five minutes Nov 1–3 (U.S. Eastern dates). Due runs retrieve five configured source/chamber pairs, update this README, commit results, and deploy GitHub Pages. GitHub schedules may be delayed or disabled in inactive repositories.
 - Source failures retain the previous snapshot **and its original retrieval timestamp**. A stale snapshot is visibly labeled and excluded from the market average. If every source fails, the retrieval step reports a warning and retains the validated previous snapshots; the site can still publish code fixes and marks old quotes stale.
 - Daily ML training runs after the previous forecast horizon expires. Training failure preserves the older model with its original dates; the website labels expired forecasts. The workflow reports a warning but still publishes fresh source prices.
-- The open website reloads saved snapshots and refreshes Polymarket directly every five minutes. Kalshi and PredictIt are refreshed by Actions, avoiding dependence on browser cross-origin permissions.
+- The open website reloads saved snapshots and refreshes Polymarket directly every 5 minutes initially, increasing to every 3 minutes from Oct 20, every 2 minutes from Oct 27, and every minute Nov 1–3. Kalshi and PredictIt are refreshed by Actions, avoiding dependence on browser cross-origin permissions.
 - No keys or credentials are shipped to the browser. GitHub Pages uses the GitHub Actions source in repository settings.
 
 Retrieval time is not a trade timestamp. Polymarket's record-update timestamp is preserved in JSON. Kalshi's market metadata time is not used as a quote time; PredictIt's timezone-unspecified timestamp is retained verbatim, not interpreted as UTC.
@@ -107,8 +107,8 @@ The README marker pair must occur exactly once. `dist/` is the complete static w
 
 ## Current-probability map
 
-The race explorer opens in **Market odds** mode and uses the hourly Polymarket race snapshots also shown in candidate profiles. Senate states show the leading eligible contract, with four probability shades (under 60%, 60–79.9%, 80–94.9%, and 95%+). House state bands count district market leaders; they are not statewide probabilities, projected winners, or a chamber-control forecast. Click a state, then a House district, to inspect candidate names, available portraits, odds, and settlement rules.
+The race explorer opens in **Market odds** mode and uses the scheduled Polymarket race snapshots also shown in candidate profiles. Senate states show the leading eligible contract, with four probability shades (under 60%, 60–79.9%, 80–94.9%, and 95%+). House state bands count district market leaders; they are not statewide probabilities, projected winners, or a chamber-control forecast. Click a state, then a House district, to inspect candidate names, available portraits, odds, and settlement rules.
 
-Ties, unknown leading parties, incomplete quotes and snapshots older than two hours are neutral. States without a Senate contest are pale and dashed. The page checks for new snapshots every five minutes and reevaluates freshness every minute while visible. **Your scenario** preserves saved manual choices separately; source odds never overwrite them. Race markets may be party/nominee contracts that follow replacement nominees. The map does not blend chamber-wide Kalshi or PredictIt prices into individual race probabilities.
+Ties, unknown leading parties, incomplete quotes and snapshots older than two hours are neutral. States without a Senate contest are pale and dashed. The page checks for new snapshots at an adaptive interval and reevaluates freshness every minute while visible. **Your scenario** preserves saved manual choices separately; source odds never overwrite them. Race markets may be party/nominee contracts that follow replacement nominees. The map does not blend chamber-wide Kalshi or PredictIt prices into individual race probabilities.
 
 The map's party totals update with these same race leaders. Senate totals add 34 Democratic-aligned and 31 Republican holdovers to the 35 contested races; House totals count all 435 districts. Other and unclear races remain separate. The bar marks the numerical majority threshold. These are leader tallies, not probability-weighted expected seats or a chamber-control forecast.
