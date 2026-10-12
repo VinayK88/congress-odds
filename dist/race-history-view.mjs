@@ -1,7 +1,9 @@
 // Historical charts use saved Polymarket Gamma observations, not invented series.
 import {validateRaceHistory} from './race-history-core.mjs';
+import {recordedPriceMovement,movementText} from './race-history-presentation.mjs';
 import {fetchJson} from './reliability.mjs?v=20261006-robust';
 let archive=null, failed=false,lastRequest=0,windowHours=24,loading=false;
+const inspectedAt=new Map(); // Don't reset the user's selected observation on automatic map refresh.
 export function getRaceHistory(){return archive;}
 export async function refreshRaceHistory(){
  if(loading||Date.now()-lastRequest<60000)return;
@@ -77,27 +79,43 @@ export function renderRaceHistory(target,raceId){
  }
  const first=entry.points[0][0],last=entry.points.at(-1)[0];
  const cutoff=Date.now()/1000-windowHours*3600;
- const visible=entry.points.filter(p=>p[0]>=cutoff);
+ const movement=recordedPriceMovement(entry,cutoff),visible=movement.points;
  const stat=el('div',undefined,'race-history-stats');
  stat.append(el('span',entry.points.length+' archived observations','race-history-stat'),
    el('span','First recorded '+shortTime(first),'race-history-stat'),
    el('span','Most recent '+shortTime(last),'race-history-stat'));
  target.append(stat);
- if(visible.length<2){
-  target.append(el('p',visible.length===1?
-    'Only one genuine quote has been recorded in this range. More observations are needed to draw a historical line.':
-    'No recorded observations fall inside this range. Select 7 days to see earlier snapshots.','race-history-empty'));
+ if(!visible.length){
+  target.append(el('p','No recorded observations fall inside this range. Select 7 days to see earlier snapshots.','race-history-empty'));
+  return;
+ }
+ // The same cards work for one genuine baseline or multiple historical quotes.
+ // We never imply a trend before at least two observations of that contract.
+ const motion=el('div',undefined,'race-history-movement');
+ motion.append(el('p',visible.length===1?
+  'First verified price snapshot · comparison will appear after more genuine observations.':
+  'Latest recorded Yes prices · changes since the first available quote of each contract in this range.','race-history-movement-caption'));
+ const metricGrid=el('div',undefined,'race-history-movement-grid');
+ for(const line of movement.contracts){
+  const card=el('article',undefined,'race-history-movement-card party-'+line.party);
+  const name=el('span',line.label,'race-history-movement-name');
+  const value=el('strong',quote(line.latest),'race-history-movement-price');
+  const delta=el('span',movementText(line.deltaPP),'race-history-movement-delta');
+  delta.classList.add(line.deltaPP===null?'is-baseline':Math.abs(line.deltaPP)<.05?'is-flat':line.deltaPP>0?'is-up':'is-down');
+  const scope=el('small',line.sampleCount+' recorded quote'+(line.sampleCount===1?'':'s')+' · '+shortTime(line.latestTime),'race-history-movement-meta');
+  card.append(name,value,delta,scope);metricGrid.append(card);
+ }
+ motion.append(metricGrid);target.append(motion);
+ if(visible.length===1){
+  const notice=el('div',undefined,'race-history-first');
+  notice.append(el('span','●','race-history-first-dot'),
+   el('div','Baseline recorded · '+shortTime(visible[0][0])+' · awaiting another independently retrieved observation. No trend line is drawn yet.','race-history-first-text'));
+  target.append(notice);
   return;
  }
  // Contract IDs, rather than candidate names, identify each time series.
  // We chart the top two contracts in the most recent actual archived sample.
- const recent=visible.at(-1),ids=[recent[1],recent[3]];
- const lines=ids.map(id=>({
-   id,label:entry.contracts[id]?.label||'Contract '+id,
-   party:entry.contracts[id]?.party||'U',
-   points:visible.map(row=>[row[0],row[1]===id?row[2]:row[3]===id?row[4]:null])
-     .filter(([,value])=>value!==null)
- }));
+ const lines=movement.contracts;
  const legend=el('div',undefined,'race-history-legend');
  for(const line of lines){
   const item=el('span',undefined,'race-history-key');
@@ -136,9 +154,11 @@ export function renderRaceHistory(target,raceId){
  label.htmlFor=slider.id;
  inputWrap.append(label,slider);
  plot.append(inputWrap);
- const select=index=>{
-   const row=visible[Math.max(0,Math.min(visible.length-1,index))];
+ const select=(index,remember=false)=>{
+   index=Math.max(0,Math.min(visible.length-1,index));
+   const row=visible[index];
    slider.value=String(index);
+   if(remember)inspectedAt.set(raceId,row[0]);
    cursor.setAttribute('x1',x(row[0]));cursor.setAttribute('x2',x(row[0]));
    const texts=lines.map(line=>{
      const p=row[1]===line.id?row[2]:row[3]===line.id?row[4]:null;
@@ -147,7 +167,7 @@ export function renderRaceHistory(target,raceId){
    details.textContent=fmt(row[0])+' · '+texts.join(' · ');
    slider.setAttribute('aria-valuetext',details.textContent);
  };
- slider.addEventListener('input',()=>select(Number(slider.value)));
+ slider.addEventListener('input',()=>select(Number(slider.value),true));
  svg.addEventListener('pointermove',event=>{
    if(event.pointerType==='touch')return;
    const rect=svg.getBoundingClientRect();
@@ -157,8 +177,10 @@ export function renderRaceHistory(target,raceId){
    const t=xmin+ratio*(xmax-xmin);
    let nearest=0,delta=Infinity;
    visible.forEach((p,i)=>{const d=Math.abs(p[0]-t);if(d<delta){delta=d;nearest=i;}});
-   select(nearest);
+   select(nearest,true);
  });
- select(visible.length-1);
+ const saved=inspectedAt.get(raceId);
+ const initial=saved===undefined?visible.length-1:visible.reduce((best,row,i)=>Math.abs(row[0]-saved)<Math.abs(visible[best][0]-saved)?i:best,0);
+ select(initial);
  target.append(plot,el('p','Snapshot cadence is at most once per hour per race; different contracts may not add to 100%. Each point is a real retrieved quote, not a prediction.','race-history-note'));
 }
