@@ -1,0 +1,201 @@
+/*
+ * Congress Odds: Map Focus + hover inspection
+ * Presentation enhancement only. Source freshness/party meaning is unchanged.
+ */
+#race-simulator .scenario-map-heading {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(190px,258px);
+  align-items:center;
+  gap:15px;
+}
+#race-simulator .scenario-map-heading h3 {
+  min-width:0;
+  max-width:440px;
+  text-wrap:balance;
+}
+#race-simulator .map-focus-toggle {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:43px;
+  padding:10px 16px;
+  border:1px solid #b9cbe1;
+  border-radius:12px;
+  background:linear-gradient(160deg,#fff,#f0f5fc);
+  color:#1b457d;
+  white-space:nowrap;
+  font:750 11px/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:.02em;
+  cursor:pointer;
+  box-shadow:0 5px 17px #1432570b;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+#race-simulator .map-focus-toggle:hover {
+  transform:translateY(-2px);
+  background:#e5efff;
+  border-color:#84a8d7;
+  box-shadow:0 9px 22px #1c478318;
+}
+#race-simulator .map-focus-toggle[aria-pressed="true"] {
+  background:#142f53;
+  border-color:#142f53;
+  color:#fff;
+}
+#race-simulator .map-focus-toggle:focus-visible {
+  outline:3px solid #b78837;
+  outline-offset:3px;
+}
+#race-simulator .state-map {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  transition:box-shadow .26s ease,border-color .26s ease;
+}
+#race-simulator .state-map:hover {
+  border-color:#b8cce5;
+  box-shadow:0 16px 36px #1f47730e,inset 0 1px 6px #15325405;
+}
+#race-simulator .map-state path {
+  transition:filter .16s ease,stroke .16s ease,stroke-width .16s ease;
+}
+#race-simulator .map-state:hover path {
+  filter:brightness(.95) saturate(1.09);
+  stroke:#496987;
+  stroke-width:2.1;
+}
+#race-simulator .map-state:focus-visible path {
+  filter:brightness(.97);
+  stroke:#956624;
+  stroke-width:3.5;
+  stroke-dasharray:none;
+}
+#race-simulator .map-state text {
+  fill:#152e50;
+  font-weight:760;
+}
+#race-simulator .map-peek {
+  position:absolute;
+  z-index:4;
+  top:23px;
+  right:22px;
+  width:min(315px,47%);
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  padding:15px 17px 15px 18px;
+  border:1px solid #becfe4;
+  border-left:4px solid #a87b39;
+  border-radius:13px;
+  color:#244060;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 14px 32px #09254a27;
+  pointer-events:none;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  animation:map-peek-enter .17s ease-out;
+}
+#race-simulator .map-peek[hidden] {display:none!important;}
+#race-simulator .map-peek strong {
+  font:750 17px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing:-.025em;
+  color:#1b365d;
+}
+#race-simulator .map-peek span {
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:4;
+  overflow:hidden;
+  font-size:11px;
+  line-height:1.55;
+  font-weight:550;
+  color:#526981;
+}
+@keyframes map-peek-enter{
+  from{opacity:0;transform:translateY(5px);}
+  to{opacity:1;transform:translateY(0);}
+}
+/* Allow the atlas to use the full editorial width without hiding any data. */
+@media(min-width:901px) {
+  #race-simulator.map-focus .scenario-layout,
+  #race-simulator.map-focus[data-map-mode="market"] .scenario-layout {
+    grid-template-columns:minmax(0,1fr);
+  }
+  #race-simulator.map-focus .scenario-map-panel {
+    max-width:none;
+    padding:31px clamp(20px,3.4vw,48px) 33px;
+  }
+  #race-simulator.map-focus .state-map {
+    max-width:1320px;
+    margin:19px auto 13px;
+    padding:26px 23px 13px;
+    border-color:#9db8d9;
+    box-shadow:0 20px 45px #152c5112,inset 0 1px 6px #15325405;
+  }
+  #race-simulator.map-focus .us-state-map {max-height:720px;}
+  #race-simulator.map-focus .race-editor {
+    border-left:0;
+    border-top:1px solid #cfdbeb;
+    padding:25px clamp(20px,3.4vw,48px);
+  }
+  #race-simulator.map-focus #state-briefing {
+    max-width:100%;
+  }
+}
+/* Work around long title/state-picker collisions on narrower desktops. */
+@media(min-width:901px) and (max-width:1220px) {
+  #race-simulator .scenario-map-heading {
+    grid-template-columns:minmax(200px,1fr) minmax(190px,240px);
+  }
+  #race-simulator .scenario-map-heading h3 {grid-column:1;grid-row:1;}
+  #race-simulator .map-focus-toggle {grid-column:1;grid-row:2;justify-self:start;}
+  #race-simulator .scenario-map-heading .state-picker {grid-column:2;grid-row:1/3;}
+}
+@media(max-width:900px) {
+  #race-simulator .scenario-map-heading {
+    grid-template-columns:minmax(0,1fr) minmax(190px,260px);
+    gap:12px;
+  }
+  #race-simulator .scenario-map-heading h3 {grid-column:1;}
+  #race-simulator .scenario-map-heading .state-picker {grid-column:2;}
+  #race-simulator .map-focus-toggle {display:none;}
+}
+@media(max-width:680px) {
+  #race-simulator .scenario-map-heading {
+    grid-template-columns:minmax(0,1fr);
+  }
+  #race-simulator .scenario-map-heading h3 {grid-column:1;}
+  #race-simulator .scenario-map-heading .state-picker {
+    grid-column:1;
+    width:100%;
+    max-width:none;
+    justify-self:stretch;
+  }
+  #race-simulator .map-peek {
+    position:static;
+    width:auto;
+    max-width:100%;
+    margin:7px 0 0;
+    padding:11px 13px;
+    border-radius:10px;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+  }
+  #race-simulator .map-peek strong {font-size:15px;}
+  #race-simulator .map-peek span {font-size:10px;}
+  #race-simulator .state-map {overflow:visible;}
+}
+@media(prefers-reduced-motion:reduce) {
+  #race-simulator .state-map,
+  #race-simulator .map-state path,
+  #race-simulator .map-focus-toggle {transition:none!important;transform:none!important;}
+  #race-simulator .map-peek {animation:none;}
+}
+@media(prefers-contrast:more) {
+  #race-simulator .map-peek {
+    background:#fff;
+    border-color:#173653;
+  }
+  #race-simulator .map-peek span {color:#263a54;}
+  #race-simulator .map-focus-toggle {border:2px solid #1b457d;}
+}
