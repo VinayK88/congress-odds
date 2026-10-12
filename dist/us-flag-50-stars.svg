@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="400" viewBox="0 0 1900 1000" role="img" aria-label="Flag of the United States, 50 stars and 13 stripes">
+  <title>Flag of the United States</title>
+  <defs>
+    <polygon id="star" points="0.00,-27.00 6.35,-8.74 25.68,-8.34 10.27,3.34 15.87,21.84 0.00,10.80 -15.87,21.84 -10.27,3.34 -25.68,-8.34 -6.35,-8.74" fill="#fff"/>
+    <linearGradient id="cloth" x1="0" y1="0" x2="1" y2=".14">
+      <stop offset="0%" stop-color="#061222" stop-opacity=".10"/>
+      <stop offset="13%" stop-color="#fff" stop-opacity=".09"/>
+      <stop offset="31%" stop-color="#0a1833" stop-opacity=".12"/>
+      <stop offset="51%" stop-color="#fff" stop-opacity=".08"/>
+      <stop offset="67%" stop-color="#04112b" stop-opacity=".10"/>
+      <stop offset="85%" stop-color="#fff" stop-opacity=".11"/>
+      <stop offset="100%" stop-color="#071226" stop-opacity=".09"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0.00000" width="1900" height="76.92808" fill="#B22234"/>
+  <rect x="0" y="76.92308" width="1900" height="76.92808" fill="#FFFFFF"/>
+  <rect x="0" y="153.84615" width="1900" height="76.92808" fill="#B22234"/>
+  <rect x="0" y="230.76923" width="1900" height="76.92808" fill="#FFFFFF"/>
+  <rect x="0" y="307.69231" width="1900" height="76.92808" fill="#B22234"/>
+  <rect x="0" y="384.61538" width="1900" height="76.92808" fill="#FFFFFF"/>
+  <rect x="0" y="461.53846" width="1900" height="76.92808" fill="#B22234"/>
+  <rect x="0" y="538.46154" width="1900" height="76.92808" fill="#FFFFFF"/>
+  <rect x="0" y="615.38462" width="1900" height="76.92808" fill="#B22234"/>
+  <rect x="0" y="692.30769" width="1900" height="76.92808" fill="#FFFFFF"/>
+  <rect x="0" y="769.23077" width="1900" height="76.92808" fill="#B22234"/>
+  <rect x="0" y="846.15385" width="1900" height="76.92808" fill="#FFFFFF"/>
+  <rect x="0" y="923.07692" width="1900" height="76.92808" fill="#B22234"/>
+  <rect width="760" height="538.46154" fill="#3C3B6E"/>
+  <g><use href="#star" x="63.333" y="53.846"/>
+    <use href="#star" x="190.000" y="53.846"/>
+    <use href="#star" x="316.667" y="53.846"/>
+    <use href="#star" x="443.333" y="53.846"/>
+    <use href="#star" x="570.000" y="53.846"/>
+    <use href="#star" x="696.667" y="53.846"/>
+    <use href="#star" x="126.667" y="107.692"/>
+    <use href="#star" x="253.333" y="107.692"/>
+    <use href="#star" x="380.000" y="107.692"/>
+    <use href="#star" x="506.667" y="107.692"/>
+    <use href="#star" x="633.333" y="107.692"/>
+    <use href="#star" x="63.333" y="161.538"/>
+    <use href="#star" x="190.000" y="161.538"/>
+    <use href="#star" x="316.667" y="161.538"/>
+    <use href="#star" x="443.333" y="161.538"/>
+    <use href="#star" x="570.000" y="161.538"/>
+    <use href="#star" x="696.667" y="161.538"/>
+    <use href="#star" x="126.667" y="215.385"/>
+    <use href="#star" x="253.333" y="215.385"/>
+    <use href="#star" x="380.000" y="215.385"/>
+    <use href="#star" x="506.667" y="215.385"/>
+    <use href="#star" x="633.333" y="215.385"/>
+    <use href="#star" x="63.333" y="269.231"/>
+    <use href="#star" x="190.000" y="269.231"/>
+    <use href="#star" x="316.667" y="269.231"/>
+    <use href="#star" x="443.333" y="269.231"/>
+    <use href="#star" x="570.000" y="269.231"/>
+    <use href="#star" x="696.667" y="269.231"/>
+    <use href="#star" x="126.667" y="323.077"/>
+    <use href="#star" x="253.333" y="323.077"/>
+    <use href="#star" x="380.000" y="323.077"/>
+    <use href="#star" x="506.667" y="323.077"/>
+    <use href="#star" x="633.333" y="323.077"/>
+    <use href="#star" x="63.333" y="376.923"/>
+    <use href="#star" x="190.000" y="376.923"/>
+    <use href="#star" x="316.667" y="376.923"/>
+    <use href="#star" x="443.333" y="376.923"/>
+    <use href="#star" x="570.000" y="376.923"/>
+    <use href="#star" x="696.667" y="376.923"/>
+    <use href="#star" x="126.667" y="430.769"/>
+    <use href="#star" x="253.333" y="430.769"/>
+    <use href="#star" x="380.000" y="430.769"/>
+    <use href="#star" x="506.667" y="430.769"/>
+    <use href="#star" x="633.333" y="430.769"/>
+    <use href="#star" x="63.333" y="484.615"/>
+    <use href="#star" x="190.000" y="484.615"/>
+    <use href="#star" x="316.667" y="484.615"/>
+    <use href="#star" x="443.333" y="484.615"/>
+    <use href="#star" x="570.000" y="484.615"/>
+    <use href="#star" x="696.667" y="484.615"/></g>
+  <rect width="1900" height="1000" fill="url(#cloth)"/>
+</svg>
