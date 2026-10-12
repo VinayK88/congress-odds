@@ -83,6 +83,9 @@ jobs:
       - name: Report candidate refresh failure
         if: steps.candidates.outcome == 'failure'
         run: echo "::warning::Candidate refresh failed. Retaining previous profiles with their original retrieval timestamps."
+      - name: Record real candidate quote history
+        if: steps.candidates.outcome == 'success'
+        run: node scripts/update-race-history.mjs
       - name: Train daily model
         if: steps.dependencies.outcome == 'success' && needs.cadence.outputs.model == 'true'
         timeout-minutes: 10
