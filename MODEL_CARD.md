@@ -46,7 +46,7 @@ Detail charts use a clearly labeled zoomed probability axis with an optional ful
 
 ## Refresh and limits
 
-Hourly automation trains again only after the forecast target has passed. Until then, the same daily forecast is served. Training failures preserve the last complete model and data, with original times; expired forecasts are labeled on the dashboard. The model is shown separately from the descriptive market average and does not override observed source quotes.
+Adaptive automation checks for an expired daily forecast at most once per hour and retrains only when its next-close target has passed. More frequent near-election market refreshes do not repeatedly retrain the same model. Until then, the same daily forecast is served. Training failures preserve the last complete model and data, with original times; expired forecasts are labeled on the dashboard. The model is shown separately from the descriptive market average and does not override observed source quotes.
 
 A no-change baseline can outperform the fitted model; this is displayed prominently. Results from one election cycle and one platform do not establish general predictive skill. The latest intraday quotes may differ from the latest completed daily candle, so compare the forecast to its displayed last close. No investment recommendation is implied.
 
