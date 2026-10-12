@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {electionDateET,refreshCadence,scheduledSlotDue,formatMinutes} from '../dist/refresh-cadence.mjs';
+import {electionDateET,refreshCadence,scheduledSlotDue,snapshotDue,formatMinutes} from '../dist/refresh-cadence.mjs';
 const at=s=>refreshCadence(new Date(s));
 test('countdown phases follow the US Eastern calendar, including the DST change',()=>{
  assert.equal(at('2026-10-12T12:00:00Z').publishMinutes,60);
@@ -35,4 +35,15 @@ test('cadence description is meaningful in dashboard',()=>{
  assert.equal(formatMinutes(60),'hourly');
  assert.equal(formatMinutes(15),'every 15 minutes');
  assert.equal(formatMinutes(360),'every 6 hours');
+});
+
+test('delayed GitHub runs use last published snapshot age rather than an exact minute',()=>{
+ const now=new Date('2026-10-12T13:16:00Z');
+ assert.equal(snapshotDue('2026-10-12T09:30:58Z',60,now),true);
+ assert.equal(snapshotDue('2026-10-12T12:30:59Z',60,now),false);
+ assert.equal(snapshotDue('2026-10-12T12:16:30Z',60,now),true);
+ assert.equal(snapshotDue('2026-10-12T13:11:30Z',5,now),true);
+ assert.equal(snapshotDue('2026-10-12T13:13:30Z',5,now),false);
+ assert.equal(snapshotDue(null,60,now),true);
+ assert.throws(()=>snapshotDue('2026-10-12T13:00:00Z',0,now));
 });
