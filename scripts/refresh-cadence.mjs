@@ -12,7 +12,10 @@ if(run && tier.phase!=='Post-election archive' && tier.phase!=='Post-election ve
   try {
    const saved=JSON.parse(await readFile(new URL('../dist/data/model.json',import.meta.url),'utf8'));
    const targets=Object.values(saved.series||{}).map(x=>Date.parse(x.forecastFor));
-   model=targets.length!==4||targets.some(t=>!Number.isFinite(t)||t<=now.getTime());
+   const expired=targets.length!==4||targets.some(t=>!Number.isFinite(t)||t<=now.getTime());
+   // Even in five-minute election mode, train at most once each hourly slot.
+   // Avoid repeated expensive attempts while the next daily candle is pending.
+   model=expired&&(event!=='schedule'||scheduledSlotDue(60,now));
   } catch {model=true;}
  }
 }
