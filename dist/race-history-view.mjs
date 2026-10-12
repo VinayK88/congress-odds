@@ -152,7 +152,9 @@ export function renderRaceHistory(target,raceId){
    if(event.pointerType==='touch')return;
    const rect=svg.getBoundingClientRect();
    if(!rect.width)return;
-   const t=xmin+(Math.max(0,Math.min(1,(event.clientX-rect.left)/rect.width*W-padL)/Math.max(1,W-padL-padR)))*(xmax-xmin);
+   const viewX=(event.clientX-rect.left)/rect.width*W;
+   const ratio=Math.max(0,Math.min(1,(viewX-padL)/(W-padL-padR)));
+   const t=xmin+ratio*(xmax-xmin);
    let nearest=0,delta=Infinity;
    visible.forEach((p,i)=>{const d=Math.abs(p[0]-t);if(d<delta){delta=d;nearest=i;}});
    select(nearest);
