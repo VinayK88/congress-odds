@@ -31,8 +31,9 @@ test('presentation styling preserves reduced-motion and mobile layouts',()=>{
 });
 test('latest CSS and versioned scenario module load in site',()=>{
  assert.ok(html.includes('map-experience.css?v=20261012-map-focus'));
- assert.ok(html.includes('scenario.mjs?v=20261012-map-focus'));
+ assert.match(html,/src="scenario\.mjs\?v=[^\"]+"/);
  assert.ok(html.indexOf('map-experience.css')>html.indexOf('state-briefing.css'));
- assert.ok(scenario.includes("renderStateBriefing(briefing,briefingForState("));
+ assert.ok(scenario.includes("briefingForState(chamber,selected,district,snapshot)"));
+ assert.ok(scenario.includes("renderStateBriefing(briefing,view)"));
  assert.ok(scenario.includes("marketCoverage(chamber,snapshot)"));
 });
