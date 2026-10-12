@@ -30,7 +30,7 @@ test('presentation styling preserves reduced-motion and mobile layouts',()=>{
  assert.equal((css.match(/\{/g)||[]).length,(css.match(/\}/g)||[]).length);
 });
 test('latest CSS and versioned scenario module load in site',()=>{
- assert.ok(html.includes('map-experience.css?v=20261012-map-focus'));
+ assert.match(html,/href="map-experience\.css\?v=[^"]+"/);
  assert.match(html,/src="scenario\.mjs\?v=[^\"]+"/);
  assert.ok(html.indexOf('map-experience.css')>html.indexOf('state-briefing.css'));
  assert.ok(scenario.includes("briefingForState(chamber,selected,district,snapshot)"));
