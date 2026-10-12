@@ -1,0 +1,83 @@
+/* Congress Odds · race map clarity — presentation only. */
+#race-simulator .map-symbol-guide {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px 19px;
+  margin:13px 0 17px;
+  padding:13px 15px;
+  border:1px solid #d5e0ec;
+  border-radius:12px;
+  background:#fff;
+  color:#445873;
+  font-size:11px;
+  font-weight:620;
+}
+#race-simulator .map-symbol-guide[hidden] {display:none!important;}
+#race-simulator .map-symbol-guide span {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+}
+#race-simulator .map-symbol {
+  width:23px;
+  height:17px;
+  border-radius:4px;
+  flex:0 0 23px;
+  display:inline-block;
+}
+#race-simulator .no-contest-symbol {
+  border:1px dashed #aebdd2;
+  background:repeating-linear-gradient(135deg,#f7f9fd 0 5px,#dbe3ef 5px 6px);
+}
+#race-simulator .missing-symbol {
+  background:#d5deea;
+  border:1px solid #9eafc4;
+}
+#race-simulator .selected-symbol {
+  background:#f8fbff;
+  border:3px solid #93652c;
+}
+#race-simulator #map-house-shortcut {
+  margin-left:auto;
+  padding:9px 13px;
+  min-height:36px;
+  border:1px solid #bbcfe6;
+  border-radius:9px;
+  color:#164680;
+  background:#eaf3ff;
+  font:700 11px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  cursor:pointer;
+  transition:background .2s ease,border-color .2s ease;
+}
+#race-simulator #map-house-shortcut:hover {
+  background:#d9e9fc;
+  border-color:#8aadd7;
+}
+#race-simulator #map-house-shortcut:focus-visible {
+  outline:3px solid #a8742e;
+  outline-offset:3px;
+}
+#race-simulator .map-state.no-contest path {
+  stroke:#afbed1;
+  stroke-dasharray:4 3;
+}
+#race-simulator .map-state.no-contest text {fill:#566983;}
+@media(max-width:680px) {
+  #race-simulator .map-symbol-guide {padding:12px;gap:10px 14px;}
+  #race-simulator #map-house-shortcut {
+    flex:1 1 100%;
+    margin:4px 0 0;
+    width:100%;
+    text-align:center;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  #race-simulator #map-house-shortcut {transition:none;}
+}
+@media(prefers-contrast:more) {
+  #race-simulator .map-symbol-guide {border-color:#334b6c;color:#182f50;}
+  #race-simulator .no-contest-symbol {border-color:#506987;}
+  #race-simulator .missing-symbol {border-color:#334b6c;}
+}
