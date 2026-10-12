@@ -357,3 +357,103 @@ footer {margin-top:28px}
 }
 @media(prefers-reduced-transparency:reduce){.explore-dock{background:#11233d;backdrop-filter:none;-webkit-backdrop-filter:none}}
 @media(prefers-reduced-motion:reduce){.hero-actions a:hover{transform:none}}
+
+/* Race desk refinement: compact portraits and a quieter cartographic stage. */
+.candidate-gallery {align-items:start;gap:22px}
+.candidates-section .candidate-race {padding:24px;background:#fff;border:1px solid #dce4ef}
+.candidates-section .candidate-race:before {height:2px;opacity:.75}
+.candidate-race-heading {padding-bottom:16px;margin-bottom:18px;border-bottom:1px solid #e7ecf3}
+.candidate-race-heading h3 {font-size:28px}
+.candidate-fresh {padding:7px 10px;font-size:10px;font-weight:500}
+.candidate-pair {align-items:start;gap:14px}
+.candidate-gallery .candidate-card {
+  position:relative;isolation:isolate;text-align:center;padding-top:22px;
+  border:1px solid #dce4ef;border-radius:22px;
+  background:linear-gradient(180deg,#f1f4f8 0,#fff 64%);
+  box-shadow:0 5px 16px #15335a06;
+  transition:box-shadow .2s ease,border-color .2s ease;
+}
+.candidate-gallery .candidate-D {background:linear-gradient(180deg,#eaf2ff 0,#fff 64%);border-color:#d4e3fa}
+.candidate-gallery .candidate-R {background:linear-gradient(180deg,#fff0f3 0,#fff 64%);border-color:#f0d7df}
+.candidate-gallery .candidate-portrait {
+  width:112px;height:112px;aspect-ratio:1;margin:0 auto;border-radius:50%;
+  border:4px solid #fff;outline:1px solid #becbdb;
+  box-shadow:0 7px 18px #142b4d16;
+}
+.candidate-gallery .candidate-D .candidate-portrait {outline-color:#a9c5f0}
+.candidate-gallery .candidate-R .candidate-portrait {outline-color:#e9b3c1}
+.candidate-gallery .candidate-portrait img {object-position:center 25%}
+.candidate-gallery .candidate-initials {font-size:32px}
+.candidate-gallery .photo-fallback {font-size:8px;max-width:84px}
+.candidate-gallery .candidate-body {padding:18px 18px 20px}
+.candidate-gallery .candidate-party {font-size:9px;font-weight:650;letter-spacing:1px}
+.candidate-gallery .candidate-card h4 {min-height:2.4em;margin:9px 0 16px;font-size:21px;line-height:1.2}
+.candidate-gallery .candidate-odds {padding-top:16px;border-top:1px solid #dbe3ee}
+.candidate-gallery .candidate-odds strong {font-size:46px;font-weight:600;letter-spacing:-.055em}
+.candidate-gallery .candidate-odds span {font-size:10px;margin-top:3px;color:#53657e}
+.candidate-track {height:7px;border-radius:10px;background:#e5eaf1}
+.candidate-track i {border-radius:10px}
+.candidate-gallery .candidate-contract {font-size:9px;color:#60718a}
+.candidate-gallery .candidate-body>a {display:inline-block;padding:7px 0;font-size:10px;font-weight:550}
+.candidate-gallery .candidate-credit {margin-top:3px;color:#687990}
+.candidate-retrieved {padding-top:12px;border-top:1px solid #e7ecf3;font-size:10px}
+.candidate-search-heading h3 {font-family:var(--font-system);font-weight:600;letter-spacing:-.03em}
+#candidate-more {display:block;margin:28px auto 0;min-width:210px;padding:14px 24px}
+#candidate-more[hidden] {display:none}
+.candidate-gallery .candidate-card:focus-within {outline:2px solid #9b793d;outline-offset:3px}
+.candidate-body>a:focus-visible {outline:2px solid #9b793d;outline-offset:4px;border-radius:3px}
+.scenario-map-panel {background:#fcfdff}
+.state-map {
+  padding:18px 12px 8px;border:1px solid #e1e8f1;border-radius:22px;
+  background:radial-gradient(circle,#9bb0c733 .7px,transparent .9px) 0 0/16px 16px,#f6f9fd;
+  box-shadow:inset 0 1px 6px #15325405;
+}
+.us-state-map {filter:drop-shadow(0 5px 5px #18335312)}
+.selected-state-outline {stroke:#a4792b;stroke-width:3}
+.map-hover {border:1px solid #dce5f0;border-left:3px solid #b99860;background:#fff;box-shadow:0 4px 14px #14315305}
+.market-map-legend {background:#fff;border:1px solid #e1e8f1;border-radius:16px;padding:17px 18px;margin-top:16px}
+.market-map-legend strong {color:#173255;font-size:12px}
+.probability-key {max-width:390px;gap:5px}
+.probability-key i {height:14px;border-radius:4px}
+.race-editor {background:linear-gradient(155deg,#f0f4fa,#fafbfd);border-left-color:#dce4ef}
+.race-editor h3 {font:650 36px/1.15 var(--font-system);letter-spacing:-.04em}
+.candidate-compact {grid-template-columns:82px minmax(0,1fr);box-shadow:0 5px 16px #17325307;border:1px solid #dce4ef}
+.candidate-compact .candidate-portrait {width:62px;height:62px;aspect-ratio:1;border-radius:50%;margin:17px 0 0 14px;border:2px solid #fff;box-shadow:0 0 0 1px #c9d6e7}
+.candidate-compact .candidate-body {padding:16px 14px 16px 10px}
+.candidate-compact h4 {line-height:1.3}
+.small-states button {min-width:36px;min-height:36px;border-radius:9px;background:#fff}
+.small-states button[aria-pressed=true] {border-color:#a4792b;background:#fbf5e9;color:#73551e}
+@media(hover:hover){
+  .candidate-gallery .candidate-card:hover {box-shadow:0 10px 24px #15335a12;border-color:#9aabc2}
+  .candidate-gallery .candidate-D:hover {border-color:#91b2e3}
+  .candidate-gallery .candidate-R:hover {border-color:#dfa2b3}
+}
+@media(max-width:1050px){
+  .candidates-section .candidate-race {padding:18px}
+  .candidate-gallery .candidate-body {padding:16px 12px}
+  .candidate-gallery .candidate-portrait {width:96px;height:96px}
+  .candidate-gallery .candidate-card h4 {font-size:19px}
+  .candidate-gallery .candidate-odds strong {font-size:40px}
+}
+@media(max-width:700px){
+  .candidate-gallery .candidate-card {padding-top:18px;border-radius:18px}
+  .candidate-race-heading h3 {font-size:25px}
+  .state-map {padding:12px 4px 4px;border-radius:16px}
+  .market-map-legend {padding:14px}
+  .race-editor h3 {font-size:30px}
+}
+@media(max-width:390px){
+  .candidates-section .candidate-race {padding:13px}
+  .candidate-pair {gap:9px}
+  .candidate-gallery .candidate-portrait {width:80px;height:80px}
+  .candidate-gallery .candidate-card h4 {font-size:17px}
+  .candidate-gallery .candidate-body {padding:15px 9px}
+  .candidate-gallery .candidate-odds strong {font-size:35px}
+  .candidate-fresh {font-size:8px;padding:6px}
+}
+@media(prefers-reduced-motion:reduce){
+  .candidate-gallery .candidate-card,.candidate-gallery .candidate-portrait img {transition:none;transform:none}
+}
+@media(prefers-contrast:more){
+  .state-map,.market-map-legend,.candidate-gallery .candidate-card {background:#fff;border-color:#53657e}
+}
