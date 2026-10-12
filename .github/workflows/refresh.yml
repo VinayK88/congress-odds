@@ -1,10 +1,12 @@
 name: Refresh Congress odds
 on:
   schedule:
-    - cron: '17 * * * *'
+    # 5-minute trigger grid; lightweight cadence job skips slots outside
+    # the election-week policy. Times are best-effort with GitHub Actions.
+    - cron: '2-59/5 * * * *'
   workflow_dispatch:
   push:
-    branches: [main, master]
+    branches: [main]
     paths:
       - 'dist/**'
       - 'scripts/**'
@@ -17,7 +19,25 @@ concurrency:
   group: congress-odds-refresh
   cancel-in-progress: false
 jobs:
+  cadence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      run: ${{ steps.policy.outputs.run }}
+      candidates: ${{ steps.policy.outputs.candidates }}
+      model: ${{ steps.policy.outputs.model }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - name: Decide whether a full refresh is due
+        id: policy
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: node scripts/refresh-cadence.mjs
   refresh:
+    needs: cadence
+    if: needs.cadence.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     outputs:
@@ -53,6 +73,7 @@ jobs:
         if: steps.markets.outcome == 'failure'
         run: echo "::warning::Market retrieval failed. Publishing the validated previous snapshots with original timestamps; stale quotes are excluded on the site."
       - name: Refresh candidate names, photos and race odds
+        if: needs.cadence.outputs.candidates == 'true'
         id: candidates
         continue-on-error: true
         run: node scripts/update-candidates.mjs
@@ -60,7 +81,7 @@ jobs:
         if: steps.candidates.outcome == 'failure'
         run: echo "::warning::Candidate refresh failed. Retaining previous profiles with their original retrieval timestamps."
       - name: Train daily model
-        if: steps.dependencies.outcome == 'success'
+        if: steps.dependencies.outcome == 'success' && needs.cadence.outputs.model == 'true'
         timeout-minutes: 10
         id: model
         continue-on-error: true
