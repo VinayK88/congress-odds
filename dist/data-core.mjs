@@ -1,8 +1,9 @@
 import {forecastExpired} from './forecast-view.mjs';
 export const slugs={house:'which-party-will-win-the-house-in-2026',senate:'which-party-will-win-the-senate-in-2026'};
 export const parties=['democratic','republican'];
-export const sources=['polymarket','kalshi','predictit'];
-export const names={polymarket:'Polymarket',kalshi:'Kalshi',predictit:'PredictIt'};
+export const averageSources=['polymarket','kalshi','predictit'];
+export const sources=[...averageSources,'manifold'];
+export const names={polymarket:'Polymarket',kalshi:'Kalshi',predictit:'PredictIt',manifold:'Manifold'};
 export const tickers={house:'CONTROLH',senate:'CONTROLS'};
 const array=v=>Array.isArray(v)?v:JSON.parse(v);
 function probability(v){if(v===null||v===undefined||v===''||typeof v==='boolean')throw Error('Missing price');const n=Number(v);if(!Number.isFinite(n)||n<0||n>1)throw Error('Invalid price');return n;}
@@ -26,16 +27,41 @@ export function parseKalshi(payload,chamber,fetchedAt=new Date().toISOString()){
  }
  return {chamber,source:'Kalshi',url:`https://kalshi.com/markets/${base.toLowerCase()}/${chamber==='house'?'house-winner':'senate-winner'}/${base.toLowerCase()}-2026`,fetchedAt,priceMethod:'Yes bid/ask midpoint',parties:result};
 }
-export function parsePredictIt(market,fetchedAt=new Date().toISOString()){
- if(market.id!==8155)throw Error('Unexpected PredictIt market');const result={};
+export const predictItMarkets={house:8157,senate:8155};
+export function parsePredictIt(market,fetchedAt=new Date().toISOString(),chamber='senate'){
+ if(market.id!==predictItMarkets[chamber]||!Array.isArray(market.contracts))throw Error('Unexpected PredictIt market');
+ const result={};
  for(const [key,id] of [['democratic',31947],['republican',31948]]){
- const matches=market.contracts.filter(c=>c.id===id);if(matches.length!==1)throw Error('Missing PredictIt contract');const c=matches[0];result[key]={probability:midpoint(c.bestSellYesCost,c.bestBuyYesCost),marketId:c.id,closed:c.status!=='Open'};
+  const labels=key==='democratic'?['Democratic','Democrats','Democratic Party']:['Republican','Republicans','Republican Party'];
+  const matches=market.contracts.filter(c=>chamber==='senate'?c.id===id:labels.includes(c.shortName)||labels.includes(c.name));
+  if(matches.length!==1)throw Error('Missing or ambiguous PredictIt contract');
+  const c=matches[0];if(!Number.isInteger(c.id))throw Error('Missing PredictIt contract ID');
+  result[key]={probability:midpoint(c.bestSellYesCost,c.bestBuyYesCost),marketId:c.id,closed:c.status!=='Open'};
  }
- return {chamber:'senate',source:'PredictIt',url:'https://www.predictit.org/markets/detail/8155/Which-party-will-control-the-Senate-after-the-2026-election',fetchedAt,priceMethod:'Yes bid/ask midpoint',sourceTimestampRaw:market.timeStamp,parties:result};
+ return {chamber,source:'PredictIt',url:`https://www.predictit.org/markets/detail/${predictItMarkets[chamber]}`,fetchedAt,priceMethod:'Yes bid/ask midpoint',sourceTimestampRaw:market.timeStamp,parties:result};
+}
+// Reviewed, direct 2026 chamber contracts. Each party has its own Yes market;
+// never infer a Democratic quote by complementing a Republican contract.
+export const manifoldMarkets={
+ house:{democratic:{id:'s6IEnP0Ig8',slug:'will-the-democrats-win-a-majority-i-ClQ6g6lntn',creator:'HillaryClinton'},republican:{id:'uISNlAqC2E',slug:'republicans-have-house-majority-aft',creator:'ryanmccomb'}},
+ senate:{democratic:{id:'r8pPurlDEuz6HYfxl1V4',slug:'will-democrats-lose-control-of-the',creator:'BoltonBailey'},republican:{id:'BpoEJNtlQoDBpfjBmK0y',slug:'will-republicans-win-the-senate-in-738388924521',creator:'AndrewG'}}
+};
+export const manifoldURL=(chamber,party)=>{const m=manifoldMarkets[chamber][party];return `https://manifold.markets/${m.creator}/${m.slug}`;};
+export function parseManifold(markets,chamber,fetchedAt=new Date().toISOString()){
+ if(!manifoldMarkets[chamber]||!Array.isArray(markets)||markets.length!==2)throw Error('Unexpected Manifold markets');
+ const result={};
+ for(const party of parties){
+  const config=manifoldMarkets[chamber][party],matches=markets.filter(m=>m.id===config.id);
+  if(matches.length!==1)throw Error('Missing or ambiguous Manifold contract');
+  const m=matches[0];
+  if(m.slug!==config.slug||m.outcomeType!=='BINARY'||m.token!=='MANA'||typeof m.isResolved!=='boolean'||!Number.isFinite(m.closeTime)||typeof m.probability!=='number')throw Error('Invalid Manifold contract');
+  result[party]={probability:probability(m.probability),marketId:m.id,url:manifoldURL(chamber,party),closed:m.isResolved||m.closeTime<=Date.parse(fetchedAt)};
+ }
+ return {chamber,source:'Manifold',url:manifoldURL(chamber,'democratic'),fetchedAt,priceMethod:'Play-money · independent Yes probabilities',parties:result};
 }
 export function isStale(c,now=Date.now()){return !c||!Number.isFinite(Date.parse(c.fetchedAt))||Date.parse(c.fetchedAt)>now+300000||now-Date.parse(c.fetchedAt)>7200000;}
 export function consensus(data,chamber,now=Date.now()){
- const included=sources.map(s=>data.sources?.[s]?.[chamber]).filter(c=>c&&!isStale(c,now)&&!parties.some(p=>c.parties[p].closed));
+ const included=averageSources.map(s=>data.sources?.[s]?.[chamber]).filter(c=>c&&!isStale(c,now)&&!parties.some(p=>c.parties[p].closed));
  if(!included.length)return null;
  return {included,parties:Object.fromEntries(parties.map(p=>[p,{probability:included.reduce((s,c)=>s+c.parties[p].probability,0)/included.length}]))};
 }
@@ -49,8 +75,8 @@ export function marketGapDescription(democratic,republican) {
 
 export function markdown(data,model,now=Date.now()){
  const lines=['<!-- CONGRESS_ODDS:START -->','## 2026 U.S. Congress control probabilities','','| Chamber | Source | Democrats | Republicans | Retrieved (UTC) |','| :-- | :-- | --: | --: | :-- |'];
- for(const chamber of Object.keys(slugs))for(const source of sources){const c=data.sources?.[source]?.[chamber];if(c)lines.push(`| ${chamber==='house'?'House':'Senate'} | [${c.source}](${c.url})${isStale(c)?' (stale)':''}${parties.some(p=>c.parties[p].closed)?' (closed)':''} | ${pct(c.parties.democratic.probability)} | ${pct(c.parties.republican.probability)} | ${c.fetchedAt} |`);}
- lines.push('','Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. PredictIt Senate only; no direct House contract is configured. Prices are independent and may not total 100%. Market rules differ; these are not vote shares or guaranteed results.');
+ for(const chamber of Object.keys(slugs))for(const source of sources){const c=data.sources?.[source]?.[chamber];if(c)lines.push(`| ${chamber==='house'?'House':'Senate'} | [${c.source}${source==='manifold'?' · play money (comparison only)':''}](${c.url})${isStale(c)?' (stale)':''}${parties.some(p=>c.parties[p].closed)?' (closed)':''} | ${source==='manifold'?`[${pct(c.parties.democratic.probability)}](${c.parties.democratic.url})`:pct(c.parties.democratic.probability)} | ${source==='manifold'?`[${pct(c.parties.republican.probability)}](${c.parties.republican.url})`:pct(c.parties.republican.probability)} | ${c.fetchedAt} |`);}
+ lines.push('','Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. PredictIt covers House and Senate. Manifold shows separate play-money Yes contracts for each party and is excluded from the cash-market average. Prices are independent and may not total 100%. Market rules differ; these are not vote shares or guaranteed results.');
  if(model?.series){lines.push('','### Experimental machine learning — next daily Kalshi price','','Ridge, random forest, gradient boosting and their ensemble forecast the next daily closing bid/ask midpoint, **not the election result**. An earlier 30-day validation period selects the displayed method, including a no-change baseline. Error is walk-forward mean absolute error in percentage points; lower is better.','', '| Contract | Selected method | Forecast | Forecast for (UTC) | Test MAE | No-change MAE | Test days |','| :-- | :-- | --: | :-- | --: | --: | --: |');for(const m of Object.values(model.series))lines.push(`| ${m.chamber} / ${m.party} | ${m.benchmarks?.[m.selectedModel]?.name??'Ridge'} | ${pct(m.forecast)} | ${m.forecastFor}${forecastExpired(m.forecastFor,now)?' (expired)':''} | ${m.maePP.toFixed(2)} | ${m.baselineMaePP.toFixed(2)} | ${m.testDays} |`);lines.push('',`Model trained: ${model.trainedAt}. Forecasts expire at their target time. Uses Kalshi history only; no polling or election-outcome training. See the dashboard and model card for limitations.`);}
  lines.push('','<!-- CONGRESS_ODDS:END -->');return lines.join('\n');
 }

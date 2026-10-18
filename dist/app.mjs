@@ -1,8 +1,8 @@
 import {attachInspector} from './chart-inspector.mjs?v=20261011-interactive';
 import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
-import {fetchJson,validateLatest,validateHistory,validateModel,mergeLatest} from './reliability.mjs?v=20261006-robust';
+import {fetchJson,validateLatest,validateHistory,validateModel,mergeLatest} from './reliability.mjs?v=20261018-sources';
 import {renderLab,renderPulse} from './lab.mjs?v=20261012-audit';
-import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus,marketGapDescription} from './data-core.mjs?v=20261012-audit';
+import {slugs,parties,sources,names,tickers,parseEvent,pct,markdown,isStale,consensus,marketGapDescription} from './data-core.mjs?v=20261018-sources';
 import {forecastExpired} from './forecast-view.mjs';
 let data={sources:{},errors:{}},model,history;
 const liveFailures={},fileFailures={};
@@ -20,21 +20,21 @@ function render(){
   for(const party of parties){const number=card.querySelector(`[data-party="${party}"]`);number.replaceChildren(document.createTextNode(c?(c.parties[party].probability*100).toFixed(1):'—'));if(c)number.append(el('span','%'));card.querySelector(`[data-bar="${party}"]`).style.width=c?pct(c.parties[party].probability):'0%';}
   const status=card.querySelector('.status');const stale=selected!=='consensus'&&isStale(c);const closed=c&&parties.some(p=>c.parties[p].closed);
   status.textContent=!c?'Unavailable':selected==='consensus'?`${c.included.length} sources`:closed?'Market closed':stale?'Stale data':'Recent retrieval';status.classList.toggle('stale',!c||stale||closed);
-  card.querySelector('.card-subtitle').textContent=selected==='consensus'?'Equal-weight market average':`${names[selected]} · market-implied chance`;
+  card.querySelector('.card-subtitle').textContent=selected==='consensus'?'Equal-weight cash-market average':`${names[selected]} · ${selected==='manifold'?'play-money probabilities':'market-implied chance'}`;
   card.querySelector('.outlook').textContent=!c?'No eligible data for this view':marketGapDescription(c.parties.democratic.probability,c.parties.republican.probability);
   card.querySelector('.retrieved').textContent=!c?'No current snapshot':selected==='consensus'?`Includes ${c.included.map(x=>x.source).join(' + ')}`:`Retrieved ${date(c.fetchedAt)}`;
   card.querySelector('.source-time').textContent=selected==='consensus'?'Open sources retrieved within the last 2 hours':c?.priceMethod??'';
   const link=card.querySelector('.card-bottom a');link.href=selected==='consensus'?'#comparison':c?.url??'#comparison';link.textContent=selected==='consensus'?'Compare sources':'View market';link.target=selected==='consensus'?'_self':'_blank';
-  card.querySelector('.notice').textContent=!c?(selected==='predictit'&&chamber==='house'?'PredictIt has no direct House market configured. Use another source or the market average.':'No recent open sources available; older snapshots remain in the comparison below.'):stale?'Snapshot is over 2 hours old. Check the source for current prices.':'';
+  card.querySelector('.notice').textContent=!c?'No snapshot available. Check the comparison below for source status.':stale?'Snapshot is over 2 hours old. Check the source for current prices.':selected==='manifold'?'Community play-money markets · separate Yes contracts with different settlement rules. Comparison only; excluded from the cash-market average.':'';
  }
  const tbody=document.getElementById('source-rows');tbody.replaceChildren();
  for(const chamber of Object.keys(slugs))for(const source of sources){
   const c=data.sources[source]?.[chamber],tr=el('tr'),name=el('td');name.append(el('small',chamber==='house'?'HOUSE':'SENATE'));
   if(c){const a=el('a',names[source]+' ↗');a.href=c.url;a.target='_blank';a.rel='noopener noreferrer';name.append(a);}else name.append(el('span',names[source]));tr.append(name);
-  for(const party of parties)tr.append(el('td',c?pct(c.parties[party].probability):'—',party==='democratic'?'blue':'red'));
-  tr.append(el('td',c?.priceMethod??(source==='predictit'&&chamber==='house'?'Not configured':'Unavailable')));
-  const status=el('td',c?date(c.fetchedAt):(source==='predictit'&&chamber==='house'?'No direct House contract':'Source unavailable'));
-  if(c){const closed=parties.some(p=>c.parties[p].closed);status.append(el('small',closed?'Closed · excluded':isStale(c)?'Stale · excluded':'Eligible for market average',closed||isStale(c)?'source-error':''));if(data.errors?.[`${source}/${chamber}`]||liveFailures[`${source}/${chamber}`])status.append(el('small','Latest request failed · retained snapshot','source-error'));}
+  for(const party of parties){const cell=el('td',undefined,party==='democratic'?'blue':'red');if(c&&source==='manifold'){const a=el('a',pct(c.parties[party].probability)+' ↗');a.href=c.parties[party].url;a.target='_blank';a.rel='noopener noreferrer';a.style.color='inherit';cell.append(a);}else cell.textContent=c?pct(c.parties[party].probability):'—';tr.append(cell);}
+  tr.append(el('td',c?.priceMethod??'Unavailable'));
+  const status=el('td',c?date(c.fetchedAt):(data.errors?.[`${source}/${chamber}`]?'Retrieval failed · retry scheduled':'Awaiting source snapshot'));
+  if(c){const closed=parties.some(p=>c.parties[p].closed);status.append(el('small',closed?'Closed · excluded':isStale(c)?'Stale · excluded':source==='manifold'?'Play money · comparison only':'Eligible for cash-market average',closed||isStale(c)?'source-error':''));if(data.errors?.[`${source}/${chamber}`]||liveFailures[`${source}/${chamber}`])status.append(el('small','Latest request failed · retained snapshot','source-error'));}
   tr.append(status);tbody.append(tr);
  }
  document.getElementById('copy').disabled=!Object.keys(data.sources).length;
@@ -79,13 +79,14 @@ function renderHistory(){
 }
 let busy=false;
 function renderHealth(){
- const available=['house','senate'].reduce((n,c)=>n+(consensus(data,c)?.included.length||0),0);
+ const available=sources.reduce((n,s)=>n+Object.values(data.sources[s]||{}).filter(c=>!isStale(c)&&!parties.some(p=>c.parties[p].closed)).length,0);
+ const expected=sources.length*Object.keys(slugs).length;
  const issues=Object.keys(fileFailures).filter(k=>fileFailures[k]);
  const liveError=Object.values(liveFailures).some(Boolean);
  const offline=navigator.onLine===false;
  const box=document.getElementById('data-health');
- box.classList.toggle('degraded',offline||available<5||issues.length>0||liveError);
- box.textContent=`${offline?'Offline · ':''}${available}/5 recent, open market snapshots. Published updates scheduled ${formatMinutes(refreshCadence().publishMinutes)}; browser checks ${formatMinutes(refreshCadence().browserMinutes)}. ${lastCheck?'Last refresh check '+date(lastCheck)+'.':'Checking live sources…'} ${issues.length?'Could not update '+issues.join(', ')+'; retaining last valid data. ':''}${liveError?'Direct Polymarket refresh failed; saved snapshots remain visible. ':''}${!cacheAvailable?'Browser caching unavailable. ':''}Stale snapshots keep their original timestamps and are excluded from the average.`;
+ box.classList.toggle('degraded',offline||available<expected||issues.length>0||liveError);
+ box.textContent=`${offline?'Offline · ':''}${available}/${expected} recent, open market snapshots. Published updates scheduled ${formatMinutes(refreshCadence().publishMinutes)}; browser checks ${formatMinutes(refreshCadence().browserMinutes)}. ${lastCheck?'Last refresh check '+date(lastCheck)+'.':'Checking live sources…'} ${issues.length?'Could not update '+issues.join(', ')+'; retaining last valid data. ':''}${liveError?'Direct Polymarket refresh failed; saved snapshots remain visible. ':''}${!cacheAvailable?'Browser caching unavailable. ':''}Stale snapshots keep their original timestamps and are excluded from the average.`;
 }
 async function saved(){await Promise.all(Object.keys(validators).map(async key=>{
  try{

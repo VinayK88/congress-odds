@@ -2,7 +2,7 @@
 
 **[Open the live dashboard](https://vinayk88.github.io/congress-odds/)** · [Automatic updates](https://github.com/VinayK88/congress-odds/actions) · [Model card](MODEL_CARD.md)
 
-Compare Democratic and Republican chances of controlling the 2026 U.S. House and Senate across **Polymarket, Kalshi and PredictIt**. Includes an equal-weight market average, daily history chart and experimental machine learning forecasts.
+Compare Democratic and Republican chances of controlling the 2026 U.S. House and Senate across **Polymarket, Kalshi, PredictIt and Manifold**. Includes an equal-weight cash-market average (Manifold is comparison only), daily history chart and experimental machine learning forecasts.
 
 **Adaptive updates (U.S. Eastern dates):** hourly through Oct 19; every 30 minutes Oct 20–26; every 15 minutes Oct 27–31; every 5 minutes Nov 1–3. Candidate profiles are refreshed at most every 15 minutes in the final phase, and the experimental Kalshi-price model retrains only when its daily target expires. Scheduled GitHub Actions are best-effort, not guaranteed real-time quotes; each displayed price retains its retrieval timestamp. After Election Day, refreshes slow down.
 
@@ -13,11 +13,13 @@ Compare Democratic and Republican chances of controlling the 2026 U.S. House and
 | :-- | :-- | --: | --: | :-- |
 | House | [Polymarket](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 90.5% | 9.5% | 2026-10-18T05:12:48.482Z |
 | House | [Kalshi](https://kalshi.com/markets/controlh/house-winner/controlh-2026) | 90.1% | 10.5% | 2026-10-18T05:12:48.477Z |
+| House | [Manifold · play money (comparison only)](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [91.0%](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [7.0%](https://manifold.markets/ryanmccomb/republicans-have-house-majority-aft) | 2026-10-18T06:27:41.294Z |
 | Senate | [Polymarket](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 64.5% | 37.5% | 2026-10-18T05:12:48.481Z |
 | Senate | [Kalshi](https://kalshi.com/markets/controls/senate-winner/controls-2026) | 62.5% | 38.5% | 2026-10-18T05:12:48.473Z |
 | Senate | [PredictIt](https://www.predictit.org/markets/detail/8155/Which-party-will-control-the-Senate-after-the-2026-election) | 64.5% | 36.0% | 2026-10-18T05:12:48.507Z |
+| Senate | [Manifold · play money (comparison only)](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [63.0%](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [35.5%](https://manifold.markets/AndrewG/will-republicans-win-the-senate-in-738388924521) | 2026-10-18T06:27:41.408Z |
 
-Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. PredictIt Senate only; no direct House contract is configured. Prices are independent and may not total 100%. Market rules differ; these are not vote shares or guaranteed results.
+Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. PredictIt covers House and Senate. Manifold shows separate play-money Yes contracts for each party and is excluded from the cash-market average. Prices are independent and may not total 100%. Market rules differ; these are not vote shares or guaranteed results.
 
 ### Experimental machine learning — next daily Kalshi price
 
@@ -38,12 +40,13 @@ Model trained: 2026-10-15T15:06:51Z. Forecasts expire at their target time. Uses
 
 - **Polymarket:** direct House and Senate Yes outcome prices from the Gamma API.
 - **Kalshi:** direct House and Senate Yes bid/ask midpoints, using CONTROLH-2026 and CONTROLS-2026.
-- **PredictIt:** Senate control market 8155, using Yes bid/ask midpoints. No direct House contract is configured; combined Congress scenarios are not silently converted into House probabilities.
-- **Market average:** equal weight per eligible source, calculated separately for each party. A descriptive mean, not a learned or calibrated election forecast. Only open sources retrieved within two hours are eligible. Quotes may still be older than retrieval time.
+- **PredictIt:** direct House market 8157 and Senate market 8155, using Yes bid/ask midpoints. Failed or invalid quotes retain their original timestamps.
+- **Manifold:** independent House and Senate Yes contracts for each party, using the public API. Play-money community markets are labeled and excluded from the cash-market average and ML training. No complementary party probabilities are invented; separate contracts may not sum to 100%.
+- **Market average:** equal weight per eligible cash-market source (Polymarket, Kalshi and PredictIt), calculated separately for each party. A descriptive mean, not a learned or calibrated election forecast. Only open sources retrieved within two hours are eligible. Quotes may still be older than retrieval time.
 
 Party prices are independent, are not normalized, and may not sum to 100%. Markets differ in fees, liquidity, settlement rules and handling of ties. They reflect related information and are not independent evidence. These are not vote shares, seat counts or official results.
 
-Sources: [Polymarket API](https://docs.polymarket.com/api-reference/events/get-event-by-slug), [Kalshi API](https://docs.kalshi.com/api-reference/market/get-market-candlesticks), [PredictIt Senate API](https://www.predictit.org/api/marketdata/markets/8155).
+Sources: [Polymarket API](https://docs.polymarket.com/api-reference/events/get-event-by-slug), [Kalshi API](https://docs.kalshi.com/api-reference/market/get-market-candlesticks), [PredictIt Senate API](https://www.predictit.org/api/marketdata/markets/8155), [PredictIt House API](https://www.predictit.org/api/marketdata/markets/8157), [Manifold API](https://docs.manifold.markets/api).
 
 ## Machine learning
 

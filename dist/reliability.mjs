@@ -1,4 +1,4 @@
-import {sources,parties,slugs,tickers,names} from './data-core.mjs';
+import {sources,parties,slugs,tickers,names,manifoldMarkets,manifoldURL} from './data-core.mjs?v=20261018-sources';
 const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
 const number=v=>typeof v==='number'&&Number.isFinite(v);
 const prob=v=>number(v)&&v>=0&&v<=1;
@@ -6,11 +6,12 @@ const time=v=>typeof v==='string'&&Number.isFinite(Date.parse(v));
 const positive=v=>Number.isInteger(v)&&v>0;
 const contracts=Object.values(tickers).flatMap(t=>['D','R'].map(p=>`${t}-2026-${p}`));
 const methods=['baseline','ridge','forest','boost','ensemble'];
-const hosts={polymarket:'polymarket.com',kalshi:'kalshi.com',predictit:'www.predictit.org'};
+const hosts={polymarket:'polymarket.com',kalshi:'kalshi.com',predictit:'www.predictit.org',manifold:'manifold.markets'};
 function requireValue(ok,message){if(!ok)throw new Error(message);}
 export function validQuote(c,source,chamber,now=Date.now()) {
  if(!object(c)||c.chamber!==chamber||c.source!==names[source]||!time(c.fetchedAt)||Date.parse(c.fetchedAt)>now+300000||typeof c.priceMethod!=='string')return false;
  try{const u=new URL(c.url);if(u.protocol!=='https:'||u.hostname!==hosts[source]||u.username||u.password)return false;}catch{return false;}
+ if(source==='manifold'&&!parties.every(p=>c.parties?.[p]?.marketId===manifoldMarkets[chamber]?.[p]?.id&&c.parties[p].url===manifoldURL(chamber,p)))return false;
  return parties.every(p=>object(c.parties?.[p])&&prob(c.parties[p].probability)&&typeof c.parties[p].closed==='boolean');
 }
 export function validateLatest(value,now=Date.now()) {
@@ -18,10 +19,10 @@ export function validateLatest(value,now=Date.now()) {
  const out={schemaVersion:2,electionYear:2026,sources:{},errors:{}};
  let count=0;
  for(const source of sources)for(const chamber of Object.keys(slugs)){
-  const c=value.sources[source]?.[chamber];if(c===undefined)continue;
-  requireValue(!(source==='predictit'&&chamber==='house')&&validQuote(c,source,chamber,now),`Invalid ${source}/${chamber} snapshot`);
-  out.sources[source]??={};out.sources[source][chamber]=structuredClone(c);count++;
   const error=value.errors?.[`${source}/${chamber}`];if(typeof error==='string')out.errors[`${source}/${chamber}`]=error.slice(0,300);
+  const c=value.sources[source]?.[chamber];if(c===undefined)continue;
+  requireValue(validQuote(c,source,chamber,now),`Invalid ${source}/${chamber} snapshot`);
+  out.sources[source]??={};out.sources[source][chamber]=structuredClone(c);count++;
  }
  requireValue(count>0,'No valid source snapshots');return out;
 }
@@ -29,7 +30,8 @@ export function mergeLatest(current,incoming) {
  const out=structuredClone(current);out.sources??={};out.errors??={};out.schemaVersion=2;out.electionYear=2026;
  for(const source of sources)for(const chamber of Object.keys(slugs)){
   const next=incoming.sources[source]?.[chamber],old=out.sources[source]?.[chamber],key=`${source}/${chamber}`;
-  if(!next||(old&&Date.parse(old.fetchedAt)>Date.parse(next.fetchedAt)))continue;
+  if(!next){if(typeof incoming.errors?.[key]==='string')out.errors[key]=incoming.errors[key];continue;}
+  if(old&&Date.parse(old.fetchedAt)>Date.parse(next.fetchedAt))continue;
   out.sources[source]??={};out.sources[source][chamber]=structuredClone(next);
   if(incoming.errors?.[key])out.errors[key]=incoming.errors[key];else delete out.errors[key];
  }
