@@ -1,0 +1,51 @@
+/* A focused comparison desk; blue and red retain equal visual weight. */
+.briefing-toolbar{display:flex;justify-content:space-between;align-items:center;gap:24px;margin:4px 0 26px}
+.briefing-toolbar h3{font:600 23px/1.25 var(--font-system);letter-spacing:-.035em;margin:0 0 7px;color:var(--navy)}
+.briefing-toolbar p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
+.briefing-filters{display:flex;gap:3px;padding:5px;background:#e9eef5;border:1px solid #d8e1ed;border-radius:14px;flex-shrink:0}
+.briefing-filters button{font:550 12px var(--font-system);padding:11px 15px;min-height:42px;border:1px solid transparent;border-radius:10px;background:transparent;color:#425570;cursor:pointer}
+.briefing-filters button[aria-pressed=true]{background:#fff;border-color:#d9e1ec;color:#162d4b;box-shadow:0 3px 9px #142e5010}
+.briefing-filters button[data-party=democratic][aria-pressed=true]{color:var(--blue)}
+.briefing-filters button[data-party=republican][aria-pressed=true]{color:var(--red)}
+.briefing-panels{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.briefing-panel{min-width:0;background:#fff;border:1px solid #d9e2ee;border-radius:24px;padding:26px;box-shadow:0 10px 28px #18375c07;overflow:hidden}
+.briefing-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.briefing-kicker{font-size:9px;font-weight:650;letter-spacing:1.5px;color:var(--gold)}
+.briefing-panel h4{font:650 34px/1.15 var(--font-system);letter-spacing:-.045em;margin:7px 0 0;color:var(--navy)}
+.briefing-seats{padding:8px 11px;border:1px solid #e0e6ef;border-radius:9px;color:var(--muted);font-size:11px;white-space:nowrap}
+.briefing-axis{display:flex;justify-content:space-between;margin:0 66px 10px 25px;font-size:9px;color:#62748c;font-variant-numeric:tabular-nums}
+.briefing-source{padding:17px 0;border-top:1px solid #e5ebf3}
+.briefing-source:last-child{padding-bottom:0}
+.briefing-source-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:15px}
+.briefing-identity{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--navy)}
+.briefing-identity strong{font-weight:600}
+.briefing-source-icon{width:28px;height:28px;display:grid;place-items:center;background:#edf2f8;color:#37506f;border:1px solid #dce5f0;border-radius:8px;font-size:10px;font-weight:700}
+.briefing-source-kind{font-size:9px;color:#586c86;letter-spacing:.2px;background:#f0f4f9;border-radius:6px;padding:5px 7px}
+.briefing-quote{display:grid;grid-template-columns:16px minmax(0,1fr) 57px;gap:9px;align-items:center;margin:9px 0;color:var(--blue)}
+.briefing-quote.republican{color:var(--red)}
+.briefing-party{font-size:10px;font-weight:650}
+.briefing-track{position:relative;height:9px;border-radius:5px;background:#eef2f7;overflow:hidden}
+.briefing-track:after{content:'';position:absolute;left:50%;top:0;height:100%;border-left:1px solid #142e5030}
+.briefing-fill{display:block;height:100%;background:currentColor;border-radius:5px}
+.briefing-value{font-size:17px;font-weight:650;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:inherit;text-align:right;text-decoration:none}
+.briefing-value:hover{text-decoration:underline;text-underline-offset:4px}
+.briefing-time{font-size:9px;line-height:1.6;color:#60728a;margin:12px 0 0 25px}
+.briefing-unavailable .briefing-track{background:#e8ebef}
+.briefing-unavailable .briefing-fill{background:repeating-linear-gradient(135deg,#8997aa 0 4px,#b1bdcb 4px 8px)}
+.briefing-unavailable .briefing-source-kind{background:#fff2df;color:#7b531e}
+.briefing-details{margin-top:24px;border:1px solid #dae3ee;border-radius:18px;background:#f7f9fc;overflow:hidden}
+.briefing-details>summary{cursor:pointer;padding:20px 22px;font-size:13px;font-weight:600;color:var(--navy)}
+.briefing-details>summary span{float:right;font-weight:400;font-size:11px;color:var(--muted)}
+.comparison .briefing-details .table-wrap{border-radius:0;border:0;border-top:1px solid #dce5ef;box-shadow:none}
+.comparison>.fine{font-size:11px;line-height:1.8;margin-top:20px;max-width:950px}
+.chambers .chamber{box-shadow:0 14px 40px #19325209;border-color:#d6e1ed}
+.chambers .card-subtitle{font-size:12px;letter-spacing:.1px}
+.chambers .card-bottom a{padding:9px 12px;border:1px solid #d8e2ee;border-radius:9px;background:#f7f9fc;white-space:nowrap}
+.chambers .outlook{border-radius:0 10px 10px 0;font-size:12px;line-height:1.6}
+.source-switcher{border-radius:16px;padding:6px;gap:5px}
+.source-switcher button{border-radius:11px;min-height:42px}
+.pulse-tile{border-radius:18px}
+@media(hover:hover){.briefing-filters button:hover{background:#fff8}.briefing-source:hover .briefing-source-icon{background:#e1eaf6;border-color:#bacce3}.chambers .card-bottom a:hover{background:#eaf1fb;border-color:#b8cce6}}
+@media(max-width:1050px){.briefing-toolbar{align-items:flex-start;flex-direction:column;gap:18px}.briefing-panel{padding:22px}.briefing-panels{gap:16px}}
+@media(max-width:700px){.briefing-panels{grid-template-columns:1fr;gap:18px}.briefing-panel{padding:22px 20px;border-radius:20px}.briefing-toolbar h3{font-size:22px}.briefing-filters{width:100%}.briefing-filters button{flex:1;font-size:11px;padding:10px 7px}.briefing-details>summary span{display:none}.briefing-details>summary{padding:18px}.chambers .card-bottom{flex-wrap:wrap;gap:12px}}
+@media(prefers-contrast:more){.briefing-panel,.briefing-filters,.briefing-details{border-color:#53657e}.briefing-time,.briefing-axis{color:#344b68}}

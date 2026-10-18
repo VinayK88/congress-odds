@@ -1,3 +1,4 @@
+import {createMarketBriefing} from './market-briefing.mjs?v=20261018-visual';
 import {attachInspector} from './chart-inspector.mjs?v=20261011-interactive';
 import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
 import {fetchJson,validateLatest,validateHistory,validateModel,mergeLatest} from './reliability.mjs?v=20261018-sources';
@@ -13,6 +14,7 @@ for(const key of Object.keys(validators)){try{const raw=localStorage.getItem('co
 const date=t=>new Date(t).toLocaleString(undefined,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
 const shortDate=t=>new Date(t*1000).toLocaleDateString(undefined,{month:'short',day:'numeric',timeZone:'UTC'});
 const el=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
+const renderBriefing=createMarketBriefing(document.getElementById('market-briefing'));
 function render(){
  const selected=document.getElementById('source').value;
  for(const chamber of Object.keys(slugs)){
@@ -38,7 +40,7 @@ function render(){
   tr.append(status);tbody.append(tr);
  }
  document.getElementById('copy').disabled=!Object.keys(data.sources).length;
- renderModel();renderHistory();renderPulse(data,history,consensus);renderHealth();
+ renderBriefing(data,liveFailures);renderModel();renderHistory();renderPulse(data,history,consensus);renderHealth();
 }
 function renderModel(){
  const status=document.getElementById('model-status'),cards=document.getElementById('model-cards'),rows=document.getElementById('model-rows');cards.replaceChildren();rows.replaceChildren();
