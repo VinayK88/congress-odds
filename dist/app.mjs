@@ -1,4 +1,4 @@
-import {createMarketBriefing} from './market-briefing.mjs?v=20261018-visual';
+import {createMarketBriefing} from './market-briefing.mjs?v=20261018-visual2';
 import {attachInspector} from './chart-inspector.mjs?v=20261011-interactive';
 import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
 import {fetchJson,validateLatest,validateHistory,validateModel,mergeLatest} from './reliability.mjs?v=20261018-sources';
