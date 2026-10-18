@@ -95,6 +95,9 @@ jobs:
       - name: Report training failure
         if: steps.model.outcome == 'failure' || steps.dependencies.outcome == 'failure'
         run: echo "::warning::Model training failed. Retaining timestamped previous forecasts; expired forecasts are labeled on the site."
+      - name: Refresh early voting reports
+        continue-on-error: true
+        run: node scripts/update-early-vote.mjs
       - name: Update README comparisons and model results
         run: node scripts/update-readme.mjs
       - name: Validate generated snapshots before publication
