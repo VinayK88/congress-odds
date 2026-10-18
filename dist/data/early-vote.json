@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-18T20:49:20.781Z",
+  "fetchedAt": "2026-10-18T23:21:52.294Z",
   "rows": [
     {
       "code": "AK",
@@ -19,13 +19,13 @@
     {
       "code": "AZ",
       "name": "Arizona",
-      "asOf": "2026-10-17",
+      "asOf": "2026-10-18",
       "source": "https://www.stealth-analytics.com/early-ballots",
       "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
-      "total": 283356,
+      "total": 318750,
       "inPerson": 0,
-      "mail": 283356,
-      "requested": 3248821
+      "mail": 318750,
+      "requested": 3249941
     },
     {
       "code": "AR",
@@ -44,10 +44,10 @@
       "asOf": "2026-10-18",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist.",
-      "total": 1334860,
+      "total": 1391278,
       "inPerson": 0,
-      "mail": 1334860,
-      "requested": 23400445
+      "mail": 1391278,
+      "requested": 23400899
     },
     {
       "code": "CO",
@@ -110,9 +110,9 @@
       "asOf": "2026-10-18",
       "source": "https://mvp.sos.ga.gov/s/voter-absentee-files",
       "notes": "Georgia's county-level \"Ballots Issued and Accepted\" and \"Ballots to Date\" downloads (from the state's election-data-hub dashboard, https://sos.ga.gov/page/election-data-hub-unofficial-turnout) are compared against the statewide absentee file, county by county, using whichever is higher - this is how same-day in-person early-voting activity (which the statewide absentee file doesn't carry until the next overnight refresh) gets folded in. No district or demographic breakdown is available from these county-level downloads.",
-      "total": 837439,
-      "inPerson": 801188,
-      "mail": 36251,
+      "total": 857054,
+      "inPerson": 820357,
+      "mail": 36990,
       "requested": 142653
     },
     {
@@ -217,13 +217,13 @@
     {
       "code": "MD",
       "name": "Maryland",
-      "asOf": "2026-10-17",
+      "asOf": "2026-10-18",
       "source": "https://elections.maryland.gov/press_room/index.html",
       "notes": "Maryland reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 196082,
+      "total": 196369,
       "inPerson": 0,
-      "mail": 196082,
-      "requested": 621092
+      "mail": 196369,
+      "requested": 621014
     },
     {
       "code": "MA",
