@@ -41,7 +41,7 @@ export function createMarketBriefing(root){
      const line=node('div',undefined,`market-desk-quote ${party}`);
      const partyLabel=node('span',party==='democratic'?'D':'R','market-desk-party');partyLabel.setAttribute('aria-label',labels[party]);
      const track=node('div',undefined,'market-desk-track');track.setAttribute('aria-hidden','true');
-     if(c){const fill=node('span',undefined,'market-desk-fill');fill.style.width=pct(c.parties[party].probability);track.append(fill);}
+     if(c){const fill=node('span',undefined,'market-desk-fill');fill.style.width=`${c.parties[party].probability*100}%`;track.append(fill);}
      const quote=node(c?'a':'span',c?pct(c.parties[party].probability):'—','market-desk-value');
      if(c){quote.href=c.parties[party].url??c.url;quote.target='_blank';quote.rel='noopener noreferrer';quote.setAttribute('aria-label',`${names[source]}, ${chamber}, ${labels[party]}: ${pct(c.parties[party].probability)}. ${status}. Open source contract.`);}
      line.append(partyLabel,track,quote);row.append(line);
