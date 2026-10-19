@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-19T19:29:56.756Z",
+  "fetchedAt": "2026-10-19T22:26:53.805Z",
   "rows": [
     {
       "code": "AK",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-19",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 1021807,
-      "inPerson": 116867,
-      "mail": 904940,
-      "requested": 2368763
+      "total": 1078572,
+      "inPerson": 154325,
+      "mail": 924247,
+      "requested": 2369037
     },
     {
       "code": "GA",
@@ -294,13 +294,13 @@
     {
       "code": "NE",
       "name": "Nebraska",
-      "asOf": "2026-10-16",
+      "asOf": "2026-10-19",
       "source": "Data file provided by Nebraska Secretary of State",
       "notes": "",
-      "total": 77291,
-      "inPerson": 9278,
-      "mail": 68013,
-      "requested": 220086
+      "total": 90039,
+      "inPerson": 11018,
+      "mail": 79021,
+      "requested": 223074
     },
     {
       "code": "NV",
@@ -415,13 +415,13 @@
     {
       "code": "RI",
       "name": "Rhode Island",
-      "asOf": "2026-10-16",
+      "asOf": "2026-10-19",
       "source": "Rhode Island Secretary of State",
       "notes": "",
-      "total": 21366,
-      "inPerson": 15050,
-      "mail": 6316,
-      "requested": 31491
+      "total": 30102,
+      "inPerson": 21314,
+      "mail": 8788,
+      "requested": 31701
     },
     {
       "code": "SC",
