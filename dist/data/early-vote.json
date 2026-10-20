@@ -3,18 +3,18 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-20T22:22:24.637Z",
+  "fetchedAt": "2026-10-20T23:10:43.158Z",
   "rows": [
     {
       "code": "AK",
       "name": "Alaska",
-      "asOf": "2026-08-12",
-      "source": "https://www.elections.alaska.gov/research/statistics/#aeqstats",
+      "asOf": "2026-10-20",
+      "source": "Alaska Division of Elections",
       "notes": "",
-      "total": 0,
-      "inPerson": 0,
-      "mail": 0,
-      "requested": 0
+      "total": 11827,
+      "inPerson": 6744,
+      "mail": 5083,
+      "requested": 44360
     },
     {
       "code": "AZ",
@@ -228,13 +228,13 @@
     {
       "code": "MA",
       "name": "Massachusetts",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Massachusetts Secretary of the Commonwealth",
       "notes": "Massachusetts also publishes a party breakdown, but its \"Cast\" figures (by party) are far larger than the statewide total ballots cast on its own overall-statistics sheet, in nearly every town - checked directly, these do not reconcile with this cycle's own mail-ballot activity (e.g. one town shows 0 ballots returned total but a nonzero \"Dem Cast\"). Michael has asked the state about the discrepancy (2026-10-13); until that's resolved, this pipeline uses only the overall (non-party) statistics below.",
-      "total": 351598,
-      "inPerson": 46094,
-      "mail": 305504,
-      "requested": 1025861
+      "total": 412329,
+      "inPerson": 66757,
+      "mail": 345572,
+      "requested": 1034455
     },
     {
       "code": "MI",
@@ -307,11 +307,11 @@
       "name": "Nevada",
       "asOf": "2026-10-20",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
-      "notes": "",
-      "total": 147343,
-      "inPerson": 58751,
-      "mail": 88592,
-      "requested": 2052149
+      "notes": "Nevada's county and statewide early-voting totals include the state's own 'Vivid' dashboard numbers where those run higher than this file's; congressional and legislative district totals are built from this file alone and may be lower than the county and state totals as a result.",
+      "total": 167598,
+      "inPerson": 61252,
+      "mail": 106346,
+      "requested": 2086814
     },
     {
       "code": "NJ",
