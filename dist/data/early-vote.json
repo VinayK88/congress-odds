@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-19T22:26:53.805Z",
+  "fetchedAt": "2026-10-20T01:39:44.625Z",
   "rows": [
     {
       "code": "AK",
@@ -85,12 +85,12 @@
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-15",
+      "asOf": "2026-10-19",
       "source": "https://dcboe.org/",
       "notes": "",
-      "total": 15472,
+      "total": 23696,
       "inPerson": 0,
-      "mail": 15472,
+      "mail": 23696,
       "requested": 492023
     },
     {
@@ -99,10 +99,10 @@
       "asOf": "2026-10-19",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 1078572,
-      "inPerson": 154325,
-      "mail": 924247,
-      "requested": 2369037
+      "total": 1099898,
+      "inPerson": 171011,
+      "mail": 928887,
+      "requested": 2369378
     },
     {
       "code": "GA",
@@ -228,13 +228,13 @@
     {
       "code": "MA",
       "name": "Massachusetts",
-      "asOf": "2026-10-16",
+      "asOf": "2026-10-19",
       "source": "Massachusetts Secretary of the Commonwealth",
       "notes": "Massachusetts also publishes a party breakdown, but its \"Cast\" figures (by party) are far larger than the statewide total ballots cast on its own overall-statistics sheet, in nearly every town - checked directly, these do not reconcile with this cycle's own mail-ballot activity (e.g. one town shows 0 ballots returned total but a nonzero \"Dem Cast\"). Michael has asked the state about the discrepancy (2026-10-13); until that's resolved, this pipeline uses only the overall (non-party) statistics below.",
-      "total": 209661,
-      "inPerson": 0,
-      "mail": 209661,
-      "requested": 1015376
+      "total": 351598,
+      "inPerson": 46094,
+      "mail": 305504,
+      "requested": 1025861
     },
     {
       "code": "MI",
@@ -393,12 +393,12 @@
     {
       "code": "OR",
       "name": "Oregon",
-      "asOf": "2026-10-18",
+      "asOf": "2026-10-19",
       "source": "https://sos.oregon.gov/elections/Documents/Ballot-Return-Dashboard-Nov-3-2026.pdf",
       "notes": "",
-      "total": 3782,
+      "total": 11486,
       "inPerson": 0,
-      "mail": 3782,
+      "mail": 11486,
       "requested": 3117439
     },
     {
@@ -437,13 +437,13 @@
     {
       "code": "SD",
       "name": "South Dakota",
-      "asOf": "2026-10-17",
+      "asOf": "2026-10-19",
       "source": "South Dakota Secretary of State",
       "notes": "",
-      "total": 28451,
+      "total": 31731,
       "inPerson": 0,
-      "mail": 28451,
-      "requested": 38063
+      "mail": 31731,
+      "requested": 41466
     },
     {
       "code": "TN",
