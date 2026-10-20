@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-20T13:38:19.368Z",
+  "fetchedAt": "2026-10-20T16:49:02.240Z",
   "rows": [
     {
       "code": "AK",
@@ -19,13 +19,13 @@
     {
       "code": "AZ",
       "name": "Arizona",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://www.stealth-analytics.com/early-ballots",
       "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
-      "total": 388170,
+      "total": 401968,
       "inPerson": 0,
-      "mail": 388170,
-      "requested": 3252063
+      "mail": 401968,
+      "requested": 3252470
     },
     {
       "code": "AR",
@@ -140,24 +140,24 @@
     {
       "code": "IL",
       "name": "Illinois",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://www.elections.il.gov/VotingAndRegistrationSystems/PreElectionCounts.aspx",
       "notes": "",
-      "total": 420957,
-      "inPerson": 104525,
-      "mail": 316432,
-      "requested": 1106470
+      "total": 521301,
+      "inPerson": 172666,
+      "mail": 348635,
+      "requested": 1115987
     },
     {
       "code": "IN",
       "name": "Indiana",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Indiana Secretary of State",
       "notes": "",
-      "total": 172925,
+      "total": 196610,
       "inPerson": 0,
-      "mail": 172925,
-      "requested": 231207
+      "mail": 196610,
+      "requested": 254331
     },
     {
       "code": "IA",
@@ -184,13 +184,13 @@
     {
       "code": "KY",
       "name": "Kentucky",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://elect.ky.gov/Pages/default.aspx",
       "notes": "Kentucky reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 17798,
+      "total": 20763,
       "inPerson": 0,
-      "mail": 17798,
-      "requested": 61093
+      "mail": 20763,
+      "requested": 64250
     },
     {
       "code": "LA",
@@ -217,13 +217,13 @@
     {
       "code": "MD",
       "name": "Maryland",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://elections.maryland.gov/press_room/index.html",
       "notes": "Maryland reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 196421,
+      "total": 218469,
       "inPerson": 0,
-      "mail": 196421,
-      "requested": 621013
+      "mail": 218469,
+      "requested": 629415
     },
     {
       "code": "MA",
@@ -239,13 +239,13 @@
     {
       "code": "MI",
       "name": "Michigan",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Data provided by Michigan Secretary of State",
       "notes": "",
-      "total": 683402,
+      "total": 789654,
       "inPerson": 0,
-      "mail": 683402,
-      "requested": 2116813
+      "mail": 789654,
+      "requested": 2127758
     },
     {
       "code": "MN",
@@ -371,13 +371,13 @@
     {
       "code": "OH",
       "name": "Ohio",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://data.ohiosos.gov/portal/election-dashboards",
       "notes": "In-person early votes may be different than reported by the Ohio Secretary of State. They are approximated by counting a ballot sent and received on the same day as an in-person early vote.",
-      "total": 574341,
-      "inPerson": 359789,
-      "mail": 214552,
-      "requested": 688994
+      "total": 676836,
+      "inPerson": 404880,
+      "mail": 271956,
+      "requested": 698785
     },
     {
       "code": "OK",
@@ -404,13 +404,13 @@
     {
       "code": "PA",
       "name": "Pennsylvania",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://data.pa.gov/Government-Efficiency-Citizen-Engagement/2026-General-Election-Mail-Ballot-Requests-Departm/nbwd-pfn4/about_data",
       "notes": "These statistics are compiled from an individual level file which may have slightly different statistics than the state's summary report. I believe the discrepancy is due to timing of when the state generates these data. The individual file has age and district identifiers that allow me to produce more statistics.",
-      "total": 532067,
+      "total": 635088,
       "inPerson": 0,
-      "mail": 532067,
-      "requested": 1172391
+      "mail": 635088,
+      "requested": 1189324
     },
     {
       "code": "RI",
@@ -448,24 +448,24 @@
     {
       "code": "TN",
       "name": "Tennessee",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://sos.tn.gov/govotetn",
       "notes": "Tennessee's daily turnout report provides a cumulative county-level total for in-person early voters only. No mail-ballot figures or demographic data are available for Tennessee at at this time.",
-      "total": 305844,
-      "inPerson": 305844,
+      "total": 397417,
+      "inPerson": 397417,
       "mail": 0,
       "requested": 0
     },
     {
       "code": "TX",
       "name": "Texas",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://www.sos.state.tx.us/elections/historical/index.shtml",
       "notes": "Texas does not report mail ballot requests. Requests are set to the number of mail ballots returned.",
-      "total": 54098,
-      "inPerson": 0,
-      "mail": 54098,
-      "requested": 54098
+      "total": 496002,
+      "inPerson": 419376,
+      "mail": 76626,
+      "requested": 76626
     },
     {
       "code": "UT",
@@ -536,13 +536,13 @@
     {
       "code": "WY",
       "name": "Wyoming",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Wyoming Secretary of State",
       "notes": "",
-      "total": 18227,
+      "total": 22403,
       "inPerson": 0,
-      "mail": 18227,
-      "requested": 34503
+      "mail": 22403,
+      "requested": 37246
     }
   ]
 }
