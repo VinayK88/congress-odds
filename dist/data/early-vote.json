@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-20T12:03:44.895Z",
+  "fetchedAt": "2026-10-20T13:38:19.368Z",
   "rows": [
     {
       "code": "AK",
@@ -96,13 +96,13 @@
     {
       "code": "FL",
       "name": "Florida",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 1102430,
-      "inPerson": 171025,
-      "mail": 931405,
-      "requested": 2369564
+      "total": 1111367,
+      "inPerson": 174084,
+      "mail": 937283,
+      "requested": 2398435
     },
     {
       "code": "GA",
@@ -162,13 +162,13 @@
     {
       "code": "IA",
       "name": "Iowa",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Iowa Secretary of State",
       "notes": "Iowa's BALLOT_STATUS field is not fully documented - this site infers whether a mail ballot was accepted from whether it has a RECEIVED_DATE rather than from BALLOT_STATUS directly. Figures may be revised once the Iowa Secretary of State's office provides official field documentation.",
-      "total": 61021,
-      "inPerson": 57550,
-      "mail": 3471,
-      "requested": 151417
+      "total": 93169,
+      "inPerson": 77505,
+      "mail": 15664,
+      "requested": 159510
     },
     {
       "code": "KS",
@@ -294,13 +294,13 @@
     {
       "code": "NE",
       "name": "Nebraska",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Data file provided by Nebraska Secretary of State",
       "notes": "",
-      "total": 90039,
-      "inPerson": 11018,
-      "mail": 79021,
-      "requested": 223074
+      "total": 104837,
+      "inPerson": 13179,
+      "mail": 91658,
+      "requested": 227351
     },
     {
       "code": "NV",
@@ -316,13 +316,13 @@
     {
       "code": "NJ",
       "name": "New Jersey",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "New Jersey Secretary of State",
       "notes": "",
-      "total": 364128,
+      "total": 387599,
       "inPerson": 0,
-      "mail": 364128,
-      "requested": 910964
+      "mail": 387599,
+      "requested": 914165
     },
     {
       "code": "NM",
@@ -459,13 +459,13 @@
     {
       "code": "TX",
       "name": "Texas",
-      "asOf": "2026-08-12",
+      "asOf": "2026-10-19",
       "source": "https://www.sos.state.tx.us/elections/historical/index.shtml",
-      "notes": "",
-      "total": 0,
+      "notes": "Texas does not report mail ballot requests. Requests are set to the number of mail ballots returned.",
+      "total": 54098,
       "inPerson": 0,
-      "mail": 0,
-      "requested": 0
+      "mail": 54098,
+      "requested": 54098
     },
     {
       "code": "UT",
@@ -481,13 +481,13 @@
     {
       "code": "VT",
       "name": "Vermont",
-      "asOf": "2026-10-12",
+      "asOf": "2026-10-20",
       "source": "Data provided Vermont Secretary of State",
       "notes": "",
-      "total": 22973,
+      "total": 70966,
       "inPerson": 0,
-      "mail": 22973,
-      "requested": 457789
+      "mail": 70966,
+      "requested": 457838
     },
     {
       "code": "VA",
@@ -525,13 +525,13 @@
     {
       "code": "WI",
       "name": "Wisconsin",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://elections.wi.gov/resources/statistics/absentee-ballot-report-november-3-2026-general-election-0",
       "notes": "",
-      "total": 173164,
-      "inPerson": 0,
-      "mail": 173164,
-      "requested": 371014
+      "total": 191285,
+      "inPerson": 104,
+      "mail": 191181,
+      "requested": 376019
     },
     {
       "code": "WY",
