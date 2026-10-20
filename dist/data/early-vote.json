@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-20T20:10:29.795Z",
+  "fetchedAt": "2026-10-20T22:22:24.637Z",
   "rows": [
     {
       "code": "AK",
@@ -63,13 +63,13 @@
     {
       "code": "CT",
       "name": "Connecticut",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Connecticut Secretary of the State",
       "notes": "",
-      "total": 19217,
-      "inPerson": 0,
-      "mail": 19217,
-      "requested": 49452
+      "total": 65402,
+      "inPerson": 42241,
+      "mail": 23161,
+      "requested": 54297
     },
     {
       "code": "DE",
@@ -206,13 +206,13 @@
     {
       "code": "ME",
       "name": "Maine",
-      "asOf": "2026-10-16",
+      "asOf": "2026-10-20",
       "source": "https://www.maine.gov/sos/cec/elec/data/index.html",
       "notes": "",
-      "total": 101403,
+      "total": 135484,
       "inPerson": 0,
-      "mail": 101403,
-      "requested": 176965
+      "mail": 135484,
+      "requested": 201482
     },
     {
       "code": "MD",
@@ -393,12 +393,12 @@
     {
       "code": "OR",
       "name": "Oregon",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://sos.oregon.gov/elections/Documents/Ballot-Return-Dashboard-Nov-3-2026.pdf",
       "notes": "",
-      "total": 11486,
+      "total": 89050,
       "inPerson": 0,
-      "mail": 11486,
+      "mail": 89050,
       "requested": 3117439
     },
     {
