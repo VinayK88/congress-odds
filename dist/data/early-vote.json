@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-20T01:39:44.625Z",
+  "fetchedAt": "2026-10-20T06:35:28.506Z",
   "rows": [
     {
       "code": "AK",
@@ -22,10 +22,10 @@
       "asOf": "2026-10-19",
       "source": "https://www.stealth-analytics.com/early-ballots",
       "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
-      "total": 374270,
+      "total": 388170,
       "inPerson": 0,
-      "mail": 374270,
-      "requested": 3251508
+      "mail": 388170,
+      "requested": 3252063
     },
     {
       "code": "AR",
@@ -44,21 +44,21 @@
       "asOf": "2026-10-19",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist.",
-      "total": 1406286,
+      "total": 1548252,
       "inPerson": 0,
-      "mail": 1406286,
+      "mail": 1548252,
       "requested": 23400991
     },
     {
       "code": "CO",
       "name": "Colorado",
-      "asOf": "2026-10-17",
+      "asOf": "2026-10-19",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 369089,
-      "inPerson": 0,
-      "mail": 369089,
-      "requested": 4032778
+      "total": 506217,
+      "inPerson": 1206,
+      "mail": 505011,
+      "requested": 4043982
     },
     {
       "code": "CT",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-19",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 1099898,
-      "inPerson": 171011,
-      "mail": 928887,
-      "requested": 2369378
+      "total": 1102430,
+      "inPerson": 171025,
+      "mail": 931405,
+      "requested": 2369564
     },
     {
       "code": "GA",
@@ -110,9 +110,9 @@
       "asOf": "2026-10-19",
       "source": "https://mvp.sos.ga.gov/s/voter-absentee-files",
       "notes": "Georgia's county-level \"Ballots Issued and Accepted\" and \"Ballots to Date\" downloads (from the state's election-data-hub dashboard, https://sos.ga.gov/page/election-data-hub-unofficial-turnout) are compared against the statewide absentee file, county by county, using whichever is higher - this is how same-day in-person early-voting activity (which the statewide absentee file doesn't carry until the next overnight refresh) gets folded in. No district or demographic breakdown is available from these county-level downloads.",
-      "total": 948700,
-      "inPerson": 908464,
-      "mail": 40236,
+      "total": 1027082,
+      "inPerson": 980467,
+      "mail": 46978,
       "requested": 142681
     },
     {
@@ -360,13 +360,13 @@
     {
       "code": "ND",
       "name": "North Dakota",
-      "asOf": "2026-10-17",
+      "asOf": "2026-10-19",
       "source": "https://vip.sos.nd.gov/abev.aspx?eid=348",
       "notes": "",
-      "total": 21914,
+      "total": 24755,
       "inPerson": 0,
-      "mail": 21914,
-      "requested": 50364
+      "mail": 24755,
+      "requested": 51487
     },
     {
       "code": "OH",
