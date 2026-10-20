@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-20T18:31:24.461Z",
+  "fetchedAt": "2026-10-20T20:10:29.795Z",
   "rows": [
     {
       "code": "AK",
@@ -22,32 +22,32 @@
       "asOf": "2026-10-20",
       "source": "https://www.stealth-analytics.com/early-ballots",
       "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
-      "total": 401968,
+      "total": 518255,
       "inPerson": 0,
-      "mail": 401968,
-      "requested": 3252470
+      "mail": 518255,
+      "requested": 3257868
     },
     {
       "code": "AR",
       "name": "Arkansas",
-      "asOf": "2026-08-12",
+      "asOf": "2026-10-20",
       "source": "Arkansas Secretary of State",
       "notes": "",
-      "total": 0,
-      "inPerson": 0,
-      "mail": 0,
-      "requested": 0
+      "total": 60330,
+      "inPerson": 56950,
+      "mail": 3380,
+      "requested": 9209
     },
     {
       "code": "CA",
       "name": "California",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist.",
-      "total": 1548252,
+      "total": 1714182,
       "inPerson": 0,
-      "mail": 1548252,
-      "requested": 23400991
+      "mail": 1714182,
+      "requested": 23413436
     },
     {
       "code": "CO",
@@ -74,23 +74,23 @@
     {
       "code": "DE",
       "name": "Delaware",
-      "asOf": "2026-10-16",
+      "asOf": "2026-10-20",
       "source": "Delaware Department of Elections",
       "notes": "Delaware does not publish mail ballot request data. The \"ballots requested\" figures shown for Delaware are the number of mail ballots received and counted, treated as equal to requests for lack of any other source.",
-      "total": 12043,
+      "total": 13817,
       "inPerson": 0,
-      "mail": 12043,
-      "requested": 12043
+      "mail": 13817,
+      "requested": 13817
     },
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://dcboe.org/",
-      "notes": "",
-      "total": 23696,
+      "notes": "The DC Board of Elections reports mail ballots returned in two separate files (drop box and USPS). There is no separate outstanding-request count, so request_all is set equal to the total returned. No party, age, or geographic breakdown is available. In-person early voting is not yet included; a third file covering it is expected later in the cycle.",
+      "total": 27599,
       "inPerson": 0,
-      "mail": 23696,
+      "mail": 27599,
       "requested": 492023
     },
     {
@@ -99,10 +99,10 @@
       "asOf": "2026-10-20",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 1111367,
-      "inPerson": 174084,
-      "mail": 937283,
-      "requested": 2398435
+      "total": 1321415,
+      "inPerson": 310209,
+      "mail": 1011206,
+      "requested": 2399117
     },
     {
       "code": "GA",
@@ -118,24 +118,24 @@
     {
       "code": "HI",
       "name": "Hawaii",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://elections.hawaii.gov/resources/absentee-voting-report/",
       "notes": "",
-      "total": 14801,
+      "total": 34321,
       "inPerson": 0,
-      "mail": 14801,
-      "requested": 724028
+      "mail": 34321,
+      "requested": 724248
     },
     {
       "code": "ID",
       "name": "Idaho",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Idaho Secretary of State",
       "notes": "Idaho's daily absentee file covers mail ballots only - in-person early voting counts are scraped separately from the state's own dashboard (https://voteidaho.gov/data-and-dashboards/absentee-tracker/) and added in as a single statewide/county total, with no party, age, or gender breakdown available for it (the dashboard's own party breakdown mixes mail and in-person together, so it can't be used to split out the in-person-only portion). Congressional and state-legislative district totals are mail ballots only and do not include in-person early voting, so they will run lower than the statewide/county totals.",
-      "total": 62384,
-      "inPerson": 7485,
-      "mail": 54899,
-      "requested": 148820
+      "total": 83047,
+      "inPerson": 21208,
+      "mail": 61839,
+      "requested": 152654
     },
     {
       "code": "IL",
@@ -173,13 +173,13 @@
     {
       "code": "KS",
       "name": "Kansas",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Kansas Secretary of State",
       "notes": "",
-      "total": 25118,
-      "inPerson": 23879,
-      "mail": 1239,
-      "requested": 92115
+      "total": 55481,
+      "inPerson": 47847,
+      "mail": 7634,
+      "requested": 95547
     },
     {
       "code": "KY",
@@ -305,13 +305,13 @@
     {
       "code": "NV",
       "name": "Nevada",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
       "notes": "",
-      "total": 77590,
-      "inPerson": 88,
-      "mail": 77502,
-      "requested": 2054074
+      "total": 147343,
+      "inPerson": 58751,
+      "mail": 88592,
+      "requested": 2052149
     },
     {
       "code": "NJ",
@@ -327,13 +327,13 @@
     {
       "code": "NM",
       "name": "New Mexico",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "New Mexico Secretary of State",
       "notes": "",
-      "total": 97494,
-      "inPerson": 74093,
-      "mail": 23401,
-      "requested": 86073
+      "total": 126013,
+      "inPerson": 96686,
+      "mail": 29327,
+      "requested": 87517
     },
     {
       "code": "NY",
