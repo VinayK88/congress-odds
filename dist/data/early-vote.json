@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-21T06:30:42.688Z",
+  "fetchedAt": "2026-10-21T07:46:26.772Z",
   "rows": [
     {
       "code": "AK",
