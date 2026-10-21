@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-21T12:14:21.347Z",
+  "fetchedAt": "2026-10-21T13:54:34.765Z",
   "rows": [
     {
       "code": "AK",
@@ -96,13 +96,13 @@
     {
       "code": "FL",
       "name": "Florida",
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-21",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 1384933,
-      "inPerson": 353809,
-      "mail": 1031124,
-      "requested": 2399491
+      "total": 1399784,
+      "inPerson": 362585,
+      "mail": 1037199,
+      "requested": 2423243
     },
     {
       "code": "GA",
@@ -162,13 +162,13 @@
     {
       "code": "IA",
       "name": "Iowa",
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-21",
       "source": "Iowa Secretary of State",
       "notes": "Iowa's BALLOT_STATUS field is not fully documented - this site infers whether a mail ballot was accepted from whether it has a RECEIVED_DATE rather than from BALLOT_STATUS directly. Figures may be revised once the Iowa Secretary of State's office provides official field documentation.",
-      "total": 93169,
-      "inPerson": 77505,
-      "mail": 15664,
-      "requested": 159510
+      "total": 124444,
+      "inPerson": 95876,
+      "mail": 28568,
+      "requested": 160235
     },
     {
       "code": "KS",
@@ -294,13 +294,13 @@
     {
       "code": "NE",
       "name": "Nebraska",
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-21",
       "source": "Data file provided by Nebraska Secretary of State",
       "notes": "",
-      "total": 104837,
-      "inPerson": 13179,
-      "mail": 91658,
-      "requested": 227351
+      "total": 115500,
+      "inPerson": 15564,
+      "mail": 99936,
+      "requested": 230463
     },
     {
       "code": "NV",
@@ -316,13 +316,13 @@
     {
       "code": "NJ",
       "name": "New Jersey",
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-21",
       "source": "New Jersey Secretary of State",
       "notes": "",
-      "total": 387599,
+      "total": 404461,
       "inPerson": 0,
-      "mail": 387599,
-      "requested": 914165
+      "mail": 404461,
+      "requested": 916452
     },
     {
       "code": "NM",
@@ -481,13 +481,13 @@
     {
       "code": "VT",
       "name": "Vermont",
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-21",
       "source": "Data provided Vermont Secretary of State",
       "notes": "",
-      "total": 70966,
+      "total": 79651,
       "inPerson": 0,
-      "mail": 70966,
-      "requested": 457838
+      "mail": 79651,
+      "requested": 457880
     },
     {
       "code": "VA",
