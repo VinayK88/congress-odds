@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-21T01:32:59.336Z",
+  "fetchedAt": "2026-10-21T06:30:42.688Z",
   "rows": [
     {
       "code": "AK",
@@ -44,21 +44,21 @@
       "asOf": "2026-10-20",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist.",
-      "total": 1714182,
+      "total": 1871380,
       "inPerson": 0,
-      "mail": 1714182,
+      "mail": 1871380,
       "requested": 23413436
     },
     {
       "code": "CO",
       "name": "Colorado",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 506217,
-      "inPerson": 1206,
-      "mail": 505011,
-      "requested": 4043982
+      "total": 581822,
+      "inPerson": 2093,
+      "mail": 579729,
+      "requested": 4042853
     },
     {
       "code": "CT",
@@ -360,13 +360,13 @@
     {
       "code": "ND",
       "name": "North Dakota",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "source": "https://vip.sos.nd.gov/abev.aspx?eid=348",
       "notes": "",
-      "total": 24755,
+      "total": 26349,
       "inPerson": 0,
-      "mail": 24755,
-      "requested": 51487
+      "mail": 26349,
+      "requested": 52106
     },
     {
       "code": "OH",
