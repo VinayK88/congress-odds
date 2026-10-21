@@ -544,5 +544,7 @@
       "mail": 25918,
       "requested": 39909
     }
-  ]
+  ],
+  "lastAttemptAt": "2026-10-21T22:26:12.212Z",
+  "refreshError": "Source retrieval or validation failed; retained the previous snapshot."
 }
