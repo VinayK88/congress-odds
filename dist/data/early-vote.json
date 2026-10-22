@@ -3,18 +3,18 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-22T22:25:15.795Z",
+  "fetchedAt": "2026-10-22T23:35:31.628Z",
   "rows": [
     {
       "code": "AK",
       "name": "Alaska",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "https://www.elections.alaska.gov/research/statistics/#aeqstats",
       "notes": "",
-      "total": 17484,
-      "inPerson": 10785,
-      "mail": 6699,
-      "requested": 45101
+      "total": 26328,
+      "inPerson": 17244,
+      "mail": 9084,
+      "requested": 46329
     },
     {
       "code": "AZ",
@@ -85,12 +85,12 @@
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-22",
       "source": "https://dcboe.org/",
       "notes": "The DC Board of Elections reports mail ballots returned in two separate files (drop box and USPS). There is no separate outstanding-request count, so request_all is set equal to the total returned. No party, age, or geographic breakdown is available. In-person early voting is not yet included; a third file covering it is expected later in the cycle.",
-      "total": 27599,
+      "total": 31649,
       "inPerson": 0,
-      "mail": 27599,
+      "mail": 31649,
       "requested": 492023
     },
     {
@@ -514,13 +514,13 @@
     {
       "code": "WV",
       "name": "West Virginia",
-      "asOf": "2026-08-12",
+      "asOf": "2026-10-22",
       "source": "West Virginia Secretary of State",
-      "notes": "",
-      "total": 0,
-      "inPerson": 0,
+      "notes": "West Virginia publishes in-person early vote returns by county and party only - there is no mail-ballot figure and no separate ballots-requested figure, so the \"ballots requested\" figures shown equal early vote returns. No age, gender, race, or district-level data is available.",
+      "total": 16922,
+      "inPerson": 16922,
       "mail": 0,
-      "requested": 0
+      "requested": 16922
     },
     {
       "code": "WI",
