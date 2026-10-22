@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-22T18:36:45.753Z",
+  "fetchedAt": "2026-10-22T20:38:25.602Z",
   "rows": [
     {
       "code": "AK",
@@ -41,13 +41,13 @@
     {
       "code": "CA",
       "name": "California",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist.",
-      "total": 1973289,
+      "total": 2326426,
       "inPerson": 0,
-      "mail": 1973289,
-      "requested": 23413436
+      "mail": 2326426,
+      "requested": 23438326
     },
     {
       "code": "CO",
@@ -63,24 +63,24 @@
     {
       "code": "CT",
       "name": "Connecticut",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "Connecticut Secretary of the State",
       "notes": "",
-      "total": 105526,
-      "inPerson": 80075,
-      "mail": 25451,
-      "requested": 57038
+      "total": 140815,
+      "inPerson": 112976,
+      "mail": 27839,
+      "requested": 59198
     },
     {
       "code": "DE",
       "name": "Delaware",
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-22",
       "source": "Delaware Department of Elections",
       "notes": "Delaware does not publish mail ballot request data. The \"ballots requested\" figures shown for Delaware are the number of mail ballots received and counted, treated as equal to requests for lack of any other source.",
-      "total": 13817,
+      "total": 30473,
       "inPerson": 0,
-      "mail": 13817,
-      "requested": 13817
+      "mail": 30473,
+      "requested": 30473
     },
     {
       "code": "DC",
@@ -118,13 +118,13 @@
     {
       "code": "HI",
       "name": "Hawaii",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "https://elections.hawaii.gov/resources/absentee-voting-report/",
       "notes": "",
-      "total": 58312,
-      "inPerson": 284,
-      "mail": 58028,
-      "requested": 724992
+      "total": 79348,
+      "inPerson": 504,
+      "mail": 78844,
+      "requested": 725443
     },
     {
       "code": "ID",
@@ -393,12 +393,12 @@
     {
       "code": "OR",
       "name": "Oregon",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "https://sos.oregon.gov/elections/Documents/Ballot-Return-Dashboard-Nov-3-2026.pdf",
       "notes": "",
-      "total": 155137,
+      "total": 271544,
       "inPerson": 0,
-      "mail": 155137,
+      "mail": 271544,
       "requested": 3117439
     },
     {
