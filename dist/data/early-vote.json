@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-22T12:23:38.174Z",
+  "fetchedAt": "2026-10-22T13:53:02.678Z",
   "rows": [
     {
       "code": "AK",
@@ -162,13 +162,13 @@
     {
       "code": "IA",
       "name": "Iowa",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "Iowa Secretary of State",
       "notes": "Iowa's BALLOT_STATUS field is not fully documented - this site infers whether a mail ballot was accepted from whether it has a RECEIVED_DATE rather than from BALLOT_STATUS directly. Figures may be revised once the Iowa Secretary of State's office provides official field documentation.",
-      "total": 124444,
-      "inPerson": 95876,
-      "mail": 28568,
-      "requested": 160235
+      "total": 167195,
+      "inPerson": 115907,
+      "mail": 51288,
+      "requested": 160515
     },
     {
       "code": "KS",
@@ -294,13 +294,13 @@
     {
       "code": "NE",
       "name": "Nebraska",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "Data file provided by Nebraska Secretary of State",
       "notes": "",
-      "total": 115500,
-      "inPerson": 15564,
-      "mail": 99936,
-      "requested": 230463
+      "total": 125954,
+      "inPerson": 17838,
+      "mail": 108116,
+      "requested": 233336
     },
     {
       "code": "NV",
@@ -316,13 +316,13 @@
     {
       "code": "NJ",
       "name": "New Jersey",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "New Jersey Secretary of State",
       "notes": "",
-      "total": 404461,
+      "total": 417489,
       "inPerson": 0,
-      "mail": 404461,
-      "requested": 916452
+      "mail": 417489,
+      "requested": 918406
     },
     {
       "code": "NM",
@@ -481,13 +481,13 @@
     {
       "code": "VT",
       "name": "Vermont",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "Data provided Vermont Secretary of State",
       "notes": "",
-      "total": 79651,
+      "total": 88111,
       "inPerson": 0,
-      "mail": 79651,
-      "requested": 457880
+      "mail": 88111,
+      "requested": 457964
     },
     {
       "code": "VA",
