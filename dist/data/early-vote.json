@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-22T20:38:25.602Z",
+  "fetchedAt": "2026-10-22T22:25:15.795Z",
   "rows": [
     {
       "code": "AK",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-22",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 1819495,
-      "inPerson": 640964,
-      "mail": 1178531,
-      "requested": 2444975
+      "total": 1966749,
+      "inPerson": 752064,
+      "mail": 1214685,
+      "requested": 2445585
     },
     {
       "code": "GA",
@@ -228,13 +228,13 @@
     {
       "code": "MA",
       "name": "Massachusetts",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "Massachusetts Secretary of the Commonwealth",
-      "notes": "Massachusetts also publishes a party breakdown, but its \"Cast\" figures (by party) are far larger than the statewide total ballots cast on its own overall-statistics sheet, in nearly every town - checked directly, these do not reconcile with this cycle's own mail-ballot activity (e.g. one town shows 0 ballots returned total but a nonzero \"Dem Cast\"). Michael has asked the state about the discrepancy (2026-10-13); until that's resolved, this pipeline uses only the overall (non-party) statistics below.",
-      "total": 476053,
-      "inPerson": 89573,
-      "mail": 386480,
-      "requested": 1038091
+      "notes": "",
+      "total": 541346,
+      "inPerson": 108919,
+      "mail": 432427,
+      "requested": 1043183
     },
     {
       "code": "MI",
@@ -307,11 +307,11 @@
       "name": "Nevada",
       "asOf": "2026-10-22",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
-      "notes": "Statewide totals may be more than party, age, and district statistics. Statewide totals derived from an individual file may be augmented with aggregate reports from state dashboards. These dashboards report only county statistics. The in-person dashboard reports party registration only, with some latency issues that may cause minor reporting lags. The mail dashboard reports totals only.",
-      "total": 269277,
-      "inPerson": 105244,
-      "mail": 164033,
-      "requested": 2032718
+      "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative) and age breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
+      "total": 270503,
+      "inPerson": 98367,
+      "mail": 172136,
+      "requested": 2081314
     },
     {
       "code": "NJ",
@@ -462,10 +462,10 @@
       "asOf": "2026-10-22",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 1783240,
-      "inPerson": 1685238,
-      "mail": 98002,
-      "requested": 98002
+      "total": 2230185,
+      "inPerson": 2120090,
+      "mail": 110095,
+      "requested": 110095
     },
     {
       "code": "UT",
