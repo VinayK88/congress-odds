@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-23T12:02:38.878Z",
+  "fetchedAt": "2026-10-23T13:33:01.858Z",
   "rows": [
     {
       "code": "AK",
@@ -96,13 +96,13 @@
     {
       "code": "FL",
       "name": "Florida",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 1981475,
-      "inPerson": 763666,
-      "mail": 1217809,
-      "requested": 2445586
+      "total": 1990123,
+      "inPerson": 766837,
+      "mail": 1223286,
+      "requested": 2471583
     },
     {
       "code": "GA",
@@ -217,13 +217,13 @@
     {
       "code": "MD",
       "name": "Maryland",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://elections.maryland.gov/press_room/index.html",
       "notes": "Maryland reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 242744,
+      "total": 256997,
       "inPerson": 0,
-      "mail": 242744,
-      "requested": 635280
+      "mail": 256997,
+      "requested": 636082
     },
     {
       "code": "MA",
@@ -294,13 +294,13 @@
     {
       "code": "NE",
       "name": "Nebraska",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "Data file provided by Nebraska Secretary of State",
       "notes": "",
-      "total": 125954,
-      "inPerson": 17838,
-      "mail": 108116,
-      "requested": 233336
+      "total": 136433,
+      "inPerson": 20375,
+      "mail": 116058,
+      "requested": 236945
     },
     {
       "code": "NV",
@@ -316,13 +316,13 @@
     {
       "code": "NJ",
       "name": "New Jersey",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "New Jersey Secretary of State",
       "notes": "",
-      "total": 417489,
+      "total": 435358,
       "inPerson": 0,
-      "mail": 417489,
-      "requested": 918406
+      "mail": 435358,
+      "requested": 920191
     },
     {
       "code": "NM",
@@ -382,13 +382,13 @@
     {
       "code": "OK",
       "name": "Oklahoma",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "Oklahoma State Board of Elections",
       "notes": "These data are obtained from the Oklahoma State Board of Elections Election Data Warehouse. A link is provided to the state public reporting site for when it becomes available.",
-      "total": 22874,
+      "total": 24965,
       "inPerson": 0,
-      "mail": 22874,
-      "requested": 64920
+      "mail": 24965,
+      "requested": 64913
     },
     {
       "code": "OR",
@@ -459,13 +459,13 @@
     {
       "code": "TX",
       "name": "Texas",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 2270617,
-      "inPerson": 2159850,
-      "mail": 110767,
-      "requested": 110767
+      "total": 2275035,
+      "inPerson": 2162933,
+      "mail": 112102,
+      "requested": 112102
     },
     {
       "code": "UT",
@@ -481,24 +481,24 @@
     {
       "code": "VT",
       "name": "Vermont",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "Data provided Vermont Secretary of State",
       "notes": "",
-      "total": 88111,
+      "total": 95513,
       "inPerson": 0,
-      "mail": 88111,
-      "requested": 457964
+      "mail": 95513,
+      "requested": 457909
     },
     {
       "code": "VA",
       "name": "Virginia",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://www.vpap.org/elections/early-voting/",
       "notes": "",
-      "total": 870213,
-      "inPerson": 627529,
-      "mail": 242684,
-      "requested": 459621
+      "total": 929874,
+      "inPerson": 679154,
+      "mail": 250720,
+      "requested": 461385
     },
     {
       "code": "WA",
