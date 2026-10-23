@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-23T07:39:38.211Z",
+  "fetchedAt": "2026-10-23T12:02:38.878Z",
   "rows": [
     {
       "code": "AK",
@@ -107,13 +107,13 @@
     {
       "code": "GA",
       "name": "Georgia",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://mvp.sos.ga.gov/s/voter-absentee-files",
       "notes": "Georgia's county-level \"Ballots Issued and Accepted\" and \"Ballots to Date\" downloads (from the state's election-data-hub dashboard, https://sos.ga.gov/page/election-data-hub-unofficial-turnout) are compared against the statewide absentee file, county by county, using whichever is higher - this is how same-day in-person early-voting activity (which the statewide absentee file doesn't carry until the next overnight refresh) gets folded in. No district or demographic breakdown is available from these county-level downloads.",
-      "total": 1467650,
-      "inPerson": 1396777,
-      "mail": 70873,
-      "requested": 149358
+      "total": 1467780,
+      "inPerson": 1396699,
+      "mail": 71081,
+      "requested": 152390
     },
     {
       "code": "HI",
@@ -283,13 +283,13 @@
     {
       "code": "MT",
       "name": "Montana",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://sosmt.gov/elections/absentee-ballot-count/",
       "notes": "",
-      "total": 137265,
+      "total": 155677,
       "inPerson": 0,
-      "mail": 137265,
-      "requested": 522166
+      "mail": 155677,
+      "requested": 522834
     },
     {
       "code": "NE",
@@ -349,13 +349,13 @@
     {
       "code": "NC",
       "name": "North Carolina",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://dl.ncsbe.gov/?prefix=ENRS/2026_11_03/",
       "notes": "North Carolina provides summary ballot request statistics available for counties only. No mail ballot request statistics by district are available.",
-      "total": 1101322,
-      "inPerson": 1050226,
-      "mail": 51096,
-      "requested": 162353
+      "total": 1269920,
+      "inPerson": 1215032,
+      "mail": 54888,
+      "requested": 162901
     },
     {
       "code": "ND",
@@ -470,12 +470,12 @@
     {
       "code": "UT",
       "name": "Utah",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "Utah Lt. Governor",
       "notes": "Utah is a universal vote-by-mail state - every \"Active\" registered voter is automatically mailed a ballot each election, and a 2025 law phasing this out does not take effect until 2029. Statewide and county \"ballots requested\" figures are therefore the number of Active registered voters by party, scraped from the Lt. Governor's current voter registration statistics page. Congressional district figures instead use accepted ballots as a stand-in, since Utah does not publish district-level registration or request data.",
-      "total": 114999,
-      "inPerson": 583,
-      "mail": 114416,
+      "total": 148309,
+      "inPerson": 856,
+      "mail": 147453,
       "requested": 1787566
     },
     {
