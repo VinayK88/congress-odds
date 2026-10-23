@@ -3,18 +3,18 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-23T16:56:38.204Z",
+  "fetchedAt": "2026-10-23T18:27:16.620Z",
   "rows": [
     {
       "code": "AK",
       "name": "Alaska",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://www.elections.alaska.gov/research/statistics/#aeqstats",
       "notes": "",
-      "total": 26328,
-      "inPerson": 17244,
-      "mail": 9084,
-      "requested": 46329
+      "total": 30999,
+      "inPerson": 20436,
+      "mail": 10563,
+      "requested": 46626
     },
     {
       "code": "AZ",
@@ -85,12 +85,12 @@
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://dcboe.org/",
       "notes": "The DC Board of Elections reports mail ballots returned in two separate files (drop box and USPS). There is no separate outstanding-request count, so request_all is set equal to the total returned. No party, age, or geographic breakdown is available. In-person early voting is not yet included; a third file covering it is expected later in the cycle.",
-      "total": 31649,
+      "total": 34633,
       "inPerson": 0,
-      "mail": 31649,
+      "mail": 34633,
       "requested": 492023
     },
     {
@@ -99,10 +99,10 @@
       "asOf": "2026-10-23",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 2127629,
-      "inPerson": 859144,
-      "mail": 1268485,
-      "requested": 2471313
+      "total": 2192149,
+      "inPerson": 904769,
+      "mail": 1287380,
+      "requested": 2471140
     },
     {
       "code": "GA",
@@ -118,13 +118,13 @@
     {
       "code": "HI",
       "name": "Hawaii",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "https://elections.hawaii.gov/resources/absentee-voting-report/",
       "notes": "",
-      "total": 79348,
-      "inPerson": 504,
-      "mail": 78844,
-      "requested": 725443
+      "total": 97737,
+      "inPerson": 732,
+      "mail": 97005,
+      "requested": 725584
     },
     {
       "code": "ID",
@@ -393,12 +393,12 @@
     {
       "code": "OR",
       "name": "Oregon",
-      "asOf": "2026-10-22",
-      "source": "https://sos.oregon.gov/elections/Documents/Ballot-Return-Dashboard-Nov-3-2026.pdf",
+      "asOf": "2026-10-23",
+      "source": "https://sos.oregon.gov/elections/Documents/2026-general-election-unofficial-ballot-returns.pdf",
       "notes": "",
-      "total": 271544,
+      "total": 383771,
       "inPerson": 0,
-      "mail": 271544,
+      "mail": 383771,
       "requested": 3117439
     },
     {
