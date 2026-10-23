@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-23T01:36:35.110Z",
+  "fetchedAt": "2026-10-23T06:37:13.590Z",
   "rows": [
     {
       "code": "AK",
@@ -44,21 +44,21 @@
       "asOf": "2026-10-22",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist.",
-      "total": 2326426,
+      "total": 2478771,
       "inPerson": 0,
-      "mail": 2326426,
-      "requested": 23438326
+      "mail": 2478771,
+      "requested": 23413436
     },
     {
       "code": "CO",
       "name": "Colorado",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 657781,
-      "inPerson": 2972,
-      "mail": 654809,
-      "requested": 4045707
+      "total": 726213,
+      "inPerson": 3929,
+      "mail": 722284,
+      "requested": 4048644
     },
     {
       "code": "CT",
@@ -308,10 +308,10 @@
       "asOf": "2026-10-22",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
       "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative) and age breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
-      "total": 270503,
-      "inPerson": 98367,
-      "mail": 172136,
-      "requested": 2081314
+      "total": 284851,
+      "inPerson": 106629,
+      "mail": 178222,
+      "requested": 2081400
     },
     {
       "code": "NJ",
@@ -360,13 +360,13 @@
     {
       "code": "ND",
       "name": "North Dakota",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "https://vip.sos.nd.gov/abev.aspx?eid=348",
       "notes": "",
-      "total": 28238,
-      "inPerson": 0,
-      "mail": 28238,
-      "requested": 52771
+      "total": 30891,
+      "inPerson": 692,
+      "mail": 30199,
+      "requested": 53405
     },
     {
       "code": "OH",
@@ -503,12 +503,12 @@
     {
       "code": "WA",
       "name": "Washington",
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "source": "https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics",
       "notes": "Washington is a universal vote-by-mail state - every active registered voter is automatically mailed a ballot, so the \"ballots requested\" figures shown are active registered voters (from the state's own voter registration file) rather than a separate request count. Gender is the only demographic breakdown available for Washington; no party, race, or age data is published with ballot returns.",
-      "total": 461559,
+      "total": 616612,
       "inPerson": 0,
-      "mail": 461559,
+      "mail": 616612,
       "requested": 5131622
     },
     {
