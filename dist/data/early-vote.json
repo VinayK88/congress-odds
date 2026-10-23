@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-23T18:27:16.620Z",
+  "fetchedAt": "2026-10-23T20:11:18.122Z",
   "rows": [
     {
       "code": "AK",
@@ -74,13 +74,13 @@
     {
       "code": "DE",
       "name": "Delaware",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "source": "Delaware Department of Elections",
       "notes": "Delaware does not publish mail ballot request data. The \"ballots requested\" figures shown for Delaware are the number of mail ballots received and counted, treated as equal to requests for lack of any other source.",
-      "total": 30473,
+      "total": 50212,
       "inPerson": 0,
-      "mail": 30473,
-      "requested": 30473
+      "mail": 50212,
+      "requested": 50212
     },
     {
       "code": "DC",
@@ -206,13 +206,13 @@
     {
       "code": "ME",
       "name": "Maine",
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-23",
       "source": "https://www.maine.gov/sos/cec/elec/data/index.html",
       "notes": "",
-      "total": 135484,
+      "total": 178680,
       "inPerson": 0,
-      "mail": 135484,
-      "requested": 201482
+      "mail": 178680,
+      "requested": 235901
     },
     {
       "code": "MD",
@@ -462,10 +462,10 @@
       "asOf": "2026-10-23",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 2747668,
-      "inPerson": 2632233,
-      "mail": 115435,
-      "requested": 115435
+      "total": 2809829,
+      "inPerson": 2689060,
+      "mail": 120769,
+      "requested": 120769
     },
     {
       "code": "UT",
