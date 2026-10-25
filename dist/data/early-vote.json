@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-25T22:38:03.387Z",
+  "fetchedAt": "2026-10-25T23:36:56.761Z",
   "rows": [
     {
       "code": "AK",
@@ -44,10 +44,10 @@
       "asOf": "2026-10-25",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist. Because PDI, the source for party registration data, does not report by method of voting, all party registration calculations include in-person early and mail ballots.",
-      "total": 3007396,
-      "inPerson": 6909,
-      "mail": 3000487,
-      "requested": 23443789
+      "total": 3146689,
+      "inPerson": 28315,
+      "mail": 3118374,
+      "requested": 23443978
     },
     {
       "code": "CO",
@@ -85,12 +85,12 @@
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-25",
       "source": "https://dcboe.org/",
-      "notes": "The DC Board of Elections reports mail ballots returned in two separate files (drop box and USPS). There is no separate outstanding-request count, so request_all is set equal to the total returned. No party, age, or geographic breakdown is available. In-person early voting is not yet included; a third file covering it is expected later in the cycle.",
-      "total": 34633,
+      "notes": "The DC Board of Elections reports mail ballots returned in two separate files (drop box and USPS). DC is vote-by-mail, so request_all reflects active voter registration rather than anything derived from these files. No party, age, or geographic breakdown is available. In-person early voting is not yet included; a third file covering it is expected later in the cycle.",
+      "total": 37158,
       "inPerson": 0,
-      "mail": 34633,
+      "mail": 37158,
       "requested": 492023
     },
     {
@@ -99,10 +99,10 @@
       "asOf": "2026-10-25",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 2718679,
-      "inPerson": 1319115,
-      "mail": 1399564,
-      "requested": 2479330
+      "total": 2783995,
+      "inPerson": 1381455,
+      "mail": 1402540,
+      "requested": 2479026
     },
     {
       "code": "GA",
@@ -110,9 +110,9 @@
       "asOf": "2026-10-25",
       "source": "https://mvp.sos.ga.gov/s/voter-absentee-files",
       "notes": "Georgia's county-level \"Ballots Issued and Accepted\" and \"Ballots to Date\" downloads (from the state's election-data-hub dashboard, https://sos.ga.gov/page/election-data-hub-unofficial-turnout) are compared against the statewide absentee file, county by county, using whichever is higher - this is how same-day in-person early-voting activity (which the statewide absentee file doesn't carry until the next overnight refresh) gets folded in. No district or demographic breakdown is available from these county-level downloads.",
-      "total": 1751157,
-      "inPerson": 1669567,
-      "mail": 81590,
+      "total": 1775359,
+      "inPerson": 1696736,
+      "mail": 82623,
       "requested": 157545
     },
     {
@@ -308,10 +308,10 @@
       "asOf": "2026-10-25",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
       "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative), age, and district-level party breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
-      "total": 375498,
-      "inPerson": 145724,
-      "mail": 229774,
-      "requested": 2087993
+      "total": 387799,
+      "inPerson": 154472,
+      "mail": 233327,
+      "requested": 2088026
     },
     {
       "code": "NJ",
@@ -360,13 +360,13 @@
     {
       "code": "ND",
       "name": "North Dakota",
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-25",
       "source": "https://vip.sos.nd.gov/abev.aspx?eid=348",
       "notes": "",
-      "total": 33434,
-      "inPerson": 1628,
-      "mail": 31806,
-      "requested": 54010
+      "total": 34012,
+      "inPerson": 1973,
+      "mail": 32039,
+      "requested": 54029
     },
     {
       "code": "OH",
@@ -437,13 +437,13 @@
     {
       "code": "SD",
       "name": "South Dakota",
-      "asOf": "2026-10-24",
+      "asOf": "2026-10-25",
       "source": "South Dakota Secretary of State",
       "notes": "",
-      "total": 44966,
+      "total": 44997,
       "inPerson": 0,
-      "mail": 44966,
-      "requested": 55032
+      "mail": 44997,
+      "requested": 55063
     },
     {
       "code": "TN",
@@ -462,10 +462,10 @@
       "asOf": "2026-10-25",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 4128577,
-      "inPerson": 3929923,
-      "mail": 198654,
-      "requested": 198654
+      "total": 4132879,
+      "inPerson": 3934187,
+      "mail": 198692,
+      "requested": 198692
     },
     {
       "code": "UT",
