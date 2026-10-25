@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-25T16:31:33.813Z",
+  "fetchedAt": "2026-10-25T19:14:09.292Z",
   "rows": [
     {
       "code": "AK",
@@ -63,13 +63,13 @@
     {
       "code": "CT",
       "name": "Connecticut",
-      "asOf": "2026-10-24",
+      "asOf": "2026-10-25",
       "source": "Connecticut Secretary of the State",
       "notes": "",
-      "total": 204720,
-      "inPerson": 172316,
-      "mail": 32404,
-      "requested": 62624
+      "total": 220837,
+      "inPerson": 188256,
+      "mail": 32581,
+      "requested": 62674
     },
     {
       "code": "DE",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-25",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 2619679,
-      "inPerson": 1232899,
-      "mail": 1386780,
-      "requested": 2479638
+      "total": 2718679,
+      "inPerson": 1319115,
+      "mail": 1399564,
+      "requested": 2479330
     },
     {
       "code": "GA",
@@ -448,11 +448,11 @@
     {
       "code": "TN",
       "name": "Tennessee",
-      "asOf": "2026-10-24",
+      "asOf": "2026-10-25",
       "source": "https://sos.tn.gov/govotetn",
       "notes": "Tennessee's daily turnout report provides a cumulative county-level total for in-person early voters only. No mail-ballot figures or demographic data are available for Tennessee at at this time.",
-      "total": 760069,
-      "inPerson": 760069,
+      "total": 815354,
+      "inPerson": 815354,
       "mail": 0,
       "requested": 0
     },
@@ -462,10 +462,10 @@
       "asOf": "2026-10-25",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 3697498,
-      "inPerson": 3504892,
-      "mail": 192606,
-      "requested": 192606
+      "total": 4102616,
+      "inPerson": 3904406,
+      "mail": 198210,
+      "requested": 198210
     },
     {
       "code": "UT",
