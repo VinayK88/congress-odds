@@ -11,14 +11,14 @@ Compare Democratic and Republican chances of controlling the 2026 U.S. House and
 
 | Chamber | Source | Democrats | Republicans | Retrieved (UTC) |
 | :-- | :-- | --: | --: | :-- |
-| House | [Polymarket](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 91.5% | 8.5% | 2026-10-25T01:48:57.520Z |
-| House | [Kalshi](https://kalshi.com/markets/controlh/house-winner/controlh-2026) | 90.3% | 9.5% | 2026-10-25T01:48:57.477Z |
-| House | [PredictIt](https://www.predictit.org/markets/detail/8157) | 90.5% | 11.5% | 2026-10-25T01:48:57.734Z |
-| House | [Manifold · play money (comparison only)](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [93.1%](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [7.6%](https://manifold.markets/ryanmccomb/republicans-have-house-majority-aft) | 2026-10-25T01:48:57.563Z |
-| Senate | [Polymarket](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 67.0% | 33.5% | 2026-10-25T01:48:57.521Z |
-| Senate | [Kalshi](https://kalshi.com/markets/controls/senate-winner/controls-2026) | 64.5% | 36.5% | 2026-10-25T01:48:57.557Z |
-| Senate | [PredictIt](https://www.predictit.org/markets/detail/8155) | 66.5% | 35.0% | 2026-10-25T01:48:57.740Z |
-| Senate | [Manifold · play money (comparison only)](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [66.0%](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [33.0%](https://manifold.markets/AndrewG/will-republicans-win-the-senate-in-738388924521) | 2026-10-25T01:48:57.753Z |
+| House | [Polymarket](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 91.5% | 8.5% | 2026-10-25T06:17:36.567Z |
+| House | [Kalshi](https://kalshi.com/markets/controlh/house-winner/controlh-2026) | 90.5% | 9.3% | 2026-10-25T06:17:36.589Z |
+| House | [PredictIt](https://www.predictit.org/markets/detail/8157) | 90.0% | 12.0% | 2026-10-25T06:17:36.677Z |
+| House | [Manifold · play money (comparison only)](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [93.5%](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [7.5%](https://manifold.markets/ryanmccomb/republicans-have-house-majority-aft) | 2026-10-25T06:17:36.690Z |
+| Senate | [Polymarket](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 66.5% | 33.5% | 2026-10-25T06:17:36.708Z |
+| Senate | [Kalshi](https://kalshi.com/markets/controls/senate-winner/controls-2026) | 63.5% | 36.5% | 2026-10-25T06:17:36.624Z |
+| Senate | [PredictIt](https://www.predictit.org/markets/detail/8155) | 66.5% | 35.0% | 2026-10-25T06:17:36.734Z |
+| Senate | [Manifold · play money (comparison only)](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [66.0%](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [33.0%](https://manifold.markets/AndrewG/will-republicans-win-the-senate-in-738388924521) | 2026-10-25T06:17:36.708Z |
 
 Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. PredictIt covers House and Senate. Manifold shows separate play-money Yes contracts for each party and is excluded from the cash-market average. Prices are independent and may not total 100%. Market rules differ; these are not vote shares or guaranteed results.
 
@@ -125,12 +125,12 @@ The map's party totals update with these same race leaders. Senate totals add 34
 
 | Reported ballot activity | Count | Jurisdictions with this field |
 | :-- | --: | --: |
-| Early ballots | 26,662,500 | 49 |
-| In-person early | 12,608,276 | 49 |
-| Mail accepted | 14,054,224 | 49 |
-| Mail requested / issued | 59,404,524 | 49 |
+| Early ballots | 26,681,083 | 49 |
+| In-person early | 12,621,804 | 49 |
+| Mail accepted | 14,059,279 | 49 |
+| Mail requested / issued | 59,404,593 | 49 |
 
-Feed retrieved: 2026-10-25T01:49:02.287Z. Partial coverage: 49 of 51 jurisdictions (50 states + D.C.); report dates vary.
+Feed retrieved: 2026-10-25T06:17:40.892Z. Partial coverage: 49 of 51 jurisdictions (50 states + D.C.); report dates vary.
 
 <!-- EARLY_VOTE:END -->
 

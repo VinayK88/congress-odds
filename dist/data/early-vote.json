@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-25T01:49:02.287Z",
+  "fetchedAt": "2026-10-25T06:17:40.892Z",
   "rows": [
     {
       "code": "AK",
@@ -273,10 +273,10 @@
       "code": "MO",
       "name": "Missouri",
       "asOf": "2026-10-23",
-      "source": "Available county dashboards",
-      "notes": "St. Louis County only",
-      "total": 54601,
-      "inPerson": 50079,
+      "source": "County election dashboards",
+      "notes": "St. Louis County only. Mail ballot figures (request_all/accept_all) carried forward from 10/23/2026 - the source's own mail_ballots feed was reporting received > sent on 10/24/2026, a logical impossibility, so today's mail figures are not used until the source corrects itself. In-person figures are today's real numbers.",
+      "total": 54608,
+      "inPerson": 50086,
       "mail": 4522,
       "requested": 12165
     },
@@ -308,10 +308,10 @@
       "asOf": "2026-10-24",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
       "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative), age, and district-level party breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
-      "total": 352509,
-      "inPerson": 132202,
-      "mail": 220307,
-      "requested": 2087919
+      "total": 371085,
+      "inPerson": 145723,
+      "mail": 225362,
+      "requested": 2087988
     },
     {
       "code": "NJ",
