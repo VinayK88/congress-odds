@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-26T13:46:42.809Z",
+  "fetchedAt": "2026-10-26T14:22:18.930Z",
   "rows": [
     {
       "code": "AK",
@@ -63,13 +63,13 @@
     {
       "code": "CT",
       "name": "Connecticut",
-      "asOf": "2026-10-25",
+      "asOf": "2026-10-26",
       "source": "Connecticut Secretary of the State",
       "notes": "",
-      "total": 220837,
-      "inPerson": 188256,
-      "mail": 32581,
-      "requested": 62674
+      "total": 232524,
+      "inPerson": 199812,
+      "mail": 32712,
+      "requested": 62660
     },
     {
       "code": "DE",
@@ -151,13 +151,13 @@
     {
       "code": "IN",
       "name": "Indiana",
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-26",
       "source": "Indiana Secretary of State",
       "notes": "",
-      "total": 292616,
+      "total": 374767,
       "inPerson": 0,
-      "mail": 292616,
-      "requested": 348356
+      "mail": 374767,
+      "requested": 426777
     },
     {
       "code": "IA",
@@ -525,13 +525,13 @@
     {
       "code": "WI",
       "name": "Wisconsin",
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-26",
       "source": "https://elections.wi.gov/resources/statistics/absentee-ballot-report-november-3-2026-general-election-0",
       "notes": "",
-      "total": 377058,
-      "inPerson": 148896,
-      "mail": 228162,
-      "requested": 533560
+      "total": 441141,
+      "inPerson": 200338,
+      "mail": 240803,
+      "requested": 588504
     },
     {
       "code": "WY",
