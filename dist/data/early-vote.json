@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-26T20:34:52.659Z",
+  "fetchedAt": "2026-10-26T23:19:06.616Z",
   "rows": [
     {
       "code": "AK",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-26",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 3046004,
-      "inPerson": 1571943,
-      "mail": 1474061,
-      "requested": 2479069
+      "total": 3142422,
+      "inPerson": 1654063,
+      "mail": 1488359,
+      "requested": 2478778
     },
     {
       "code": "GA",
@@ -228,13 +228,13 @@
     {
       "code": "MA",
       "name": "Massachusetts",
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-26",
       "source": "Massachusetts Secretary of the Commonwealth",
       "notes": "",
-      "total": 596614,
-      "inPerson": 127469,
-      "mail": 469145,
-      "requested": 1046938
+      "total": 739058,
+      "inPerson": 183823,
+      "mail": 555235,
+      "requested": 1054719
     },
     {
       "code": "MI",
@@ -415,13 +415,13 @@
     {
       "code": "RI",
       "name": "Rhode Island",
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-26",
       "source": "Rhode Island Secretary of State",
       "notes": "",
-      "total": 60784,
-      "inPerson": 45557,
-      "mail": 15227,
-      "requested": 32498
+      "total": 70080,
+      "inPerson": 54741,
+      "mail": 15339,
+      "requested": 32755
     },
     {
       "code": "SC",
@@ -462,10 +462,10 @@
       "asOf": "2026-10-26",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 4394402,
-      "inPerson": 4192397,
-      "mail": 202005,
-      "requested": 202005
+      "total": 4457272,
+      "inPerson": 4252915,
+      "mail": 204357,
+      "requested": 204357
     },
     {
       "code": "UT",
@@ -514,13 +514,13 @@
     {
       "code": "WV",
       "name": "West Virginia",
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-26",
       "source": "West Virginia Secretary of State",
-      "notes": "West Virginia publishes in-person early vote returns by county and party only - there is no mail-ballot figure and no separate ballots-requested figure, so the \"ballots requested\" figures shown equal early vote returns. No age, gender, race, or district-level data is available.",
-      "total": 16922,
-      "inPerson": 16922,
-      "mail": 0,
-      "requested": 16922
+      "notes": "West Virginia publishes mail ballots requested and returned, and in-person early vote returns, by county and party. No age, gender, race, or district-level data is available.",
+      "total": 66855,
+      "inPerson": 62366,
+      "mail": 4489,
+      "requested": 8290
     },
     {
       "code": "WI",
