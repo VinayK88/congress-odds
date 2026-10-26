@@ -7,19 +7,19 @@
         "chamber": "house",
         "source": "Polymarket",
         "url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
-        "fetchedAt": "2026-10-26T19:36:11.342Z",
+        "fetchedAt": "2026-10-26T20:34:47.634Z",
         "priceMethod": "Yes outcome price",
         "parties": {
           "democratic": {
             "probability": 0.915,
             "marketId": "562802",
-            "updatedAt": "2026-10-26T19:34:39.12572Z",
+            "updatedAt": "2026-10-26T20:30:39.454359Z",
             "closed": false
           },
           "republican": {
             "probability": 0.085,
             "marketId": "562803",
-            "updatedAt": "2026-10-26T19:34:39.12572Z",
+            "updatedAt": "2026-10-26T20:30:39.454359Z",
             "closed": false
           }
         }
@@ -28,19 +28,19 @@
         "chamber": "senate",
         "source": "Polymarket",
         "url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
-        "fetchedAt": "2026-10-26T19:36:11.344Z",
+        "fetchedAt": "2026-10-26T20:34:47.635Z",
         "priceMethod": "Yes outcome price",
         "parties": {
           "democratic": {
-            "probability": 0.645,
+            "probability": 0.655,
             "marketId": "562793",
-            "updatedAt": "2026-10-26T19:34:39.12572Z",
+            "updatedAt": "2026-10-26T20:30:39.454359Z",
             "closed": false
           },
           "republican": {
-            "probability": 0.355,
+            "probability": 0.345,
             "marketId": "562794",
-            "updatedAt": "2026-10-26T19:34:39.12572Z",
+            "updatedAt": "2026-10-26T20:30:39.454359Z",
             "closed": false
           }
         }
@@ -51,16 +51,16 @@
         "chamber": "house",
         "source": "Kalshi",
         "url": "https://kalshi.com/markets/controlh/house-winner/controlh-2026",
-        "fetchedAt": "2026-10-26T19:36:11.335Z",
+        "fetchedAt": "2026-10-26T20:34:47.666Z",
         "priceMethod": "Yes bid/ask midpoint",
         "parties": {
           "democratic": {
-            "probability": 0.9055,
+            "probability": 0.9105000000000001,
             "marketId": "CONTROLH-2026-D",
             "closed": false
           },
           "republican": {
-            "probability": 0.0955,
+            "probability": 0.0945,
             "marketId": "CONTROLH-2026-R",
             "closed": false
           }
@@ -70,7 +70,7 @@
         "chamber": "senate",
         "source": "Kalshi",
         "url": "https://kalshi.com/markets/controls/senate-winner/controls-2026",
-        "fetchedAt": "2026-10-26T19:36:11.339Z",
+        "fetchedAt": "2026-10-26T20:34:47.660Z",
         "priceMethod": "Yes bid/ask midpoint",
         "parties": {
           "democratic": {
@@ -91,17 +91,17 @@
         "chamber": "house",
         "source": "PredictIt",
         "url": "https://www.predictit.org/markets/detail/8157",
-        "fetchedAt": "2026-10-26T19:36:11.571Z",
+        "fetchedAt": "2026-10-26T20:34:47.845Z",
         "priceMethod": "Yes bid/ask midpoint",
-        "sourceTimestampRaw": "2026-10-26T15:36:08.4705422",
+        "sourceTimestampRaw": "2026-10-26T16:34:47.7828725",
         "parties": {
           "democratic": {
-            "probability": 0.89,
+            "probability": 0.88,
             "marketId": 31951,
             "closed": false
           },
           "republican": {
-            "probability": 0.125,
+            "probability": 0.12,
             "marketId": 31952,
             "closed": false
           }
@@ -111,17 +111,17 @@
         "chamber": "senate",
         "source": "PredictIt",
         "url": "https://www.predictit.org/markets/detail/8155",
-        "fetchedAt": "2026-10-26T19:36:11.533Z",
+        "fetchedAt": "2026-10-26T20:34:48.040Z",
         "priceMethod": "Yes bid/ask midpoint",
-        "sourceTimestampRaw": "2026-10-26T15:35:54.3355956",
+        "sourceTimestampRaw": "2026-10-26T16:34:47.9906294",
         "parties": {
           "democratic": {
-            "probability": 0.65,
+            "probability": 0.645,
             "marketId": 31947,
             "closed": false
           },
           "republican": {
-            "probability": 0.365,
+            "probability": 0.375,
             "marketId": 31948,
             "closed": false
           }
@@ -133,7 +133,7 @@
         "chamber": "house",
         "source": "Manifold",
         "url": "https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn",
-        "fetchedAt": "2026-10-26T19:36:11.551Z",
+        "fetchedAt": "2026-10-26T20:34:47.937Z",
         "priceMethod": "Play-money · independent Yes probabilities",
         "parties": {
           "democratic": {
@@ -143,7 +143,7 @@
             "closed": false
           },
           "republican": {
-            "probability": 0.05736772622309701,
+            "probability": 0.057601793124554754,
             "marketId": "uISNlAqC2E",
             "url": "https://manifold.markets/ryanmccomb/republicans-have-house-majority-aft",
             "closed": false
@@ -154,7 +154,7 @@
         "chamber": "senate",
         "source": "Manifold",
         "url": "https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the",
-        "fetchedAt": "2026-10-26T19:36:11.530Z",
+        "fetchedAt": "2026-10-26T20:34:48.011Z",
         "priceMethod": "Play-money · independent Yes probabilities",
         "parties": {
           "democratic": {
@@ -164,7 +164,7 @@
             "closed": false
           },
           "republican": {
-            "probability": 0.3079239435585492,
+            "probability": 0.31000000000000005,
             "marketId": "BpoEJNtlQoDBpfjBmK0y",
             "url": "https://manifold.markets/AndrewG/will-republicans-win-the-senate-in-738388924521",
             "closed": false
