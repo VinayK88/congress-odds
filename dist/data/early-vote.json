@@ -3,18 +3,18 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-26T23:19:06.616Z",
+  "fetchedAt": "2026-10-27T00:32:45.522Z",
   "rows": [
     {
       "code": "AK",
       "name": "Alaska",
-      "asOf": "2026-10-25",
+      "asOf": "2026-10-26",
       "source": "https://www.elections.alaska.gov/research/statistics/#aeqstats",
       "notes": "",
-      "total": 43319,
-      "inPerson": 28685,
-      "mail": 14634,
-      "requested": 48185
+      "total": 46204,
+      "inPerson": 30536,
+      "mail": 15668,
+      "requested": 48346
     },
     {
       "code": "AZ",
@@ -85,12 +85,12 @@
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-25",
+      "asOf": "2026-10-26",
       "source": "https://dcboe.org/",
       "notes": "The DC Board of Elections reports mail ballots returned in two separate files (drop box and USPS). DC is vote-by-mail, so request_all reflects active voter registration rather than anything derived from these files. No party, age, or geographic breakdown is available. In-person early voting is not yet included; a third file covering it is expected later in the cycle.",
-      "total": 37158,
+      "total": 44714,
       "inPerson": 0,
-      "mail": 37158,
+      "mail": 44714,
       "requested": 492023
     },
     {
@@ -110,9 +110,9 @@
       "asOf": "2026-10-26",
       "source": "https://mvp.sos.ga.gov/s/voter-absentee-files",
       "notes": "Georgia's county-level \"Ballots Issued and Accepted\" and \"Ballots to Date\" downloads (from the state's election-data-hub dashboard, https://sos.ga.gov/page/election-data-hub-unofficial-turnout) are compared against the statewide absentee file, county by county, using whichever is higher - this is how same-day in-person early-voting activity (which the statewide absentee file doesn't carry until the next overnight refresh) gets folded in. No district or demographic breakdown is available from these county-level downloads.",
-      "total": 1825626,
-      "inPerson": 1741132,
-      "mail": 84494,
+      "total": 1940019,
+      "inPerson": 1849662,
+      "mail": 90357,
       "requested": 157598
     },
     {
@@ -206,13 +206,13 @@
     {
       "code": "ME",
       "name": "Maine",
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-26",
       "source": "https://www.maine.gov/sos/cec/elec/data/index.html",
       "notes": "",
-      "total": 178680,
+      "total": 196122,
       "inPerson": 0,
-      "mail": 178680,
-      "requested": 235901
+      "mail": 196122,
+      "requested": 248095
     },
     {
       "code": "MD",
@@ -437,13 +437,13 @@
     {
       "code": "SD",
       "name": "South Dakota",
-      "asOf": "2026-10-25",
+      "asOf": "2026-10-26",
       "source": "South Dakota Secretary of State",
       "notes": "",
-      "total": 44997,
+      "total": 50299,
       "inPerson": 0,
-      "mail": 44997,
-      "requested": 55063
+      "mail": 50299,
+      "requested": 60230
     },
     {
       "code": "TN",
@@ -462,10 +462,10 @@
       "asOf": "2026-10-26",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 4457272,
-      "inPerson": 4252915,
-      "mail": 204357,
-      "requested": 204357
+      "total": 4538667,
+      "inPerson": 4332753,
+      "mail": 205914,
+      "requested": 205914
     },
     {
       "code": "UT",
