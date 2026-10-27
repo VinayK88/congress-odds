@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-27T00:32:45.522Z",
+  "fetchedAt": "2026-10-27T02:09:37.878Z",
   "rows": [
     {
       "code": "AK",
@@ -22,10 +22,10 @@
       "asOf": "2026-10-26",
       "source": "https://www.stealth-analytics.com/early-ballots",
       "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
-      "total": 937650,
+      "total": 956224,
       "inPerson": 0,
-      "mail": 937650,
-      "requested": 3277171
+      "mail": 956224,
+      "requested": 3278043
     },
     {
       "code": "AR",
@@ -52,13 +52,13 @@
     {
       "code": "CO",
       "name": "Colorado",
-      "asOf": "2026-10-24",
+      "asOf": "2026-10-26",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 824754,
-      "inPerson": 5230,
-      "mail": 819524,
-      "requested": 4045838
+      "total": 982522,
+      "inPerson": 7148,
+      "mail": 975374,
+      "requested": 4050945
     },
     {
       "code": "CT",
@@ -99,9 +99,9 @@
       "asOf": "2026-10-26",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 3142422,
-      "inPerson": 1654063,
-      "mail": 1488359,
+      "total": 3152810,
+      "inPerson": 1660564,
+      "mail": 1492246,
       "requested": 2478778
     },
     {
@@ -308,10 +308,10 @@
       "asOf": "2026-10-26",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
       "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative), age, and district-level party breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
-      "total": 395331,
+      "total": 410049,
       "inPerson": 157207,
-      "mail": 238124,
-      "requested": 2088030
+      "mail": 252842,
+      "requested": 2088247
     },
     {
       "code": "NJ",
@@ -360,13 +360,13 @@
     {
       "code": "ND",
       "name": "North Dakota",
-      "asOf": "2026-10-25",
+      "asOf": "2026-10-26",
       "source": "https://vip.sos.nd.gov/abev.aspx?eid=348",
       "notes": "",
-      "total": 34012,
-      "inPerson": 1973,
-      "mail": 32039,
-      "requested": 54029
+      "total": 39400,
+      "inPerson": 4289,
+      "mail": 35111,
+      "requested": 54942
     },
     {
       "code": "OH",
@@ -503,12 +503,12 @@
     {
       "code": "WA",
       "name": "Washington",
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-26",
       "source": "https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics",
       "notes": "",
-      "total": 744812,
+      "total": 955270,
       "inPerson": 0,
-      "mail": 744812,
+      "mail": 955270,
       "requested": 5131622
     },
     {
