@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-27T13:19:45.001Z",
+  "fetchedAt": "2026-10-27T13:38:17.868Z",
   "rows": [
     {
       "code": "AK",
@@ -164,7 +164,7 @@
       "name": "Iowa",
       "asOf": "2026-10-27",
       "source": "Iowa Secretary of State",
-      "notes": "Iowa's BALLOT_STATUS field is not fully documented - this site infers whether a mail ballot was accepted from whether it has a RECEIVED_DATE rather than from BALLOT_STATUS directly. Figures may be revised once the Iowa Secretary of State's office provides official field documentation.",
+      "notes": "",
       "total": 306956,
       "inPerson": 194321,
       "mail": 112635,
@@ -294,13 +294,13 @@
     {
       "code": "NE",
       "name": "Nebraska",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "Data file provided by Nebraska Secretary of State",
       "notes": "",
-      "total": 151915,
-      "inPerson": 24097,
-      "mail": 127818,
-      "requested": 241715
+      "total": 169652,
+      "inPerson": 27947,
+      "mail": 141705,
+      "requested": 243269
     },
     {
       "code": "NV",
