@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-27T19:28:51.116Z",
+  "fetchedAt": "2026-10-27T22:50:14.625Z",
   "rows": [
     {
       "code": "AK",
@@ -30,13 +30,13 @@
     {
       "code": "AR",
       "name": "Arkansas",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "Arkansas Secretary of State",
       "notes": "",
-      "total": 279707,
-      "inPerson": 274368,
-      "mail": 5339,
-      "requested": 11150
+      "total": 325307,
+      "inPerson": 319223,
+      "mail": 6084,
+      "requested": 11746
     },
     {
       "code": "CA",
@@ -74,23 +74,23 @@
     {
       "code": "DE",
       "name": "Delaware",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "Delaware Department of Elections",
       "notes": "Delaware does not publish mail ballot request data. The \"ballots requested\" figures shown for Delaware are the number of mail ballots received and counted, treated as equal to requests for lack of any other source.",
-      "total": 75978,
+      "total": 92300,
       "inPerson": 0,
-      "mail": 75978,
-      "requested": 75978
+      "mail": 92300,
+      "requested": 92300
     },
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "https://dcboe.org/",
-      "notes": "The DC Board of Elections reports mail ballots returned in two separate files (drop box and USPS). DC is vote-by-mail, so request_all reflects active voter registration rather than anything derived from these files. No party, age, or geographic breakdown is available. In-person early voting is not yet included; a third file covering it is expected later in the cycle.",
-      "total": 44714,
-      "inPerson": 0,
-      "mail": 44714,
+      "notes": "The DC Board of Elections reports ballots in three separate files: mail ballots returned by drop box, mail ballots returned by USPS, and in-person votes cast at Early Vote Centers (EVC). DC is vote-by-mail, so request_all reflects active voter registration rather than anything derived from these files. No party, age, or geographic breakdown is available.",
+      "total": 50653,
+      "inPerson": 3361,
+      "mail": 50653,
       "requested": 492023
     },
     {
@@ -206,13 +206,13 @@
     {
       "code": "ME",
       "name": "Maine",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "https://www.maine.gov/sos/cec/elec/data/index.html",
       "notes": "",
-      "total": 196122,
+      "total": 220814,
       "inPerson": 0,
-      "mail": 196122,
-      "requested": 248095
+      "mail": 220814,
+      "requested": 266597
     },
     {
       "code": "MD",
@@ -228,13 +228,13 @@
     {
       "code": "MA",
       "name": "Massachusetts",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "Massachusetts Secretary of the Commonwealth",
       "notes": "",
-      "total": 739058,
-      "inPerson": 183823,
-      "mail": 555235,
-      "requested": 1054719
+      "total": 814909,
+      "inPerson": 212165,
+      "mail": 602744,
+      "requested": 1061167
     },
     {
       "code": "MI",
