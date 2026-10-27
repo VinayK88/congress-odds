@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-27T22:50:14.625Z",
+  "fetchedAt": "2026-10-27T23:50:30.803Z",
   "rows": [
     {
       "code": "AK",
@@ -437,13 +437,13 @@
     {
       "code": "SD",
       "name": "South Dakota",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "South Dakota Secretary of State",
       "notes": "",
-      "total": 50299,
+      "total": 55763,
       "inPerson": 0,
-      "mail": 50299,
-      "requested": 60230
+      "mail": 55763,
+      "requested": 65674
     },
     {
       "code": "TN",
@@ -462,10 +462,10 @@
       "asOf": "2026-10-27",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 5014466,
-      "inPerson": 4796596,
-      "mail": 217870,
-      "requested": 217870
+      "total": 5078422,
+      "inPerson": 4857518,
+      "mail": 220904,
+      "requested": 220904
     },
     {
       "code": "UT",
