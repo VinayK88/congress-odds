@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-28T07:32:15.720Z",
+  "fetchedAt": "2026-10-28T13:07:57.865Z",
   "rows": [
     {
       "code": "AK",
@@ -19,13 +19,13 @@
     {
       "code": "AZ",
       "name": "Arizona",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://www.stealth-analytics.com/early-ballots",
       "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
-      "total": 971184,
+      "total": 1143275,
       "inPerson": 0,
-      "mail": 971184,
-      "requested": 3278545
+      "mail": 1143275,
+      "requested": 3289914
     },
     {
       "code": "AR",
@@ -41,12 +41,12 @@
     {
       "code": "CA",
       "name": "California",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist. Because PDI, the source for party registration data, does not report by method of voting, all party registration calculations include in-person early and mail ballots.",
-      "total": 3421226,
+      "total": 3791228,
       "inPerson": 39748,
-      "mail": 3381478,
+      "mail": 3751480,
       "requested": 23444011
     },
     {
@@ -96,24 +96,24 @@
     {
       "code": "FL",
       "name": "Florida",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 3517675,
-      "inPerson": 1934427,
-      "mail": 1583248,
-      "requested": 2479719
+      "total": 3531109,
+      "inPerson": 1938019,
+      "mail": 1593090,
+      "requested": 2480757
     },
     {
       "code": "GA",
       "name": "Georgia",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://mvp.sos.ga.gov/s/voter-absentee-files",
       "notes": "Georgia's county-level \"Ballots Issued and Accepted\" and \"Ballots to Date\" downloads (from the state's election-data-hub dashboard, https://sos.ga.gov/page/election-data-hub-unofficial-turnout) are compared against the statewide absentee file, county by county, using whichever is higher - this is how same-day in-person early-voting activity (which the statewide absentee file doesn't carry until the next overnight refresh) gets folded in. No district or demographic breakdown is available from these county-level downloads.",
-      "total": 2128354,
-      "inPerson": 2029999,
-      "mail": 98355,
-      "requested": 157510
+      "total": 2128281,
+      "inPerson": 2029896,
+      "mail": 98385,
+      "requested": 157374
     },
     {
       "code": "HI",
@@ -195,13 +195,13 @@
     {
       "code": "LA",
       "name": "Louisiana",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://www.sos.la.gov/elections-voting/early-voting-statistics-statewide",
       "notes": "Louisiana does not publish mail ballot request data - the ballots requested figures shown for Louisiana equal ballots returned. Louisiana rreports statistics for Whites, Blacks, and other only.",
-      "total": 433702,
-      "inPerson": 364319,
-      "mail": 69383,
-      "requested": 69383
+      "total": 520942,
+      "inPerson": 448525,
+      "mail": 72417,
+      "requested": 72417
     },
     {
       "code": "ME",
@@ -283,13 +283,13 @@
     {
       "code": "MT",
       "name": "Montana",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://sosmt.gov/elections/absentee-ballot-count/",
       "notes": "",
-      "total": 209134,
+      "total": 234756,
       "inPerson": 0,
-      "mail": 209134,
-      "requested": 524860
+      "mail": 234756,
+      "requested": 526128
     },
     {
       "code": "NE",
@@ -349,13 +349,13 @@
     {
       "code": "NC",
       "name": "North Carolina",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://dl.ncsbe.gov/?prefix=ENRS/2026_11_03/",
       "notes": "North Carolina provides summary ballot request statistics available for counties only. No mail ballot request statistics by district are available.",
-      "total": 1773890,
-      "inPerson": 1708049,
-      "mail": 65841,
-      "requested": 164597
+      "total": 1961168,
+      "inPerson": 1890392,
+      "mail": 70776,
+      "requested": 165290
     },
     {
       "code": "ND",
@@ -382,13 +382,13 @@
     {
       "code": "OK",
       "name": "Oklahoma",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "Oklahoma State Board of Elections",
       "notes": "These data are obtained from the Oklahoma State Board of Elections Election Data Warehouse. A link is provided to the state public reporting site for when it becomes available.",
-      "total": 31600,
+      "total": 32750,
       "inPerson": 0,
-      "mail": 31600,
-      "requested": 64915
+      "mail": 32750,
+      "requested": 64916
     },
     {
       "code": "OR",
@@ -459,23 +459,23 @@
     {
       "code": "TX",
       "name": "Texas",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 5105285,
-      "inPerson": 4882068,
-      "mail": 223217,
-      "requested": 223217
+      "total": 5105300,
+      "inPerson": 4882079,
+      "mail": 223221,
+      "requested": 223221
     },
     {
       "code": "UT",
       "name": "Utah",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "Utah Lt. Governor",
       "notes": "Utah is a universal vote-by-mail state - every \"Active\" registered voter is automatically mailed a ballot each election, and a 2025 law phasing this out does not take effect until 2029. Statewide and county \"ballots requested\" figures are therefore the number of Active registered voters by party, scraped from the Lt. Governor's current voter registration statistics page. Congressional district figures instead use accepted ballots as a stand-in, since Utah does not publish district-level registration or request data.",
-      "total": 236983,
-      "inPerson": 1869,
-      "mail": 235114,
+      "total": 307234,
+      "inPerson": 4192,
+      "mail": 303042,
       "requested": 1786661
     },
     {
@@ -492,13 +492,13 @@
     {
       "code": "VA",
       "name": "Virginia",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://www.vpap.org/elections/early-voting/",
       "notes": "",
-      "total": 1183390,
-      "inPerson": 909044,
-      "mail": 274346,
-      "requested": 463391
+      "total": 1256011,
+      "inPerson": 972953,
+      "mail": 283058,
+      "requested": 463040
     },
     {
       "code": "WA",
