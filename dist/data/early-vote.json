@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-28T18:54:48.537Z",
+  "fetchedAt": "2026-10-28T19:41:54.633Z",
   "rows": [
     {
       "code": "AK",
@@ -74,13 +74,13 @@
     {
       "code": "DE",
       "name": "Delaware",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "Delaware Department of Elections",
       "notes": "Delaware does not publish mail ballot request data. The \"ballots requested\" figures shown for Delaware are the number of mail ballots received and counted, treated as equal to requests for lack of any other source.",
-      "total": 92300,
+      "total": 104746,
       "inPerson": 0,
-      "mail": 92300,
-      "requested": 92300
+      "mail": 104746,
+      "requested": 104746
     },
     {
       "code": "DC",
@@ -118,13 +118,13 @@
     {
       "code": "HI",
       "name": "Hawaii",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://elections.hawaii.gov/resources/absentee-voting-report/",
       "notes": "",
-      "total": 142068,
-      "inPerson": 1648,
-      "mail": 140420,
-      "requested": 726777
+      "total": 168191,
+      "inPerson": 2270,
+      "mail": 165921,
+      "requested": 727412
     },
     {
       "code": "ID",
@@ -206,13 +206,13 @@
     {
       "code": "ME",
       "name": "Maine",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://www.maine.gov/sos/cec/elec/data/index.html",
       "notes": "",
-      "total": 220814,
+      "total": 243608,
       "inPerson": 0,
-      "mail": 220814,
-      "requested": 266597
+      "mail": 243608,
+      "requested": 284603
     },
     {
       "code": "MD",
