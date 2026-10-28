@@ -3,18 +3,18 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-27T23:50:30.803Z",
+  "fetchedAt": "2026-10-28T01:49:43.480Z",
   "rows": [
     {
       "code": "AK",
       "name": "Alaska",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "https://www.elections.alaska.gov/research/statistics/#aeqstats",
       "notes": "",
-      "total": 46204,
-      "inPerson": 30536,
-      "mail": 15668,
-      "requested": 48346
+      "total": 57933,
+      "inPerson": 39060,
+      "mail": 18873,
+      "requested": 48999
     },
     {
       "code": "AZ",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-27",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 3406760,
-      "inPerson": 1836707,
-      "mail": 1570053,
-      "requested": 2480020
+      "total": 3517675,
+      "inPerson": 1934427,
+      "mail": 1583248,
+      "requested": 2479719
     },
     {
       "code": "GA",
@@ -110,9 +110,9 @@
       "asOf": "2026-10-27",
       "source": "https://mvp.sos.ga.gov/s/voter-absentee-files",
       "notes": "Georgia's county-level \"Ballots Issued and Accepted\" and \"Ballots to Date\" downloads (from the state's election-data-hub dashboard, https://sos.ga.gov/page/election-data-hub-unofficial-turnout) are compared against the statewide absentee file, county by county, using whichever is higher - this is how same-day in-person early-voting activity (which the statewide absentee file doesn't carry until the next overnight refresh) gets folded in. No district or demographic breakdown is available from these county-level downloads.",
-      "total": 2039493,
-      "inPerson": 1944126,
-      "mail": 95367,
+      "total": 2128354,
+      "inPerson": 2029999,
+      "mail": 98355,
       "requested": 157510
     },
     {
@@ -415,13 +415,13 @@
     {
       "code": "RI",
       "name": "Rhode Island",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "Rhode Island Secretary of State",
       "notes": "",
-      "total": 70080,
-      "inPerson": 54741,
-      "mail": 15339,
-      "requested": 32755
+      "total": 82544,
+      "inPerson": 62985,
+      "mail": 19559,
+      "requested": 32885
     },
     {
       "code": "SC",
@@ -503,12 +503,12 @@
     {
       "code": "WA",
       "name": "Washington",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics",
       "notes": "",
-      "total": 955270,
+      "total": 1140105,
       "inPerson": 0,
-      "mail": 955270,
+      "mail": 1140105,
       "requested": 5131622
     },
     {
