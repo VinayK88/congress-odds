@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-28T01:49:43.480Z",
+  "fetchedAt": "2026-10-28T05:52:31.934Z",
   "rows": [
     {
       "code": "AK",
@@ -58,7 +58,7 @@
       "total": 982530,
       "inPerson": 7148,
       "mail": 975382,
-      "requested": 4050877
+      "requested": 3943177
     },
     {
       "code": "CT",
@@ -308,10 +308,10 @@
       "asOf": "2026-10-27",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
       "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative), age, and district-level party breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
-      "total": 444249,
-      "inPerson": 180835,
-      "mail": 263414,
-      "requested": 2088277
+      "total": 495447,
+      "inPerson": 205143,
+      "mail": 290304,
+      "requested": 2088533
     },
     {
       "code": "NJ",
@@ -360,13 +360,13 @@
     {
       "code": "ND",
       "name": "North Dakota",
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "source": "https://vip.sos.nd.gov/abev.aspx?eid=348",
       "notes": "",
-      "total": 39400,
-      "inPerson": 4289,
-      "mail": 35111,
-      "requested": 54942
+      "total": 51594,
+      "inPerson": 14140,
+      "mail": 37454,
+      "requested": 55485
     },
     {
       "code": "OH",
@@ -462,10 +462,10 @@
       "asOf": "2026-10-27",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent.",
-      "total": 5078422,
-      "inPerson": 4857518,
-      "mail": 220904,
-      "requested": 220904
+      "total": 5105285,
+      "inPerson": 4882068,
+      "mail": 223217,
+      "requested": 223217
     },
     {
       "code": "UT",
