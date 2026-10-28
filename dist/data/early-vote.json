@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-28T13:07:57.865Z",
+  "fetchedAt": "2026-10-28T14:24:12.131Z",
   "rows": [
     {
       "code": "AK",
@@ -151,35 +151,35 @@
     {
       "code": "IN",
       "name": "Indiana",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "Indiana Secretary of State",
       "notes": "",
-      "total": 432007,
+      "total": 476175,
       "inPerson": 0,
-      "mail": 432007,
-      "requested": 477874
+      "mail": 476175,
+      "requested": 517454
     },
     {
       "code": "IA",
       "name": "Iowa",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "Iowa Secretary of State",
-      "notes": "",
-      "total": 306956,
-      "inPerson": 194321,
-      "mail": 112635,
-      "requested": 161209
+      "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
+      "total": 338739,
+      "inPerson": 216154,
+      "mail": 122585,
+      "requested": 161498
     },
     {
       "code": "KS",
       "name": "Kansas",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "Kansas Secretary of State",
       "notes": "",
-      "total": 245079,
-      "inPerson": 192726,
-      "mail": 52353,
-      "requested": 105750
+      "total": 282232,
+      "inPerson": 222375,
+      "mail": 59857,
+      "requested": 106788
     },
     {
       "code": "KY",
@@ -217,13 +217,13 @@
     {
       "code": "MD",
       "name": "Maryland",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://elections.maryland.gov/press_room/index.html",
       "notes": "Maryland reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 614880,
-      "inPerson": 309190,
-      "mail": 305690,
-      "requested": 645962
+      "total": 711202,
+      "inPerson": 388823,
+      "mail": 322379,
+      "requested": 648907
     },
     {
       "code": "MA",
@@ -294,24 +294,24 @@
     {
       "code": "NE",
       "name": "Nebraska",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "Data file provided by Nebraska Secretary of State",
       "notes": "",
-      "total": 169652,
-      "inPerson": 27947,
-      "mail": 141705,
-      "requested": 243269
+      "total": 185194,
+      "inPerson": 32153,
+      "mail": 153041,
+      "requested": 244362
     },
     {
       "code": "NV",
       "name": "Nevada",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
       "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative), age, and district-level party breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
-      "total": 495447,
-      "inPerson": 205143,
-      "mail": 290304,
-      "requested": 2088533
+      "total": 501994,
+      "inPerson": 205766,
+      "mail": 296228,
+      "requested": 2088550
     },
     {
       "code": "NJ",
@@ -481,13 +481,13 @@
     {
       "code": "VT",
       "name": "Vermont",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "Data provided Vermont Secretary of State",
       "notes": "",
-      "total": 114122,
+      "total": 123481,
       "inPerson": 0,
-      "mail": 114122,
-      "requested": 458005
+      "mail": 123481,
+      "requested": 458018
     },
     {
       "code": "VA",
@@ -525,13 +525,13 @@
     {
       "code": "WI",
       "name": "Wisconsin",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://elections.wi.gov/resources/statistics/absentee-ballot-report-november-3-2026-general-election-0",
       "notes": "",
-      "total": 513602,
-      "inPerson": 251092,
-      "mail": 262510,
-      "requested": 641771
+      "total": 574433,
+      "inPerson": 299025,
+      "mail": 275408,
+      "requested": 691359
     },
     {
       "code": "WY",
