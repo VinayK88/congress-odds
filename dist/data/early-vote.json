@@ -3,18 +3,18 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-28T23:33:03.445Z",
+  "fetchedAt": "2026-10-29T02:45:21.758Z",
   "rows": [
     {
       "code": "AK",
       "name": "Alaska",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://www.elections.alaska.gov/research/statistics/#aeqstats",
       "notes": "",
-      "total": 57933,
-      "inPerson": 39060,
-      "mail": 18873,
-      "requested": 48999
+      "total": 61649,
+      "inPerson": 41030,
+      "mail": 20619,
+      "requested": 49248
     },
     {
       "code": "AZ",
@@ -44,9 +44,9 @@
       "asOf": "2026-10-28",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist. Because PDI, the source for party registration data, does not report by method of voting, all party registration calculations include in-person early and mail ballots.",
-      "total": 4070172,
+      "total": 4307811,
       "inPerson": 77520,
-      "mail": 3992652,
+      "mail": 4230291,
       "requested": 23447524
     },
     {
@@ -55,10 +55,10 @@
       "asOf": "2026-10-28",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 1174321,
-      "inPerson": 10078,
-      "mail": 1164243,
-      "requested": 4050079
+      "total": 1220842,
+      "inPerson": 11054,
+      "mail": 1209788,
+      "requested": 4064271
     },
     {
       "code": "CT",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-28",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 3886449,
-      "inPerson": 2203546,
-      "mail": 1682903,
-      "requested": 2479902
+      "total": 3896546,
+      "inPerson": 2210864,
+      "mail": 1685682,
+      "requested": 2479891
     },
     {
       "code": "GA",
@@ -360,13 +360,13 @@
     {
       "code": "ND",
       "name": "North Dakota",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://vip.sos.nd.gov/abev.aspx?eid=348",
       "notes": "",
-      "total": 51594,
-      "inPerson": 14140,
-      "mail": 37454,
-      "requested": 55485
+      "total": 63807,
+      "inPerson": 23409,
+      "mail": 40398,
+      "requested": 56122
     },
     {
       "code": "OH",
@@ -437,13 +437,13 @@
     {
       "code": "SD",
       "name": "South Dakota",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "South Dakota Secretary of State",
       "notes": "",
-      "total": 55763,
+      "total": 61052,
       "inPerson": 0,
-      "mail": 55763,
-      "requested": 65674
+      "mail": 61052,
+      "requested": 70869
     },
     {
       "code": "TN",
@@ -503,12 +503,12 @@
     {
       "code": "WA",
       "name": "Washington",
-      "asOf": "2026-10-27",
+      "asOf": "2026-10-28",
       "source": "https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics",
       "notes": "",
-      "total": 1140105,
+      "total": 1356057,
       "inPerson": 0,
-      "mail": 1140105,
+      "mail": 1356057,
       "requested": 5131622
     },
     {
