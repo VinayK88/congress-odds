@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-29T13:13:43.412Z",
+  "fetchedAt": "2026-10-29T15:46:21.913Z",
   "rows": [
     {
       "code": "AK",
@@ -30,13 +30,13 @@
     {
       "code": "AR",
       "name": "Arkansas",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Arkansas Secretary of State",
       "notes": "",
-      "total": 368915,
-      "inPerson": 362293,
-      "mail": 6622,
-      "requested": 12255
+      "total": 413805,
+      "inPerson": 406500,
+      "mail": 7305,
+      "requested": 13119
     },
     {
       "code": "CA",
@@ -63,13 +63,13 @@
     {
       "code": "CT",
       "name": "Connecticut",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Connecticut Secretary of the State",
       "notes": "",
-      "total": 314180,
-      "inPerson": 272806,
-      "mail": 41374,
-      "requested": 66740
+      "total": 349520,
+      "inPerson": 305032,
+      "mail": 44488,
+      "requested": 67958
     },
     {
       "code": "DE",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-29",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 3905292,
-      "inPerson": 2214914,
-      "mail": 1690378,
-      "requested": 2480768
+      "total": 4013781,
+      "inPerson": 2290247,
+      "mail": 1723534,
+      "requested": 2480537
     },
     {
       "code": "GA",
@@ -129,13 +129,13 @@
     {
       "code": "ID",
       "name": "Idaho",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Idaho Secretary of State",
       "notes": "Idaho's daily absentee file covers mail ballots only - in-person early voting counts are scraped separately from the state's own dashboard (https://voteidaho.gov/data-and-dashboards/absentee-tracker/) and added in as a single statewide/county total, with no party, age, or gender breakdown available for it (the dashboard's own party breakdown mixes mail and in-person together, so it can't be used to split out the in-person-only portion). Congressional and state-legislative district totals are mail ballots only and do not include in-person early voting, so they will run lower than the statewide/county totals.",
-      "total": 192809,
+      "total": 198961,
       "inPerson": 94297,
-      "mail": 98512,
-      "requested": 163323
+      "mail": 104664,
+      "requested": 163608
     },
     {
       "code": "IL",
@@ -151,24 +151,24 @@
     {
       "code": "IN",
       "name": "Indiana",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Indiana Secretary of State",
       "notes": "",
-      "total": 476175,
+      "total": 552934,
       "inPerson": 0,
-      "mail": 476175,
-      "requested": 517454
+      "mail": 552934,
+      "requested": 588569
     },
     {
       "code": "IA",
       "name": "Iowa",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Iowa Secretary of State",
       "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative), age, and district-level party breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
-      "total": 338739,
-      "inPerson": 216154,
-      "mail": 122585,
-      "requested": 161498
+      "total": 373386,
+      "inPerson": 239682,
+      "mail": 133704,
+      "requested": 161728
     },
     {
       "code": "KS",
@@ -184,13 +184,13 @@
     {
       "code": "KY",
       "name": "Kentucky",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://elect.ky.gov/Pages/default.aspx",
       "notes": "Kentucky reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 49502,
-      "inPerson": 11643,
-      "mail": 37859,
-      "requested": 67511
+      "total": 54219,
+      "inPerson": 13459,
+      "mail": 40760,
+      "requested": 67508
     },
     {
       "code": "LA",
@@ -217,13 +217,13 @@
     {
       "code": "MD",
       "name": "Maryland",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://elections.maryland.gov/press_room/index.html",
       "notes": "Maryland reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 711202,
-      "inPerson": 388823,
-      "mail": 322379,
-      "requested": 648907
+      "total": 819801,
+      "inPerson": 480207,
+      "mail": 339594,
+      "requested": 651907
     },
     {
       "code": "MA",
@@ -239,13 +239,13 @@
     {
       "code": "MI",
       "name": "Michigan",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Data provided by Michigan Secretary of State",
       "notes": "Michigan does not identify how voters cast their ballots. The in-person numbers differ from the state's dashboard in that in-person reported here is estimated from mail ballot application data.",
-      "total": 1552556,
-      "inPerson": 261587,
-      "mail": 1290969,
-      "requested": 2167785
+      "total": 1704753,
+      "inPerson": 328746,
+      "mail": 1376007,
+      "requested": 2170628
     },
     {
       "code": "MN",
@@ -294,13 +294,13 @@
     {
       "code": "NE",
       "name": "Nebraska",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Data file provided by Nebraska Secretary of State",
       "notes": "",
-      "total": 185194,
-      "inPerson": 32153,
-      "mail": 153041,
-      "requested": 244362
+      "total": 200455,
+      "inPerson": 36228,
+      "mail": 164227,
+      "requested": 245415
     },
     {
       "code": "NV",
@@ -316,33 +316,33 @@
     {
       "code": "NJ",
       "name": "New Jersey",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "New Jersey Secretary of State",
       "notes": "",
-      "total": 795205,
+      "total": 813589,
       "inPerson": 290361,
-      "mail": 504844,
-      "requested": 928377
+      "mail": 523228,
+      "requested": 929146
     },
     {
       "code": "NM",
       "name": "New Mexico",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "New Mexico Secretary of State",
       "notes": "",
-      "total": 316642,
-      "inPerson": 258294,
-      "mail": 58348,
-      "requested": 89159
+      "total": 346689,
+      "inPerson": 284447,
+      "mail": 62242,
+      "requested": 89170
     },
     {
       "code": "NY",
       "name": "New York",
-      "asOf": "2026-10-28",
-      "source": "New York State Board of Elections (in-person early voting); Associated Press county callouts (mail ballots, partial coverage)",
-      "notes": "New York early vote statistics provided by the State Board of elections. Mail ballot statistics are provided courtesy of the Associated Press who contacted county offices for statistics. Coverage is not complete and may vary on day of reporting.",
-      "total": 1064498,
-      "inPerson": 918633,
+      "asOf": "2026-10-29",
+      "source": "New York early vote statistics provided by the State Board of elections. Mail ballot statistics are provided courtesy of the Associated Press who contacted county offices for statistics. Coverage is not complete and may vary on day of reporting.",
+      "notes": "New York's daily turnout report provides a cumulative county-level total for in-person early voters only. Mail-ballot figures (request_all = ballots issued, accept_all = ballots returned, per county) come from a separate Associated Press phone-survey tracker of county election offices - 13 of 62 counties have not been reached yet as of this file and are treated as 0 for the mail component only (their in-person total is unaffected). No demographic breakdown is available for either source.",
+      "total": 1255918,
+      "inPerson": 1110053,
       "mail": 145865,
       "requested": 279463
     },
@@ -393,24 +393,24 @@
     {
       "code": "OR",
       "name": "Oregon",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://sos.oregon.gov/elections/Documents/2026-general-election-unofficial-ballot-returns.pdf",
       "notes": "",
-      "total": 806727,
+      "total": 963640,
       "inPerson": 0,
-      "mail": 806727,
+      "mail": 963640,
       "requested": 3117439
     },
     {
       "code": "PA",
       "name": "Pennsylvania",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://data.pa.gov/Government-Efficiency-Citizen-Engagement/2026-General-Election-Mail-Ballot-Requests-Departm/nbwd-pfn4/about_data",
       "notes": "The statewide and county statistics are compiled from the state dashobard. The district and age statistics are from an individual level file which may have slightly different statistics than the state's summary report, which the state did not update on Friday",
-      "total": 934657,
+      "total": 966863,
       "inPerson": 0,
-      "mail": 934657,
-      "requested": 1296759
+      "mail": 966863,
+      "requested": 1297152
     },
     {
       "code": "RI",
@@ -426,13 +426,13 @@
     {
       "code": "SC",
       "name": "South Carolina",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://scvotes.gov/elections-statistics/voter-participation/",
       "notes": "South Carolina's in-person early-voting total (by county) comes from a separate report with no race or Hispanic ethnicity breakdown; the race/ethnicity figures shown reflect mail ballots only.",
-      "total": 705437,
-      "inPerson": 671314,
-      "mail": 34123,
-      "requested": 56877
+      "total": 789240,
+      "inPerson": 753108,
+      "mail": 36132,
+      "requested": 56910
     },
     {
       "code": "SD",
@@ -525,24 +525,24 @@
     {
       "code": "WI",
       "name": "Wisconsin",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://elections.wi.gov/resources/statistics/absentee-ballot-report-november-3-2026-general-election-0",
       "notes": "",
-      "total": 574433,
-      "inPerson": 299025,
-      "mail": 275408,
-      "requested": 691359
+      "total": 633073,
+      "inPerson": 344182,
+      "mail": 288891,
+      "requested": 737687
     },
     {
       "code": "WY",
       "name": "Wyoming",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Wyoming Secretary of State",
       "notes": "",
-      "total": 47553,
+      "total": 52691,
       "inPerson": 0,
-      "mail": 47553,
-      "requested": 56176
+      "mail": 52691,
+      "requested": 60275
     }
   ]
 }
