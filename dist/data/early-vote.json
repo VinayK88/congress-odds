@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-29T15:46:21.913Z",
+  "fetchedAt": "2026-10-29T19:00:00.313Z",
   "rows": [
     {
       "code": "AK",
@@ -140,13 +140,13 @@
     {
       "code": "IL",
       "name": "Illinois",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://www.elections.il.gov/VotingAndRegistrationSystems/PreElectionCounts.aspx",
       "notes": "",
-      "total": 1164397,
-      "inPerson": 608570,
-      "mail": 555827,
-      "requested": 1168268
+      "total": 1267319,
+      "inPerson": 683628,
+      "mail": 583691,
+      "requested": 1175326
     },
     {
       "code": "IN",
@@ -371,13 +371,13 @@
     {
       "code": "OH",
       "name": "Ohio",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://data.ohiosos.gov/portal/election-dashboards",
       "notes": "In-person early votes may be different than reported by the Ohio Secretary of State. They are approximated by counting a ballot sent and received on the same day as an in-person early vote.",
-      "total": 1291317,
-      "inPerson": 775270,
-      "mail": 516047,
-      "requested": 731691
+      "total": 1388980,
+      "inPerson": 844282,
+      "mail": 544698,
+      "requested": 732168
     },
     {
       "code": "OK",
