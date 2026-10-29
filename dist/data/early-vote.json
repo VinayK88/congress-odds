@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-29T19:00:00.313Z",
+  "fetchedAt": "2026-10-29T20:41:03.310Z",
   "rows": [
     {
       "code": "AK",
@@ -41,13 +41,13 @@
     {
       "code": "CA",
       "name": "California",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist. Because PDI, the source for party registration data, does not report by method of voting, all party registration calculations include in-person early and mail ballots.",
-      "total": 4307811,
-      "inPerson": 77520,
-      "mail": 4230291,
-      "requested": 23447524
+      "total": 4605932,
+      "inPerson": 97263,
+      "mail": 4508669,
+      "requested": 23450456
     },
     {
       "code": "CO",
@@ -74,23 +74,23 @@
     {
       "code": "DE",
       "name": "Delaware",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Delaware Department of Elections",
       "notes": "Delaware does not publish mail ballot request data. The \"ballots requested\" figures shown for Delaware are the number of mail ballots received and counted, treated as equal to requests for lack of any other source.",
-      "total": 104746,
+      "total": 116273,
       "inPerson": 0,
-      "mail": 104746,
-      "requested": 104746
+      "mail": 116273,
+      "requested": 116273
     },
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://dcboe.org/",
       "notes": "The DC Board of Elections reports ballots in three separate files: mail ballots returned by drop box, mail ballots returned by USPS, and in-person votes cast at Early Vote Centers (EVC). DC is vote-by-mail, so request_all reflects active voter registration rather than anything derived from these files. No party, age, or geographic breakdown is available.",
-      "total": 60027,
-      "inPerson": 6526,
-      "mail": 60027,
+      "total": 68499,
+      "inPerson": 9424,
+      "mail": 68499,
       "requested": 492023
     },
     {
@@ -99,10 +99,10 @@
       "asOf": "2026-10-29",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 4013781,
-      "inPerson": 2290247,
-      "mail": 1723534,
-      "requested": 2480537
+      "total": 4159900,
+      "inPerson": 2403540,
+      "mail": 1756360,
+      "requested": 2480240
     },
     {
       "code": "GA",
@@ -110,21 +110,21 @@
       "asOf": "2026-10-29",
       "source": "https://mvp.sos.ga.gov/s/voter-absentee-files",
       "notes": "Georgia's county-level \"Ballots Issued and Accepted\" and \"Ballots to Date\" downloads (from the state's election-data-hub dashboard, https://sos.ga.gov/page/election-data-hub-unofficial-turnout) are compared against the statewide absentee file, county by county, using whichever is higher - this is how same-day in-person early-voting activity (which the statewide absentee file doesn't carry until the next overnight refresh) gets folded in. No district or demographic breakdown is available from these county-level downloads.",
-      "total": 2308779,
-      "inPerson": 2203531,
-      "mail": 105248,
+      "total": 2402526,
+      "inPerson": 2294275,
+      "mail": 108251,
       "requested": 157132
     },
     {
       "code": "HI",
       "name": "Hawaii",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://elections.hawaii.gov/resources/absentee-voting-report/",
       "notes": "",
-      "total": 168191,
-      "inPerson": 2270,
-      "mail": 165921,
-      "requested": 727412
+      "total": 190203,
+      "inPerson": 2824,
+      "mail": 187379,
+      "requested": 727772
     },
     {
       "code": "ID",
@@ -448,11 +448,11 @@
     {
       "code": "TN",
       "name": "Tennessee",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://sos.tn.gov/govotetn",
       "notes": "Tennessee's daily turnout report provides a cumulative county-level total for in-person early voters only. No mail-ballot figures or demographic data are available for Tennessee at at this time.",
-      "total": 1018521,
-      "inPerson": 1018521,
+      "total": 1130292,
+      "inPerson": 1130292,
       "mail": 0,
       "requested": 0
     },
@@ -462,10 +462,10 @@
       "asOf": "2026-10-29",
       "source": "https://goelect.txelections.civixapps.com/ivis-evr-ui/evr",
       "notes": "Texas does not report mail ballot requests. Requests are equal to mail ballots sent. For some counties, I may scrape directly from a county website. These do not always provide breakdowns of early voting by mail and in-person voting.",
-      "total": 5846852,
-      "inPerson": 5612744,
-      "mail": 234108,
-      "requested": 234108
+      "total": 6258909,
+      "inPerson": 6011271,
+      "mail": 247638,
+      "requested": 247638
     },
     {
       "code": "UT",
