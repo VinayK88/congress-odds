@@ -3,18 +3,18 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-30T00:22:24.134Z",
+  "fetchedAt": "2026-10-30T05:57:53.826Z",
   "rows": [
     {
       "code": "AK",
       "name": "Alaska",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://www.elections.alaska.gov/research/statistics/#aeqstats",
       "notes": "",
-      "total": 61649,
-      "inPerson": 41030,
-      "mail": 20619,
-      "requested": 49248
+      "total": 72150,
+      "inPerson": 48510,
+      "mail": 23640,
+      "requested": 49592
     },
     {
       "code": "AZ",
@@ -44,21 +44,21 @@
       "asOf": "2026-10-29",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist. Because PDI, the source for party registration data, does not report by method of voting, all party registration calculations include in-person early and mail ballots.",
-      "total": 4605932,
+      "total": 4827892,
       "inPerson": 97263,
-      "mail": 4508669,
+      "mail": 4730629,
       "requested": 23450456
     },
     {
       "code": "CO",
       "name": "Colorado",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 1220842,
-      "inPerson": 11054,
-      "mail": 1209788,
-      "requested": 4064271
+      "total": 1319994,
+      "inPerson": 13425,
+      "mail": 1306569,
+      "requested": 4054527
     },
     {
       "code": "CT",
@@ -360,13 +360,13 @@
     {
       "code": "ND",
       "name": "North Dakota",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://vip.sos.nd.gov/abev.aspx?eid=348",
       "notes": "",
-      "total": 63807,
-      "inPerson": 23409,
-      "mail": 40398,
-      "requested": 56122
+      "total": 74769,
+      "inPerson": 31674,
+      "mail": 43095,
+      "requested": 56664
     },
     {
       "code": "OH",
@@ -503,12 +503,12 @@
     {
       "code": "WA",
       "name": "Washington",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics",
       "notes": "",
-      "total": 1356057,
+      "total": 1513547,
       "inPerson": 0,
-      "mail": 1356057,
+      "mail": 1513547,
       "requested": 5131622
     },
     {
