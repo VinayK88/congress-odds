@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-30T18:13:18.251Z",
+  "fetchedAt": "2026-10-30T18:40:32.806Z",
   "rows": [
     {
       "code": "AK",
@@ -173,13 +173,13 @@
     {
       "code": "KS",
       "name": "Kansas",
-      "asOf": "2026-10-29",
+      "asOf": "2026-10-30",
       "source": "Kansas Secretary of State",
       "notes": "",
-      "total": 328522,
-      "inPerson": 262515,
-      "mail": 66007,
-      "requested": 107813
+      "total": 375937,
+      "inPerson": 303878,
+      "mail": 72059,
+      "requested": 107914
     },
     {
       "code": "KY",
