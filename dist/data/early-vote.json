@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-29T23:21:22.322Z",
+  "fetchedAt": "2026-10-30T00:22:24.134Z",
   "rows": [
     {
       "code": "AK",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-29",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 4258780,
-      "inPerson": 2492034,
-      "mail": 1766746,
-      "requested": 2479951
+      "total": 4266000,
+      "inPerson": 2498468,
+      "mail": 1767532,
+      "requested": 2479926
     },
     {
       "code": "GA",
@@ -272,13 +272,13 @@
     {
       "code": "MO",
       "name": "Missouri",
-      "asOf": "2026-10-23",
-      "source": "County election dashboards",
-      "notes": "St. Louis County only. Mail ballot figures (request_all/accept_all) carried forward from 10/23/2026 - the source's own mail_ballots feed was reporting received > sent on 10/24/2026, a logical impossibility, so today's mail figures are not used until the source corrects itself. In-person figures are today's real numbers.",
-      "total": 54608,
-      "inPerson": 50086,
-      "mail": 4522,
-      "requested": 12165
+      "asOf": "2026-10-29",
+      "source": "Associated Press (AP) county-level advance-turnout feed, supplemented by direct county clerk contact",
+      "notes": "Statewide AP county-level advance-turnout feed; county coverage fills in through the day as clerks report in.",
+      "total": 260656,
+      "inPerson": 226882,
+      "mail": 33774,
+      "requested": 49163
     },
     {
       "code": "MT",
@@ -437,13 +437,13 @@
     {
       "code": "SD",
       "name": "South Dakota",
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "source": "South Dakota Secretary of State",
       "notes": "",
-      "total": 61052,
+      "total": 66534,
       "inPerson": 0,
-      "mail": 61052,
-      "requested": 70869
+      "mail": 66534,
+      "requested": 76162
     },
     {
       "code": "TN",
@@ -515,7 +515,7 @@
       "code": "WV",
       "name": "West Virginia",
       "asOf": "2026-10-29",
-      "source": "West Virginia Secretary of State",
+      "source": "https://sos.wv.gov/article/secretary-warner-announces-more-115000-ballots-have-been-cast-absentee-voting-and-during",
       "notes": "West Virginia publishes mail ballots requested and returned, and in-person early vote returns, by county and party. No age, gender, race, or district-level data is available.",
       "total": 114391,
       "inPerson": 219804,
