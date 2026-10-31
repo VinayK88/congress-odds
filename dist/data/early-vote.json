@@ -3,18 +3,18 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-31T20:59:17.626Z",
+  "fetchedAt": "2026-10-31T23:26:40.859Z",
   "rows": [
     {
       "code": "AK",
       "name": "Alaska",
-      "asOf": "2026-10-30",
+      "asOf": "2026-10-31",
       "source": "https://www.elections.alaska.gov/research/statistics/#aeqstats",
       "notes": "",
-      "total": 77749,
-      "inPerson": 51636,
-      "mail": 26113,
-      "requested": 49772
+      "total": 86317,
+      "inPerson": 56640,
+      "mail": 29677,
+      "requested": 49920
     },
     {
       "code": "AZ",
@@ -85,12 +85,12 @@
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-30",
+      "asOf": "2026-10-31",
       "source": "https://dcboe.org/",
       "notes": "The DC Board of Elections reports ballots in three separate files: mail ballots returned by drop box, mail ballots returned by USPS, and in-person votes cast at Early Vote Centers (EVC). DC is vote-by-mail, so request_all reflects active voter registration rather than anything derived from these files. No party, age, or geographic breakdown is available.",
-      "total": 77480,
-      "inPerson": 12901,
-      "mail": 64579,
+      "total": 88113,
+      "inPerson": 17410,
+      "mail": 70703,
       "requested": 492023
     },
     {
@@ -99,10 +99,10 @@
       "asOf": "2026-10-31",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 5091245,
-      "inPerson": 3194701,
-      "mail": 1896544,
-      "requested": 2480071
+      "total": 5148276,
+      "inPerson": 3247657,
+      "mail": 1900619,
+      "requested": 2479891
     },
     {
       "code": "GA",
@@ -162,13 +162,13 @@
     {
       "code": "IA",
       "name": "Iowa",
-      "asOf": "2026-10-30",
+      "asOf": "2026-10-31",
       "source": "Iowa Secretary of State",
-      "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
-      "total": 407374,
-      "inPerson": 266340,
-      "mail": 141034,
-      "requested": 161814
+      "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative), age, and district-level party breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
+      "total": 440389,
+      "inPerson": 293362,
+      "mail": 147027,
+      "requested": 161862
     },
     {
       "code": "KS",
@@ -305,13 +305,13 @@
     {
       "code": "NV",
       "name": "Nevada",
-      "asOf": "2026-10-30",
+      "asOf": "2026-10-31",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
       "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative), age, and district-level party breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
-      "total": 665060,
-      "inPerson": 284089,
-      "mail": 380971,
-      "requested": 2091159
+      "total": 718903,
+      "inPerson": 308019,
+      "mail": 410884,
+      "requested": 2091353
     },
     {
       "code": "NJ",
