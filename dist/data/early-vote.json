@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-10-31T13:48:16.560Z",
+  "fetchedAt": "2026-10-31T15:47:00.154Z",
   "rows": [
     {
       "code": "AK",
@@ -63,13 +63,13 @@
     {
       "code": "CT",
       "name": "Connecticut",
-      "asOf": "2026-10-30",
+      "asOf": "2026-10-31",
       "source": "Connecticut Secretary of the State",
       "notes": "",
-      "total": 394385,
-      "inPerson": 347279,
-      "mail": 47106,
-      "requested": 68904
+      "total": 438386,
+      "inPerson": 388342,
+      "mail": 50044,
+      "requested": 69527
     },
     {
       "code": "DE",
@@ -99,10 +99,10 @@
       "asOf": "2026-10-31",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 4743216,
-      "inPerson": 2892241,
-      "mail": 1850975,
-      "requested": 2480839
+      "total": 4824734,
+      "inPerson": 2958547,
+      "mail": 1866187,
+      "requested": 2480656
     },
     {
       "code": "GA",
@@ -110,10 +110,10 @@
       "asOf": "2026-10-31",
       "source": "https://mvp.sos.ga.gov/s/voter-absentee-files",
       "notes": "Georgia's county-level \"Ballots Issued and Accepted\" and \"Ballots to Date\" downloads (from the state's election-data-hub dashboard, https://sos.ga.gov/page/election-data-hub-unofficial-turnout) are compared against the statewide absentee file, county by county, using whichever is higher - this is how same-day in-person early-voting activity (which the statewide absentee file doesn't carry until the next overnight refresh) gets folded in. No district or demographic breakdown is available from these county-level downloads.",
-      "total": 2513648,
-      "inPerson": 2402283,
-      "mail": 111365,
-      "requested": 156771
+      "total": 2823265,
+      "inPerson": 2704627,
+      "mail": 118638,
+      "requested": 156145
     },
     {
       "code": "HI",
@@ -338,11 +338,11 @@
     {
       "code": "NY",
       "name": "New York",
-      "asOf": "2026-10-30",
+      "asOf": "2026-10-31",
       "source": "New York early vote statistics provided by the State Board of elections. Mail ballot statistics are provided courtesy of the Associated Press who contacted county offices for statistics. Coverage is not complete and may vary on day of reporting.",
       "notes": "New York's daily turnout report provides a cumulative county-level total for in-person early voters only. Mail-ballot figures (request_all = ballots issued, accept_all = ballots returned, per county) come from a separate Associated Press phone-survey tracker of county election offices - 13 of 62 counties have not been reached yet as of this file and are treated as 0 for the mail component only (their in-person total is unaffected). No demographic breakdown is available for either source.",
-      "total": 1423100,
-      "inPerson": 1277235,
+      "total": 1620756,
+      "inPerson": 1474891,
       "mail": 145865,
       "requested": 279463
     },
@@ -481,13 +481,13 @@
     {
       "code": "VT",
       "name": "Vermont",
-      "asOf": "2026-10-30",
+      "asOf": "2026-10-31",
       "source": "Data provided Vermont Secretary of State",
       "notes": "",
-      "total": 139565,
+      "total": 146298,
       "inPerson": 0,
-      "mail": 139565,
-      "requested": 457996
+      "mail": 146298,
+      "requested": 457957
     },
     {
       "code": "VA",
