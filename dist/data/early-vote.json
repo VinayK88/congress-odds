@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-01T14:19:59.220Z",
+  "fetchedAt": "2026-11-01T17:08:23.823Z",
   "rows": [
     {
       "code": "AK",
@@ -63,13 +63,13 @@
     {
       "code": "CT",
       "name": "Connecticut",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-01",
       "source": "Connecticut Secretary of the State",
       "notes": "",
-      "total": 438386,
-      "inPerson": 388342,
-      "mail": 50044,
-      "requested": 69527
+      "total": 467678,
+      "inPerson": 417230,
+      "mail": 50448,
+      "requested": 69436
     },
     {
       "code": "DE",
@@ -129,12 +129,12 @@
     {
       "code": "ID",
       "name": "Idaho",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-01",
       "source": "Idaho Secretary of State",
       "notes": "Idaho's daily absentee file covers mail ballots only - in-person early voting counts are scraped separately from the state's own dashboard (https://voteidaho.gov/data-and-dashboards/absentee-tracker/) and added in as a single statewide/county total, with no party, age, or gender breakdown available for it (the dashboard's own party breakdown mixes mail and in-person together, so it can't be used to split out the in-person-only portion). Congressional and state-legislative district totals are mail ballots only and do not include in-person early voting, so they will run lower than the statewide/county totals.",
-      "total": 241364,
-      "inPerson": 122372,
-      "mail": 118992,
+      "total": 263133,
+      "inPerson": 144127,
+      "mail": 119006,
       "requested": 164146
     },
     {
@@ -217,13 +217,13 @@
     {
       "code": "MD",
       "name": "Maryland",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-01",
       "source": "https://elections.maryland.gov/press_room/index.html",
       "notes": "Maryland reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 981363,
+      "total": 991069,
       "inPerson": 604396,
-      "mail": 376967,
-      "requested": 654876
+      "mail": 386673,
+      "requested": 656599
     },
     {
       "code": "MA",
@@ -338,11 +338,11 @@
     {
       "code": "NY",
       "name": "New York",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-01",
       "source": "New York early vote statistics provided by the State Board of elections. Mail ballot statistics are provided courtesy of the Associated Press who contacted county offices for statistics. Coverage is not complete and may vary on day of reporting.",
       "notes": "New York's daily turnout report provides a cumulative county-level total for in-person early voters only. Mail-ballot figures (request_all = ballots issued, accept_all = ballots returned, per county) come from a separate Associated Press phone-survey tracker of county election offices - 13 of 62 counties have not been reached yet as of this file and are treated as 0 for the mail component only (their in-person total is unaffected). No demographic breakdown is available for either source.",
-      "total": 1620756,
-      "inPerson": 1474891,
+      "total": 1851563,
+      "inPerson": 1705698,
       "mail": 145865,
       "requested": 279463
     },
@@ -404,13 +404,13 @@
     {
       "code": "PA",
       "name": "Pennsylvania",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-01",
       "source": "https://data.pa.gov/Government-Efficiency-Citizen-Engagement/2026-General-Election-Mail-Ballot-Requests-Departm/nbwd-pfn4/about_data",
       "notes": "The statewide and county statistics are compiled from the state dashobard. The district and age statistics are from an individual level file which may have slightly different statistics than the state's summary report, which the state did not update on Friday",
-      "total": 1042976,
+      "total": 1056549,
       "inPerson": 0,
-      "mail": 1042976,
-      "requested": 1297665
+      "mail": 1056549,
+      "requested": 1297730
     },
     {
       "code": "RI",
@@ -481,13 +481,13 @@
     {
       "code": "VT",
       "name": "Vermont",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-01",
       "source": "Data provided Vermont Secretary of State",
       "notes": "",
-      "total": 146298,
+      "total": 147147,
       "inPerson": 0,
-      "mail": 146298,
-      "requested": 457957
+      "mail": 147147,
+      "requested": 457953
     },
     {
       "code": "VA",
