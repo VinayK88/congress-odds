@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-02T16:36:57.627Z",
+  "fetchedAt": "2026-11-02T17:10:20.336Z",
   "rows": [
     {
       "code": "AK",
@@ -30,13 +30,13 @@
     {
       "code": "AR",
       "name": "Arkansas",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-02",
       "source": "Arkansas Secretary of State",
       "notes": "",
-      "total": 518198,
-      "inPerson": 509081,
-      "mail": 9117,
-      "requested": 13135
+      "total": 550338,
+      "inPerson": 540941,
+      "mail": 9397,
+      "requested": 13552
     },
     {
       "code": "CA",
@@ -85,12 +85,12 @@
     {
       "code": "DC",
       "name": "District of Columbia",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-02",
       "source": "https://dcboe.org/",
       "notes": "The DC Board of Elections reports ballots in three separate files: mail ballots returned by drop box, mail ballots returned by USPS, and in-person votes cast at Early Vote Centers (EVC). DC is vote-by-mail, so request_all reflects active voter registration rather than anything derived from these files. No party, age, or geographic breakdown is available.",
-      "total": 88113,
-      "inPerson": 17410,
-      "mail": 70703,
+      "total": 111150,
+      "inPerson": 27118,
+      "mail": 84032,
       "requested": 492023
     },
     {
@@ -140,13 +140,13 @@
     {
       "code": "IL",
       "name": "Illinois",
-      "asOf": "2026-10-30",
+      "asOf": "2026-11-02",
       "source": "https://www.elections.il.gov/VotingAndRegistrationSystems/PreElectionCounts.aspx",
       "notes": "",
-      "total": 1382486,
-      "inPerson": 764924,
-      "mail": 617562,
-      "requested": 1181322
+      "total": 1579728,
+      "inPerson": 904143,
+      "mail": 675585,
+      "requested": 1188674
     },
     {
       "code": "IN",
@@ -184,13 +184,13 @@
     {
       "code": "KY",
       "name": "Kentucky",
-      "asOf": "2026-10-30",
+      "asOf": "2026-11-02",
       "source": "https://elect.ky.gov/Pages/default.aspx",
       "notes": "Kentucky reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 192709,
-      "inPerson": 149368,
-      "mail": 43341,
-      "requested": 67497
+      "total": 438602,
+      "inPerson": 390736,
+      "mail": 47866,
+      "requested": 67460
     },
     {
       "code": "LA",
@@ -250,13 +250,13 @@
     {
       "code": "MN",
       "name": "Minnesota",
-      "asOf": "2026-10-30",
+      "asOf": "2026-11-02",
       "source": "https://www.sos.mn.gov/election-administration-campaigns/data-maps/absentee-data/",
       "notes": "",
-      "total": 728961,
-      "inPerson": 483520,
-      "mail": 245441,
-      "requested": 455166
+      "total": 886427,
+      "inPerson": 619847,
+      "mail": 266580,
+      "requested": 455217
     },
     {
       "code": "MS",
@@ -371,13 +371,13 @@
     {
       "code": "OH",
       "name": "Ohio",
-      "asOf": "2026-11-01",
+      "asOf": "2026-11-02",
       "source": "https://data.ohiosos.gov/portal/election-dashboards",
       "notes": "In-person early votes may be different than reported by the Ohio Secretary of State. They are approximated by counting a ballot sent and received on the same day as an in-person early vote.",
-      "total": 1677822,
-      "inPerson": 1060266,
-      "mail": 617556,
-      "requested": 730424
+      "total": 1728899,
+      "inPerson": 1103252,
+      "mail": 625647,
+      "requested": 730152
     },
     {
       "code": "OK",
@@ -536,13 +536,13 @@
     {
       "code": "WY",
       "name": "Wyoming",
-      "asOf": "2026-10-30",
+      "asOf": "2026-11-02",
       "source": "Wyoming Secretary of State",
       "notes": "",
-      "total": 57968,
+      "total": 65264,
       "inPerson": 0,
-      "mail": 57968,
-      "requested": 64552
+      "mail": 65264,
+      "requested": 70442
     }
   ]
 }
