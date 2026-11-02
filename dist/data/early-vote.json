@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-01T23:40:45.604Z",
+  "fetchedAt": "2026-11-02T00:39:00.614Z",
   "rows": [
     {
       "code": "AK",
@@ -99,10 +99,10 @@
       "asOf": "2026-11-01",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 5345564,
-      "inPerson": 3410092,
-      "mail": 1935472,
-      "requested": 2479618
+      "total": 5402758,
+      "inPerson": 3465546,
+      "mail": 1937212,
+      "requested": 2479306
     },
     {
       "code": "GA",
