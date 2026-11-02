@@ -3,18 +3,18 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-02T00:39:00.614Z",
+  "fetchedAt": "2026-11-02T06:20:17.861Z",
   "rows": [
     {
       "code": "AK",
       "name": "Alaska",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-01",
       "source": "https://www.elections.alaska.gov/research/statistics/#aeqstats",
       "notes": "",
-      "total": 86317,
-      "inPerson": 56640,
-      "mail": 29677,
-      "requested": 49920
+      "total": 90570,
+      "inPerson": 58262,
+      "mail": 32308,
+      "requested": 49964
     },
     {
       "code": "AZ",
@@ -22,10 +22,10 @@
       "asOf": "2026-11-01",
       "source": "https://www.stealth-analytics.com/early-ballots",
       "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
-      "total": 1595938,
+      "total": 1602837,
       "inPerson": 0,
-      "mail": 1595938,
-      "requested": 3322965
+      "mail": 1602837,
+      "requested": 3323287
     },
     {
       "code": "AR",
@@ -52,13 +52,13 @@
     {
       "code": "CO",
       "name": "Colorado",
-      "asOf": "2026-10-31",
+      "asOf": "2026-11-01",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 1525971,
-      "inPerson": 23546,
-      "mail": 1502425,
-      "requested": 4062876
+      "total": 1591323,
+      "inPerson": 23655,
+      "mail": 1567668,
+      "requested": 4128119
     },
     {
       "code": "CT",
