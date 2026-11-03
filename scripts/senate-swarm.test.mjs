@@ -59,3 +59,27 @@ test('stale quotes are excluded and archived prices remain labeled historical',(
  assert.equal(archive.counts['D-strong'],1);
  assert.equal(archive.counts.unavailable,34);
 });
+
+
+test('responsive layouts fit without horizontal scrolling at narrow screen widths',()=>{
+ const data=senateDistribution(null,now);
+ for(const size of [240,280,320,375,430,600,820,1090]){
+  const g=layoutRaceBubbles(data,size);
+  assert.equal(g.compact,true,'stacked layout should be used at '+size);
+  assert.equal(g.width,size,'chart width must be viewport width');
+  assert.equal(g.nodes.length,35);
+  assert.equal(g.sections.length,8,'seven market bands plus unassigned strip');
+  for(const p of g.nodes){
+   assert.ok(p.x-p.r>=0&&p.x+p.r<=g.width,`${p.id} clipped horizontally at ${size}`);
+   assert.ok(p.y-p.r>=0&&p.y+p.r<=g.height,`${p.id} clipped vertically at ${size}`);
+   assert.ok(p.r>=12,'state code should remain legible');
+  }
+  for(let i=0;i<g.nodes.length;i++){
+   for(let j=i+1;j<g.nodes.length;j++){
+    const a=g.nodes[i],b=g.nodes[j];
+    const delta=Math.hypot(a.x-b.x,a.y-b.y);
+    assert.ok(delta>=a.r+b.r-1.2,`${a.id} and ${b.id} overlap at ${size}`);
+   }
+  }
+ }
+});
