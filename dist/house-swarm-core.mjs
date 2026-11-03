@@ -71,7 +71,48 @@ export function bubbleHash(id){
 // abbreviation; House bubbles repeat abbreviations across individual districts.
 // Chart height expands for unusually concentrated price bands, never squashing
 // labels or allowing circles to overlap.
-export function layoutRaceBubbles(distribution){
+// Narrow viewports: stack the seven price bands into full-width rows rather
+// than compressing labeled circles or requiring horizontal dragging.
+function compactRaceLayout(distribution,availableWidth){
+ const senate=distribution.chamber==='senate';
+ const width=Math.max(240,Math.floor(availableWidth));
+ const radius=senate?15.3:12.5,step=senate?34:28;
+ const edge=16;
+ const cols=Math.max(1,Math.floor((width-2*edge)/step));
+ const byBand=new Map(HOUSE_BANDS.map(b=>[b.id,[]]));
+ const unavailable=[];
+ for(const b of distribution.bubbles){
+  const group=byBand.get(b.band);
+  if(group)group.push(b);else unavailable.push(b);
+ }
+ const nodes=[],sections=[];
+ let y=13;
+ const drawSection=(id,label,items)=>{
+  items.sort((a,b)=>bubbleHash(a.id)-bubbleHash(b.id)||a.id.localeCompare(b.id));
+  const rows=Math.ceil(items.length/cols);
+  const headerY=y+19,firstY=y+55;
+  const count=items.length;
+  sections.push({id,label,count,headerY,firstY,top:y});
+  for(let i=0;i<count;i++){
+   const row=Math.floor(i/cols),col=i%cols;
+   const onRow=Math.min(cols,count-row*cols);
+   nodes.push({...items[i],x:width/2+(col-(onRow-1)/2)*step,y:firstY+row*step,r:radius});
+  }
+  y=firstY+Math.max(1,rows)*step+10;
+ };
+ for(const b of HOUSE_BANDS)drawSection(b.id,b.label,byBand.get(b.id));
+ drawSection('unavailable','Other, stale or unavailable quotes',unavailable);
+ return {
+  compact:true,nodes,width,height:y+12,sections,
+  // Maintain a stable public geometry shape for clients and tests.
+  left:edge,bandWidth:width,axisY:0,dividerY:0,unknownTitleY:0,unknownY:0,mainLast:0
+ };
+}
+export function layoutRaceBubbles(distribution,availableWidth=null){
+ if(Number.isFinite(availableWidth)&&availableWidth>0&&availableWidth<1100){
+  return compactRaceLayout(distribution,availableWidth);
+ }
+
  const senate=distribution.chamber==='senate';
  const width=1580,left=55,bandWidth=210,top=119;
  const step=senate?36:28.4;
