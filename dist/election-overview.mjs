@@ -51,7 +51,7 @@ function gauge(democratic,republican){
  key.append(make('span','DEMOCRATS','overview-key-dem'),make('span','TOSS-UP'),make('span','REPUBLICANS','overview-key-rep'));
  wrap.append(key);
  const leading=democratic===null?'No current market quote':democratic>=republican?`${percent(democratic)} Democrats`:`${percent(republican)} Republicans`;
- wrap.append(make('strong',leading,'overview-gauge-headline'));
+ wrap.append(make('strong',leading,'overview-gauge-headline'+(democratic!==null&&republican>democratic?' rep':'')));
  wrap.append(make('p',democratic===null?'No fresh eligible price for this view.':`D ${percent(democratic)} · R ${percent(republican)} · independently quoted`,'overview-gauge-detail'));
  return wrap;
 }
