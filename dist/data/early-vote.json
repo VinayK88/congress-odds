@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-03T22:18:29.909Z",
+  "fetchedAt": "2026-11-03T23:41:06.493Z",
   "rows": [
     {
       "code": "AK",
@@ -55,10 +55,10 @@
       "asOf": "2026-11-03",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 2117807,
-      "inPerson": 78412,
-      "mail": 2039395,
-      "requested": 4054439
+      "total": 2217052,
+      "inPerson": 95636,
+      "mail": 2121416,
+      "requested": 4136460
     },
     {
       "code": "CT",
@@ -99,10 +99,10 @@
       "asOf": "2026-11-03",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 5475004,
-      "inPerson": 3467812,
-      "mail": 2007192,
-      "requested": 2464405
+      "total": 5518179,
+      "inPerson": 3467810,
+      "mail": 2050369,
+      "requested": 2477553
     },
     {
       "code": "GA",
