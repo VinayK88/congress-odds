@@ -84,14 +84,31 @@ function drawChart(distribution){
  const target=document.getElementById('house-swarm-plot');
  const tooltip=document.getElementById('house-swarm-tooltip');
  if(!target)return;
+ const availableWidth=target.getBoundingClientRect().width||target.clientWidth;
+ const geometry=layoutRaceBubbles(distribution,availableWidth),layout=geometry.nodes;
  target.replaceChildren();
- const geometry=layoutRaceBubbles(distribution),layout=geometry.nodes;
  const {width,height,left,bandWidth,axisY,dividerY,unknownTitleY,mainLast}=geometry;
  const graphic=svg('svg',{viewBox:'0 0 '+width+' '+height,class:'house-swarm-svg',role:'img',
   'aria-label':'Every one of the 435 House districts as a circle, arranged in seven market-confidence quote bands and an unavailable quotes strip.'});
  graphic.append(svg('title',{},'2026 House district market quote distribution'));
  graphic.append(svg('desc',{},'Columns run from high Democratic Yes prices to high Republican Yes prices. A central band represents races with a quoted leader below 60%. Unavailable races appear in grey at the bottom. Market prices are not election results.'));
  const backdrop=svg('g',{'aria-hidden':'true'});
+ if(geometry.compact){
+  for(const section of geometry.sections){
+   const index=HOUSE_BANDS.findIndex(b=>b.id===section.id);
+   const party=index<0?'unknown':index<3?'is-dem':index>3?'is-rep':'is-close';
+   const heading=index<0?'OTHER / UNAVAILABLE':index<3?'DEMOCRATIC':index>3?'REPUBLICAN':'CLOSE RACES';
+   const title=index<0?heading:heading+' · '+section.label;
+   backdrop.append(svg('rect',{x:9,y:section.top+2,width:width-18,height:49,rx:9,
+     fill:index===3?'#fff8e7':index<0?'#f1f2f2':'#f7f6f2'}));
+   backdrop.append(svg('text',{x:17,y:section.headerY,class:'house-swarm-column-heading '+party},title));
+   backdrop.append(svg('text',{x:17,y:section.headerY+18,class:'house-swarm-column-subtitle'},
+    index<0?'Stale or unavailable quotes':'Market Yes prices, not results'));
+   backdrop.append(svg('text',{x:width-17,y:section.headerY,'text-anchor':'end',class:'house-swarm-column-heading '+party},
+    section.count+' races'));
+   if(section.count===0)backdrop.append(svg('text',{x:width/2,y:section.firstY+4,'text-anchor':'middle',class:'house-swarm-column-subtitle'},'No eligible quotes'));
+  }
+ }else{
  backdrop.append(svg('text',{x:width/2,y:mainLast+12,'text-anchor':'middle',class:'house-swarm-watermark'},'435'));
  for(let i=0;i<7;i++){
   const band=HOUSE_BANDS[i],center=left+i*bandWidth+bandWidth/2;
@@ -108,6 +125,7 @@ function drawChart(distribution){
  const other=distribution.bubbles.filter(b=>b.party==='O').length;
  backdrop.append(svg('text',{x:left,y:unknownTitleY,class:'house-swarm-no-quote-title'},
   String(distribution.counts.unavailable)+' OTHER / UNAVAILABLE QUOTES'+(other?' · '+other+' OTHER-PARTY LEADERS':'')));
+ }
  graphic.append(backdrop);
  const bubbleGroup=svg('g',{class:'house-swarm-dots'});
  for(const b of layout){
@@ -209,6 +227,15 @@ function start(){
   refresh();
  });
  window.addEventListener('candidate-data-updated',refresh);
+ const plot=document.getElementById('house-swarm-plot');
+ if(plot&&typeof ResizeObserver==='function'){
+  let lastWidth=0;
+  const observer=new ResizeObserver(entries=>{
+   const width=Math.round(entries[0]?.contentRect?.width||plot.getBoundingClientRect().width);
+   if(width>0&&Math.abs(width-lastWidth)>=2){lastWidth=width;refresh();}
+  });
+  observer.observe(plot);
+ }else window.addEventListener('resize',refresh,{passive:true});
  refresh();
 }
 start();
