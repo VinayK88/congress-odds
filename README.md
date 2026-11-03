@@ -11,14 +11,14 @@ Compare Democratic and Republican chances of controlling the 2026 U.S. House and
 
 | Chamber | Source | Democrats | Republicans | Retrieved (UTC) |
 | :-- | :-- | --: | --: | :-- |
-| House | [Polymarket](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 94.5% | 5.5% | 2026-11-03T06:56:40.307Z |
-| House | [Kalshi](https://kalshi.com/markets/controlh/house-winner/controlh-2026) | 93.8% | 6.2% | 2026-11-03T06:56:40.196Z |
-| House | [PredictIt](https://www.predictit.org/markets/detail/8157) | 93.5% | 7.5% | 2026-11-03T06:56:40.277Z |
-| House | [Manifold · play money (comparison only)](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [98.0%](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [2.0%](https://manifold.markets/ryanmccomb/republicans-have-house-majority-aft) | 2026-11-03T06:56:40.802Z |
-| Senate | [Polymarket](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 77.5% | 22.5% | 2026-11-03T06:56:40.189Z |
-| Senate | [Kalshi](https://kalshi.com/markets/controls/senate-winner/controls-2026) | 75.5% | 24.5% | 2026-11-03T06:56:40.226Z |
-| Senate | [PredictIt](https://www.predictit.org/markets/detail/8155) | 78.0% | 23.0% | 2026-11-03T06:56:40.741Z |
-| Senate | [Manifold · play money (comparison only)](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [70.0%](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [21.2%](https://manifold.markets/AndrewG/will-republicans-win-the-senate-in-738388924521) | 2026-11-03T06:56:40.841Z |
+| House | [Polymarket](https://polymarket.com/event/which-party-will-win-the-house-in-2026) | 94.5% | 5.5% | 2026-11-03T11:50:07.238Z |
+| House | [Kalshi](https://kalshi.com/markets/controlh/house-winner/controlh-2026) | 94.0% | 6.3% | 2026-11-03T11:50:07.262Z |
+| House | [PredictIt](https://www.predictit.org/markets/detail/8157) | 93.5% | 7.5% | 2026-11-03T11:50:07.310Z |
+| House | [Manifold · play money (comparison only)](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [98.0%](https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn) | [2.3%](https://manifold.markets/ryanmccomb/republicans-have-house-majority-aft) | 2026-11-03T11:50:07.333Z |
+| Senate | [Polymarket](https://polymarket.com/event/which-party-will-win-the-senate-in-2026) | 78.5% | 21.5% | 2026-11-03T11:50:07.240Z |
+| Senate | [Kalshi](https://kalshi.com/markets/controls/senate-winner/controls-2026) | 75.5% | 24.5% | 2026-11-03T11:50:07.317Z |
+| Senate | [PredictIt](https://www.predictit.org/markets/detail/8155) | 78.5% | 22.5% | 2026-11-03T11:50:07.386Z |
+| Senate | [Manifold · play money (comparison only)](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [70.0%](https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the) | [19.9%](https://manifold.markets/AndrewG/will-republicans-win-the-senate-in-738388924521) | 2026-11-03T11:50:07.320Z |
 
 Polymarket: Yes outcome prices. Kalshi and PredictIt: Yes bid/ask midpoints. PredictIt covers House and Senate. Manifold shows separate play-money Yes contracts for each party and is excluded from the cash-market average. Prices are independent and may not total 100%. Market rules differ; these are not vote shares or guaranteed results.
 
@@ -130,7 +130,7 @@ The map's party totals update with these same race leaders. Senate totals add 34
 | Mail accepted | 26,779,541 | 49 |
 | Mail requested / issued | 61,259,862 | 49 |
 
-Feed retrieved: 2026-11-03T06:56:44.480Z. Partial coverage: 49 of 51 jurisdictions (50 states + D.C.); report dates vary.
+Feed retrieved: 2026-11-03T11:50:10.521Z. Partial coverage: 49 of 51 jurisdictions (50 states + D.C.); report dates vary.
 
 <!-- EARLY_VOTE:END -->
 
