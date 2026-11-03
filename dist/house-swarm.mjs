@@ -1,6 +1,6 @@
 // Interactive, source-backed House bubble atlas. No fabricated forecasts.
 import {getCandidateSnapshot} from './candidates.mjs';
-import {HOUSE_BANDS,houseDistribution,layoutHouseBubbles} from './house-swarm-core.mjs';
+import {HOUSE_BANDS,houseDistribution,layoutHouseBubbles} from './house-swarm-core.mjs?v=20261104-atlas-final';
 import {STATES} from './race-data.mjs';
 
 const ROOT=document.getElementById('house-swarm');
