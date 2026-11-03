@@ -1,6 +1,6 @@
 // Interactive, source-backed Senate bubble atlas: 35 contests, 65 holdover seats not shown.
 import {getCandidateSnapshot} from './candidates.mjs';
-import {HOUSE_BANDS,senateDistribution,layoutRaceBubbles} from './house-swarm-core.mjs?v=20261104-state-labels';
+import {HOUSE_BANDS,senateDistribution,layoutRaceBubbles} from './house-swarm-core.mjs?v=20261104-fit-width';
 import {STATES} from './race-data.mjs';
 
 const ROOT=document.getElementById('senate-swarm');
