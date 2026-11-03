@@ -94,7 +94,7 @@ export function layoutHouseBubbles(distribution){
  missing.forEach((d,i)=>{
   const row=Math.floor(i/perRow),col=i%perRow,parts=Math.min(perRow,missing.length-row*perRow);
   const x=34+(col+.5)*10.1+((perRow-parts)*10.1/2);
-  const y=573+row*14.5;
+  const y=591+row*14.5;
   nodes.push({...d,x,y,r:4.5});
  });
  return nodes;
