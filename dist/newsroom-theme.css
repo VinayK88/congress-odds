@@ -1,0 +1,206 @@
+/* Election desk: warm paper, editorial type and quiet controls.
+   Presentation only. Party semantics, source freshness and calculations stay intact. */
+:root {
+  --bg:#faf9f6; --surface:#fffefa; --text:#202126; --muted:#65655f;
+  --line:#deddd6; --navy:#24262b; --gold:#77694d;
+  --blue:#1a56a0; --red:#a63729; --party-dem:#1a56a0; --party-rep:#a63729;
+  --party-dem-light:#edf2f8; --party-rep-light:#faf0ed;
+  --shadow-soft:none; --radius-card:6px;
+  --news-serif:Georgia,'Times New Roman',serif;
+}
+html,body.newsroom {background:#faf9f6; background-image:none; color:var(--text)}
+body.newsroom {font-size:14px}
+.newsroom main {max-width:1360px;padding:0 40px}
+.newsroom h1,.newsroom h2,.newsroom h3,.newsroom h4 {
+  font-family:var(--news-serif);color:var(--text);letter-spacing:-.025em
+}
+.newsroom :is(.election-ribbon,.election-headline-bar,.hero-art,.hero-patriotic-stars,
+  .hero-watermark,.edition-tiles,.civic-section-name,.hero-actions,.heading .eyebrow) {display:none}
+.newsroom :is(.heading,.chamber,.edition-tile,.candidates-section,.comparison,
+  .model-section,.history-section,.early-voting)::before,
+.newsroom :is(.heading,.chamber,.masthead,.scenario-board)::after {display:none}
+.newsroom .masthead {
+  background:#faf9f6f5;color:var(--text);border-bottom:1px solid var(--line);
+  box-shadow:none;padding:14px max(24px,calc((100vw - 1280px)/2));gap:24px;
+  min-height:68px;backdrop-filter:blur(12px)
+}
+.newsroom .brand {font-size:24px;color:var(--text);letter-spacing:-1px}
+.newsroom .brand-light {color:var(--text)}
+.newsroom .brand-mark {color:var(--blue);background:transparent;border:0;box-shadow:none;transform:none;width:32px;height:36px}
+.newsroom .brand:after {color:var(--muted);background:none;border:0;margin-left:6px}
+.newsroom .masthead nav a {color:#555650;font-size:12px;font-weight:600}
+.newsroom .masthead nav a:hover {color:var(--text);text-decoration:underline;text-underline-offset:7px}
+.newsroom .sound-toggle {color:#555650;background:transparent;border:1px solid var(--line);border-radius:5px}
+.newsroom .heading {
+  display:block;min-height:0;margin:0;padding:30px 0 22px;border:0;border-radius:0;
+  background:transparent;box-shadow:none;color:var(--text);text-align:left;overflow:visible
+}
+.newsroom .hero-copy {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 32px;align-items:center}
+.newsroom .hero-tag {grid-column:1/-1;border:0;padding:0;background:none;color:var(--muted);font-size:9px;letter-spacing:1.6px}
+.newsroom .hero-tag .tag-pip {background:var(--red);box-shadow:none}
+.newsroom .heading h1 {grid-column:1;grid-row:2;font-size:clamp(30px,3.4vw,46px);line-height:1.15;font-weight:700;letter-spacing:-.035em;margin:0;max-width:none}
+.newsroom .heading h1 br {display:none}
+.newsroom .heading h1 em {color:var(--text);font-style:italic;font-weight:400}
+.newsroom .intro {grid-column:1;grid-row:3;margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.newsroom .intro br {display:none}
+.newsroom .hero-facts {grid-column:2;grid-row:2/4;margin:0;gap:20px;justify-content:flex-end}
+.newsroom .hero-facts strong {font:700 28px/1.2 var(--news-serif);color:var(--text)}
+.newsroom .hero-facts span {color:var(--muted);font-size:9px;letter-spacing:.3px}
+.newsroom .hero-facts i {background:var(--line)}
+.newsroom .refresh-box {grid-column:1/-1;display:flex;gap:12px;margin:5px 0 0}
+.newsroom .refresh-box button {border:1px solid var(--line);background:#fffefa;color:var(--text);border-radius:5px;box-shadow:none}
+.newsroom .refresh-box>span {color:var(--muted);max-width:none;font-size:10px}
+.newsroom .coverage-strip {margin:0;padding:12px 0;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;background:none;color:var(--muted);font-size:9px;letter-spacing:1px}
+.newsroom .explore-dock {width:max-content;max-width:100%;margin:0 auto;padding:0 8px;gap:4px;top:0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:#faf9f6f5;box-shadow:none}
+.newsroom .explore-dock a {padding:13px 15px;color:var(--muted);border-radius:0;font-size:11px;border-bottom:2px solid transparent}
+.newsroom .explore-dock a[aria-current] {background:none;color:var(--text);border-bottom-color:var(--text)}
+.newsroom .explore-dock a:hover:not([aria-current]) {background:#efeee9;color:var(--text)}
+.newsroom .control-heading {padding:30px 0 0;gap:12px}
+.newsroom .control-heading h2,.newsroom .section-heading h2 {font-size:32px;font-weight:700;color:var(--text)}
+.newsroom .control-heading .eyebrow,.newsroom .section-heading .eyebrow {color:var(--muted);font-size:9px;letter-spacing:1.3px;margin-bottom:8px}
+.newsroom .control-heading>p {color:var(--muted);font-size:11px}
+.newsroom .data-health {margin:14px 0;padding:9px 12px;border-radius:4px;box-shadow:none}
+.newsroom .legend {margin:12px 0;font-size:11px}
+.newsroom :is(select,input,textarea) {border-color:#cfcec7;border-radius:5px;background:#fffefa;color:var(--text)}
+.newsroom .electoral-brief {margin:12px 0;background:transparent;border:0;border-radius:0;box-shadow:none}
+.newsroom .electoral-brief-item {background:transparent;border-color:var(--line)}
+.newsroom .electoral-brief-item strong {color:var(--text);font-size:12px}
+.newsroom .electoral-brief-item span {color:var(--muted)}
+.newsroom :is(.source-switcher,.chamber-switch,.map-mode-switch,.market-desk-filters) {background:#eeede8;border:1px solid var(--line);border-radius:5px;padding:3px;gap:3px;box-shadow:none}
+.newsroom :is(.source-switcher,.chamber-switch,.market-desk-filters) button {border-radius:3px;color:var(--muted);background:transparent;box-shadow:none;font-size:11px;min-height:36px}
+.newsroom :is(.source-switcher,.chamber-switch,.market-desk-filters) button[aria-pressed=true] {background:#24262b;color:white;border-color:#24262b;box-shadow:none}
+.newsroom .chambers {gap:32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.newsroom .chambers .chamber {padding:24px 0 18px;border:0;border-radius:0;background:none;box-shadow:none;transform:none}
+.newsroom .chambers .chamber+ .chamber {border-left:1px solid var(--line);padding-left:32px}
+.newsroom .chamber .card-top h2 {font:700 25px/1.2 var(--news-serif);color:var(--text)}
+.newsroom .card-kicker {color:var(--muted);font-size:8px;letter-spacing:1.2px}
+.newsroom .chamber-symbol {display:none}
+.newsroom .chamber .card-subtitle {margin:8px 0 18px;color:var(--muted);font-size:11px}
+.newsroom .chamber .odds {gap:20px}
+.newsroom .chamber .odds>div {padding:0;background:none;border:0;border-radius:0;box-shadow:none}
+.newsroom .chamber .odds>div+div {text-align:right}
+.newsroom .chamber .number {font:700 clamp(42px,4.5vw,64px)/1.1 var(--news-serif);letter-spacing:-.04em;margin:10px 0 16px}
+.newsroom .party-label {font-family:var(--news-serif);font-size:15px;font-weight:700;text-transform:none;letter-spacing:0}
+.newsroom .party-monogram {width:21px;height:21px;border-radius:3px;font:700 11px/1 system-ui}
+.newsroom .chamber .outlook {padding:10px 0;background:none;border:0;border-radius:0;color:var(--muted);margin:12px 0;font-size:11px}
+.newsroom .chamber .card-bottom {border-color:var(--line);padding-top:12px}
+.newsroom .chamber .card-bottom a {background:none;border-color:var(--line);border-radius:4px;color:var(--text);font-size:10px}
+.newsroom .fill.dem {background:var(--blue)}
+.newsroom .fill.rep {background:var(--red)}
+.newsroom :is(.track,.candidate-track,.rank-track,.market-desk-track) {background:#e6e5df;border-radius:2px}
+.newsroom .track {height:7px}
+.newsroom .fill {border-radius:0}
+.newsroom .pulse-board {margin:18px 0;gap:0;border-bottom:1px solid var(--line)}
+.newsroom .pulse-tile {background:transparent;border:0;border-right:1px solid var(--line);border-radius:0;box-shadow:none;padding:12px 22px}
+.newsroom .pulse-tile:last-child {border-right:0}
+.newsroom .pulse-tile>strong {font:700 27px/1.2 var(--news-serif);color:var(--text)}
+.newsroom .interpretation {font-size:11px;color:var(--muted);margin:12px 0}
+.newsroom :is(.candidates-section,.comparison,.model-section,.history-section,.early-voting) {padding:32px 0;margin:36px 0 0;border:0;border-top:1px solid #c6c4bb;border-radius:0;background:none;box-shadow:none}
+.newsroom :is(.model-card,.lab-panel,.candidate-race,.market-desk-panel,.early-chart,.early-kpi) {border:1px solid var(--line);border-radius:5px;background:#fffefa;box-shadow:none;transform:none}
+.newsroom :is(.market-desk-details,.table-wrap,.model-details,.early-voting details) {background:transparent;border-color:var(--line);border-radius:4px;box-shadow:none}
+.newsroom :is(th,td) {border-color:var(--line)}
+.newsroom th {background:#f0efe9;color:var(--muted)}
+.newsroom .model-badge,.newsroom .early-tag {border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--muted)}
+.newsroom :is(.section-intro,.fine,.early-intro) {color:var(--muted)}
+.newsroom .section-intro {font-size:14px;line-height:1.7;max-width:900px}
+.newsroom #race-simulator {margin:36px 0 40px;padding:0;--scenario-D:#1a56a0;--scenario-R:#a63729}
+.newsroom #race-simulator>.section-heading {padding:0}
+.newsroom #race-simulator>.section-intro {padding:0}
+.newsroom .map-broadcast-banner {background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;color:var(--muted);box-shadow:none;padding:12px 0}
+.newsroom .map-broadcast-banner strong {color:var(--text)}
+.newsroom .map-broadcast-banner span {color:var(--muted)}
+.newsroom .banner-stars {display:none}
+.newsroom #race-simulator :is(.scenario-board,.scenario-layout) {border:1px solid var(--line);border-radius:4px;background:none;box-shadow:none}
+.newsroom #race-simulator .scenario-board {padding:24px 26px 16px}
+.newsroom #race-simulator .scenario-board::before {color:var(--muted);border-color:var(--line)}
+.newsroom #race-simulator .scenario-board .scenario-totals .blue {color:var(--blue)}
+.newsroom #race-simulator .scenario-board .scenario-totals .red {color:var(--red)}
+.newsroom #race-simulator .scenario-board .scenario-totals span {color:inherit}
+.newsroom #race-simulator .scenario-board .scenario-center span {color:var(--muted)}
+.newsroom #race-simulator .scenario-board :is(.scenario-totals small,.majority-label,.majority-paths small,.fine) {color:var(--muted)}
+.newsroom #race-simulator .scenario-board :is(.scenario-result,.majority-label strong) {color:var(--text)}
+.newsroom #race-simulator .scenario-board .majority-track {background:#e6e5df}
+.newsroom #race-simulator .scenario-board :is(.market-seat-bar b,.majority-track i) {background:var(--text)}
+.newsroom #race-simulator .scenario-layout {margin-top:12px}
+.newsroom .scenario-totals strong {font:700 62px/1 var(--news-serif);letter-spacing:-.04em}
+.newsroom .scenario-totals span {font-family:var(--news-serif);font-size:16px;font-weight:700;letter-spacing:0;text-transform:none}
+.newsroom .scenario-center span {font-family:var(--font-system);font-size:9px;letter-spacing:1px;color:var(--muted)}
+.newsroom .scenario-center b {font-family:var(--news-serif);color:var(--text)}
+.newsroom #race-simulator .scenario-map-panel {background:transparent;padding:24px}
+.newsroom #race-simulator .race-editor {background:#f2f1ec;border-color:var(--line)}
+.newsroom #race-simulator .state-map {background:transparent;border:0;border-radius:0;box-shadow:none;padding:12px 0}
+.newsroom #race-simulator .state-map:hover {box-shadow:none;border:0}
+.newsroom #race-simulator .scenario-map-heading h3 {font:700 25px/1.2 var(--news-serif);color:var(--text)}
+.newsroom #race-simulator .map-focus-toggle {background:#fffefa;border:1px solid var(--line);color:var(--text);border-radius:4px;box-shadow:none}
+.newsroom #race-simulator .map-focus-toggle[aria-pressed=true] {background:#24262b;color:white}
+.newsroom #race-simulator .state-picker {background:none;box-shadow:none;border-color:var(--line);border-radius:4px}
+.newsroom #race-simulator .state-picker-control {background:#fffefa;border-color:var(--line);border-radius:4px;box-shadow:none}
+.newsroom #race-simulator .state-picker-label {color:var(--muted)}
+.newsroom #race-simulator .state-picker-emblem {background:none;color:var(--muted);border:0;box-shadow:none}
+.newsroom #race-simulator .state-picker-code {background:#eeede8;color:var(--text);border-color:var(--line)}
+.newsroom #race-simulator .state-picker select {color:var(--text)}
+.newsroom #race-simulator .map-symbol-guide {background:#f0efe9;border-color:var(--line);border-radius:4px}
+.newsroom #race-simulator .map-peek {background:#fffefa;border-radius:5px;border-color:var(--line);box-shadow:0 5px 16px #20212614}
+.newsroom #race-simulator :is(.battleground-radar,.flip-watch,.state-briefing,.race-history-panel) {border-color:var(--line);border-radius:5px;background:#fffefa;box-shadow:none}
+.newsroom #race-simulator :is(.radar-heading h3,.flip-heading h3) {font-family:var(--news-serif);color:var(--text)}
+.newsroom :is(.early-kpi strong,.candidate-odds strong,.market-desk-panel h4,.forecast-number) {font-family:var(--news-serif)}
+.newsroom :is(.market-desk-panel-head h4,.market-desk-toolbar h3) {font-family:var(--news-serif);color:var(--text)}
+.newsroom :is(.market-desk-source-icon,.market-desk-source-kind,.market-desk-seats) {background:#f0efe9;border-color:var(--line);color:var(--muted);border-radius:4px}
+.newsroom .market-desk-source {border-color:var(--line)}
+.newsroom .candidate-search-heading {background:#eeede8;color:var(--text);border-color:var(--line);border-radius:5px 5px 0 0}
+.newsroom .candidate-search-heading :is(h3,p,.candidate-search-eyebrow) {color:var(--text)}
+.newsroom #candidate-reset {background:#fffefa;border-color:var(--line);color:var(--text);box-shadow:none}
+.newsroom .candidate-filters {background:#f2f1ec;border-color:var(--line);border-radius:5px}
+.newsroom .candidate-gallery .candidate-D {background:#f2f5f9;border-color:#c7d4e4}
+.newsroom .candidate-gallery .candidate-R {background:#fbf3f0;border-color:#e6cbc4}
+.newsroom .candidate-card {border-radius:4px;box-shadow:none}
+.newsroom .candidate-directory {border-color:var(--line);border-radius:5px;box-shadow:none}
+.newsroom #history-chart {background:#fffefa;border-color:var(--line);border-radius:5px;box-shadow:none}
+.newsroom .early-kpi {border-top:2px solid #61776a}
+.newsroom .early-kpi strong {color:#3b5b4a}
+.newsroom footer {border-color:var(--line);color:var(--muted)}
+.newsroom #back-to-top {background:#24262b;border-color:#24262b;border-radius:5px;box-shadow:none}
+.newsroom :is(button,a,select,input,summary):focus-visible {outline:3px solid #1a56a0;outline-offset:3px}
+@media(min-width:901px) {
+  .newsroom #race-simulator[data-map-mode=market] .scenario-layout {grid-template-columns:minmax(0,1fr) 320px}
+  .newsroom #race-simulator.map-focus[data-map-mode=market] .scenario-layout {grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:1000px) {
+  .newsroom .masthead {gap:16px;padding:14px 24px}
+  .newsroom .masthead nav {gap:14px}
+  .newsroom .hero-facts {gap:14px}
+  .newsroom .hero-facts strong {font-size:23px}
+}
+@media(max-width:700px) {
+  .newsroom main {padding:0 18px}
+  .newsroom .masthead {padding:12px 18px;flex-wrap:wrap;gap:10px}
+  .newsroom .masthead nav {width:100%;order:3;gap:16px;overflow-x:auto;justify-content:flex-start;border-color:var(--line);padding:10px 0 2px}
+  .newsroom .masthead nav a {white-space:nowrap;font-size:11px}
+  .newsroom .sound-toggle {margin-left:auto}
+  .newsroom .heading {padding:24px 0 20px}
+  .newsroom .hero-copy {display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+  .newsroom .heading h1 {font-size:34px}
+  .newsroom .hero-tag {font-size:8px;flex-wrap:wrap;letter-spacing:.7px}
+  .newsroom .hero-facts {width:100%;justify-content:space-between;margin:4px 0}
+  .newsroom .hero-facts strong {font-size:26px}
+  .newsroom .refresh-box {flex-wrap:wrap;justify-content:flex-start;gap:8px}
+  .newsroom .refresh-box>span {font-size:9px}
+  .newsroom .explore-dock {width:100%;padding:0;gap:0}
+  .newsroom .explore-dock a {padding:13px 5px;font-size:10px}
+  .newsroom .control-heading {padding-top:24px;gap:10px}
+  .newsroom .control-heading h2,.newsroom .section-heading h2 {font-size:28px}
+  .newsroom .chambers {gap:0}
+  .newsroom .chambers .chamber+.chamber {padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .newsroom .chamber .number {font-size:56px}
+  .newsroom .pulse-tile {padding:12px}
+  .newsroom .pulse-tile:nth-child(2n) {border-right:0}
+  .newsroom #race-simulator .scenario-map-panel {padding:18px 12px}
+  .newsroom #race-simulator .scenario-board {padding:20px 14px}
+  .newsroom .scenario-totals strong {font-size:44px}
+  .newsroom .scenario-totals span {font-size:12px}
+  .newsroom .scenario-center span {font-size:8px}
+  .newsroom :is(.candidates-section,.comparison,.model-section,.history-section,.early-voting) {padding:24px 0}
+}
+@media(prefers-reduced-motion:reduce) {
+  .newsroom *,.newsroom *::before,.newsroom *::after {animation:none!important;transition:none!important}
+}
