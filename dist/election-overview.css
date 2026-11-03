@@ -1,0 +1,388 @@
+/* Congress Odds / The midterms at a glance
+   Editorial newsprint meets restrained Apple-style surfaces. */
+.newsroom .election-overview {
+  margin: 30px 0 28px;
+  padding: 25px 0 28px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  --overview-dem: #2b5798;
+  --overview-rep: #a43b2f;
+  --overview-muted: #777774;
+}
+.newsroom .overview-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 0 0 22px;
+}
+.newsroom .overview-header .eyebrow {
+  font: 700 10px/1.3 var(--font-system);
+  letter-spacing: .12em;
+  color: var(--muted);
+  margin-bottom: 9px;
+}
+.newsroom .overview-header h2 {
+  font: 700 clamp(32px, 3.4vw, 46px)/1.08 var(--news-serif);
+  letter-spacing: -.04em;
+  margin: 0 0 9px;
+}
+.newsroom .overview-header p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 0;
+  font: 400 13px/1.65 var(--font-system);
+  color: var(--muted);
+}
+.newsroom .overview-header-meta {
+  flex: 0 0 auto;
+  color: #696963;
+  background: #f1efe9;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 9px 13px;
+  font: 700 10px/1.2 var(--font-system);
+  letter-spacing: .08em;
+}
+.newsroom .overview-chambers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.newsroom .overview-chamber-card {
+  min-width: 0;
+  padding: 24px 28px 18px;
+  background: #fffefa;
+  border: 1px solid #dcdbd5;
+  border-radius: 16px;
+  box-shadow: 0 3px 13px #23221e07, 0 14px 28px #23221e05;
+}
+.newsroom .overview-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.newsroom .overview-card-head h3 {
+  font: 700 clamp(24px, 2.5vw, 31px)/1.1 var(--news-serif);
+  letter-spacing: -.035em;
+  margin: 0;
+}
+.newsroom .overview-market-badge {
+  flex: 0 0 auto;
+  color: #767771;
+  background: transparent;
+  border: 1px solid #d9d8d3;
+  border-radius: 100px;
+  padding: 6px 11px;
+  font: 700 9px/1 var(--font-system);
+  letter-spacing: .1em;
+}
+.newsroom .overview-card-subtitle {
+  font: 650 10px/1.4 var(--font-system);
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  color: #777871;
+  margin: 10px 0 13px;
+}
+.newsroom .overview-gauge {
+  width: 100%;
+  max-width: 410px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+.newsroom .overview-gauge svg {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+.newsroom .overview-gauge-caption {
+  font: 700 9px var(--font-system);
+  letter-spacing: .08em;
+  fill: #92928d;
+}
+.newsroom .overview-gauge-key {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin: -2px auto 8px;
+  max-width: 315px;
+  font: 700 9px/1.3 var(--font-system);
+  letter-spacing: .055em;
+  color: #9d9d98;
+}
+.newsroom .overview-key-dem { color: var(--overview-dem); }
+.newsroom .overview-key-rep { color: var(--overview-rep); }
+.newsroom .overview-gauge-headline {
+  display: block;
+  color: var(--overview-dem);
+  font: 700 clamp(23px, 2.9vw, 34px)/1.12 var(--font-system);
+  letter-spacing: -.04em;
+  font-variant-numeric: tabular-nums;
+}
+.newsroom .overview-gauge-detail {
+  color: #676a70;
+  font: 500 12px/1.4 var(--font-system);
+  margin: 7px 0 0;
+}
+.newsroom .overview-seat-tally {
+  padding: 6px 0 15px;
+}
+.newsroom .overview-seat-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 9px;
+  align-items: end;
+  margin-bottom: 12px;
+}
+.newsroom .overview-party-count {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.newsroom .overview-party-count strong {
+  color: var(--text);
+  font: 700 clamp(26px, 2.8vw, 34px)/1 var(--news-serif);
+  font-variant-numeric: tabular-nums;
+}
+.newsroom .overview-party-count small {
+  color: var(--overview-muted);
+  font: 500 10px/1.35 var(--font-system);
+}
+.newsroom .overview-party-count.dem strong { color: var(--overview-dem); }
+.newsroom .overview-party-count.rep strong { color: var(--overview-rep); }
+.newsroom .overview-party-count.mid { text-align: center; }
+.newsroom .overview-party-count.mid strong { font-size: 24px; }
+.newsroom .overview-party-count.rep { text-align: right; }
+.newsroom .overview-seat-bar {
+  height: 17px;
+  display: flex;
+  position: relative;
+  overflow: visible;
+  background: #e7e6e2;
+  border-radius: 4px;
+}
+.newsroom .overview-seat-bar .seat-segment {
+  display: block;
+  min-width: 0;
+  height: 100%;
+}
+.newsroom .overview-seat-bar .seat-segment.dem {
+  background: var(--overview-dem);
+  border-radius: 4px 0 0 4px;
+}
+.newsroom .overview-seat-bar .seat-segment.rep {
+  background: var(--overview-rep);
+  border-radius: 0 4px 4px 0;
+}
+.newsroom .overview-seat-bar .seat-segment.other { background: #c6b17c; }
+.newsroom .overview-seat-bar .seat-segment.unknown { background: #dededb; }
+.newsroom .overview-majority-marker {
+  width: 2px;
+  position: absolute;
+  top: -7px;
+  bottom: -7px;
+  background: #212226;
+  transform: translateX(-50%);
+}
+.newsroom .overview-seat-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 13px;
+  color: var(--overview-muted);
+  font: 500 10px/1.4 var(--font-system);
+}
+.newsroom .overview-seat-footer strong { color: var(--text); font-weight: 750; text-align: center; }
+.newsroom .overview-seat-footer span:last-child { text-align: right; }
+.newsroom .overview-seat-note, .newsroom .overview-tally-loading {
+  color: #85847e;
+  font: 400 11px/1.5 var(--font-system);
+  margin: 12px 0 0;
+}
+.newsroom .overview-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e8e6e1;
+  padding-top: 13px;
+  margin-top: 6px;
+  color: #777772;
+  font: 600 11px/1.5 var(--font-system);
+}
+.newsroom .overview-card-footer a {
+  color: var(--text);
+  font-weight: 750;
+  text-decoration: none;
+}
+.newsroom .overview-card-footer a:hover { color: var(--overview-dem); text-decoration: underline; }
+.newsroom .overview-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, .9fr);
+  gap: 26px;
+  margin-top: 28px;
+}
+.newsroom .overview-panel {
+  min-width: 0;
+}
+.newsroom .overview-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  border-bottom: 2px solid #2a2928;
+  padding-bottom: 10px;
+}
+.newsroom .overview-panel-heading h3 {
+  margin: 0;
+  font: 800 11px/1.4 var(--font-system);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.newsroom .overview-panel-heading small {
+  color: #898984;
+  font: 500 10px/1.4 var(--font-system);
+}
+.newsroom .overview-race-row {
+  display: block;
+  padding: 13px 2px 12px;
+  border-bottom: 1px solid #e2e0db;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color .16s ease;
+}
+.newsroom .overview-race-row:hover {
+  background: #f2f1ed;
+}
+.newsroom .overview-race-top,
+.newsroom .overview-contender {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.newsroom .overview-race-top {
+  margin-bottom: 9px;
+}
+.newsroom .overview-race-top strong {
+  font: 750 12px/1.3 var(--font-system);
+}
+.newsroom .overview-race-top span {
+  color: #7e7c77;
+  font: 600 10px/1.2 var(--font-system);
+  white-space: nowrap;
+}
+.newsroom .overview-contenders {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+.newsroom .overview-contender {
+  min-width: 0;
+}
+.newsroom .overview-contender-identity {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  font: 550 11px/1.3 var(--font-system);
+}
+.newsroom .overview-contender-identity > span:last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.newsroom .overview-person-avatar {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e6e8ea;
+  color: #445062;
+  font: 700 10px/1 var(--font-system);
+}
+.newsroom .overview-person-avatar img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+}
+.newsroom .overview-contender strong {
+  font: 750 14px/1.2 var(--font-system);
+  font-variant-numeric: tabular-nums;
+}
+.newsroom .overview-contender.dem strong { color: var(--overview-dem); }
+.newsroom .overview-contender.rep strong { color: var(--overview-rep); }
+.newsroom .overview-pair-tracks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 9px;
+}
+.newsroom .overview-quote-track {
+  display: block;
+  height: 8px;
+  background: #e2e1dd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.newsroom .overview-quote-track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+.newsroom .overview-quote-track.dem i { background: var(--overview-dem); }
+.newsroom .overview-quote-track.rep i { background: var(--overview-rep); }
+.newsroom .overview-quote-note {
+  font: 400 10px/1.45 var(--font-system);
+  color: #8b8b85;
+  margin: 8px 0 0;
+}
+.newsroom .overview-empty,
+.newsroom .overview-calls-empty {
+  margin: 16px 0;
+  font: 500 13px/1.65 var(--font-system);
+  color: #777772;
+}
+.newsroom .overview-calls-empty strong {
+  display: block;
+  font: 700 19px/1.3 var(--news-serif);
+  color: var(--text);
+  margin-bottom: 9px;
+}
+.newsroom .overview-calls-empty p { margin: 0 0 12px; }
+.newsroom .overview-calls-empty a { color: var(--overview-dem); font-weight: 700; }
+.newsroom .overview-disclaimer {
+  margin: 20px 0 0;
+  color: #767671;
+  font: 400 11px/1.6 var(--font-system);
+}
+.newsroom #overview-source-status { font-weight: 650; }
+@media (max-width: 920px) {
+  .newsroom .overview-chamber-card { padding: 20px 18px; }
+  .newsroom .overview-bottom { grid-template-columns: minmax(0, 1fr) minmax(230px, .75fr); }
+  .newsroom .overview-seat-footer { font-size: 9px; }
+}
+@media (max-width: 700px) {
+  .newsroom .election-overview { margin: 20px 0; padding: 20px 0; }
+  .newsroom .overview-header { display: block; }
+  .newsroom .overview-header-meta { display: inline-block; margin-top: 12px; }
+  .newsroom .overview-chambers, .newsroom .overview-bottom { grid-template-columns: 1fr; gap: 14px; }
+  .newsroom .overview-chamber-card { padding: 20px 20px 18px; }
+  .newsroom .overview-bottom { margin-top: 25px; gap: 27px; }
+  .newsroom .overview-gauge { max-width: 370px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .newsroom .overview-race-row { transition: none; }
+}
