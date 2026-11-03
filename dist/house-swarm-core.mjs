@@ -72,18 +72,21 @@ export function layoutHouseBubbles(distribution){
   else unused.push(d);
  }
  const nodes=[];
- const start=32,bandWidth=170,originY=313,step=14.6;
+ const start=32,bandWidth=170,originY=313;
  for(const [i,band] of HOUSE_BANDS.entries()){
   const sorted=bands.get(band.id).sort((a,b)=>bubbleHash(a.id)-bubbleHash(b.id)||a.id.localeCompare(b.id));
   const cols=Math.max(2,Math.min(10,Math.round(Math.sqrt(sorted.length*145/350))));
   const rows=Math.ceil(sorted.length/cols);
+  // Fit even an extreme 435-seat landslide within the visible plot.
+  const step=Math.min(14.6,390/Math.max(1,rows-1));
+  const radius=Math.min(5.5,(step-1.5)/2);
   sorted.forEach((d,index)=>{
    const row=Math.floor(index/cols),col=index%cols;
    const h=bubbleHash(d.id),drift=((h%100)/100-.5)*1.3;
    const rowOffset=(row%2?0.30:0)*step;
    const x=start+bandWidth*i+bandWidth/2+(col-(cols-1)/2)*step+rowOffset+drift;
    const y=originY+(row-(rows-1)/2)*step+(((h>>>8)%100)/100-.5)*1.1;
-   nodes.push({...d,x,y,r:5.5});
+   nodes.push({...d,x,y,r:radius});
   });
  }
  const missing=unused.sort((a,b)=>bubbleHash(a.id)-bubbleHash(b.id)||a.id.localeCompare(b.id));
