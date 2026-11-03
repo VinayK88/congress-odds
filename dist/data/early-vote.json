@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-03T14:13:31.425Z",
+  "fetchedAt": "2026-11-03T15:14:51.610Z",
   "rows": [
     {
       "code": "AK",
@@ -96,13 +96,13 @@
     {
       "code": "FL",
       "name": "Florida",
-      "asOf": "2026-11-02",
+      "asOf": "2026-11-03",
       "source": "https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats",
       "notes": "Some Florida statistics are obtained from county websites that may report more recent and higher numbers than the Florida Division of Elections reports.",
-      "total": 5464802,
-      "inPerson": 3467810,
-      "mail": 1996992,
-      "requested": 2480045
+      "total": 5475004,
+      "inPerson": 3467812,
+      "mail": 2007192,
+      "requested": 2464405
     },
     {
       "code": "GA",
@@ -217,13 +217,13 @@
     {
       "code": "MD",
       "name": "Maryland",
-      "asOf": "2026-11-02",
+      "asOf": "2026-11-03",
       "source": "https://elections.maryland.gov/press_room/index.html",
       "notes": "Maryland reports are typically time-stamped one day behind when they are updated to this site. The reported date is as of the upload to this site is so that site vistors can be aware when a new report is available.",
-      "total": 993206,
+      "total": 1021813,
       "inPerson": 604396,
-      "mail": 388810,
-      "requested": 656837
+      "mail": 417417,
+      "requested": 657245
     },
     {
       "code": "MA",
@@ -484,10 +484,10 @@
       "asOf": "2026-11-02",
       "source": "Data provided Vermont Secretary of State",
       "notes": "",
-      "total": 150202,
+      "total": 171730,
       "inPerson": 0,
-      "mail": 150202,
-      "requested": 457926
+      "mail": 171730,
+      "requested": 457734
     },
     {
       "code": "VA",
