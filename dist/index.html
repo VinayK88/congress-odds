@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="election-overview.css?v=20261103-dashboard">
 <link rel="stylesheet" href="election-overview-refined.css?v=20261103-premium">
 <link rel="stylesheet" href="house-swarm.css?v=20261104-atlas-final">
+<link rel="stylesheet" href="state-bubble-atlas.css?v=20261104-labelled">
 </head>
 <body class="newsroom">
 <div id="reading-progress" aria-hidden="true"></div>
@@ -82,7 +83,7 @@
     <div>
       <p class="eyebrow">THE HOUSE / EVERY DISTRICT</p>
       <h2>435 races. One changing picture.</h2>
-      <p>One circle for every U.S. House district, arranged by the highest eligible market Yes price. Explore the races near the center or spotlight a state. These are market quotes, not election predictions or called results.</p>
+      <p>One circle for every U.S. House district, with its two-letter state code printed inside, arranged by the highest eligible market Yes price. Explore the races near the center or spotlight a state. These are market quotes, not election predictions or called results.</p>
     </div>
     <span class="house-swarm-flag"><i aria-hidden="true"></i> HOUSE · 2026</span>
   </div>
@@ -125,6 +126,57 @@
     <aside class="house-swarm-detail" id="house-swarm-detail" aria-label="Selected district market details" aria-live="polite">
       <h3>Inspect a district</h3>
       <p>Select a bubble or use the district menu to inspect source-backed quotes.</p>
+    </aside>
+  </div>
+</section>
+<section class="house-swarm senate-swarm" id="senate-swarm" aria-label="2026 House market price distribution">
+  <div class="house-swarm-head">
+    <div>
+      <p class="eyebrow">THE SENATE / 35 CONTESTS</p>
+      <h2>35 Senate races. State by state.</h2>
+      <p>One bubble for each of the 35 Senate contests, with its two-letter state code printed inside. The other 65 Senate seats are holdovers and are not plotted. Prices are market quotes, not certified results.</p>
+    </div>
+    <span class="house-swarm-flag"><i aria-hidden="true"></i> SENATE · 2026</span>
+  </div>
+  <div class="house-swarm-shell">
+    <div class="house-swarm-toolbar">
+      <div class="house-swarm-toolbar-identity">
+        <strong>Senate market bubble atlas</strong>
+        <small>35 CONTESTS · INDEPENDENT YES-CONTRACT QUOTES · SOURCE: POLYMARKET</small>
+      </div>
+      <div class="house-swarm-controls">
+        <label for="senate-swarm-state">Spotlight state
+          <select id="senate-swarm-state" aria-label="Highlight districts from a selected state"></select>
+        </label>
+        <label for="senate-swarm-district">Inspect a race
+          <select id="senate-swarm-district" aria-label="Select one of the 35 Senate contests"></select>
+        </label>
+        <button type="button" id="senate-swarm-close" aria-pressed="false">Spotlight close races</button>
+      </div>
+    </div>
+    <p id="senate-swarm-status" class="house-swarm-status" role="status">Loading Senate race-market snapshots…</p>
+    <div id="senate-swarm-plot" class="house-swarm-plot" aria-label="Interactive Senate race bubble chart; on small screens, scroll horizontally">
+      <p class="fine">Loading 35 Senate race bubbles…</p>
+      <div id="senate-swarm-tooltip" class="house-swarm-tooltip" hidden></div>
+    </div>
+    <div class="house-swarm-legend" aria-label="Chart legend">
+      <span class="house-swarm-legend-piece"><i class="dem" aria-hidden="true"></i> Democratic leader</span>
+      <span class="house-swarm-legend-piece"><i class="close" aria-hidden="true"></i> Leading price under 60%</span>
+      <span class="house-swarm-legend-piece"><i class="rep" aria-hidden="true"></i> Republican leader</span>
+      <span class="house-swarm-legend-piece"><i class="unknown" aria-hidden="true"></i> Other / missing / stale</span>
+      <span>Each dot = one contested Senate race · Not vote shares</span>
+    </div>
+  </div>
+  <div class="house-swarm-detail-wrap">
+    <div class="house-swarm-context">
+      <h3>Follow the Senate races, state by state.</h3>
+      <p>Categories are defined by the highest active Yes-contract quote: 90%+, 75–89.9%, 60–74.9%, or below 60%. The price scale is <strong>not a calibrated forecast</strong>; independent contract prices can disagree. Missing, tied, other-party, and stale quotes are shown separately, never assigned to a major party.</p>
+      <p id="senate-swarm-filter-note" class="house-swarm-filter-note">All 35 Senate races · Select a bubble to see its quote.</p>
+      <p>The 65 non-contested seats comprise 34 Democratic-aligned and 31 Republican holdovers. Snapshots are timestamped; older market distributions are marked <strong>archived</strong>, not live. <a href="#race-simulator">Explore the full race map ›</a></p>
+    </div>
+    <aside class="house-swarm-detail" id="senate-swarm-detail" aria-label="Selected Senate race market details" aria-live="polite">
+      <h3>Inspect a race</h3>
+      <p>Select a labeled state bubble or use the Senate race menu to inspect its quoted odds.</p>
     </aside>
   </div>
 </section>
@@ -194,5 +246,6 @@
 <script type="module" src="capitol-broadcast.mjs?v=20261012-countdown"></script>
 <script type="module" src="editorial-finish.mjs?v=20261012-editorial"></script>
 <script type="module" src="early-vote.mjs?v=20261019-early"></script>
-<script type="module" src="house-swarm.mjs?v=20261104-atlas-final"></script>
+<script type="module" src="house-swarm.mjs?v=20261104-state-labels"></script>
+<script type="module" src="senate-swarm.mjs?v=20261104-state-labels"></script>
 </body></html>
