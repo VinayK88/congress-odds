@@ -1,4 +1,5 @@
 import {createMarketBriefing} from './market-briefing.mjs?v=20261018-visual3';
+import {renderElectionOverview} from './election-overview.mjs?v=20261103-dashboard';
 import {attachInspector} from './chart-inspector.mjs?v=20261011-interactive';
 import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
 import {fetchJson,validateLatest,validateHistory,validateModel,mergeLatest} from './reliability.mjs?v=20261018-sources';
@@ -40,7 +41,7 @@ function render(){
   tr.append(status);tbody.append(tr);
  }
  document.getElementById('copy').disabled=!Object.keys(data.sources).length;
- renderBriefing(data,liveFailures);renderModel();renderHistory();renderPulse(data,history,consensus);renderHealth();
+ renderBriefing(data,liveFailures);renderModel();renderHistory();renderPulse(data,history,consensus);renderHealth();renderElectionOverview(data,selected);
 }
 function renderModel(){
  const status=document.getElementById('model-status'),cards=document.getElementById('model-cards'),rows=document.getElementById('model-rows');cards.replaceChildren();rows.replaceChildren();
@@ -112,6 +113,7 @@ async function refresh(manual=false){
  finally{button.disabled=false;button.textContent='↻ Refresh odds';busy=false;}
  if(manual)chime();
 }
+window.addEventListener('candidate-data-updated',()=>renderElectionOverview(data,document.getElementById('source').value));
 document.getElementById('refresh').addEventListener('click',()=>refresh(true));document.getElementById('source').addEventListener('change',render);for(const id of ['history-chamber','history-days'])document.getElementById(id).addEventListener('change',renderHistory);
 document.getElementById('copy').addEventListener('click',async()=>{const text=markdown(data,model),status=document.getElementById('copy-status');try{await navigator.clipboard.writeText(text);status.textContent='Copied source comparisons and model results with timestamps.';}catch{const a=el('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/markdown'}));a.download='congress-odds-README.md';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);status.textContent='Downloaded README snapshot.';}});
 let soundOn=false,audioContext;
