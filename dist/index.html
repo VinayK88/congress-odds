@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="early-vote.css?v=20261019-early">
 <link rel="stylesheet" href="newsroom-theme.css?v=20261103-newsroom">
 <link rel="stylesheet" href="apple-newsroom-polish.css?v=20261103-capitol-hero">
+<link rel="stylesheet" href="election-overview.css?v=20261103-dashboard">
 </head>
 <body class="newsroom">
 <div id="reading-progress" aria-hidden="true"></div>
@@ -39,6 +40,34 @@
 <main>
 <div class="heading"><div class="hero-copy"><div class="hero-tag"><span class="tag-pip" aria-hidden="true"></span> INDEPENDENT ELECTION INTELLIGENCE <span aria-hidden="true">·</span> NOV 03, 2026</div><div class="hero-patriotic-stars" aria-hidden="true">★ ★ ★</div><p class="eyebrow"><span aria-hidden="true">★</span> THE RACE FOR CONGRESS</p><h1>The race for <em>Congress.</em></h1><p class="intro">House and Senate probabilities, state by state.</p><div class="hero-facts" aria-label="Contests covered by the interactive race map"><div><strong>435</strong><span>House districts</span></div><i aria-hidden="true"></i><div><strong>35</strong><span>Senate contests</span></div><i aria-hidden="true"></i><div class="hero-clock"><strong id="election-days">—</strong><span id="election-days-label">Days to election</span></div></div><div class="hero-actions"><a href="#race-simulator">Explore the race map <span aria-hidden="true">↗</span></a><a href="#history">Explore the trends <span aria-hidden="true">↓</span></a></div><div class="refresh-box"><button id="refresh" type="button" aria-describedby="refresh-policy"><span aria-hidden="true">↻</span> Refresh odds</button><span id="refresh-policy">Market snapshots update more often as Election Day approaches.</span></div></div><div class="hero-art hero-logo"><span class="hero-watermark" aria-hidden="true">2026</span><img src="capitol-strong.webp" alt="United States Capitol building" width="1504" height="1046" fetchpriority="high" decoding="async"></div></div>
 <div class="coverage-strip"><span><i class="coverage-dot" aria-hidden="true"></i> MARKET WATCH</span><span>HOUSE <b>+ </b> SENATE</span><span>POLYMARKET · KALSHI · PREDICTIT · MANIFOLD</span></div>
+<section class="election-overview" id="election-overview" aria-label="2026 congressional market dashboard">
+  <div class="overview-header">
+    <div>
+      <p class="eyebrow">THE ELECTION DESK / AT A GLANCE</p>
+      <h2>The 2026 midterms.</h2>
+      <p>House and Senate control odds, seat-leader tallies, and closely quoted races. These are market snapshots, not live vote counts or official projections.</p>
+    </div>
+    <span class="overview-header-meta">2026 · ELECTION WATCH</span>
+  </div>
+  <div id="overview-chambers" class="overview-chambers" aria-label="House and Senate market gauges">
+    <p class="overview-empty">Loading recent market snapshots and race prices…</p>
+  </div>
+  <div class="overview-bottom">
+    <section class="overview-panel" aria-labelledby="overview-watch-title">
+      <div class="overview-panel-heading"><h3 id="overview-watch-title">Races to watch</h3><small>Closest D / R market quotes</small></div>
+      <div id="overview-races" aria-label="Closest comparable market quotes"><p class="overview-empty">Loading available race contracts…</p></div>
+    </section>
+    <section class="overview-panel overview-calls" aria-labelledby="overview-calls-title">
+      <div class="overview-panel-heading"><h3 id="overview-calls-title">Latest calls</h3><small>Verified results only</small></div>
+      <div class="overview-calls-empty">
+        <strong>Results feed not connected.</strong>
+        <p>Official vote totals and race calls are not included in this dashboard. A market leader is not a called race.</p>
+        <a href="#race-simulator">Explore the market-based race map ›</a>
+      </div>
+    </section>
+  </div>
+  <p class="overview-disclaimer"><span id="overview-source-status">Waiting for eligible market prices.</span> Quotes can be stale or unavailable; separate Yes contracts need not total 100%. Seat bars count fresh race-market leaders plus Senate holdovers and do not predict certified seats.</p>
+</section>
 <nav class="edition-tiles" aria-label="Explore the election dashboard">
   <a class="edition-tile" href="#control"><span class="edition-tile-meta"><span class="edition-tile-number">01</span><span>MARKET WATCH</span><span class="edition-tile-arrow" aria-hidden="true">↗</span></span><div><h3>Control board</h3><p>House &amp; Senate market odds</p></div></a>
   <a class="edition-tile" href="#race-simulator"><span class="edition-tile-meta"><span class="edition-tile-number">02</span><span>INTERACTIVE ATLAS</span><span class="edition-tile-arrow" aria-hidden="true">↗</span></span><div><h3>Race map</h3><p>Explore contests state by state</p></div></a>
@@ -98,7 +127,7 @@
 <section class="history-section" id="history"><div class="section-heading"><div><p class="eyebrow">ON THE CAMPAIGN TRAIL</p><h2>The shifting balance.</h2></div><div class="chart-controls"><label for="history-chamber" class="sr-only">History chamber</label><select id="history-chamber"><option value="house">House</option><option value="senate">Senate</option></select><label for="history-days" class="sr-only">History time window</label><select id="history-days"><option value="30">30 days</option><option value="90" selected>90 days</option><option value="365">1 year</option></select></div></div><p class="fine">Kalshi closing bid/ask midpoint · <span class="blue">Democrats</span> / <span class="red">Republicans</span> · full 0–100% scale</p><div id="history-chart" role="img" aria-label="Historical daily Kalshi probabilities"></div><p id="history-caption" class="fine"></p></section>
 <section class="lower"><div class="method" id="methodology"><p class="eyebrow">BEHIND THE NUMBERS</p><h2>A market snapshot.<br>Not a certainty.</h2><p>Polymarket supplies Yes outcome prices. Kalshi and PredictIt use the midpoint between the best Yes bid and ask. Manifold supplies play-money probabilities from separate party contracts, shown for comparison only. Prices reflect traders’ expectations; fees, liquidity and settlement rules can cause differences.</p><details><summary>Sources, timing &amp; calculation</summary><p>Prices are shown independently and may not add to 100%. The market average is a simple descriptive mean of the sources shown as eligible in the table, without normalization or accuracy weighting. Only Polymarket, Kalshi and PredictIt are eligible; Manifold is excluded.</p><p>“Retrieved” records a successful API retrieval, not the last trade. After two hours a snapshot is marked stale and excluded from the average. Quote timestamps are not consistently supplied. A failed request retains the earlier snapshot and its original time.</p><p>Polymarket can refresh directly while this page is open. All sources and the README use an adaptive GitHub Actions schedule: hourly, then every 30 minutes from Oct 20, every 15 minutes from Oct 27, and every 5 minutes Nov 1–3 (U.S. Eastern dates). GitHub scheduling is best effort. The model retrains after its daily forecast expires. Browser refresh reloads saved data too.</p><p><a href="https://docs.polymarket.com/api-reference/events/get-event-by-slug">Polymarket API</a> · <a href="https://docs.kalshi.com/api-reference/market/get-market-candlesticks">Kalshi history API</a> · <a href="https://www.predictit.org/api/marketdata/markets/8155">PredictIt Senate data</a> · <a href="https://www.predictit.org/api/marketdata/markets/8157">PredictIt House data</a> · <a href="https://docs.manifold.markets/api">Manifold API</a></p></details></div><div class="readme"><div class="readme-heading"><span class="code-icon" aria-hidden="true">&lt;/&gt;</span><span>TAKE THE ODDS TO GITHUB</span></div><h2>The same numbers.<br>In your README.</h2><p>Copy a timestamped snapshot now. The included GitHub workflow progressively refreshes your README and website more often as November 3 approaches.</p><div class="readme-actions"><button id="copy" disabled>Copy README snapshot</button><a href="congress-odds-source.zip" download>Download website & workflow</a></div><p><a href="https://github.com/VinayK88/congress-odds/actions" target="_blank" rel="noopener noreferrer">View automatic updates on GitHub</a></p><p id="copy-status" role="status">Adaptive README refresh configured. Check the latest run on GitHub.</p></div></section>
 <footer><span>★ Congress Odds <span class="muted">/ 2026</span></span><span>Independent project · Not affiliated with the U.S. government · Market prices are not election results</span></footer>
-</main><button id="back-to-top" type="button" hidden aria-label="Back to top"><span class="return-arrow" aria-hidden="true">↑</span> Top</button><noscript><p>This dashboard needs JavaScript to load probabilities. Use the source links above to view the markets directly.</p></noscript><script type="module" src="app.mjs?v=20261018-visual3"></script>
+</main><button id="back-to-top" type="button" hidden aria-label="Back to top"><span class="return-arrow" aria-hidden="true">↑</span> Top</button><noscript><p>This dashboard needs JavaScript to load probabilities. Use the source links above to view the markets directly.</p></noscript><script type="module" src="app.mjs?v=20261103-election-overview"></script>
 <script type="module" src="scenario.mjs?v=20261103-newsroom"></script>
 <script type="module" src="interactions.mjs?v=20261011-interactive"></script>
 <script type="module" src="candidates.mjs?v=20261012-countdown"></script>
