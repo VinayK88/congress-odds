@@ -1,6 +1,6 @@
 // Interactive, source-backed House bubble atlas. No fabricated forecasts.
 import {getCandidateSnapshot} from './candidates.mjs';
-import {HOUSE_BANDS,houseDistribution,layoutHouseBubbles} from './house-swarm-core.mjs?v=20261104-atlas-final';
+import {HOUSE_BANDS,houseDistribution,layoutRaceBubbles} from './house-swarm-core.mjs?v=20261104-state-labels';
 import {STATES} from './race-data.mjs';
 
 const ROOT=document.getElementById('house-swarm');
@@ -34,8 +34,8 @@ function setNodeState(node,bubble){
  const muted=(state&&bubble.state!==state)||(onlyClose&&bubble.band!=='close');
  node.classList.toggle('is-dimmed',Boolean(muted));
  node.classList.toggle('is-selected',isSelected);
- node.setAttribute('stroke-width',isSelected?'2.5':'1.4');
- node.setAttribute('r',isSelected?bubble.r+2:bubble.r);
+ const circle=node.querySelector('circle');
+ if(circle)circle.setAttribute('stroke-width',isSelected?'3':'1.5');
 }
 function raceTitle(b){
  const text=b.leaderName?' · '+b.leaderName:'';
@@ -85,37 +85,40 @@ function drawChart(distribution){
  const tooltip=document.getElementById('house-swarm-tooltip');
  if(!target)return;
  target.replaceChildren();
- const graphic=svg('svg',{viewBox:'0 0 1254 664',class:'house-swarm-svg',role:'img',
+ const geometry=layoutRaceBubbles(distribution),layout=geometry.nodes;
+ const {width,height,left,bandWidth,axisY,dividerY,unknownTitleY,mainLast}=geometry;
+ const graphic=svg('svg',{viewBox:'0 0 '+width+' '+height,class:'house-swarm-svg',role:'img',
   'aria-label':'Every one of the 435 House districts as a circle, arranged in seven market-confidence quote bands and an unavailable quotes strip.'});
  graphic.append(svg('title',{},'2026 House district market quote distribution'));
  graphic.append(svg('desc',{},'Columns run from high Democratic Yes prices to high Republican Yes prices. A central band represents races with a quoted leader below 60%. Unavailable races appear in grey at the bottom. Market prices are not election results.'));
  const backdrop=svg('g',{'aria-hidden':'true'});
- backdrop.append(svg('text',{x:627,y:369,'text-anchor':'middle',class:'house-swarm-watermark'},'435'));
+ backdrop.append(svg('text',{x:width/2,y:mainLast+12,'text-anchor':'middle',class:'house-swarm-watermark'},'435'));
  for(let i=0;i<7;i++){
-  const band=HOUSE_BANDS[i],center=32+i*170+85;
-  if(i===3)backdrop.append(svg('rect',{x:32+i*170+3,y:88,width:164,height:450,rx:11,fill:'#fff9e6'}));
-  if(i>0)backdrop.append(svg('line',{x1:32+i*170,y1:87,x2:32+i*170,y2:536,class:'house-swarm-guide'}));
+  const band=HOUSE_BANDS[i],center=left+i*bandWidth+bandWidth/2;
+  if(i===3)backdrop.append(svg('rect',{x:left+i*bandWidth+5,y:72,width:bandWidth-10,height:Math.max(60,axisY-50),rx:12,fill:'#fff9e6'}));
+  if(i>0)backdrop.append(svg('line',{x1:left+i*bandWidth,y1:75,x2:left+i*bandWidth,y2:axisY-2,class:'house-swarm-guide'}));
   const mainLabel=i<3?'DEMOCRATIC':i>3?'REPUBLICAN':'CLOSE RACES';
   backdrop.append(
-   svg('text',{x:center,y:31,'text-anchor':'middle',class:'house-swarm-column-heading '+(i<3?'is-dem':i>3?'is-rep':'is-close')},String(distribution.counts[band.id])+' · '+mainLabel),
-   svg('text',{x:center,y:52,'text-anchor':'middle',class:'house-swarm-column-subtitle'},band.label),
-   svg('text',{x:center,y:531,'text-anchor':'middle',class:'house-swarm-axis'},i===3?'LEADER < 60%':i<3?['90%+','75%+','60%+'][i]:['60%+','75%+','90%+'][i-4])
+   svg('text',{x:center,y:29,'text-anchor':'middle',class:'house-swarm-column-heading '+(i<3?'is-dem':i>3?'is-rep':'is-close')},String(distribution.counts[band.id])+' · '+mainLabel),
+   svg('text',{x:center,y:49,'text-anchor':'middle',class:'house-swarm-column-subtitle'},band.label),
+   svg('text',{x:center,y:axisY,'text-anchor':'middle',class:'house-swarm-axis'},i===3?'LEADER < 60%':i<3?['90%+','75%+','60%+'][i]:['60%+','75%+','90%+'][i-4])
   );
  }
- backdrop.append(svg('line',{x1:32,y1:551,x2:1222,y2:551,class:'house-swarm-divider'}));
+ backdrop.append(svg('line',{x1:left,y1:dividerY,x2:width-left,y2:dividerY,class:'house-swarm-divider'}));
  const other=distribution.bubbles.filter(b=>b.party==='O').length;
- backdrop.append(svg('text',{x:34,y:570,class:'house-swarm-no-quote-title'},
+ backdrop.append(svg('text',{x:left,y:unknownTitleY,class:'house-swarm-no-quote-title'},
   String(distribution.counts.unavailable)+' OTHER / UNAVAILABLE QUOTES'+(other?' · '+other+' OTHER-PARTY LEADERS':'')));
  graphic.append(backdrop);
  const bubbleGroup=svg('g',{class:'house-swarm-dots'});
- const layout=layoutHouseBubbles(distribution);
  for(const b of layout){
-  const color=b.party==='O'&&b.band==='unavailable'?colors.other:colors[b.band];
-  const circle=svg('circle',{cx:b.x.toFixed(2),cy:b.y.toFixed(2),r:b.r,fill:color[0],stroke:color[1],
-   'data-race-id':b.id,'aria-hidden':'true'});
-  circle.append(svg('title',{},raceTitle(b)));
-  setNodeState(circle,b);
-  bubbleGroup.append(circle);
+  const palette=b.party==='O'&&b.band==='unavailable'?colors.other:colors[b.band];
+  const textColor=b.band==='close'?'#735515':b.party==='D'?'#24518e':b.party==='R'?'#963e35':'#535e68';
+  const group=svg('g',{'data-race-id':b.id,class:'house-swarm-bubble'});
+  const circle=svg('circle',{cx:b.x.toFixed(2),cy:b.y.toFixed(2),r:b.r,fill:palette[0],stroke:palette[1],'stroke-width':1.5});
+  const label=svg('text',{x:b.x.toFixed(2),y:(b.y+.3).toFixed(2),'text-anchor':'middle','dominant-baseline':'middle',class:'house-swarm-state-label',fill:textColor},b.state);
+  group.append(svg('title',{},raceTitle(b)),circle,label);
+  setNodeState(group,b);
+  bubbleGroup.append(group);
  }
  graphic.append(bubbleGroup);
  target.append(graphic);
@@ -132,11 +135,11 @@ function drawChart(distribution){
   if(select&&selected)select.value=selected;
  }
  graphic.addEventListener('click',event=>{
-  const circle=event.target.closest('circle[data-race-id]');
+  const circle=event.target.closest('g[data-race-id]');
   if(circle)updateSelection(circle.getAttribute('data-race-id'));
  });
  graphic.addEventListener('pointermove',event=>{
-  const circle=event.target.closest('circle[data-race-id]');
+  const circle=event.target.closest('g[data-race-id]');
   if(!circle||!tooltip){if(tooltip)tooltip.hidden=true;return;}
   const b=lookup.get(circle.getAttribute('data-race-id'));
   if(!b)return;
@@ -178,7 +181,7 @@ function drawChart(distribution){
  if(filterNote){
   filterNote.textContent=(state?'State spotlight: '+(STATES.find(x=>x.code===state)?.name||state)+' · ':'All districts · ')+
     (onlyClose?'Close races highlighted':'All price bands visible')+
-    '. Every circle represents one House district.';
+    '. Each bubble shows its two-letter state; select it for the exact House district ID.';
  }
  ROOT.dataset.archive=String(distribution.archived);
 }
