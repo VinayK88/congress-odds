@@ -1,0 +1,82 @@
+/* State abbreviations are visible inside every House and Senate bubble.
+   Original political newsroom palette and market categories remain unchanged. */
+.newsroom .house-swarm-plot {
+  scroll-snap-type: x proximity;
+}
+.newsroom .house-swarm-svg {
+  min-width: 1530px;
+  width: 100%;
+  height: auto;
+}
+.newsroom .house-swarm-dots .house-swarm-bubble {
+  cursor: pointer;
+  transition: opacity .16s ease;
+}
+.newsroom .house-swarm-dots .house-swarm-bubble.is-dimmed {
+  opacity: .12;
+}
+.newsroom .house-swarm-dots .house-swarm-bubble.is-selected {
+  opacity: 1;
+  filter: drop-shadow(0 0 4px #2631424d);
+}
+.newsroom .house-swarm-dots .house-swarm-bubble circle {
+  transition: stroke-width .16s ease, fill .16s ease;
+}
+.newsroom .house-swarm-dots .house-swarm-bubble:hover {
+  opacity: 1;
+  filter: drop-shadow(0 0 4px #2531423a);
+}
+.newsroom .house-swarm-dots .house-swarm-bubble:hover circle {
+  stroke: #252a32;
+  stroke-width: 2.8;
+}
+.newsroom .house-swarm-state-label {
+  pointer-events: none;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: -.035em;
+  paint-order: stroke;
+  stroke: #ffffff33;
+  stroke-width: .25px;
+}
+.newsroom .senate-swarm .house-swarm-state-label {
+  font-size: 12.4px;
+  letter-spacing: 0;
+}
+.newsroom .senate-swarm .house-swarm-flag i {
+  background: linear-gradient(90deg, #29589b 0 43%, #eee3cf 43% 57%, #ae4c44 57%);
+}
+.newsroom .senate-swarm .house-swarm-watermark {
+  font-size: 200px;
+  letter-spacing: -.075em;
+}
+.newsroom .senate-swarm .house-swarm-svg {
+  min-width: 1530px;
+}
+.newsroom .senate-swarm .house-swarm-detail-lead.is-republican,
+.newsroom .house-swarm .house-swarm-detail-lead.is-republican {
+  color: #aa4c40;
+}
+.newsroom .house-swarm .house-swarm-detail-lead.is-unavailable {
+  color: #747981;
+}
+.newsroom .house-swarm-context strong {
+  color: #40454d;
+}
+@media(max-width: 730px) {
+  .newsroom .house-swarm-svg,
+  .newsroom .senate-swarm .house-swarm-svg {
+    min-width: 1530px;
+  }
+  .newsroom .house-swarm-plot {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .newsroom .house-swarm-dots .house-swarm-bubble,
+  .newsroom .house-swarm-dots .house-swarm-bubble circle {
+    transition: none;
+  }
+}
