@@ -80,3 +80,39 @@
     transition: none;
   }
 }
+
+
+/* Full-width responsive atlas: no sideways dragging at any breakpoint. */
+.newsroom .house-swarm .house-swarm-plot {
+  overflow-x: hidden;
+  overflow-y: visible;
+  scroll-snap-type: none;
+  max-width: 100%;
+}
+.newsroom .house-swarm .house-swarm-svg,
+.newsroom .senate-swarm .house-swarm-svg {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+}
+.newsroom .house-swarm-shell,
+.newsroom .house-swarm-toolbar,
+.newsroom .house-swarm-detail-wrap {
+  min-width: 0;
+}
+@media (max-width: 1100px) {
+  .newsroom .house-swarm-state-label {
+    font-size: 10.6px;
+  }
+  .newsroom .senate-swarm .house-swarm-state-label {
+    font-size: 12px;
+  }
+}
+@media (max-width: 730px) {
+  .newsroom .house-swarm .house-swarm-svg,
+  .newsroom .senate-swarm .house-swarm-svg {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
