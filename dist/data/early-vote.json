@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-03T21:07:47.086Z",
+  "fetchedAt": "2026-11-03T21:51:04.149Z",
   "rows": [
     {
       "code": "AK",
@@ -55,10 +55,10 @@
       "asOf": "2026-11-03",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 1899759,
-      "inPerson": 50976,
-      "mail": 1848783,
-      "requested": 4056293
+      "total": 2117807,
+      "inPerson": 78412,
+      "mail": 2039395,
+      "requested": 4054439
     },
     {
       "code": "CT",
@@ -536,13 +536,13 @@
     {
       "code": "WY",
       "name": "Wyoming",
-      "asOf": "2026-11-02",
+      "asOf": "2026-11-03",
       "source": "Wyoming Secretary of State",
       "notes": "",
-      "total": 65264,
+      "total": 73895,
       "inPerson": 0,
-      "mail": 65264,
-      "requested": 70442
+      "mail": 73895,
+      "requested": 76934
     }
   ]
 }
