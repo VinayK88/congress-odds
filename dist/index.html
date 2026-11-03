@@ -32,6 +32,7 @@
 <link rel="stylesheet" href="apple-newsroom-polish.css?v=20261103-capitol-hero">
 <link rel="stylesheet" href="election-overview.css?v=20261103-dashboard">
 <link rel="stylesheet" href="election-overview-refined.css?v=20261103-premium">
+<link rel="stylesheet" href="house-swarm.css?v=20261104-atlas">
 </head>
 <body class="newsroom">
 <div id="reading-progress" aria-hidden="true"></div>
@@ -75,6 +76,57 @@
     </section>
   </div>
   <p class="overview-disclaimer"><span id="overview-source-status">Waiting for eligible market prices.</span> Quotes can be stale or unavailable; separate Yes contracts need not total 100%. Seat bars count fresh race-market leaders plus Senate holdovers and do not predict certified seats.</p>
+</section>
+<section class="house-swarm" id="house-swarm" aria-label="2026 House market price distribution">
+  <div class="house-swarm-head">
+    <div>
+      <p class="eyebrow">THE HOUSE / EVERY DISTRICT</p>
+      <h2>435 races. One changing picture.</h2>
+      <p>One circle for every U.S. House district, arranged by the highest eligible market Yes price. Explore the races near the center or spotlight a state. These are market quotes, not election predictions or called results.</p>
+    </div>
+    <span class="house-swarm-flag"><i aria-hidden="true"></i> HOUSE · 2026</span>
+  </div>
+  <div class="house-swarm-shell">
+    <div class="house-swarm-toolbar">
+      <div class="house-swarm-toolbar-identity">
+        <strong>House market bubble atlas</strong>
+        <small>435 DISTRICTS · INDEPENDENT YES-CONTRACT QUOTES · SOURCE: POLYMARKET</small>
+      </div>
+      <div class="house-swarm-controls">
+        <label for="house-swarm-state">Spotlight state
+          <select id="house-swarm-state" aria-label="Highlight districts from a selected state"></select>
+        </label>
+        <label for="house-swarm-district">Inspect a district
+          <select id="house-swarm-district" aria-label="Select an individual House district"></select>
+        </label>
+        <button type="button" id="house-swarm-close" aria-pressed="false">Spotlight close races</button>
+      </div>
+    </div>
+    <p id="house-swarm-status" class="house-swarm-status" role="status">Loading saved district-market snapshots…</p>
+    <div id="house-swarm-plot" class="house-swarm-plot" aria-label="Interactive House district dot chart; on small screens, scroll horizontally">
+      <p class="fine">Loading 435 district bubbles…</p>
+      <div id="house-swarm-tooltip" class="house-swarm-tooltip" hidden></div>
+    </div>
+    <div class="house-swarm-legend" aria-label="Chart legend">
+      <span class="house-swarm-legend-piece"><i class="dem" aria-hidden="true"></i> Democratic leader</span>
+      <span class="house-swarm-legend-piece"><i class="close" aria-hidden="true"></i> Leading price under 60%</span>
+      <span class="house-swarm-legend-piece"><i class="rep" aria-hidden="true"></i> Republican leader</span>
+      <span class="house-swarm-legend-piece"><i class="unknown" aria-hidden="true"></i> Other / missing / stale</span>
+      <span>Each dot = one district · Not vote shares</span>
+    </div>
+  </div>
+  <div class="house-swarm-detail-wrap">
+    <div class="house-swarm-context">
+      <h3>Follow the districts, not just the headlines.</h3>
+      <p>Categories are defined by the highest active Yes-contract quote: 90%+, 75–89.9%, 60–74.9%, or below 60%. The price scale is <strong>not a calibrated forecast</strong>; independent contract prices can disagree. Missing, tied, other-party, and stale quotes are shown separately, never assigned to a major party.</p>
+      <p id="house-swarm-filter-note" class="house-swarm-filter-note">All House districts · Select a circle to see its quote.</p>
+      <p>Snapshots are timestamped. If recent data is unavailable, the last recorded distribution is visibly marked <strong>archived</strong>, not live. <a href="#race-simulator">Explore the full race map ›</a></p>
+    </div>
+    <aside class="house-swarm-detail" id="house-swarm-detail" aria-label="Selected district market details" aria-live="polite">
+      <h3>Inspect a district</h3>
+      <p>Select a bubble or use the district menu to inspect source-backed quotes.</p>
+    </aside>
+  </div>
 </section>
 <nav class="edition-tiles" aria-label="Explore the election dashboard">
   <a class="edition-tile" href="#control"><span class="edition-tile-meta"><span class="edition-tile-number">01</span><span>MARKET WATCH</span><span class="edition-tile-arrow" aria-hidden="true">↗</span></span><div><h3>Control board</h3><p>House &amp; Senate market odds</p></div></a>
@@ -142,4 +194,5 @@
 <script type="module" src="capitol-broadcast.mjs?v=20261012-countdown"></script>
 <script type="module" src="editorial-finish.mjs?v=20261012-editorial"></script>
 <script type="module" src="early-vote.mjs?v=20261019-early"></script>
+<script type="module" src="house-swarm.mjs?v=20261104-atlas"></script>
 </body></html>
