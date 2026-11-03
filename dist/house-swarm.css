@@ -1,0 +1,69 @@
+/* Congress Odds House bubble atlas — newspaper precision, Apple-like surfaces. */
+.newsroom .house-swarm{margin:38px 0;padding:29px 0 33px;border-top:1px solid #d1cec4;border-bottom:1px solid #d1cec4}
+.newsroom .house-swarm-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:20px}
+.newsroom .house-swarm-head .eyebrow{font:750 10px/1.4 var(--font-system);letter-spacing:.13em;color:#74716d;margin:0 0 10px}
+.newsroom .house-swarm-head h2{font:700 clamp(34px,3.8vw,50px)/1.1 var(--news-serif);letter-spacing:-.046em;margin:0 0 11px}
+.newsroom .house-swarm-head p:not(.eyebrow){max-width:760px;color:#72736e;font:450 13px/1.65 var(--font-system);margin:0}
+.newsroom .house-swarm-flag{display:flex;align-items:center;gap:9px;flex:0 0 auto;border:1px solid #ddd9d1;border-radius:99px;background:#fffefa;color:#575651;padding:10px 14px;font:750 10px var(--font-system);letter-spacing:.08em}
+.newsroom .house-swarm-flag i{width:16px;height:10px;border-radius:2px;background:linear-gradient(90deg,#436cac 0 44%,#efe5d5 44% 57%,#b54c44 57%)}
+.newsroom .house-swarm-shell{overflow:hidden;position:relative;border:1px solid #d7d7d3;border-radius:20px;background:#fffefa;box-shadow:0 5px 13px #1e222808,0 21px 47px #1b21240d}
+.newsroom .house-swarm-toolbar{display:flex;align-items:end;justify-content:space-between;gap:14px 22px;flex-wrap:wrap;padding:18px 20px 16px;border-bottom:1px solid #ebe9e3;background:#fcfbf8}
+.newsroom .house-swarm-toolbar-identity{display:grid;gap:5px}
+.newsroom .house-swarm-toolbar-identity strong{color:#292a2d;font:750 16px/1.3 var(--font-system);letter-spacing:-.025em}
+.newsroom .house-swarm-toolbar-identity small{color:#777873;font:650 10px var(--font-system);letter-spacing:.065em}
+.newsroom .house-swarm-controls{display:flex;align-items:end;gap:9px;flex-wrap:wrap}
+.newsroom .house-swarm-controls label{display:grid;gap:5px;color:#6b6b65;font:650 10px var(--font-system)}
+.newsroom .house-swarm-controls :is(select,button){min-height:38px;padding:8px 12px;border:1px solid #dcdad4;border-radius:9px;color:#35383a;background:#fffefa;font:650 11px var(--font-system);box-shadow:0 1px 4px #1e222808}
+.newsroom .house-swarm-controls select{min-width:145px;max-width:210px}
+.newsroom .house-swarm-controls button[aria-pressed=true]{color:#275084;background:#e9edf4;border-color:#9db0cd}
+.newsroom .house-swarm-controls button:hover{background:#f1f0ed}
+.newsroom .house-swarm-status{margin:0;padding:10px 20px;color:#45644e;background:#eef3eb;border-bottom:1px solid #e0e5dc;font:640 11px/1.5 var(--font-system);font-variant-numeric:tabular-nums}
+.newsroom .house-swarm-status.is-archive{background:#f9f2df;color:#755b31}
+.newsroom .house-swarm-plot{position:relative;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#b2b4b7 transparent;background:linear-gradient(90deg,#a5bbdf0d,transparent 50%,#e0b0a90d)}
+.newsroom .house-swarm-svg{display:block;width:100%;min-width:900px;height:auto;overflow:visible;user-select:none}
+.newsroom .house-swarm-watermark{font:800 265px var(--font-system);letter-spacing:-.08em;fill:#24282e08;pointer-events:none}
+.newsroom .house-swarm-guide{stroke:#e3e4e5;stroke-width:1}
+.newsroom .house-swarm-divider{stroke:#d9d8d5;stroke-width:1.5}
+.newsroom .house-swarm-column-heading{font:800 11px var(--font-system);letter-spacing:.05em;fill:#696b6d}
+.newsroom .house-swarm-column-heading.is-dem{fill:#355e9c}
+.newsroom .house-swarm-column-heading.is-rep{fill:#b4564f}
+.newsroom .house-swarm-column-heading.is-close{fill:#92702d}
+.newsroom .house-swarm-column-subtitle{fill:#7d7f81;font:600 10.5px var(--font-system)}
+.newsroom .house-swarm-axis{fill:#9ca0a3;font:700 10px var(--font-system)}
+.newsroom .house-swarm-no-quote-title{fill:#687078;font:700 11px var(--font-system);letter-spacing:.06em}
+.newsroom .house-swarm-dots circle{cursor:pointer;transition:opacity .15s ease,stroke-width .15s ease}
+.newsroom .house-swarm-dots circle.is-dimmed{opacity:.11}
+.newsroom .house-swarm-dots circle.is-selected{stroke:#232932;filter:drop-shadow(0 0 4px #29344450);opacity:1}
+.newsroom .house-swarm-dots circle:hover{stroke:#202931;stroke-width:2.7;filter:drop-shadow(0 1px 4px #303b4955);opacity:1}
+.newsroom .house-swarm-tooltip{position:absolute;z-index:5;pointer-events:none;max-width:260px;border-radius:9px;padding:10px 12px;background:#252a32f2;color:#fff;box-shadow:0 9px 24px #141a2255;font:600 11px/1.45 var(--font-system)}
+.newsroom .house-swarm-tooltip[hidden]{display:none}
+.newsroom .house-swarm-legend{display:flex;align-items:center;flex-wrap:wrap;gap:11px 20px;padding:13px 20px;border-top:1px solid #e5e3df;background:#fcfbf8;color:#64666b;font:600 11px var(--font-system)}
+.newsroom .house-swarm-legend-piece{display:inline-flex;align-items:center;gap:7px}
+.newsroom .house-swarm-legend-piece i{display:block;width:10px;height:10px;border-radius:50%;border:1.5px solid}
+.newsroom .house-swarm-legend-piece .dem{border-color:#4d78b7;background:#c8d8f0}
+.newsroom .house-swarm-legend-piece .rep{border-color:#bb6258;background:#edc6c1}
+.newsroom .house-swarm-legend-piece .close{border-color:#ab812d;background:#f3d784}
+.newsroom .house-swarm-legend-piece .unknown{border-color:#aeb3b8;background:#e1e3e4}
+.newsroom .house-swarm-detail-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.62fr);gap:24px;margin-top:17px;align-items:start}
+.newsroom .house-swarm-context{padding-top:7px}
+.newsroom .house-swarm-context h3{margin:0 0 9px;font:700 24px/1.2 var(--news-serif)}
+.newsroom .house-swarm-context p{margin:0 0 10px;max-width:720px;color:#777872;font:450 12px/1.7 var(--font-system)}
+.newsroom .house-swarm-context a{color:#2e568e;font-weight:750}
+.newsroom .house-swarm-filter-note{display:inline-block;padding:8px 11px;border-radius:9px;border:1px solid #e1ded7;background:#f3f1ed}
+.newsroom .house-swarm-detail{min-height:162px;padding:17px 19px;border:1px solid #ddd9d1;border-radius:15px;background:#fffefa;box-shadow:0 3px 14px #29231b08}
+.newsroom .house-swarm-detail-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.newsroom .house-swarm-detail-head h3{margin:0;font:750 23px var(--news-serif)}
+.newsroom .house-swarm-detail-party{padding:5px 8px;border-radius:7px;background:#e8e9eb;font:750 10px var(--font-system)}
+.newsroom .house-swarm-detail-party.dem{color:#315d98;background:#e6edf8}
+.newsroom .house-swarm-detail-party.rep{color:#a54438;background:#f8e8e5}
+.newsroom .house-swarm-detail-lead{margin:14px 0 4px;color:#315a91;font:800 21px/1.3 var(--font-system);font-variant-numeric:tabular-nums}
+.newsroom .house-swarm-detail-note,.newsroom .house-swarm-detail-time{margin:8px 0;color:#767771;font:450 11px/1.55 var(--font-system)}
+.newsroom .house-swarm-detail-pair{display:grid;gap:7px;margin:13px 0}
+.newsroom .house-swarm-detail-contract{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 10px;border-radius:8px;background:#f6f5f2;font:600 11px/1.4 var(--font-system)}
+.newsroom .house-swarm-detail-contract strong{font-variant-numeric:tabular-nums}
+.newsroom .house-swarm-detail-contract strong.dem{color:#315d9f}
+.newsroom .house-swarm-detail-contract strong.rep{color:#ad4c41}
+.newsroom .house-swarm-detail-link{display:inline-block;padding:9px 13px;margin-top:10px;border:1px solid #d5dfea;border-radius:9px;background:#e9edf3;color:#305484;font:750 11px var(--font-system);text-decoration:none}
+.newsroom .house-swarm-detail-link:hover{background:#dfe8f2}
+@media(max-width:730px){.newsroom .house-swarm-head{display:block}.newsroom .house-swarm-flag{display:inline-flex;margin-top:14px}.newsroom .house-swarm-shell{border-radius:14px}.newsroom .house-swarm-toolbar{padding:14px}.newsroom .house-swarm-controls{width:100%}.newsroom .house-swarm-controls label{flex:1;min-width:132px}.newsroom .house-swarm-controls select{width:100%;min-width:0}.newsroom .house-swarm-svg{min-width:915px}.newsroom .house-swarm-detail-wrap{grid-template-columns:1fr}.newsroom .house-swarm-context{order:2}.newsroom .house-swarm-detail{order:1}}
+@media(prefers-reduced-motion:reduce){.newsroom .house-swarm-dots circle{transition:none}}
