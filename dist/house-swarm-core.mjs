@@ -1,5 +1,5 @@
-// One bubble per real House district, classified by eligible market quotes.
-// Bands represent independent Polymarket Yes prices; they are not election calls.
+// Source-backed election bubble atlases. One circle per contested race.
+// The data are independent Polymarket Yes prices, NEVER certified results.
 import {races} from './scenario-core.mjs';
 import {raceLeader} from './market-map.mjs';
 
@@ -13,6 +13,7 @@ export const HOUSE_BANDS=Object.freeze([
  {id:'R-strong',label:'90%+ quoted',party:'R',tier:'strong',min:.90}
 ]);
 export const HOUSE_TOTAL=435;
+export const SENATE_RACES=35;
 const validTime=value=>typeof value==='string'&&Number.isFinite(Date.parse(value));
 export function houseBand(leader){
  if(!leader||!['D','R'].includes(leader.party)||!Number.isFinite(leader.probability))return 'unavailable';
@@ -23,15 +24,16 @@ export function houseBand(leader){
  if(p<.90)return leader.party+'-likely';
  return leader.party+'-strong';
 }
-export function houseDistribution(snapshot,now=Date.now()){
- const records=new Map((snapshot?.races||[]).filter(r=>r?.chamber==='house').map(r=>[r.id,r]));
- const available=validTime(snapshot?.updatedAt)&&Date.parse(snapshot.updatedAt)<=now+5*60000;
- // On election night or after it, retain the historical captured distribution
- // but label it as archived if outside the two-hour freshness window.
- const asOf=available?Math.min(now,Date.parse(snapshot.updatedAt)):now;
- const archived=available&&now-asOf>2*3600000;
+export function raceDistribution(snapshot,chamber,now=Date.now()){
+ if(!['house','senate'].includes(chamber))throw Error('Unknown chamber for bubble atlas');
+ const expected=chamber==='house'?HOUSE_TOTAL:SENATE_RACES;
+ const records=new Map((snapshot?.races||[]).filter(r=>r?.chamber===chamber).map(r=>[r.id,r]));
+ const hasTime=validTime(snapshot?.updatedAt)&&Date.parse(snapshot.updatedAt)<=now+5*60000;
+ const asOf=hasTime?Math.min(now,Date.parse(snapshot.updatedAt)):now;
+ // Retain historical quote context on subsequent days, but never call it live.
+ const archived=hasTime&&now-asOf>2*3600000;
  const reference=archived?asOf:now;
- const bubbles=races('house').map((district)=>{
+ const bubbles=races(chamber).map(district=>{
   const source=records.get(district.id);
   const leader=raceLeader(source,reference);
   const band=houseBand(leader);
@@ -48,54 +50,75 @@ export function houseDistribution(snapshot,now=Date.now()){
  });
  const counts=Object.fromEntries([...HOUSE_BANDS.map(b=>b.id),'unavailable'].map(k=>[k,0]));
  for(const bubble of bubbles)counts[bubble.band]++;
- if(bubbles.length!==HOUSE_TOTAL||Object.values(counts).reduce((a,b)=>a+b,0)!==HOUSE_TOTAL)throw Error('Invalid House district distribution');
+ if(bubbles.length!==expected||Object.values(counts).reduce((a,b)=>a+b,0)!==expected)throw Error('Invalid district/race distribution');
  const byParty={
-  D:bubbles.filter(x=>x.party==='D'&&x.band!=='unavailable').length,
-  R:bubbles.filter(x=>x.party==='R'&&x.band!=='unavailable').length,
-  O:bubbles.filter(x=>x.party==='O').length,
-  U:bubbles.filter(x=>x.party==='U').length
+  D:bubbles.filter(b=>b.party==='D'&&b.band!=='unavailable').length,
+  R:bubbles.filter(b=>b.party==='R'&&b.band!=='unavailable').length,
+  O:bubbles.filter(b=>b.party==='O').length,
+  U:bubbles.filter(b=>b.party==='U').length
  };
- return {bubbles,counts,byParty,total:HOUSE_TOTAL,asOf:available?new Date(asOf).toISOString():null,archived,hasSnapshot:Boolean(snapshot&&available)};
+ return {chamber,bubbles,counts,byParty,total:expected,asOf:hasTime?new Date(asOf).toISOString():null,archived,hasSnapshot:Boolean(snapshot&&hasTime)};
 }
-// Deterministic, evenly spaced columns, with tiny per-district jitter to evoke
-// a beeswarm. Circles are not scaled by volume, so each seat carries equal weight.
+export const houseDistribution=(snapshot,now=Date.now())=>raceDistribution(snapshot,'house',now);
+export const senateDistribution=(snapshot,now=Date.now())=>raceDistribution(snapshot,'senate',now);
+
 export function bubbleHash(id){
  let h=2166136261;
  for(const c of String(id)){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}
  return h>>>0;
 }
-export function layoutHouseBubbles(distribution){
- const bands=new Map(HOUSE_BANDS.map(b=>[b.id,[]]));
- const unused=[];
- for(const d of distribution.bubbles){
-  if(bands.has(d.band))bands.get(d.band).push(d);
-  else unused.push(d);
+// Wide, label-friendly matrix. Every bubble carries an actual two-letter state
+// abbreviation; House bubbles repeat abbreviations across individual districts.
+// Chart height expands for unusually concentrated price bands, never squashing
+// labels or allowing circles to overlap.
+export function layoutRaceBubbles(distribution){
+ const senate=distribution.chamber==='senate';
+ const width=1580,left=55,bandWidth=210,top=119;
+ const step=senate?36:28.4;
+ const radius=senate?16.4:12.85;
+ const columns=senate?5:7;
+ const byBand=new Map(HOUSE_BANDS.map(b=>[b.id,[]]));
+ const unavailable=[];
+ for(const b of distribution.bubbles){
+  if(byBand.has(b.band))byBand.get(b.band).push(b);
+  else unavailable.push(b);
  }
+ const bands=HOUSE_BANDS.map(b=>{
+  const items=byBand.get(b.id).sort((a,c)=>bubbleHash(a.id)-bubbleHash(c.id)||a.id.localeCompare(c.id));
+  return {band:b,items,rows:Math.ceil(items.length/columns)};
+ });
+ const maxRows=Math.max(1,...bands.map(b=>b.rows));
+ const mainLast=top+(maxRows-1)*step+radius;
+ const axisY=mainLast+30;
+ const dividerY=axisY+22;
+ const unknownTitleY=dividerY+29;
+ const unknownY=unknownTitleY+33;
+ const unknownStep=senate?37:28.4;
+ const unknownRadius=senate?16.4:12.85;
+ const unknownColumns=senate?40:51;
+ const sortedMissing=unavailable.sort((a,b)=>bubbleHash(a.id)-bubbleHash(b.id)||a.id.localeCompare(b.id));
+ const missingRows=Math.max(1,Math.ceil(sortedMissing.length/unknownColumns));
  const nodes=[];
- const start=32,bandWidth=170,originY=313;
- for(const [i,band] of HOUSE_BANDS.entries()){
-  const sorted=bands.get(band.id).sort((a,b)=>bubbleHash(a.id)-bubbleHash(b.id)||a.id.localeCompare(b.id));
-  const cols=Math.max(2,Math.min(10,Math.round(Math.sqrt(sorted.length*145/350))));
-  const rows=Math.ceil(sorted.length/cols);
-  // Fit even an extreme 435-seat landslide within the visible plot.
-  const step=Math.min(14.6,390/Math.max(1,rows-1));
-  const radius=Math.min(5.5,(step-1.5)/2);
-  sorted.forEach((d,index)=>{
-   const row=Math.floor(index/cols),col=index%cols;
-   const h=bubbleHash(d.id),drift=((h%100)/100-.5)*1.3;
-   const rowOffset=(row%2?0.30:0)*step;
-   const x=start+bandWidth*i+bandWidth/2+(col-(cols-1)/2)*step+rowOffset+drift;
-   const y=originY+(row-(rows-1)/2)*step+(((h>>>8)%100)/100-.5)*1.1;
-   nodes.push({...d,x,y,r:radius});
+ for(const [i,b] of bands.entries()){
+  const center=left+bandWidth*i+bandWidth/2;
+  b.items.forEach((item,j)=>{
+   const col=j%columns,row=Math.floor(j/columns),h=bubbleHash(item.id);
+   const jitter=((h%100)/100-.5)*.7;
+   const x=center+(col-(columns-1)/2)*step+jitter;
+   const y=top+row*step+(((h>>>8)%100)/100-.5)*.7;
+   nodes.push({...item,x,y,r:radius});
   });
  }
- const missing=unused.sort((a,b)=>bubbleHash(a.id)-bubbleHash(b.id)||a.id.localeCompare(b.id));
- const perRow=115;
- missing.forEach((d,i)=>{
-  const row=Math.floor(i/perRow),col=i%perRow,parts=Math.min(perRow,missing.length-row*perRow);
-  const x=34+(col+.5)*10.1+((perRow-parts)*10.1/2);
-  const y=591+row*14.5;
-  nodes.push({...d,x,y,r:4.5});
+ sortedMissing.forEach((item,i)=>{
+  const row=Math.floor(i/unknownColumns),col=i%unknownColumns;
+  const onRow=Math.min(unknownColumns,sortedMissing.length-row*unknownColumns);
+  const center=width/2;
+  const x=center+(col-(onRow-1)/2)*unknownStep;
+  const y=unknownY+row*unknownStep;
+  nodes.push({...item,x,y,r:unknownRadius});
  });
- return nodes;
+ const height=unknownY+(missingRows-1)*unknownStep+unknownRadius+41;
+ return {nodes,width,height,left,bandWidth,axisY,dividerY,unknownTitleY,unknownY,mainLast};
 }
+export const layoutHouseBubbles=distribution=>layoutRaceBubbles(distribution).nodes;
+export const layoutSenateBubbles=distribution=>layoutRaceBubbles(distribution).nodes;
