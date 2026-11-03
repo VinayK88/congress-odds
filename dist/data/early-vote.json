@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-03T14:07:49.003Z",
+  "fetchedAt": "2026-11-03T14:13:31.425Z",
   "rows": [
     {
       "code": "AK",
@@ -162,13 +162,13 @@
     {
       "code": "IA",
       "name": "Iowa",
-      "asOf": "2026-11-02",
+      "asOf": "2026-11-03",
       "source": "Iowa Secretary of State",
-      "notes": "Utah is a universal vote-by-mail state - every \"Active\" registered voter is automatically mailed a ballot each election, and a 2025 law phasing this out does not take effect until 2029. Statewide and county \"ballots requested\" figures are therefore the number of Active registered voters by party, scraped from the Lt. Governor's current voter registration statistics page. Congressional district figures instead use accepted ballots as a stand-in, since Utah does not publish district-level registration or request data.",
-      "total": 464008,
-      "inPerson": 314683,
-      "mail": 149325,
-      "requested": 161779
+      "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
+      "total": 498713,
+      "inPerson": 344986,
+      "mail": 153727,
+      "requested": 161763
     },
     {
       "code": "KS",
@@ -382,13 +382,13 @@
     {
       "code": "OK",
       "name": "Oklahoma",
-      "asOf": "2026-11-02",
+      "asOf": "2026-11-03",
       "source": "Oklahoma State Board of Elections",
       "notes": "Individual absentee ballot data are obtained from the Oklahoma State Board of Elections Election Data Warehouse, which enable calculation of statistics by district. The in-person early vote data are from a pdf of county-level reports that do not enable district statistics.",
-      "total": 229159,
+      "total": 231090,
       "inPerson": 186488,
-      "mail": 42671,
-      "requested": 64938
+      "mail": 44602,
+      "requested": 64947
     },
     {
       "code": "OR",
