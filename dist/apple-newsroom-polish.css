@@ -1,0 +1,202 @@
+/* Quiet Cupertino-inspired finish for the existing Congress Odds newsroom.
+   Presentation only: do not modify election data, party colors, or chart meaning. */
+.newsroom {
+  --polish-paper: #fffefa;
+  --polish-stroke: rgba(61, 55, 45, .13);
+  --polish-shadow: 0 3px 12px rgba(44, 40, 32, .035), 0 12px 32px rgba(44, 40, 32, .035);
+  --polish-ease: cubic-bezier(.2, .75, .25, 1);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* Keep traditional editorial headlines; make UI and numeric data feel precise. */
+.newsroom :is(button, select, input, .masthead nav, .explore-dock, .eyebrow, .card-kicker) {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+.newsroom :is(.number, .scenario-totals strong, .pulse-tile>strong, .candidate-odds strong, .early-kpi strong, .forecast-number) {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.newsroom .heading h1,
+.newsroom .control-heading h2,
+.newsroom .section-heading h2 {
+  text-wrap: balance;
+}
+.newsroom .intro,
+.newsroom .section-intro {
+  text-wrap: pretty;
+}
+/* Thin glass on navigation, without replacing the warm-paper masthead. */
+.newsroom .masthead {
+  background: rgba(250, 249, 246, .91);
+  -webkit-backdrop-filter: saturate(1.18) blur(18px);
+  backdrop-filter: saturate(1.18) blur(18px);
+  border-bottom-color: var(--polish-stroke);
+}
+.newsroom .masthead nav a {
+  transition: color .18s ease, opacity .18s ease;
+}
+.newsroom .explore-dock {
+  top: 8px;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  padding: 5px;
+  border: 1px solid var(--polish-stroke);
+  border-radius: 13px;
+  background: rgba(255, 254, 250, .91);
+  -webkit-backdrop-filter: saturate(1.15) blur(16px);
+  backdrop-filter: saturate(1.15) blur(16px);
+  box-shadow: 0 3px 18px rgba(32, 33, 38, .06);
+}
+.newsroom .explore-dock a {
+  border-bottom: 0;
+  border-radius: 9px;
+  padding: 11px 15px;
+  transition: background-color .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.newsroom .explore-dock a[aria-current] {
+  background: #f0eee9;
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px rgba(61, 55, 45, .07);
+}
+.newsroom .explore-dock a:hover:not([aria-current]) {
+  background: rgba(233, 231, 225, .78);
+  text-decoration: none;
+}
+/* Newsprint remains flat overall; key content gets a restrained lift. */
+.newsroom .chambers {
+  padding: 7px 24px;
+  background: var(--polish-paper);
+  border: 1px solid var(--polish-stroke);
+  border-radius: 14px;
+  box-shadow: var(--polish-shadow);
+}
+.newsroom .chambers .chamber {
+  background: transparent;
+}
+.newsroom :is(.model-card, .lab-panel, .market-desk-panel, .candidate-race,
+  .early-chart, .early-kpi, .candidate-directory, #history-chart) {
+  border-radius: 12px;
+  box-shadow: var(--polish-shadow);
+}
+.newsroom #race-simulator :is(.scenario-board, .scenario-layout) {
+  border-radius: 13px;
+  border-color: var(--polish-stroke);
+  background: var(--polish-paper);
+  box-shadow: var(--polish-shadow);
+}
+.newsroom #race-simulator .scenario-board {
+  padding: 25px 26px 17px;
+}
+.newsroom #race-simulator :is(.battleground-radar, .flip-watch, .state-briefing, .race-history-panel) {
+  border-radius: 12px;
+  box-shadow: var(--polish-shadow);
+}
+.newsroom #race-simulator :is(.map-peek, .state-picker, .state-picker-control, .map-symbol-guide) {
+  border-radius: 10px;
+}
+.newsroom .candidate-card {
+  border-radius: 11px;
+  overflow: hidden;
+}
+.newsroom .candidate-filters {
+  border-radius: 12px;
+}
+.newsroom .candidate-search-heading {
+  border-radius: 12px 12px 0 0;
+}
+.newsroom .pulse-tile {
+  transition: background-color .2s ease;
+}
+.newsroom .pulse-tile:hover {
+  background: rgba(241, 239, 232, .65);
+}
+.newsroom :is(.data-health, .market-map-status, .market-desk-details, .table-wrap,
+  .model-details, .early-voting details) {
+  border-radius: 10px;
+}
+/* Neutral, tactile controls: party-specific blues and reds are untouched. */
+.newsroom :is(.refresh-box button, .sound-toggle, #candidate-reset,
+  .chamber .card-bottom a, #race-simulator .map-focus-toggle) {
+  border-radius: 9px;
+  transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .22s var(--polish-ease);
+}
+.newsroom :is(.refresh-box button, .sound-toggle, #candidate-reset,
+  .chamber .card-bottom a):hover {
+  background: #f1f0eb;
+  border-color: #bdb9ae;
+  box-shadow: 0 2px 7px rgba(38, 37, 33, .065);
+}
+.newsroom :is(.source-switcher, .chamber-switch, .map-mode-switch, .market-desk-filters) {
+  border-radius: 11px;
+  background: #efeee9;
+}
+.newsroom :is(.source-switcher, .chamber-switch, .market-desk-filters) button {
+  border-radius: 8px;
+  transition: background-color .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.newsroom :is(.source-switcher, .chamber-switch, .market-desk-filters) button[aria-pressed="true"] {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(24, 26, 30, .15);
+}
+.newsroom :is(select, input, textarea) {
+  border-radius: 9px;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.newsroom :is(select, input, textarea):focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(26, 86, 160, .11);
+}
+.newsroom :is(button, a, select, input, textarea, summary):focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+/* Only a tiny bit of elevation, and only when the device supports hover. */
+@media (hover: hover) and (pointer: fine) {
+  .newsroom :is(.candidate-race, .model-card, .lab-panel, .early-kpi) {
+    transition: box-shadow .25s var(--polish-ease), border-color .2s ease;
+  }
+  .newsroom :is(.candidate-race, .model-card, .lab-panel, .early-kpi):hover {
+    box-shadow: 0 5px 16px rgba(44, 40, 32, .045), 0 16px 36px rgba(44, 40, 32, .065);
+    border-color: rgba(61, 55, 45, .22);
+  }
+}
+/* Maintain breathing room and touch comfort on phones. */
+@media (max-width: 700px) {
+  .newsroom .explore-dock {
+    width: 100%;
+    border-radius: 11px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .newsroom .explore-dock a {
+    padding: 12px 8px;
+    white-space: nowrap;
+  }
+  .newsroom .chambers {
+    padding: 4px 17px;
+    border-radius: 12px;
+  }
+  .newsroom #race-simulator .scenario-board {
+    padding: 20px 15px;
+  }
+  .newsroom :is(select, input, textarea) {
+    font-size: max(16px, 1em);
+  }
+}
+/* Accessibility: animation and transparency are enhancements, never requirements. */
+@media (prefers-reduced-motion: reduce) {
+  .newsroom :is(button, a, select, input, textarea, summary, .candidate-race,
+    .model-card, .lab-panel, .early-kpi, .pulse-tile) {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .newsroom .masthead,
+  .newsroom .explore-dock {
+    background: #faf9f6;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
