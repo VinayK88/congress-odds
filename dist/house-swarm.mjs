@@ -98,12 +98,12 @@ function drawChart(distribution){
    const index=HOUSE_BANDS.findIndex(b=>b.id===section.id);
    const party=index<0?'unknown':index<3?'is-dem':index>3?'is-rep':'is-close';
    const heading=index<0?'OTHER / UNAVAILABLE':index<3?'DEMOCRATIC':index>3?'REPUBLICAN':'CLOSE RACES';
-   const title=index<0?heading:heading+' · '+section.label;
+   const title=heading;
    backdrop.append(svg('rect',{x:9,y:section.top+2,width:width-18,height:49,rx:9,
      fill:index===3?'#fff8e7':index<0?'#f1f2f2':'#f7f6f2'}));
    backdrop.append(svg('text',{x:17,y:section.headerY,class:'house-swarm-column-heading '+party},title));
    backdrop.append(svg('text',{x:17,y:section.headerY+18,class:'house-swarm-column-subtitle'},
-    index<0?'Stale or unavailable quotes':'Market Yes prices, not results'));
+    index<0?'Other, stale or unavailable quotes':section.label+' · Market Yes prices'));
    backdrop.append(svg('text',{x:width-17,y:section.headerY,'text-anchor':'end',class:'house-swarm-column-heading '+party},
     section.count+' races'));
    if(section.count===0)backdrop.append(svg('text',{x:width/2,y:section.firstY+4,'text-anchor':'middle',class:'house-swarm-column-subtitle'},'No eligible quotes'));
