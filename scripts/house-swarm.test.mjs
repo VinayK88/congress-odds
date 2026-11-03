@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {HOUSE_BANDS,HOUSE_TOTAL,houseBand,houseDistribution,layoutHouseBubbles} from '../dist/house-swarm-core.mjs';
+import {HOUSE_BANDS,HOUSE_TOTAL,houseBand,houseDistribution,layoutHouseBubbles,layoutRaceBubbles} from '../dist/house-swarm-core.mjs';
 import {races} from '../dist/scenario-core.mjs';
 
 const now=Date.parse('2026-11-03T23:30:00Z');
@@ -64,14 +64,27 @@ test('archived distribution is clearly labeled, retaining only eligible quotes a
  assert.equal(dist.counts['D-strong'],1);
  assert.equal(dist.counts.unavailable,434);
 });
-test('deterministic bubble coordinates stay in chart bounds at distribution extremes',()=>{
+test('deterministic state-labeled bubble coordinates stay inside their dynamic layout',()=>{
  const empty=houseDistribution(null,now);
+ const geometry=layoutRaceBubbles(empty);
  const a=layoutHouseBubbles(empty),b=layoutHouseBubbles(empty);
  assert.equal(a.length,435);
  assert.deepEqual(a,b);
- for(const p of a){assert.ok(p.x>=0&&p.x<=1254&&p.y>=80&&p.y<=664,p.id);}
+ assert.equal(geometry.nodes.length,435);
+ assert.equal(new Set(a.map(p=>p.id)).size,435);
+ for(const p of a){
+  assert.match(p.state,/^[A-Z]{2}$/);
+  assert.ok(p.r>=12,p.id+' has unreadable radius');
+  assert.ok(p.x-p.r>=0&&p.x+p.r<=geometry.width,p.id+' x out of bounds');
+  assert.ok(p.y-p.r>=0&&p.y+p.r<=geometry.height,p.id+' y out of bounds');
+ }
  const total={...empty,bubbles:manifest.map(item=>({id:item.id,state:item.state,band:'D-strong',party:'D',probability:.99,reason:null,pair:[],url:null}))};
- const extreme=layoutHouseBubbles(total);
- assert.equal(extreme.length,435);
- for(const p of extreme)assert.ok(p.x>=0&&p.x<=1254&&p.y>=80&&p.y<=540,`${p.id}: ${p.x},${p.y}`);
+ const extreme=layoutRaceBubbles(total);
+ assert.equal(extreme.nodes.length,435);
+ assert.ok(extreme.height>geometry.height,'a concentrated band should expand vertically');
+ for(const p of extreme.nodes){
+  assert.ok(p.r>=12,p.id+' bubble shrank below label size');
+  assert.ok(p.x-p.r>=0&&p.x+p.r<=extreme.width,p.id+' x outside chart');
+  assert.ok(p.y-p.r>=0&&p.y+p.r<=extreme.height,p.id+' y outside chart');
+ }
 });
