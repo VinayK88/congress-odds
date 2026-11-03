@@ -119,6 +119,7 @@ function drawChart(distribution){
  }
  graphic.append(bubbleGroup);
  target.append(graphic);
+ if(tooltip)target.append(tooltip);
  const lookup=new Map(layout.map(b=>[b.id,b]));
  function updateSelection(id){
   selected=id;
