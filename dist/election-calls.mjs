@@ -13,7 +13,7 @@ export function renderCalledResults(){
  const status=document.getElementById('called-results-status');
  if(status){
   const stale=Date.now()-Date.parse(latest.checkedAt)>45*60000;
-  status.textContent='Reported winners · House '+results.D+' Democratic / '+results.R+' Republican · Senate '+senate.D+' Democratic / '+senate.R+' Republican+
+  status.textContent='Called winners · House '+results.D+' D / '+results.R+' R · Senate '+senate.D+' D / '+senate.R+' R'+
    ' · Source checked '+when(latest.checkedAt)+(stale?' · refresh delayed':'');
  }
  const details=document.getElementById('overview-calls');
