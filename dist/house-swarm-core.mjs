@@ -2,6 +2,7 @@
 // The data are independent Polymarket Yes prices, NEVER certified results.
 import {races} from './scenario-core.mjs';
 import {raceLeader} from './market-map.mjs';
+import {selectWinner} from './election-calls-core.mjs';
 
 export const HOUSE_BANDS=Object.freeze([
  {id:'D-strong',label:'90%+ quoted',party:'D',tier:'strong',min:.90},
@@ -24,7 +25,7 @@ export function houseBand(leader){
  if(p<.90)return leader.party+'-likely';
  return leader.party+'-strong';
 }
-export function raceDistribution(snapshot,chamber,now=Date.now()){
+export function raceDistribution(snapshot,chamber,now=Date.now(),calls=null){
  if(!['house','senate'].includes(chamber))throw Error('Unknown chamber for bubble atlas');
  const expected=chamber==='house'?HOUSE_TOTAL:SENATE_RACES;
  const records=new Map((snapshot?.races||[]).filter(r=>r?.chamber===chamber).map(r=>[r.id,r]));
@@ -37,10 +38,11 @@ export function raceDistribution(snapshot,chamber,now=Date.now()){
   const source=records.get(district.id);
   const leader=raceLeader(source,reference);
   const band=houseBand(leader);
+  const called=selectWinner(calls,district.id);
   const pair=(source?.candidates||[]).filter(c=>c.active&&!c.closed&&Number.isFinite(c.probability))
    .sort((a,b)=>b.probability-a.probability).slice(0,2);
   return {
-   id:district.id,state:district.state,band,
+   id:district.id,state:district.state,band,called,
    party:leader.party,probability:leader.probability,reason:leader.reason||null,
    leaderName:leader.candidate?.name||leader.candidate?.label||null,
    candidateScope:leader.candidate?.scope||null,
@@ -59,8 +61,8 @@ export function raceDistribution(snapshot,chamber,now=Date.now()){
  };
  return {chamber,bubbles,counts,byParty,total:expected,asOf:hasTime?new Date(asOf).toISOString():null,archived,hasSnapshot:Boolean(snapshot&&hasTime)};
 }
-export const houseDistribution=(snapshot,now=Date.now())=>raceDistribution(snapshot,'house',now);
-export const senateDistribution=(snapshot,now=Date.now())=>raceDistribution(snapshot,'senate',now);
+export const houseDistribution=(snapshot,now=Date.now(),calls=null)=>raceDistribution(snapshot,'house',now,calls);
+export const senateDistribution=(snapshot,now=Date.now(),calls=null)=>raceDistribution(snapshot,'senate',now,calls);
 
 export function bubbleHash(id){
  let h=2166136261;
