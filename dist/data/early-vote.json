@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-04T06:36:01.681Z",
+  "fetchedAt": "2026-11-04T09:26:16.944Z",
   "rows": [
     {
       "code": "AK",
@@ -52,13 +52,13 @@
     {
       "code": "CO",
       "name": "Colorado",
-      "asOf": "2026-11-03",
+      "asOf": "2026-11-04",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 2524979,
-      "inPerson": 138132,
-      "mail": 2386847,
-      "requested": 4223515
+      "total": 2639206,
+      "inPerson": 138130,
+      "mail": 2501076,
+      "requested": 4188115
     },
     {
       "code": "CT",
