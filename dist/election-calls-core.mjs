@@ -89,6 +89,29 @@ export function parsePeopleTallyResults(data,now=new Date().toISOString()){
  }
  return winners;
 }
+// A public community results desk transcribes decision-desk calls into its
+// explicitly named "call" column. It is a secondary, lower-authority source,
+// never a certification or a substitute for a named AP article.
+export function parseCommunityElectionDeskResults(data,now=new Date().toISOString()){
+ if(data?.v!==2||!data.national||typeof data.national.races!=='object'||Array.isArray(data.national.races))
+  throw Error('Unexpected election monitor data schema');
+ const winners={};
+ const publishedAt=Array.isArray(data.drops)&&data.drops.length?
+  data.drops[data.drops.length-1]?.ts:null;
+ const checkedTime=timestamp(publishedAt)?new Date(publishedAt).toISOString():now;
+ const url='https://github.com/lakerainier/election-monitor/blob/main/data/state.json';
+ for(const [raw,r] of Object.entries(data.national.races)){
+  if(!r||typeof r!=='object'||!['D','R','I','O'].includes(r.call))continue;
+  const id=canonicalRaceId(raw);
+  if(!id)continue;
+  const party=r.call==='I'?'O':r.call;
+  const listed=party==='D'?r.dn:party==='R'?r.rn:null;
+  const name=cleanText(listed)|| (party==='D'?'Democratic nominee':party==='R'?'Republican nominee':'Independent nominee');
+  winners[id]={party,name,status:'called',source:'Election Monitor community results desk (AP-attributed entry)',
+    sourceUrl:url,updatedAt:timestamp(r.called_at)?new Date(r.called_at).toISOString():checkedTime};
+ }
+ return winners;
+}
 export function validateCalls(snapshot){
  if(!snapshot||snapshot.schemaVersion!==1||snapshot.electionYear!==2026||!timestamp(snapshot.checkedAt)||
     !snapshot.winners||typeof snapshot.winners!=='object'||Array.isArray(snapshot.winners)||
