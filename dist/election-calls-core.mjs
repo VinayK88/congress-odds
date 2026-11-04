@@ -12,6 +12,14 @@ const cleanParty=p=>{
 };
 export function canonicalRaceId(raw){
  const v=String(raw||'').trim().toUpperCase().replace(/^2026-/,'');
+ // The People's Tally and state feeds use H-OH-09 and S-OH-sp.
+ const compact=/^H[-_]([A-Z]{2})[-_](\d{1,2}|AL|00)$/.exec(v);
+ if(compact){
+  const suffix=compact[2]==='AL'||compact[2]==='00'?'AL':String(Number(compact[2])).padStart(2,'0');
+  const id=compact[1]+'-'+suffix;return MANIFEST.has(id)?id:null;
+ }
+ const compactSenate=/^S[-_]([A-Z]{2})(?:[-_](?:SP|SPECIAL|REGULAR))?$/.exec(v);
+ if(compactSenate){const id=compactSenate[1]+'-S';return MANIFEST.has(id)?id:null;}
  let m=/^([A-Z]{2})[-_](?:HOUSE[-_])?(\d{1,2}|AL|AT-LARGE)$/.exec(v);
  if(!m){
   const h=/^([A-Z]{2})[-_]HOUSE[-_](\d{1,2}|AL|00)$/.exec(v);
