@@ -1,4 +1,6 @@
-import {marketStateSummary,raceLeader,marketTotals,marketCoverage} from './market-map.mjs?v=20261012-clarity';
+import {marketStateSummary,raceLeader,marketTotals,marketCoverage} from './market-map.mjs?v=20261104-winner-overlay';
+import {getElectionCallsSnapshot} from './election-calls.mjs?v=20261104-winner-overlay';
+import {selectWinner,countCalls} from './election-calls-core.mjs';
 import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
 import {renderRaceCandidates,getCandidateSnapshot} from './candidates.mjs?v=20261012-countdown';
 import {briefingForState,renderStateBriefing} from './state-briefing.mjs';
@@ -35,7 +37,7 @@ root.innerHTML=`<div class="section-heading"><div><p class="eyebrow">EXPLORE THE
 // Keep the chamber tally and geographic map ahead of the supporting watchlists.
 // Moving the existing nodes preserves their IDs and delegated controls.
 $('.scenario-layout').after($('#battleground-radar'), $('#flip-watch'));
-function summary(code){return mode==='market'?marketStateSummary(chamber,getCandidateSnapshot(),code):stateSummary(chamber,scenario,code);}
+function summary(code){return mode==='market'?marketStateSummary(chamber,getCandidateSnapshot(),code,Date.now(),getElectionCallsSnapshot()):stateSummary(chamber,scenario,code);}
 function render() {
   const market=mode==='market',snapshot=getCandidateSnapshot();
   root.dataset.mapMode=mode;
@@ -62,6 +64,8 @@ function render() {
   const mapStatus=$('#market-map-status');
   mapStatus.classList.toggle('is-stale',mapUnavailable);
   mapStatus.textContent=snapshot?`${mapUnavailable?'OUTDATED RACE QUOTES — No current market leaders are available; colored states return after fresh quotes are published. ':''}${coverage.clear} of ${coverage.total} contested races have a fresh, identifiable market leader · ${coverage.stale} stale · ${coverage.unclear} unclear or missing.${coverage.noContest?' '+coverage.noContest+' states have no Senate contest in 2026.':''} Batch published ${new Date(snapshot.updatedAt).toLocaleString()}. Updates scheduled ${formatMinutes(refreshCadence().profilesMinutes)}; browser checks ${formatMinutes(refreshCadence().browserProfilesMinutes)}. Schedules can be delayed; race quotes expire after 2 hours.`:'Loading race market snapshots…';
+  const resultsCounts=countCalls(getElectionCallsSnapshot(),chamber);
+  if(market&&resultsCounts.total)mapStatus.textContent+=' · CALLED OR CERTIFIED: '+resultsCounts.D+' Democratic / '+resultsCounts.R+' Republican / '+resultsCounts.O+' other. Solid result colors override market shades only when a race has an attributed winner.';
   $('#map-symbol-guide').hidden=chamber!=='senate';
   $('#market-map-legend').innerHTML=chamber==='senate'?`<strong>Leading contract’s market-implied chance</strong><div class="probability-key"><span>Democratic</span><i style="background:#bed3f3"></i><i style="background:#82a9df"></i><i style="background:#477bc3"></i><i style="background:#235aaa"></i><span>Republican</span><i style="background:#efc1c7"></i><i style="background:#df8e99"></i><i style="background:#c95868"></i><i style="background:#b73643"></i></div><p>Light → dark: under 60% · 60–79.9% · 80–94.9% · 95%+. Gold: other party. Gray: tied, stale, missing quotes or unknown party. Pale dashed: no contest.</p>`:`<strong>District market leaders within each state</strong><p><i class="scenario-key party-D"></i> Democratic · <i class="scenario-key party-R"></i> Republican · <i class="scenario-key party-O"></i> Other · <i class="scenario-key party-U"></i> Unclear / unavailable</p>`;
   const {counts,total,majority,control,tie}=tally(scenario,chamber);
@@ -84,7 +88,7 @@ function render() {
   peek.append(document.createElement('strong'),document.createElement('span'));
   stateMap.append(peek);
   $('#map-hover').textContent=summary(selected).text;
-  $('#map-caption').textContent=market?(chamber==='senate'?'Color shows the highest quoted eligible contract and its probability, not an election result. Party / nominee contracts can follow a replacement nominee.':'Color bands show the count of district market leaders, not a statewide win probability or projected seat total. Choose a district for its candidate odds. District boundaries are not drawn.'):chamber==='senate'?'State colors show your Senate choices. Pale, dashed states have no Senate contest in 2026.':'State color bands show the share of districts you assigned to each bloc. Click a state to choose individual House districts.';
+  $('#map-caption').textContent=market?(chamber==='senate'?'Solid blue/red means a called winner where available. Otherwise light→dark shows eligible market price, not a result. Party / nominee contracts can follow a replacement nominee.':'Solid blue/red indicates a single party won every district in that state; otherwise state colors show market leaders. Individual district winners are marked ✓ in the district list. Choose a district for its candidate odds. District boundaries are not drawn.'):chamber==='senate'?'State colors show your Senate choices. Pale, dashed states have no Senate contest in 2026.':'State color bands show the share of districts you assigned to each bloc. Click a state to choose individual House districts.';
   const state=STATES.find(s=>s.code===selected),rr=races(chamber,selected);
   const houseShortcut=$('#map-house-shortcut');
   houseShortcut.hidden=chamber!=='senate'||rr.length!==0;
@@ -106,7 +110,7 @@ function render() {
   $('#editor-state').textContent=state.name;
   $('#editor-context').textContent=chamber==='house'?`${state.houseSeats} voting district${state.houseSeats===1?'':'s'}. ${market?'Select a district for candidate odds.':'Select a district, then choose its outcome.'}`:state.senateParty?`${state.special?'Special election':'Regular Class II election'} · current seat party: ${state.senateParty==='D'?'Democratic':'Republican'}.`:'No Senate seat on the 2026 ballot. Choose another state or switch to House.';
   $('#district-list').hidden=chamber!=='house';
-  $('#district-list').innerHTML=chamber==='house'?rr.map(r=>{const leader=market?raceLeader(snapshot?.races.find(item=>item.id===r.id)):null,p=market?leader.party:(scenario[chamber][r.id]||'U');return `<button type="button" data-district="${r.id}" class="district-chip assigned-${p}" aria-pressed="${district===r.id}" aria-label="${r.id}: ${market?(p==='U'?leader.reason:PARTIES[p]+' market leader at '+(leader.probability*100).toFixed(1)+'%'):PARTIES[p]}">${r.id.split('-')[1]}<small>${p}</small></button>`;}).join(''):'';
+  $('#district-list').innerHTML=chamber==='house'?rr.map(r=>{const leader=market?raceLeader(snapshot?.races.find(item=>item.id===r.id)):null,called=market?selectWinner(getElectionCallsSnapshot(),r.id):null,p=market?(called?.party||leader.party):(scenario[chamber][r.id]||'U');return `<button type="button" data-district="${r.id}" class="district-chip assigned-${p}${called?' result-called result-called-'+p:''}" aria-pressed="${district===r.id}" aria-label="${r.id}: ${called?called.name+' · '+called.status+' winner from '+called.source:market?(p==='U'?leader.reason:PARTIES[p]+' market leader at '+(leader.probability*100).toFixed(1)+'%'):PARTIES[p]}">${r.id.split('-')[1]}<small>${called?'✓ ':''}${p}</small></button>`;}).join(''):'';
   renderRaceCandidates({chamber,state:selected,raceId:race?.id||null});
   $('#editor-race').textContent=race?`${race.id} · ${race.label}`:'';
   $('#party-choices').hidden=market||!race;
@@ -204,6 +208,7 @@ render();
 function refreshMap(){if(mode!=='market')return;const active=document.activeElement,state=active?.dataset?.state,districtId=active?.dataset?.district;render();if(state)$(`[data-state="${state}"]`)?.focus({preventScroll:true});else if(districtId)$(`[data-district="${districtId}"]`)?.focus({preventScroll:true});}
 window.addEventListener('candidate-data-updated',()=>{refreshMap();refreshRaceHistory();});
 window.addEventListener('race-history-updated',refreshMap);
+ window.addEventListener('election-calls-updated',refreshMap);
 refreshRaceHistory();
 setInterval(()=>{if(!document.hidden)refreshMap();},60000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshMap();});
