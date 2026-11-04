@@ -1,0 +1,76 @@
+/* Verified called/certified winners: pronounced party colors, distinct from odds. */
+.newsroom .called-results-status{
+  margin:0 0 15px;padding:12px 15px;border-radius:11px;
+  border:1px solid #d9dbe0;background:linear-gradient(110deg,#eef3f9,#fbf5f2);
+  color:#384351;font:700 11px/1.6 var(--font-system);
+  font-variant-numeric:tabular-nums;
+}
+.newsroom .called-results-headline{margin:12px 0 15px;display:grid;gap:4px}
+.newsroom .called-results-headline strong{font:700 22px/1.25 var(--news-serif);color:#272b34;letter-spacing:-.025em}
+.newsroom .called-results-headline small{font:500 11px/1.5 var(--font-system);color:#767675}
+.newsroom .called-results-row{
+  display:flex;align-items:center;gap:11px;padding:10px 0;
+  border-bottom:1px solid #deddd8;
+}
+.newsroom .called-results-party{
+  flex:0 0 31px;display:grid;place-items:center;
+  width:31px;height:31px;border-radius:10px;background:#b8b8b8;
+  color:#fff;font:800 13px/1 var(--font-system);
+}
+.newsroom .called-results-row.winner-dem .called-results-party{background:#245ba8}
+.newsroom .called-results-row.winner-rep .called-results-party{background:#b43c33}
+.newsroom .called-results-row.winner-other .called-results-party{background:#aa8736}
+.newsroom .called-results-body{display:grid;gap:4px;min-width:0;flex:1}
+.newsroom .called-results-body strong{font:700 11px/1.35 var(--font-system);color:#252930}
+.newsroom .called-results-body small{font:500 10px/1.4 var(--font-system);color:#797a7d}
+.newsroom .called-results-link{color:#2c598f;font:700 10px var(--font-system);white-space:nowrap}
+.newsroom .called-results-footnote{margin:15px 0 10px;font:500 11px/1.6 var(--font-system);color:#727675}
+.newsroom .house-swarm-bubble.is-called.dem circle{
+  fill:#245bad;stroke:#153e78;stroke-width:1.9;
+}
+.newsroom .house-swarm-bubble.is-called.rep circle{
+  fill:#b74038;stroke:#842c29;stroke-width:1.9;
+}
+.newsroom .house-swarm-bubble.is-called.other circle{
+  fill:#b58d37;stroke:#72581e;stroke-width:1.9;
+}
+.newsroom .house-swarm-bubble.is-called .house-swarm-state-label{
+  fill:#fff!important;stroke:none;font-weight:800
+}
+.newsroom .house-swarm-bubble .house-swarm-call-mark{
+  fill:#fff;font:800 8px/1 var(--font-system);
+  stroke:none;pointer-events:none
+}
+.newsroom .senate-swarm .house-swarm-call-mark{font-size:10px}
+.newsroom .house-swarm-bubble.is-called{
+  filter:drop-shadow(0 1px 2px #101d303a);
+}
+.newsroom .house-swarm-bubble.is-called.is-selected{
+  filter:drop-shadow(0 0 4px #273f62b3)
+}
+.newsroom .house-swarm-bubble.is-dimmed.is-called{opacity:.13}
+.newsroom .house-swarm-legend-piece i.called-dem{background:#245bad;border-color:#153e78}
+.newsroom .house-swarm-legend-piece i.called-rep{background:#b74038;border-color:#842c29}
+.newsroom .house-swarm-legend-piece i.not-called{background:#e5e7ea;border-color:#adb3be}
+.newsroom .house-swarm-detail .called-winner-note{
+  margin:12px 0 6px;padding:9px 11px;border-radius:10px;
+  border:1px solid #d1dae5;background:#edf3f9;color:#234c81;
+  font:750 11px/1.5 var(--font-system)
+}
+.newsroom .house-swarm-detail .called-winner-note.rep{
+  border-color:#efdad5;background:#fbefed;color:#a53930;
+}
+.newsroom .house-swarm-detail .called-winner-note.other{
+  background:#fbf5e5;border-color:#e6d8b4;color:#7f6327
+}
+.newsroom .house-swarm-winner-mode{
+  padding:9px 12px;border:1px solid #a7b7cb;border-radius:9px;
+  color:#244776;background:#eaf0f6;
+  font:750 11px var(--font-system);
+}
+.newsroom .house-swarm-winner-mode[aria-pressed=false]{
+  background:#fffefa;border-color:#dddcd6;color:#545860
+}
+@media(prefers-reduced-motion:reduce){
+ .newsroom .house-swarm-bubble.is-called{transition:none}
+}
