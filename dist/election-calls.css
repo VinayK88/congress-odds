@@ -74,3 +74,26 @@
 @media(prefers-reduced-motion:reduce){
  .newsroom .house-swarm-bubble.is-called{transition:none}
 }
+
+/* The geographic race explorer's district tiles show called seats distinctly. */
+.newsroom #race-simulator .district-chip.result-called-D {
+  background: #245bad;
+  border-color: #16477f;
+  color: #fff;
+  box-shadow: 0 2px 6px #16396328;
+}
+.newsroom #race-simulator .district-chip.result-called-R {
+  background: #b74038;
+  border-color: #8a322d;
+  color: #fff;
+  box-shadow: 0 2px 6px #70251f25;
+}
+.newsroom #race-simulator .district-chip.result-called-D small,
+.newsroom #race-simulator .district-chip.result-called-R small {
+  color: #fff;
+}
+.newsroom #race-simulator .district-chip.result-called-D[aria-pressed=true],
+.newsroom #race-simulator .district-chip.result-called-R[aria-pressed=true] {
+  outline: 3px solid #c9a759;
+  outline-offset: 2px;
+}
