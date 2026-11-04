@@ -1,15 +1,9 @@
 {
   "schemaVersion": 1,
   "electionYear": 2026,
-  "checkedAt": "2026-11-04T06:20:00.000Z",
+  "checkedAt": "2026-11-04T06:31:33.580Z",
   "sourceStatus": "source-backed calls",
   "sources": [
-    {
-      "name": "Poliwave election-night calls",
-      "url": "https://www.poliwave.com/us/live/midterms-2026/",
-      "status": "manually verified published calls",
-      "winnerCount": 40
-    },
     {
       "name": "watch.vote",
       "url": "https://watch.vote/api/elections/2026/results?office=house",
