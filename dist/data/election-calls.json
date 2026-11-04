@@ -1,9 +1,15 @@
 {
   "schemaVersion": 1,
   "electionYear": 2026,
-  "checkedAt": "2026-11-04T06:23:52.631Z",
-  "sourceStatus": "no published calls",
+  "checkedAt": "2026-11-04T06:20:00.000Z",
+  "sourceStatus": "source-backed calls",
   "sources": [
+    {
+      "name": "Poliwave election-night calls",
+      "url": "https://www.poliwave.com/us/live/midterms-2026/",
+      "status": "manually verified published calls",
+      "winnerCount": 40
+    },
     {
       "name": "watch.vote",
       "url": "https://watch.vote/api/elections/2026/results?office=house",
@@ -23,5 +29,326 @@
       "winnerCount": 0
     }
   ],
-  "winners": {}
+  "winners": {
+    "AL-S": {
+      "party": "R",
+      "name": "Barry Moore",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AR-S": {
+      "party": "R",
+      "name": "Tom Cotton",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "CO-S": {
+      "party": "D",
+      "name": "John Hickenlooper",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "DE-S": {
+      "party": "D",
+      "name": "Chris Coons",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "FL-S": {
+      "party": "R",
+      "name": "Ashley Moody",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "GA-S": {
+      "party": "D",
+      "name": "Jon Ossoff",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "IL-S": {
+      "party": "D",
+      "name": "Juliana Stratton",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "IA-S": {
+      "party": "D",
+      "name": "Josh Turek",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "KS-S": {
+      "party": "D",
+      "name": "Adam Hamilton",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "KY-S": {
+      "party": "R",
+      "name": "Andy Barr",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "LA-S": {
+      "party": "R",
+      "name": "Julia Letlow",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "MA-S": {
+      "party": "D",
+      "name": "Edward Markey",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "MI-S": {
+      "party": "D",
+      "name": "Abdul El-Sayed",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "NH-S": {
+      "party": "D",
+      "name": "Chris Pappas",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "NJ-S": {
+      "party": "D",
+      "name": "Cory Booker",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "NM-S": {
+      "party": "D",
+      "name": "Ben Luján",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "NC-S": {
+      "party": "D",
+      "name": "Roy Cooper",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "OH-S": {
+      "party": "D",
+      "name": "Sherrod Brown",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "OK-S": {
+      "party": "R",
+      "name": "Kevin Hern",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "OR-S": {
+      "party": "D",
+      "name": "Jeff Merkley",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "RI-S": {
+      "party": "D",
+      "name": "Jack Reed",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "SC-S": {
+      "party": "D",
+      "name": "Annie Andrews",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "SD-S": {
+      "party": "R",
+      "name": "Mike Rounds",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "TX-S": {
+      "party": "D",
+      "name": "James Talarico",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AL-01": {
+      "party": "R",
+      "name": "Jerry Carl",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AL-02": {
+      "party": "D",
+      "name": "Shomari C. Figures",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AL-03": {
+      "party": "R",
+      "name": "Mike Rogers",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AL-04": {
+      "party": "R",
+      "name": "Robert B. Aderholt",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AL-06": {
+      "party": "R",
+      "name": "Gary Palmer",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AL-07": {
+      "party": "D",
+      "name": "Terri Sewell",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AZ-03": {
+      "party": "D",
+      "name": "Yassamin Ansari",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AZ-04": {
+      "party": "D",
+      "name": "Greg Stanton",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AZ-07": {
+      "party": "D",
+      "name": "Adelita Grijalva",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AZ-09": {
+      "party": "R",
+      "name": "Paul Gosar",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AR-01": {
+      "party": "R",
+      "name": "Rick Crawford",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "CA-02": {
+      "party": "D",
+      "name": "Jared Huffman",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "CA-03": {
+      "party": "D",
+      "name": "Ami Bera",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "CA-06": {
+      "party": "D",
+      "name": "Richard Pan",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "CA-07": {
+      "party": "D",
+      "name": "Doris Matsui",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "CA-08": {
+      "party": "D",
+      "name": "John Garamendi",
+      "status": "called",
+      "source": "Poliwave election desk",
+      "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/house",
+      "updatedAt": "2026-11-04T06:20:00.000Z"
+    }
+  }
 }
