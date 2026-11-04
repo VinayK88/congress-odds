@@ -19,24 +19,6 @@ const sources=[],inputs=[
  {name:'watch.vote',url:'https://watch.vote/api/elections/2026/results?office=senate',parse:parseWatchVoteResults},
  {name:"The People's Tally",url:'https://thepeoplestally.com/data/results.json',parse:parsePeopleTallyResults}
 ];
-// Poliwave publishes named called results in a public House/Senate election
-// board. We inspect the server-rendered rows before enabling an adapter.
-for(const office of ['senate','house']){
- try{
-  const url='https://www.poliwave.com/us/live/midterms-2026/'+office;
-  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),12000);
-  let result;
-  try{result=await fetch(url,{signal:controller.signal,headers:{Accept:'text/html','User-Agent':'Mozilla/5.0 (compatible; CongressOdds/1.0)'}});}
-  finally{clearTimeout(timeout);}
-  if(!result.ok)throw Error('HTTP '+result.status);
-  const raw=await result.text();
-  const callIndex=raw.indexOf('Poliwave call');
-  console.log('Poliwave '+office+' HTML bytes '+raw.length+' first-called-row offset '+callIndex+
-    ' table rows '+(raw.match(/<tr[\\s>]/g)||[]).length+
-    ' "Elected" occurrences '+(raw.match(/Elected/g)||[]).length);
-  if(callIndex>=0)console.log('Poliwave '+office+' called-row HTML snippet '+raw.slice(Math.max(0,callIndex-900),callIndex+260).replace(/[\\n\\r]/g,'').slice(0,1300));
- }catch(e){console.warn('Poliwave '+office+' HTML unavailable:',String(e))}
-}
 const winners={},disputes=new Set();
 for(const input of inputs){
  try{
