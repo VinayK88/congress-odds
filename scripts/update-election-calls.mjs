@@ -19,6 +19,22 @@ const sources=[],inputs=[
  {name:'watch.vote',url:'https://watch.vote/api/elections/2026/results?office=senate',parse:parseWatchVoteResults},
  {name:"The People's Tally",url:'https://thepeoplestally.com/data/results.json',parse:parsePeopleTallyResults}
 ];
+// The open civicAPI has a documented race search route. Inspect its
+// response once in Actions before extending the strict winner adapter.
+try{
+ const url='https://civicapi.org/api/v2/race/search?query=US%20Senate&country=US&startDate=2026-11-03&endDate=2026-11-03&limit=50';
+ const sample=await get(url);
+ console.log('civicAPI sample keys:',Object.keys(sample||{}));
+ const rows=Array.isArray(sample)?sample:Array.isArray(sample?.results)?sample.results:Array.isArray(sample?.races)?sample.races:Array.isArray(sample?.data)?sample.data:[];
+ console.log('civicAPI race search: '+rows.length+' rows, first '+JSON.stringify(rows[0]||{}).slice(0,1500));
+ if(rows.length){
+  const first=rows[0],raceId=first?.raceId??first?.raceid??first?.id??first?.race_id;
+  if(typeof raceId==='string'||Number.isInteger(raceId)){
+   const detail=await get('https://civicapi.org/api/v2/race/'+encodeURIComponent(String(raceId))+'?light');
+   console.log('civicAPI race example: '+JSON.stringify(detail).slice(0,2000));
+  }
+ }
+}catch(err){console.warn('civicAPI sample unavailable:',String(err));}
 const winners={},disputes=new Set();
 for(const input of inputs){
  try{
