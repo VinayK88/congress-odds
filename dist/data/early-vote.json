@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-04T03:15:22.144Z",
+  "fetchedAt": "2026-11-04T06:18:19.084Z",
   "rows": [
     {
       "code": "AK",
@@ -55,10 +55,10 @@
       "asOf": "2026-11-03",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 2448419,
-      "inPerson": 137870,
-      "mail": 2310549,
-      "requested": 4147217
+      "total": 2524979,
+      "inPerson": 138132,
+      "mail": 2386847,
+      "requested": 4223515
     },
     {
       "code": "CT",
@@ -396,9 +396,9 @@
       "asOf": "2026-11-03",
       "source": "https://sos.oregon.gov/elections/Documents/2026-general-election-unofficial-ballot-returns.pdf",
       "notes": "",
-      "total": 1668842,
+      "total": 1808770,
       "inPerson": 0,
-      "mail": 1668842,
+      "mail": 1808770,
       "requested": 3117439
     },
     {
