@@ -1,6 +1,6 @@
 // Source-attributed election calls. Never infer a winner from leading votes or odds.
 import {readFile,writeFile} from 'node:fs/promises';
-import {parseWatchVoteResults,parsePeopleTallyResults,validateCalls} from '../dist/election-calls-core.mjs';
+import {parseWatchVoteResults,parsePeopleTallyResults,parseCommunityElectionDeskResults,validateCalls} from '../dist/election-calls-core.mjs';
 const destination=new URL('../dist/data/election-calls.json',import.meta.url);
 const now=new Date().toISOString();
 let prior=null;
@@ -17,7 +17,8 @@ async function get(url){
 const sources=[],inputs=[
  {name:'watch.vote',url:'https://watch.vote/api/elections/2026/results?office=house',parse:parseWatchVoteResults},
  {name:'watch.vote',url:'https://watch.vote/api/elections/2026/results?office=senate',parse:parseWatchVoteResults},
- {name:"The People's Tally",url:'https://thepeoplestally.com/data/results.json',parse:parsePeopleTallyResults}
+ {name:"The People's Tally",url:'https://thepeoplestally.com/data/results.json',parse:parsePeopleTallyResults},
+ {name:'Election Monitor community desk',url:'https://raw.githubusercontent.com/lakerainier/election-monitor/main/data/state.json',parse:parseCommunityElectionDeskResults}
 ];
 const winners={},disputes=new Set();
 for(const input of inputs){
@@ -41,7 +42,16 @@ for(const input of inputs){
 if(sources.some(s=>s.status==='ok')){
  // Preserve previously attributed calls when one provider is temporarily down.
  for(const [id,c] of Object.entries(prior?.winners||{})){
-  if(!winners[id]&&!disputes.has(id))winners[id]=c;
+  if(disputes.has(id))continue;
+  if(winners[id]&&winners[id].party!==c.party){
+   // Independent published desks disagree. Fail closed until reviewed.
+   delete winners[id];disputes.add(id);
+   console.warn('New call conflicts with previously published winner for '+id+'; withholding');
+   continue;
+  }
+  // Preserve the more directly attributed Poliwave / individual record over
+  // generic names from community summaries, when the called party agrees.
+  if(!winners[id]||c.source==='Poliwave election desk')winners[id]=c;
  }
  const result=validateCalls({schemaVersion:1,electionYear:2026,checkedAt:now,
   sourceStatus:Object.keys(winners).length?'source-backed calls':'no published calls',sources,winners});
