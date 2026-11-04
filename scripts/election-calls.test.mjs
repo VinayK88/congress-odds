@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {canonicalRaceId,parseWatchVoteResults,parsePeopleTallyResults,validateCalls,selectWinner,countCalls} from '../dist/election-calls-core.mjs';
+import {canonicalRaceId,parseWatchVoteResults,parsePeopleTallyResults,parseCommunityElectionDeskResults,validateCalls,selectWinner,countCalls} from '../dist/election-calls-core.mjs';
 import {houseDistribution,senateDistribution} from '../dist/house-swarm-core.mjs';
 import {marketStateSummary} from '../dist/market-map.mjs';
 import {readFile} from 'node:fs/promises';
@@ -71,4 +71,19 @@ test('saved called winner snapshot is valid and source-backed',async()=>{
  for(const id of Object.keys(data.winners)){
   assert.ok(selectWinner(data,id));
  }
+});
+
+test('community desk contributes only explicit calls, never vote leads',()=>{
+ const sample={v:2,drops:[{ts:now}],national:{races:{
+  'S-GA':{call:'D',d:100,r:99},
+  'H-PA-07':{call:'R',dn:'Candidate D',rn:'Candidate R',d:99,r:101},
+  'H-PA-08':{call:'',dn:'Leading D',rn:'Leading R',d:1000000,r:100}
+ }}};
+ const records=parseCommunityElectionDeskResults(sample,now);
+ assert.deepEqual(Object.keys(records).sort(),['GA-S','PA-07']);
+ assert.equal(records['GA-S'].party,'D');
+ assert.equal(records['PA-07'].party,'R');
+ assert.equal(records['PA-07'].name,'Candidate R');
+ assert.equal(records['PA-07'].status,'called');
+ assert.equal(records['PA-07'].sourceUrl,'https://github.com/lakerainier/election-monitor/blob/main/data/state.json');
 });
