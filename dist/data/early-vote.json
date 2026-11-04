@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-04T01:27:55.545Z",
+  "fetchedAt": "2026-11-04T03:15:22.144Z",
   "rows": [
     {
       "code": "AK",
@@ -55,10 +55,10 @@
       "asOf": "2026-11-03",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 2217052,
-      "inPerson": 95636,
-      "mail": 2121416,
-      "requested": 4136460
+      "total": 2448419,
+      "inPerson": 137870,
+      "mail": 2310549,
+      "requested": 4147217
     },
     {
       "code": "CT",
@@ -503,12 +503,12 @@
     {
       "code": "WA",
       "name": "Washington",
-      "asOf": "2026-11-02",
+      "asOf": "2026-11-03",
       "source": "https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics",
       "notes": "",
-      "total": 1992533,
+      "total": 2349137,
       "inPerson": 0,
-      "mail": 1992533,
+      "mail": 2349137,
       "requested": 5131622
     },
     {
