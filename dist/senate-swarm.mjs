@@ -2,6 +2,7 @@
 import {getCandidateSnapshot} from './candidates.mjs';
 import {HOUSE_BANDS,senateDistribution,layoutRaceBubbles} from './house-swarm-core.mjs?v=20261104-fit-width';
 import {STATES} from './race-data.mjs';
+import {getElectionCallsSnapshot} from './election-calls.mjs?v=20261104-winner-overlay';
 
 const ROOT=document.getElementById('senate-swarm');
 const NS='http://www.w3.org/2000/svg';
@@ -28,7 +29,7 @@ const colors={
  close:['#f3d784','#ae8026'],'R-lean':['#f3e0da','#c4786e'],'R-likely':['#f0d3cc','#c76d62'],'R-strong':['#edc6c1','#b44e44'],
  unavailable:['#e1e3e4','#aeb3b8'],other:['#f2d99b','#ae8530']
 };
-let selected=null,onlyClose=false,state='';
+let selected=null,onlyClose=false,state='',winnerView=true;
 function setNodeState(node,bubble){
  const isSelected=selected===bubble.id;
  const muted=(state&&bubble.state!==state)||(onlyClose&&bubble.band!=='close');
@@ -39,7 +40,7 @@ function setNodeState(node,bubble){
 }
 function raceTitle(b){
  const text=b.leaderName?' · '+b.leaderName:'';
- return b.id+' · '+(partyNames[b.party]||'Unavailable')+text+
+ return b.id+' · '+(b.called?'CALLED '+(partyNames[b.called.party]||'Other')+' WINNER '+b.called.name:(partyNames[b.party]||'Unavailable')+text)+
   (Number.isFinite(b.probability)?' · '+fmt(b.probability)+' quoted Yes price':' · '+(b.reason||'Market data unavailable'));
 }
 function legendLine(text,klass){
@@ -62,7 +63,14 @@ function showDetail(b){
  const note=make('p','house-swarm-detail-note',Number.isFinite(b.probability)?
   'Highest eligible quoted Yes contract; not a polling margin, probability of a certified result, or an election call.':
   (b.reason||'No recent eligible quote for this Senate race.'));
- target.append(top,lead,note);
+ target.append(top);
+ if(b.called){
+  const announced=make('p','called-winner-note '+(b.called.party==='R'?'rep':b.called.party==='O'?'other':''),'✓ '+(b.called.status==='certified'?'Certified':'Called')+' '+(partyNames[b.called.party]||'Other')+' winner: '+b.called.name+' · '+b.called.source);
+  target.append(announced);
+  const callLink=make('a','house-swarm-detail-link','Verify winner ↗');
+  callLink.href=b.called.sourceUrl;callLink.target='_blank';callLink.rel='noopener noreferrer';target.append(callLink);
+ }
+ target.append(lead,note);
  if(b.pair.length){
   const grid=make('div','house-swarm-detail-pair');
   for(const c of b.pair){
@@ -129,12 +137,13 @@ function drawChart(distribution){
  graphic.append(backdrop);
  const bubbleGroup=svg('g',{class:'house-swarm-dots'});
  for(const b of layout){
-  const palette=b.party==='O'&&b.band==='unavailable'?colors.other:colors[b.band];
-  const textColor=b.band==='close'?'#735515':b.party==='D'?'#24518e':b.party==='R'?'#963e35':'#535e68';
-  const group=svg('g',{'data-race-id':b.id,class:'house-swarm-bubble'});
+  const palette=winnerView?(b.called?b.called.party==='D'?['#245bad','#153e78']:b.called.party==='R'?['#b74038','#842c29']:['#b58d37','#72581e']:['#e5e7ea','#b4bac3']):(b.party==='O'&&b.band==='unavailable'?colors.other:colors[b.band]);
+  const textColor=winnerView?(b.called?'#fff':'#636c75'):b.band==='close'?'#735515':b.party==='D'?'#24518e':b.party==='R'?'#963e35':'#535e68';
+  const group=svg('g',{'data-race-id':b.id,class:'house-swarm-bubble'+(winnerView&&b.called?' is-called '+(b.called.party==='D'?'dem':b.called.party==='R'?'rep':'other'):'')});
   const circle=svg('circle',{cx:b.x.toFixed(2),cy:b.y.toFixed(2),r:b.r,fill:palette[0],stroke:palette[1],'stroke-width':1.5});
   const label=svg('text',{x:b.x.toFixed(2),y:(b.y+.3).toFixed(2),'text-anchor':'middle','dominant-baseline':'middle',class:'house-swarm-state-label',fill:textColor},b.state);
   group.append(svg('title',{},raceTitle(b)),circle,label);
+  if(winnerView&&b.called)group.append(svg('text',{x:(b.x+b.r*.45).toFixed(2),y:(b.y+b.r*.66).toFixed(2),'text-anchor':'middle','dominant-baseline':'middle',class:'house-swarm-call-mark'},'✓'));
   setNodeState(group,b);
   bubbleGroup.append(group);
  }
@@ -194,6 +203,10 @@ function drawChart(distribution){
    distribution.counts.close+' close · '+distribution.counts.unavailable+' unavailable / other'+
    (distribution.asOf?' · Snapshot '+localTime(distribution.asOf):' · No saved snapshot');
   coverage.textContent+=' · 65 non-contested seats (34 Democratic-aligned, 31 Republican) are not plotted';
+  const called=distribution.bubbles.filter(b=>b.called);
+  coverage.textContent+=' · '+called.length+' called/certified winners ('+
+    called.filter(b=>b.called.party==='D').length+' D / '+called.filter(b=>b.called.party==='R').length+' R) · '+
+    (winnerView?'SOLID BLUE/RED = CALLED WINNERS; GRAY = NOT CALLED':'COLORS = MARKET QUOTES; CALLS SHOWN IN RACE DETAILS');
   coverage.classList.toggle('is-archive',distribution.archived||!distribution.hasSnapshot);
  }
  const filterNote=document.getElementById('senate-swarm-filter-note');
@@ -211,7 +224,7 @@ function start(){
  const menu=document.getElementById('senate-swarm-district');
  const refresh=()=>{
   const snap=getCandidateSnapshot();
-  drawChart(senateDistribution(snap));
+  drawChart(senateDistribution(snap,Date.now(),getElectionCallsSnapshot()));
  };
  if(stateInput)stateInput.addEventListener('change',()=>{state=stateInput.value;refresh();});
  if(closeButton)closeButton.addEventListener('click',()=>{
@@ -222,12 +235,26 @@ function start(){
  });
  if(menu)menu.addEventListener('change',()=>{
   selected=menu.value||null;
-  const b=senateDistribution(getCandidateSnapshot()).bubbles.find(r=>r.id===selected);
+  const b=senateDistribution(getCandidateSnapshot(),Date.now(),getElectionCallsSnapshot()).bubbles.find(r=>r.id===selected);
   showDetail(b||null);
   // Keep the selected dot prominent without changing market data.
   refresh();
  });
  window.addEventListener('candidate-data-updated',refresh);
+ window.addEventListener('election-calls-updated',refresh);
+ const controls=ROOT.querySelector('.house-swarm-controls');
+ if(controls&&!controls.querySelector('.house-swarm-winner-mode')){
+  const button=make('button','house-swarm-winner-mode','✓ Called winners');
+  button.type='button';button.setAttribute('aria-pressed','true');
+  button.title='Toggle between called/certified winners and independent market quotes';
+  button.addEventListener('click',()=>{
+   winnerView=!winnerView;
+   button.setAttribute('aria-pressed',String(winnerView));
+   button.textContent=winnerView?'✓ Called winners':'Market odds';
+   refresh();
+  });
+  controls.prepend(button);
+ }
  const plot=document.getElementById('senate-swarm-plot');
  if(plot&&typeof ResizeObserver==='function'){
   let lastWidth=0;
