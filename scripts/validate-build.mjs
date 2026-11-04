@@ -1,5 +1,6 @@
 import {validateEarlyVote} from '../dist/early-vote-core.mjs';
 import {validateCandidates} from '../dist/candidate-core.mjs';
+import {validateCalls} from '../dist/election-calls-core.mjs';
 import {validateRaceHistory} from '../dist/race-history-core.mjs';
 import {readFile,readdir,access} from 'node:fs/promises';
 import {validateLatest,validateHistory,validateModel} from '../dist/reliability.mjs';
@@ -7,6 +8,7 @@ const root=new URL('../dist/',import.meta.url);
 validateEarlyVote(JSON.parse(await readFile(new URL('data/early-vote.json',root),'utf8')));
 for(const [key,validate] of Object.entries({latest:validateLatest,model:validateModel,history:validateHistory,candidates:validateCandidates}))validate(JSON.parse(await readFile(new URL(`data/${key}.json`,root),'utf8')));
 validateRaceHistory(JSON.parse(await readFile(new URL('data/race-history.json',root),'utf8')));
+validateCalls(JSON.parse(await readFile(new URL('data/election-calls.json',root),'utf8')));
 for(const name of await readdir(root)){
  if(!name.endsWith('.mjs'))continue;
  const text=await readFile(new URL(name,root),'utf8');
