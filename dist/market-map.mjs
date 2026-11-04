@@ -1,6 +1,7 @@
 import {STATES,HOLDOVERS} from './race-data.mjs';
 import {races} from './scenario-core.mjs';
 import {candidateFresh} from './candidate-core.mjs';
+import {selectWinner} from './election-calls-core.mjs';
 export const MARKET_COLORS={D:['#bed3f3','#82a9df','#477bc3','#235aaa'],R:['#efc1c7','#df8e99','#c95868','#b73643'],O:['#e2d9bd','#c6b787','#a5915c','#82724d'],U:'#d5deea'};
 export function raceLeader(race,now=Date.now()){
  const neutral=reason=>({party:'U',probability:null,reason,candidate:null});
@@ -17,7 +18,7 @@ export function leaderColor(leader){
  if(leader.party==='U')return MARKET_COLORS.U;
  const p=leader.probability;return MARKET_COLORS[leader.party][p>=.95?3:p>=.8?2:p>=.6?1:0];
 }
-export function marketStateSummary(chamber,snapshot,code,now=Date.now()){
+export function marketStateSummary(chamber,snapshot,code,now=Date.now(),calls=null){
  const state=STATES.find(s=>s.code===code),rr=races(chamber,code),counts={D:0,R:0,O:0,U:0};
  const marketById=new Map((snapshot?.races||[]).map(r=>[r.id,r]));
  const leaders=rr.map(r=>({id:r.id,...raceLeader(marketById.get(r.id),now)}));
@@ -25,7 +26,25 @@ export function marketStateSummary(chamber,snapshot,code,now=Date.now()){
  let text=`${state.name}: no 2026 Senate contest`,fill;
  if(chamber==='house')text=`${state.name}: district market leaders — ${counts.D} Democratic, ${counts.R} Republican, ${counts.O} other, ${counts.U} unclear or unavailable. Counts, not win probabilities.`;
  else if(leaders.length){const l=leaders[0];fill=leaderColor(l);text=l.party==='U'?`${state.name}: ${l.reason}`:`${state.name}: ${l.candidate.name||l.candidate.label} leads at ${(l.probability*100).toFixed(1)}% (${l.candidate.scope==='party'?'party / nominee':'individual'} contract).`;}
- return {state,counts,total:rr.length,text,fill,leaders};
+ const published=rr.map(r=>({id:r.id,call:selectWinner(calls,r.id)})).filter(x=>x.call);
+ if(chamber==='senate'&&published.length===1){
+  const c=published[0].call;
+  fill=c.party==='D'?'#235aaa':c.party==='R'?'#b73643':'#a78b44';
+  text=state.name+': '+c.name+' ('+c.party+') '+(c.status==='certified'?'certified winner':'projected winner')+' · '+c.source+'.';
+ }
+ if(chamber==='house'&&published.length){
+  const d=published.filter(x=>x.call.party==='D').length;
+  const r=published.filter(x=>x.call.party==='R').length;
+  text+=' Called districts: '+d+' Democratic, '+r+' Republican, '+(published.length-d-r)+' other.';
+  // A state-wide solid party fill is only valid when EVERY district has been
+  // called for the same party; mixed districts stay in the normal map shading.
+  const parties=new Set(published.map(x=>x.call.party));
+  if(published.length===rr.length&&parties.size===1){
+   const p=published[0].call.party;
+   fill=p==='D'?'#235aaa':p==='R'?'#b73643':'#a78b44';
+  }
+ }
+ return {state,counts,total:rr.length,text,fill,leaders,called:published};
 }
 
 // Explain the difference between an unopposed/non-contested state, an expired
