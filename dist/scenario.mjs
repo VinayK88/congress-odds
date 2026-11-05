@@ -1,6 +1,7 @@
 import {marketStateSummary,raceLeader,marketTotals,marketCoverage} from './market-map.mjs?v=20261104-winner-overlay';
 import {getElectionCallsSnapshot} from './election-calls.mjs?v=20261104-winner-overlay';
 import {selectWinner,countCalls} from './election-calls-core.mjs';
+import {stateResultSummary,resultSeatTotals} from './results-map-core.mjs?v=20261105-results';
 import {refreshCadence,formatMinutes} from './refresh-cadence.mjs';
 import {renderRaceCandidates,getCandidateSnapshot} from './candidates.mjs?v=20261012-countdown';
 import {briefingForState,renderStateBriefing} from './state-briefing.mjs';
@@ -16,7 +17,7 @@ import {PARTIES,races,emptyScenario,validateScenario,seatPartyPreset,tally} from
 const root=document.querySelector('#race-simulator');
 const $=s=>root.querySelector(s);
 const KEY='congress-odds-scenario-v1';
-let scenario=emptyScenario(),chamber='senate',selected='GA',district='GA-S',mode='market',mapFocus=false,flipWindow=168,highlightFlips=true,radarThreshold=10,radarOpen=true;
+let scenario=emptyScenario(),chamber='senate',selected='GA',district='GA-S',mode='results',mapFocus=false,flipWindow=168,highlightFlips=true,radarThreshold=10,radarOpen=true;
 let exportURL;
 let storageMessage='Your scenarios save on this device.';
 try { const saved=localStorage.getItem(KEY);if(saved){if(saved.length>100000)throw new Error('Oversized scenario');scenario=validateScenario(JSON.parse(saved));} }
@@ -24,9 +25,9 @@ catch { storageMessage='Saved scenario unavailable. Starting with unassigned rac
 const scenarioHistory=createScenarioHistory(scenario);
 function save() { try{localStorage.setItem(KEY,JSON.stringify(scenario));storageMessage='Scenario saved on this device.';}catch{storageMessage='Device storage unavailable. Download your scenario to keep it.';} }
 root.innerHTML=`<div class="section-heading"><div><p class="eyebrow">EXPLORE THE ELECTORAL LANDSCAPE</p><h2>Every race. A changing picture.</h2></div><span class="model-badge">2026 RACE EXPLORER</span></div>
-<p class="section-intro">Explore the latest available market odds across 35 Senate races and 435 House districts. Select a state to see candidates and their chances, or switch to Your scenario to build your own path to a majority.</p>
+<p class="section-intro">Explore the latest available market odds across 35 Senate races and 435 House districts. View called election winners by state, switch to Market odds for historical/available price data, or choose Your scenario to build a path to a majority.</p>
 <div class="map-broadcast-banner"><strong>★ 2026 CONGRESSIONAL ATLAS</strong><span>435 House districts · 35 Senate contests</span><span class="banner-stars" aria-hidden="true">★ ★ ★</span></div>
-<div class="map-mode-switch chamber-switch" role="group" aria-label="Map view"><button type="button" data-map-mode="market" aria-pressed="true">Market odds</button><button type="button" data-map-mode="scenario" aria-pressed="false">Your scenario</button></div><div id="market-map-status" class="market-map-status" role="status"></div><section id="battleground-radar" class="battleground-radar" aria-label="Tight market races"></section><section id="flip-watch" class="flip-watch" aria-label="Market leader flip watch"></section><div class="scenario-toolbar"><div class="chamber-switch" role="group" aria-label="Map chamber"><button type="button" data-chamber="senate" aria-pressed="true">Senate · 100 seats</button><button type="button" data-chamber="house" aria-pressed="false">House · 435 seats</button></div><label id="vp-field">Senate tie-break <select id="scenario-vp" aria-label="Senate tie-break"><option value="R">Republican VP</option><option value="D">Democratic VP</option><option value="none">No tie-break assumed</option></select></label></div>
+<div class="map-mode-switch chamber-switch" role="group" aria-label="Map view"><button type="button" data-map-mode="results" aria-pressed="true">Election results</button><button type="button" data-map-mode="market" aria-pressed="false">Market odds</button><button type="button" data-map-mode="scenario" aria-pressed="false">Your scenario</button></div><div id="market-map-status" class="market-map-status" role="status"></div><section id="battleground-radar" class="battleground-radar" aria-label="Tight market races"></section><section id="flip-watch" class="flip-watch" aria-label="Market leader flip watch"></section><div class="scenario-toolbar"><div class="chamber-switch" role="group" aria-label="Map chamber"><button type="button" data-chamber="senate" aria-pressed="true">Senate · 100 seats</button><button type="button" data-chamber="house" aria-pressed="false">House · 435 seats</button></div><label id="vp-field">Senate tie-break <select id="scenario-vp" aria-label="Senate tie-break"><option value="R">Republican VP</option><option value="D">Democratic VP</option><option value="none">No tie-break assumed</option></select></label></div>
 <div id="market-seat-totals" class="scenario-board market-seat-totals" aria-live="polite" aria-atomic="true"></div>
 <div class="scenario-board"><div class="scenario-score" id="scenario-score" aria-live="polite" aria-atomic="true"></div><div id="majority-paths" class="majority-paths"></div><div id="seat-dots" class="seat-dots" aria-hidden="true"></div><p id="scenario-base" class="fine"></p></div>
 <div class="scenario-layout"><div class="scenario-map-panel"><div class="scenario-map-heading"><h3>Pick a state. Shape the chamber.</h3><button type="button" id="map-focus-toggle" class="map-focus-toggle" aria-pressed="false" aria-controls="state-map" title="Give the map more space">⤢ Focus map</button><div class="state-picker"><label class="state-picker-label" for="scenario-state">SELECT STATE <span aria-hidden="true">★</span></label><div class="state-picker-control"><span class="state-picker-emblem" aria-hidden="true">★</span><select id="scenario-state" aria-label="Select state to explore on the map">${STATES.map(s=>`<option value="${s.code}">${s.name}</option>`).join('')}</select><span id="state-picker-code" class="state-picker-code" aria-hidden="true">GA</span><svg class="state-picker-chevron" aria-hidden="true" focusable="false" viewBox="0 0 20 20" width="20" height="20"><path d="m5 7 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div><p class="fine">Click a state on the map · Alaska and Hawaii shown as insets</p><div id="state-map" class="state-map"></div><p id="map-hover" class="map-hover" aria-live="polite"></p><div class="scenario-legend" id="scenario-legend"><span><i class="scenario-key party-D"></i>Democratic</span><span><i class="scenario-key party-R"></i>Republican</span><span><i class="scenario-key party-O"></i>Other</span><span><i class="scenario-key party-U"></i>Unassigned</span></div><div id="market-map-legend" class="market-map-legend"></div><div id="map-symbol-guide" class="map-symbol-guide" role="group" aria-label="Map symbol key"><span><i class="map-symbol no-contest-symbol" aria-hidden="true"></i>No Senate contest</span><span><i class="map-symbol missing-symbol" aria-hidden="true"></i>Unavailable or stale</span><span><i class="map-symbol selected-symbol" aria-hidden="true"></i>Selected state</span><button id="map-house-shortcut" type="button" hidden>Explore House districts here →</button></div><p class="fine" id="map-caption"></p><section id="state-briefing" class="state-briefing" role="region" aria-label="Selected state race briefing"></section></div>
@@ -37,9 +38,9 @@ root.innerHTML=`<div class="section-heading"><div><p class="eyebrow">EXPLORE THE
 // Keep the chamber tally and geographic map ahead of the supporting watchlists.
 // Moving the existing nodes preserves their IDs and delegated controls.
 $('.scenario-layout').after($('#battleground-radar'), $('#flip-watch'));
-function summary(code){return mode==='market'?marketStateSummary(chamber,getCandidateSnapshot(),code,Date.now(),getElectionCallsSnapshot()):stateSummary(chamber,scenario,code);}
+function summary(code){return mode==='results'?stateResultSummary(chamber,getElectionCallsSnapshot(),code):mode==='market'?marketStateSummary(chamber,getCandidateSnapshot(),code,Date.now()):stateSummary(chamber,scenario,code);}
 function render() {
-  const market=mode==='market',snapshot=getCandidateSnapshot();
+  const results=mode==='results',market=mode==='market',readOnly=results||market,snapshot=getCandidateSnapshot();
   root.dataset.mapMode=mode;
   const historyArchive=getRaceHistory();
   const flipStats=marketLeaderFlips(historyArchive,chamber,Date.now(),flipWindow);
@@ -51,14 +52,17 @@ function render() {
   const focusToggle=$('#map-focus-toggle');
   focusToggle.setAttribute('aria-pressed',String(mapFocus));
   focusToggle.textContent=mapFocus?'↙ Standard layout':'⤢ Focus map';
-  for(const selector of ['.scenario-board:not(.market-seat-totals)','.scenario-actions','#scenario-save','.scenario-json','#scenario-legend'])$(selector).hidden=market;
-  $('#market-seat-totals').hidden=!market;
-  const mt=marketTotals(chamber,snapshot);
+  for(const selector of ['.scenario-board:not(.market-seat-totals)','.scenario-actions','#scenario-save','.scenario-json','#scenario-legend'])$(selector).hidden=readOnly;
+  $('#market-seat-totals').hidden=!readOnly;
+  const mt=results?resultSeatTotals(chamber,getElectionCallsSnapshot()):marketTotals(chamber,snapshot);
+  if(results){
+    $('#market-seat-totals').innerHTML=`<div class="scenario-totals"><div class="blue"><span>DEMOCRATIC CALLED${chamber==='senate'?' + HOLDOVERS':''}</span><strong>${mt.counts.D}</strong><small>${chamber==='senate'?mt.holdovers.D+' holdovers + ':''}${mt.called.D} called wins</small></div><div class="scenario-center"><span>${chamber.toUpperCase()} · REPORTED RESULTS</span><b>${mt.majority} seats for majority</b></div><div class="red"><span>REPUBLICAN CALLED${chamber==='senate'?' + HOLDOVERS':''}</span><strong>${mt.counts.R}</strong><small>${chamber==='senate'?mt.holdovers.R+' holdovers + ':''}${mt.called.R} called wins</small></div></div><div class="market-seat-bar" aria-hidden="true">${Object.entries(mt.counts).map(([p,n])=>`<i class="party-${p}" style="width:${n/mt.total*100}%"></i>`).join('')}<b style="left:${mt.majority/mt.total*100}%"></b></div><p class="fine">${mt.called.total} called contests · ${mt.counts.U} uncalled · ${mt.total} total seats</p><p class="fine market-tally-note">Only independently attributed called races${chamber==='senate'?' plus 65 non-contested holdover seats':''} are included. This source is incomplete and can lag national AP tallies; uncalled races remain unassigned.</p>`;
+  }else
   $('#market-seat-totals').innerHTML=`<div class="scenario-totals"><div class="blue"><span>${chamber==='senate'?'DEMOCRATIC-ALIGNED':'DEMOCRATIC'}</span><strong>${mt.counts.D}</strong><small>${chamber==='senate'?mt.holdovers.D+' holdovers + ':''}${mt.contested.D} market leads</small></div><div class="scenario-center"><span>${chamber.toUpperCase()} · MARKET LEADER TALLY</span><b>${mt.majority} seats for a majority</b></div><div class="red"><span>REPUBLICAN</span><strong>${mt.counts.R}</strong><small>${chamber==='senate'?mt.holdovers.R+' holdovers + ':''}${mt.contested.R} market leads</small></div></div><div class="market-seat-bar" aria-hidden="true">${Object.entries(mt.counts).map(([p,n])=>`<i class="party-${p}" style="width:${n/mt.total*100}%"></i>`).join('')}<b style="left:${mt.majority/mt.total*100}%"></b></div><p class="fine">${mt.counts.O} other · ${mt.counts.U} unclear / unavailable · ${mt.total} total seats</p><p class="fine market-tally-note">${chamber==='senate'?'Includes 65 holdover seats: 34 Democratic-aligned (including two independents) and 31 Republican. ':''}Each eligible race counts once for its market leader. This is not a probability-weighted seat forecast or an election result. Unclear races stay separate.</p>`;
-  $('#market-map-status').hidden=!market;$('#market-map-legend').hidden=!market;
+  $('#market-map-status').hidden=!readOnly;$('#market-map-legend').hidden=!readOnly;
   root.querySelectorAll('[data-map-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mapMode===mode)));
-  $('.scenario-map-heading h3').textContent=market?'Where the markets stand.':'Pick a state. Shape the chamber.';
-  $('.race-editor>.eyebrow').textContent=market?'RACE MARKET DETAILS':'YOUR RACE CALL';
+  $('.scenario-map-heading h3').textContent=results?'2026 election winners, state by state.':market?'Where the markets stand.':'Pick a state. Shape the chamber.';
+  $('.race-editor>.eyebrow').textContent=results?'CALLED RACE DETAILS':market?'RACE MARKET DETAILS':'YOUR RACE CALL';
   const coverage=marketCoverage(chamber,snapshot);
   const mapUnavailable=Boolean(snapshot)&&coverage.clear===0&&coverage.stale>0;
   const mapStatus=$('#market-map-status');
@@ -66,8 +70,18 @@ function render() {
   mapStatus.textContent=snapshot?`${mapUnavailable?'OUTDATED RACE QUOTES — No current market leaders are available; colored states return after fresh quotes are published. ':''}${coverage.clear} of ${coverage.total} contested races have a fresh, identifiable market leader · ${coverage.stale} stale · ${coverage.unclear} unclear or missing.${coverage.noContest?' '+coverage.noContest+' states have no Senate contest in 2026.':''} Batch published ${new Date(snapshot.updatedAt).toLocaleString()}. Updates scheduled ${formatMinutes(refreshCadence().profilesMinutes)}; browser checks ${formatMinutes(refreshCadence().browserProfilesMinutes)}. Schedules can be delayed; race quotes expire after 2 hours.`:'Loading race market snapshots…';
   const resultsCounts=countCalls(getElectionCallsSnapshot(),chamber);
   if(market&&resultsCounts.total)mapStatus.textContent+=' · CALLED OR CERTIFIED: '+resultsCounts.D+' Democratic / '+resultsCounts.R+' Republican / '+resultsCounts.O+' other. Solid result colors override market shades only when a race has an attributed winner.';
+  if(results){
+   const asOf=getElectionCallsSnapshot().checkedAt;
+   const time=asOf&&Number.isFinite(Date.parse(asOf))?new Date(asOf).toLocaleString():'Not available';
+   mapStatus.classList.remove('is-stale');
+   mapStatus.textContent='RESULTS · '+mt.called.total+' of '+(chamber==='senate'?35:435)+' contests with attributed winner calls · '+
+    mt.called.D+' Democratic · '+mt.called.R+' Republican · '+mt.called.O+' other · '+
+    mt.counts.U+' uncalled · Results snapshot '+time+
+    '. Includes community-reported projections; not final certification.';
+  }
   $('#map-symbol-guide').hidden=chamber!=='senate';
   $('#market-map-legend').innerHTML=chamber==='senate'?`<strong>Leading contract’s market-implied chance</strong><div class="probability-key"><span>Democratic</span><i style="background:#bed3f3"></i><i style="background:#82a9df"></i><i style="background:#477bc3"></i><i style="background:#235aaa"></i><span>Republican</span><i style="background:#efc1c7"></i><i style="background:#df8e99"></i><i style="background:#c95868"></i><i style="background:#b73643"></i></div><p>Light → dark: under 60% · 60–79.9% · 80–94.9% · 95%+. Gold: other party. Gray: tied, stale, missing quotes or unknown party. Pale dashed: no contest.</p>`:`<strong>District market leaders within each state</strong><p><i class="scenario-key party-D"></i> Democratic · <i class="scenario-key party-R"></i> Republican · <i class="scenario-key party-O"></i> Other · <i class="scenario-key party-U"></i> Unclear / unavailable</p>`;
+  if(results)$('#market-map-legend').innerHTML='<strong>Called winners — not forecasts</strong><p><i class="scenario-key party-D"></i> Democratic call · <i class="scenario-key party-R"></i> Republican call · <i class="scenario-key party-O"></i> Other call · <i class="scenario-key party-U"></i> Not yet called</p><p>Senate: full state color shows a called winner; hatched = no election. House: state colors are proportional bands showing called districts plus uncalled seats, not individual district boundaries.</p>';
   const {counts,total,majority,control,tie}=tally(scenario,chamber);
   const status=control?`${PARTIES[control]} ${tie?'control via VP tie-break':'majority'}`:counts.U?'Control still open in your scenario':'No bloc has a majority under these assumptions';
   $('#scenario-score').innerHTML=`<div class="scenario-totals"><div class="blue"><span>DEMOCRATIC-ALIGNED</span><strong>${counts.D}</strong></div><div class="scenario-center"><span>${chamber.toUpperCase()} · YOUR SCENARIO</span><b>${majority} for an outright majority</b></div><div class="red"><span>REPUBLICAN-ALIGNED</span><strong>${counts.R}</strong></div></div><p class="scenario-result">${status}</p><p class="fine">${counts.O} other · ${counts.U} unassigned · ${total} total seats</p>`;
@@ -77,11 +91,11 @@ function render() {
   $('#scenario-base').textContent=chamber==='senate'?'Includes 65 holdover seats: 34 Democratic-aligned + 31 Republican. Only the 35 contested seats are editable.':'All 435 voting districts are editable. No winners or probabilities are prefilled.';
   $('[data-chamber="senate"]').setAttribute('aria-pressed',String(chamber==='senate'));
   $('[data-chamber="house"]').setAttribute('aria-pressed',String(chamber==='house'));
-  $('#vp-field').hidden=market||chamber!=='senate';$('#scenario-vp').value=scenario.vp;
+  $('#vp-field').hidden=readOnly||chamber!=='senate';$('#scenario-vp').value=scenario.vp;
   $('#scenario-state').value=selected;
   $('#state-picker-code').textContent=selected;
   const stateMap=$('#state-map');
-  stateMap.innerHTML=mapMarkup(chamber,scenario,selected,{summary,market,flipStates:market&&highlightFlips?flipStats.states:null});
+  stateMap.innerHTML=mapMarkup(chamber,scenario,selected,{summary,market:readOnly,flipStates:market&&highlightFlips?flipStats.states:null});
   // Always recreate this presentation-only peek when the map SVG is refreshed.
   const peek=document.createElement('div');peek.id='map-peek';peek.className='map-peek';
   peek.setAttribute('aria-hidden','true');peek.hidden=true;
@@ -89,13 +103,27 @@ function render() {
   stateMap.append(peek);
   $('#map-hover').textContent=summary(selected).text;
   $('#map-caption').textContent=market?(chamber==='senate'?'Solid blue/red means a called winner where available. Otherwise light→dark shows eligible market price, not a result. Party / nominee contracts can follow a replacement nominee.':'Solid blue/red indicates a single party won every district in that state; otherwise state colors show market leaders. Individual district winners are marked ✓ in the district list. Choose a district for its candidate odds. District boundaries are not drawn.'):chamber==='senate'?'State colors show your Senate choices. Pale, dashed states have no Senate contest in 2026.':'State color bands show the share of districts you assigned to each bloc. Click a state to choose individual House districts.';
+  if(results)$('#map-caption').textContent=chamber==='senate'?
+   'Solid blue/red = an attributed election call; gray = uncalled; hatched = no 2026 Senate election. Calls are projections until certified.':
+   'Each state displays the proportion of its House districts called Democratic (blue), Republican (red), or still uncalled (gray). These are color bands, NOT congressional district boundaries.';
   const state=STATES.find(s=>s.code===selected),rr=races(chamber,selected);
   const houseShortcut=$('#map-house-shortcut');
   houseShortcut.hidden=chamber!=='senate'||rr.length!==0;
   houseShortcut.textContent='Explore '+state.name+' House districts →';
   if(!rr.some(r=>r.id===district))district=rr[0]?.id||null;
   const race=rr.find(r=>r.id===district);
-  const briefing=$('#state-briefing');briefing.hidden=!market;
+  const briefing=$('#state-briefing');briefing.hidden=!readOnly;
+  if(results){
+    briefing.replaceChildren();
+    const call=race?selectWinner(getElectionCallsSnapshot(),race.id):null;
+    const heading=document.createElement('h3');heading.textContent=call?'✓ '+race.id+' · '+call.name:race?race.id+' · Not called':'Select a race';
+    briefing.append(heading);
+    const p=document.createElement('p');
+    p.textContent=call?(call.status==='certified'?'Certified':'Projected winner')+' · '+(call.party==='D'?'Democratic':call.party==='R'?'Republican':'Other')+' · '+call.source:
+      'No attributed winner call for this contest. Market prices are not results.';
+    briefing.append(p);
+    if(call){const link=document.createElement('a');link.href=call.sourceUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='View attributed result source ↗';briefing.append(link);}
+  }
   if(market){
     const view=briefingForState(chamber,selected,district,snapshot);
     renderStateBriefing(briefing,view);
@@ -108,14 +136,14 @@ function render() {
     }
   }
   $('#editor-state').textContent=state.name;
-  $('#editor-context').textContent=chamber==='house'?`${state.houseSeats} voting district${state.houseSeats===1?'':'s'}. ${market?'Select a district for candidate odds.':'Select a district, then choose its outcome.'}`:state.senateParty?`${state.special?'Special election':'Regular Class II election'} · current seat party: ${state.senateParty==='D'?'Democratic':'Republican'}.`:'No Senate seat on the 2026 ballot. Choose another state or switch to House.';
+  $('#editor-context').textContent=chamber==='house'?`${state.houseSeats} voting district${state.houseSeats===1?'':'s'}. ${results?'Select a district to inspect a called winner.':market?'Select a district for candidate odds.':'Select a district, then choose its outcome.'}`:state.senateParty?`${state.special?'Special election':'Regular Class II election'} · current seat party: ${state.senateParty==='D'?'Democratic':'Republican'}.`:'No Senate seat on the 2026 ballot. Choose another state or switch to House.';
   $('#district-list').hidden=chamber!=='house';
-  $('#district-list').innerHTML=chamber==='house'?rr.map(r=>{const leader=market?raceLeader(snapshot?.races.find(item=>item.id===r.id)):null,called=market?selectWinner(getElectionCallsSnapshot(),r.id):null,p=market?(called?.party||leader.party):(scenario[chamber][r.id]||'U');return `<button type="button" data-district="${r.id}" class="district-chip assigned-${p}${called?' result-called result-called-'+p:''}" aria-pressed="${district===r.id}" aria-label="${r.id}: ${called?called.name+' · '+called.status+' winner from '+called.source:market?(p==='U'?leader.reason:PARTIES[p]+' market leader at '+(leader.probability*100).toFixed(1)+'%'):PARTIES[p]}">${r.id.split('-')[1]}<small>${called?'✓ ':''}${p}</small></button>`;}).join(''):'';
+  $('#district-list').innerHTML=chamber==='house'?rr.map(r=>{const leader=market?raceLeader(snapshot?.races.find(item=>item.id===r.id)):null,called=readOnly?selectWinner(getElectionCallsSnapshot(),r.id):null,p=results?(called?.party||'U'):market?leader.party:(scenario[chamber][r.id]||'U');return `<button type="button" data-district="${r.id}" class="district-chip assigned-${p}${called?' result-called result-called-'+p:''}" aria-pressed="${district===r.id}" aria-label="${r.id}: ${called?called.name+' · '+called.status+' winner from '+called.source:results?'No winner call yet':market?(p==='U'?leader.reason:PARTIES[p]+' market leader at '+(leader.probability*100).toFixed(1)+'%'):PARTIES[p]}">${r.id.split('-')[1]}<small>${called?'✓ ':''}${p}</small></button>`;}).join(''):'';
   renderRaceCandidates({chamber,state:selected,raceId:race?.id||null});
   $('#editor-race').textContent=race?`${race.id} · ${race.label}`:'';
-  $('#party-choices').hidden=market||!race;
+  $('#party-choices').hidden=readOnly||!race;
   root.querySelectorAll('[data-party]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.party===(race?(scenario[chamber][race.id]||'U'):null))));
-  $('#fill-state').hidden=market||chamber!=='house';$('#scenario-preset').hidden=chamber!=='senate';
+  $('#fill-state').hidden=readOnly||chamber!=='house';$('#scenario-preset').hidden=chamber!=='senate';
   $('#scenario-reset').textContent=`Clear ${chamber==='senate'?'Senate':'House'} choices`;
   $('#scenario-save').textContent=storageMessage;
   $('#scenario-undo').disabled=!scenarioHistory.canUndo;$('#scenario-redo').disabled=!scenarioHistory.canRedo;
@@ -205,7 +233,7 @@ $('#scenario-import').addEventListener('change',async e=>{
 });
 render();
 
-function refreshMap(){if(mode!=='market')return;const active=document.activeElement,state=active?.dataset?.state,districtId=active?.dataset?.district;render();if(state)$(`[data-state="${state}"]`)?.focus({preventScroll:true});else if(districtId)$(`[data-district="${districtId}"]`)?.focus({preventScroll:true});}
+function refreshMap(){if(mode==='scenario')return;const active=document.activeElement,state=active?.dataset?.state,districtId=active?.dataset?.district;render();if(state)$(`[data-state="${state}"]`)?.focus({preventScroll:true});else if(districtId)$(`[data-district="${districtId}"]`)?.focus({preventScroll:true});}
 window.addEventListener('candidate-data-updated',()=>{refreshMap();refreshRaceHistory();});
 window.addEventListener('race-history-updated',refreshMap);
  window.addEventListener('election-calls-updated',refreshMap);
