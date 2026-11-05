@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "electionYear": 2026,
-  "checkedAt": "2026-11-04T23:45:28.251Z",
+  "checkedAt": "2026-11-05T03:47:46.651Z",
   "sourceStatus": "source-backed calls",
   "sources": [
     {
@@ -26,7 +26,7 @@
       "name": "Election Monitor community desk",
       "url": "https://raw.githubusercontent.com/lakerainier/election-monitor/main/data/state.json",
       "status": "ok",
-      "winnerCount": 81
+      "winnerCount": 94
     }
   ],
   "winners": {
@@ -84,7 +84,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "IL-S": {
       "party": "D",
@@ -132,7 +132,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "MA-S": {
       "party": "D",
@@ -156,7 +156,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "MT-S": {
       "party": "R",
@@ -164,7 +164,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "NE-S": {
       "party": "R",
@@ -172,7 +172,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "NH-S": {
       "party": "D",
@@ -260,7 +260,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "TX-S": {
       "party": "D",
@@ -276,7 +276,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "WV-S": {
       "party": "R",
@@ -284,7 +284,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "WY-S": {
       "party": "R",
@@ -292,7 +292,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "AL-02": {
       "party": "D",
@@ -308,7 +308,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "CA-05": {
       "party": "R",
@@ -316,7 +316,15 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "CA-13": {
+      "party": "D",
+      "name": "Adam Gray",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "CA-21": {
       "party": "D",
@@ -324,7 +332,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "CA-22": {
       "party": "D",
@@ -332,7 +340,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "CA-25": {
       "party": "D",
@@ -340,7 +348,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "CA-48": {
       "party": "D",
@@ -348,7 +356,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "CO-08": {
       "party": "D",
@@ -356,7 +364,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "FL-13": {
       "party": "R",
@@ -364,7 +372,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "FL-14": {
       "party": "D",
@@ -372,7 +380,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "FL-16": {
       "party": "R",
@@ -380,7 +388,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "FL-22": {
       "party": "D",
@@ -388,7 +396,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "FL-25": {
       "party": "D",
@@ -396,7 +404,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "GA-08": {
       "party": "R",
@@ -404,7 +412,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "IA-01": {
       "party": "D",
@@ -412,7 +420,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "IA-02": {
       "party": "D",
@@ -420,7 +428,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "IA-03": {
       "party": "D",
@@ -428,7 +436,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "IN-05": {
       "party": "D",
@@ -436,7 +444,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "KY-06": {
       "party": "D",
@@ -444,7 +452,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "MA-08": {
       "party": "D",
@@ -452,7 +460,23 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "MI-04": {
+      "party": "D",
+      "name": "Sean McCann",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "MI-07": {
+      "party": "D",
+      "name": "William Lawrence",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "MI-10": {
       "party": "D",
@@ -460,7 +484,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "MN-06": {
       "party": "R",
@@ -468,7 +492,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "MN-07": {
       "party": "R",
@@ -476,7 +500,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "MN-08": {
       "party": "R",
@@ -484,7 +508,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "MO-02": {
       "party": "D",
@@ -492,7 +516,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "MT-01": {
       "party": "D",
@@ -500,7 +524,15 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "NC-01": {
+      "party": "D",
+      "name": "Don Davis",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "NC-09": {
       "party": "D",
@@ -508,7 +540,15 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "NC-13": {
+      "party": "D",
+      "name": "Paul Barringer",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "NE-01": {
       "party": "R",
@@ -516,7 +556,15 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "NJ-02": {
+      "party": "D",
+      "name": "Zack Mullock",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "NJ-07": {
       "party": "D",
@@ -524,7 +572,15 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "NV-02": {
+      "party": "D",
+      "name": "Teresa Benitez-Thompson",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "NV-03": {
       "party": "D",
@@ -532,7 +588,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "NY-11": {
       "party": "R",
@@ -540,7 +596,15 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "NY-21": {
+      "party": "R",
+      "name": "Anthony Constantino",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "OH-01": {
       "party": "D",
@@ -548,7 +612,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "OH-07": {
       "party": "D",
@@ -556,7 +620,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "OH-09": {
       "party": "D",
@@ -564,7 +628,15 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "OH-10": {
+      "party": "D",
+      "name": "Kristina Knickerbocker",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "OH-15": {
       "party": "D",
@@ -572,7 +644,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "PA-01": {
       "party": "D",
@@ -580,7 +652,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "PA-07": {
       "party": "D",
@@ -588,7 +660,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "PA-08": {
       "party": "D",
@@ -596,7 +668,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "PA-09": {
       "party": "R",
@@ -604,7 +676,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "PA-10": {
       "party": "D",
@@ -612,7 +684,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "TN-05": {
       "party": "R",
@@ -620,7 +692,23 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "TN-09": {
+      "party": "R",
+      "name": "Brent Taylor",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "TX-02": {
+      "party": "R",
+      "name": "Steve Toth",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "TX-15": {
       "party": "D",
@@ -628,7 +716,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "TX-23": {
       "party": "D",
@@ -636,7 +724,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "TX-34": {
       "party": "D",
@@ -644,7 +732,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "TX-35": {
       "party": "D",
@@ -652,7 +740,15 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "VA-01": {
+      "party": "D",
+      "name": "Shannon Taylor",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "VA-02": {
       "party": "D",
@@ -660,7 +756,15 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
+    },
+    "WA-03": {
+      "party": "D",
+      "name": "Marie Gluesenkamp Perez",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "WI-01": {
       "party": "D",
@@ -668,7 +772,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "WI-03": {
       "party": "D",
@@ -676,7 +780,7 @@
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
-      "updatedAt": "2026-11-04T05:16:26.260Z"
+      "updatedAt": "2026-11-05T01:02:32.833Z"
     },
     "AL-01": {
       "party": "R",

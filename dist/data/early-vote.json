@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-04T23:45:29.017Z",
+  "fetchedAt": "2026-11-05T03:47:47.431Z",
   "rows": [
     {
       "code": "AK",
@@ -41,13 +41,13 @@
     {
       "code": "CA",
       "name": "California",
-      "asOf": "2026-11-03",
+      "asOf": "2026-11-04",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist. Because PDI, the source for party registration data, does not report by method of voting, all party registration calculations include in-person early and mail ballots.",
-      "total": 7315224,
-      "inPerson": 479207,
-      "mail": 6836017,
-      "requested": 23451620
+      "total": 9939609,
+      "inPerson": 1443508,
+      "mail": 8496101,
+      "requested": 23452579
     },
     {
       "code": "CO",
@@ -55,10 +55,10 @@
       "asOf": "2026-11-04",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 2710567,
-      "inPerson": 138130,
-      "mail": 2572437,
-      "requested": 4107385
+      "total": 2716018,
+      "inPerson": 138128,
+      "mail": 2577890,
+      "requested": 4112838
     },
     {
       "code": "CT",
@@ -118,13 +118,13 @@
     {
       "code": "HI",
       "name": "Hawaii",
-      "asOf": "2026-11-03",
+      "asOf": "2026-11-04",
       "source": "https://elections.hawaii.gov/resources/absentee-voting-report/",
       "notes": "",
-      "total": 290606,
-      "inPerson": 7940,
-      "mail": 282666,
-      "requested": 727615
+      "total": 369385,
+      "inPerson": 17447,
+      "mail": 351938,
+      "requested": 726849
     },
     {
       "code": "ID",
@@ -503,12 +503,12 @@
     {
       "code": "WA",
       "name": "Washington",
-      "asOf": "2026-11-03",
+      "asOf": "2026-11-04",
       "source": "https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics",
       "notes": "",
-      "total": 2349137,
+      "total": 2885474,
       "inPerson": 0,
-      "mail": 2349137,
+      "mail": 2885474,
       "requested": 5131622
     },
     {
