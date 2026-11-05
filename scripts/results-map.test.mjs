@@ -62,7 +62,7 @@ test('production called snapshot has count consistency and no ungrounded state f
   assert.ok(totals.counts.U>=0);
   assert.equal(totals.called.total,totals.called.D+totals.called.R+totals.called.O);
  }
- const dc=stateResultSummary('house',calls,'DC');
- assert.ok(dc.total>=1);
- assert.ok(dc.counts.U>=0);
+ const wy=stateResultSummary('house',calls,'WY');
+ assert.equal(wy.total,1);
+ assert.ok(wy.counts.U>=0);
 });
