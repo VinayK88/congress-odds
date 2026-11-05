@@ -140,6 +140,7 @@ function render() {
   $('#district-list').hidden=chamber!=='house';
   $('#district-list').innerHTML=chamber==='house'?rr.map(r=>{const leader=market?raceLeader(snapshot?.races.find(item=>item.id===r.id)):null,called=results?selectWinner(getElectionCallsSnapshot(),r.id):null,p=results?(called?.party||'U'):market?leader.party:(scenario[chamber][r.id]||'U');return `<button type="button" data-district="${r.id}" class="district-chip assigned-${p}${called?' result-called result-called-'+p:''}" aria-pressed="${district===r.id}" aria-label="${r.id}: ${called?called.name+' · '+called.status+' winner from '+called.source:results?'No winner call yet':market?(p==='U'?leader.reason:PARTIES[p]+' market leader at '+(leader.probability*100).toFixed(1)+'%'):PARTIES[p]}">${r.id.split('-')[1]}<small>${called?'✓ ':''}${p}</small></button>`;}).join(''):'';
   renderRaceCandidates({chamber,state:selected,raceId:race?.id||null});
+  $('#race-candidate-profiles').hidden=results;
   $('#editor-race').textContent=race?`${race.id} · ${race.label}`:'';
   $('#party-choices').hidden=readOnly||!race;
   root.querySelectorAll('[data-party]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.party===(race?(scenario[chamber][race.id]||'U'):null))));
