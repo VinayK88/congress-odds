@@ -7,7 +7,7 @@
         "chamber": "house",
         "source": "Polymarket",
         "url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
-        "fetchedAt": "2026-11-05T08:56:15.619Z",
+        "fetchedAt": "2026-11-05T09:00:44.888Z",
         "priceMethod": "Yes outcome price",
         "parties": {
           "democratic": {
@@ -28,13 +28,13 @@
         "chamber": "senate",
         "source": "Polymarket",
         "url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
-        "fetchedAt": "2026-11-05T08:56:15.597Z",
+        "fetchedAt": "2026-11-05T09:00:44.890Z",
         "priceMethod": "Yes outcome price",
         "parties": {
           "democratic": {
             "probability": 1,
             "marketId": "562793",
-            "updatedAt": "2026-11-05T08:37:37.968165Z",
+            "updatedAt": "2026-11-05T08:51:38.520638Z",
             "closed": true
           },
           "republican": {
@@ -133,7 +133,7 @@
         "chamber": "house",
         "source": "Manifold",
         "url": "https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn",
-        "fetchedAt": "2026-11-05T08:56:15.781Z",
+        "fetchedAt": "2026-11-05T09:00:44.987Z",
         "priceMethod": "Play-money · independent Yes probabilities",
         "parties": {
           "democratic": {
@@ -154,7 +154,7 @@
         "chamber": "senate",
         "source": "Manifold",
         "url": "https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the",
-        "fetchedAt": "2026-11-05T08:56:15.770Z",
+        "fetchedAt": "2026-11-05T09:00:45.046Z",
         "priceMethod": "Play-money · independent Yes probabilities",
         "parties": {
           "democratic": {
@@ -176,7 +176,7 @@
   "errors": {
     "kalshi/house": "Crossed or incomplete order book",
     "kalshi/senate": "Crossed or incomplete order book",
-    "predictit/house": "Missing price",
-    "predictit/senate": "Missing price"
+    "predictit/senate": "Missing price",
+    "predictit/house": "Missing price"
   }
 }
