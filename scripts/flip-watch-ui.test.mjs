@@ -21,7 +21,8 @@ test('map flip outlines are optional and never alter original party/state geomet
 test('flip watch is separate from simulated outcome mode with accessible range controls',()=>{
  assert.ok(scenario.includes('marketLeaderFlips(historyArchive,chamber,Date.now(),flipWindow)'));
  assert.ok(scenario.includes("flipWatch.hidden=!market"));
- assert.ok(scenario.includes("mapMarkup(chamber,scenario,selected,{summary,market,flipStates:market&&highlightFlips?flipStats.states:null})"));
+ assert.ok(scenario.includes("mapMarkup(chamber,scenario,selected,{summary,market:readOnly,flipStates:market&&highlightFlips?flipStats.states:null})"));
+ assert.ok(scenario.includes("const flipWatch=$('#flip-watch');flipWatch.hidden=!market;"),'flip watch remains visible exclusively for market odds');
  assert.ok(scenario.includes("b.dataset.flipWindow"));
  assert.ok(scenario.includes("b.dataset.flipOverlay"));
  assert.ok(scenario.includes("b.dataset.flipRace"));
