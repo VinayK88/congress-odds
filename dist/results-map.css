@@ -1,0 +1,67 @@
+/* The 2026 election-results atlas, separate from the price-based forecast. */
+.newsroom .election-results-lede{
+  margin:18px 0 26px;padding:18px 21px;
+  border:1px solid #d7dadc;border-top:3px solid #40536c;
+  border-radius:13px;background:linear-gradient(110deg,#eef3f9 0%,#faf9f6 57%,#f9eeee 100%);
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  box-shadow:0 7px 22px #16202e0a;
+}
+.newsroom .election-results-lede .results-live-tag{
+  display:inline-flex;gap:8px;align-items:center;font:800 10px/1.2 var(--font-system);
+  letter-spacing:.14em;color:#35516f;
+}
+.newsroom .election-results-lede .results-live-tag::before{
+  content:"";display:block;width:7px;height:7px;border-radius:50%;background:#9e6747;
+}
+.newsroom .election-results-lede h2{
+  margin:7px 0 5px;font:700 clamp(23px,2.35vw,33px)/1.15 var(--news-serif);
+  letter-spacing:-.035em;color:#272e38;
+}
+.newsroom .election-results-lede p{margin:0;font:500 11px/1.55 var(--font-system);color:#727983}
+.newsroom .election-results-lede a{
+  white-space:nowrap;flex-shrink:0;text-decoration:none;
+  border:1px solid #d6dfeb;border-radius:10px;padding:10px 13px;
+  background:#fffefa;color:#244d7d;font:700 11px var(--font-system);
+}
+.newsroom .election-results-lede a:hover{text-decoration:underline;background:#f2f5fa}
+.newsroom #race-simulator[data-map-mode="results"] .scenario-layout{
+  border-top:0;border-radius:0 0 12px 12px;
+}
+.newsroom #race-simulator[data-map-mode="results"] .market-map-status{
+  border-left-color:#2d5b99;background:linear-gradient(100deg,#f0f5fa,#faf9f6);
+}
+.newsroom #race-simulator[data-map-mode="results"] .market-seat-totals{
+  border-top:3px solid #305f9f;
+}
+.newsroom #race-simulator[data-map-mode="results"] .map-state path{
+  transition:fill .2s ease,stroke .2s ease;
+}
+.newsroom #race-simulator[data-map-mode="results"] .map-state:hover path{
+  stroke:#1f3552;stroke-width:2;filter:drop-shadow(0 2px 3px #1c28302a);
+}
+.newsroom #race-simulator[data-map-mode="results"] #market-map-legend{
+  background:#f3f5f6;border:1px solid #e2e3e3;border-radius:10px;
+  padding:12px 14px;margin:11px 0;
+}
+.newsroom #race-simulator[data-map-mode="results"] #market-map-legend p{
+  display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:7px 0 0;
+}
+.newsroom #race-simulator[data-map-mode="results"] .map-mode-switch [data-map-mode=results][aria-pressed=true]{
+  background:#243f62;color:white;
+}
+.newsroom #race-simulator[data-map-mode="results"] #state-briefing{
+  border-left:3px solid #32649d;padding:12px 14px;
+  background:#f5f6f3;border-radius:7px;margin-top:15px;
+}
+.newsroom #race-simulator[data-map-mode="results"] #state-briefing h3{
+  margin:0 0 7px;font:750 16px var(--font-system);
+}
+.newsroom #race-simulator[data-map-mode="results"] #state-briefing p{margin:5px 0;color:#5c6168;font-size:12px}
+.newsroom #race-simulator[data-map-mode="results"] #state-briefing a{color:#24578c;font-weight:700;font-size:11px}
+@media(max-width:700px){
+ .newsroom .election-results-lede{align-items:stretch;flex-direction:column;gap:13px}
+ .newsroom .election-results-lede a{align-self:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+ .newsroom #race-simulator[data-map-mode="results"] .map-state path{transition:none}
+}
