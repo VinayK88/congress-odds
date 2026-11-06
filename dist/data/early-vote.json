@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-05T23:56:30.433Z",
+  "fetchedAt": "2026-11-06T02:32:29.013Z",
   "rows": [
     {
       "code": "AK",
@@ -41,12 +41,12 @@
     {
       "code": "CA",
       "name": "California",
-      "asOf": "2026-11-04",
+      "asOf": "2026-11-05",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist. Because PDI, the source for party registration data, does not report by method of voting, all party registration calculations include in-person early and mail ballots.",
-      "total": 9939609,
+      "total": 10677324,
       "inPerson": 1443508,
-      "mail": 8496101,
+      "mail": 9233816,
       "requested": 23452579
     },
     {
@@ -55,10 +55,10 @@
       "asOf": "2026-11-05",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 2727630,
-      "inPerson": 138128,
-      "mail": 2589502,
-      "requested": 4124450
+      "total": 2744355,
+      "inPerson": 138122,
+      "mail": 2606233,
+      "requested": 4075072
     },
     {
       "code": "CT",
@@ -118,13 +118,13 @@
     {
       "code": "HI",
       "name": "Hawaii",
-      "asOf": "2026-11-04",
+      "asOf": "2026-11-05",
       "source": "https://elections.hawaii.gov/resources/absentee-voting-report/",
       "notes": "",
-      "total": 369385,
+      "total": 391681,
       "inPerson": 17447,
-      "mail": 351938,
-      "requested": 726849
+      "mail": 374234,
+      "requested": 726368
     },
     {
       "code": "ID",
@@ -162,13 +162,13 @@
     {
       "code": "IA",
       "name": "Iowa",
-      "asOf": "2026-11-03",
+      "asOf": "2026-11-05",
       "source": "Iowa Secretary of State",
-      "notes": "Arizona's request_* figures are mail ballots issued (sent out), not applications received - this state's early voting is run through a permanent early-voting list rather than a one-off per-election request.",
-      "total": 498713,
-      "inPerson": 344986,
-      "mail": 153727,
-      "requested": 161763
+      "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist. Because PDI, the source for party registration data, does not report by method of voting, all party registration calculations include in-person early and mail ballots.",
+      "total": 504743,
+      "inPerson": 348549,
+      "mail": 156194,
+      "requested": 161456
     },
     {
       "code": "KS",
@@ -503,12 +503,12 @@
     {
       "code": "WA",
       "name": "Washington",
-      "asOf": "2026-11-04",
+      "asOf": "2026-11-05",
       "source": "https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics",
       "notes": "",
-      "total": 2885474,
+      "total": 3095092,
       "inPerson": 0,
-      "mail": 2885474,
+      "mail": 3095092,
       "requested": 5131622
     },
     {
