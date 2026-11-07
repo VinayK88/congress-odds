@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-07T10:17:15.203Z",
+  "fetchedAt": "2026-11-07T16:30:07.248Z",
   "rows": [
     {
       "code": "AK",
@@ -41,24 +41,24 @@
     {
       "code": "CA",
       "name": "California",
-      "asOf": "2026-11-05",
+      "asOf": "2026-11-06",
       "source": "https://www.sos.ca.gov/elections/upcoming-elections/general-election-november-3-2026",
       "notes": "Some statistics provided by [PDI](https://politicaldata.com/). The higher value provided by the California Secretary of State or PDI is used where reporting differences exist. Because PDI, the source for party registration data, does not report by method of voting, all party registration calculations include in-person early and mail ballots.",
-      "total": 10677324,
+      "total": 11308974,
       "inPerson": 1443508,
-      "mail": 9233816,
+      "mail": 9865466,
       "requested": 23452579
     },
     {
       "code": "CO",
       "name": "Colorado",
-      "asOf": "2026-11-06",
+      "asOf": "2026-11-07",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 2745464,
-      "inPerson": 138128,
-      "mail": 2607336,
-      "requested": 4076175
+      "total": 2746097,
+      "inPerson": 138127,
+      "mail": 2607970,
+      "requested": 4076809
     },
     {
       "code": "CT",
@@ -305,13 +305,13 @@
     {
       "code": "NV",
       "name": "Nevada",
-      "asOf": "2026-11-03",
+      "asOf": "2026-11-07",
       "source": "https://www.nvsos.gov/elections/election-information/vivid-project",
       "notes": "Statewide and county totals, method of voting (mail vs. in-person), and party registration all come from two public JSON files the state's own Vivid dashboard uses. District (congressional/legislative), age, and district-level party breakdowns come from a separate individual-level file and may not sum to exactly the same statewide total.",
-      "total": 767886,
-      "inPerson": 322681,
-      "mail": 445205,
-      "requested": 2091906
+      "total": 1094834,
+      "inPerson": 517285,
+      "mail": 577549,
+      "requested": 2092833
     },
     {
       "code": "NJ",
@@ -396,9 +396,9 @@
       "asOf": "2026-11-06",
       "source": "https://sos.oregon.gov/elections/Documents/2026-general-election-unofficial-ballot-returns.pdf",
       "notes": "",
-      "total": 2024318,
+      "total": 2028213,
       "inPerson": 0,
-      "mail": 2024318,
+      "mail": 2028213,
       "requested": 3117439
     },
     {
