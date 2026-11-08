@@ -7,7 +7,7 @@
         "chamber": "house",
         "source": "Polymarket",
         "url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
-        "fetchedAt": "2026-11-07T23:45:19.987Z",
+        "fetchedAt": "2026-11-08T02:45:04.549Z",
         "priceMethod": "Yes outcome price",
         "parties": {
           "democratic": {
@@ -28,7 +28,7 @@
         "chamber": "senate",
         "source": "Polymarket",
         "url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
-        "fetchedAt": "2026-11-07T23:45:19.985Z",
+        "fetchedAt": "2026-11-08T02:45:04.547Z",
         "priceMethod": "Yes outcome price",
         "parties": {
           "democratic": {
@@ -133,7 +133,7 @@
         "chamber": "house",
         "source": "Manifold",
         "url": "https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn",
-        "fetchedAt": "2026-11-07T23:45:20.371Z",
+        "fetchedAt": "2026-11-08T02:45:04.709Z",
         "priceMethod": "Play-money · independent Yes probabilities",
         "parties": {
           "democratic": {
@@ -154,7 +154,7 @@
         "chamber": "senate",
         "source": "Manifold",
         "url": "https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the",
-        "fetchedAt": "2026-11-07T23:45:20.367Z",
+        "fetchedAt": "2026-11-08T02:45:04.788Z",
         "priceMethod": "Play-money · independent Yes probabilities",
         "parties": {
           "democratic": {
