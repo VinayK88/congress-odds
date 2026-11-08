@@ -7,7 +7,7 @@
         "chamber": "house",
         "source": "Polymarket",
         "url": "https://polymarket.com/event/which-party-will-win-the-house-in-2026",
-        "fetchedAt": "2026-11-08T09:30:31.242Z",
+        "fetchedAt": "2026-11-08T15:20:03.002Z",
         "priceMethod": "Yes outcome price",
         "parties": {
           "democratic": {
@@ -28,7 +28,7 @@
         "chamber": "senate",
         "source": "Polymarket",
         "url": "https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
-        "fetchedAt": "2026-11-08T09:30:31.243Z",
+        "fetchedAt": "2026-11-08T15:20:03.005Z",
         "priceMethod": "Yes outcome price",
         "parties": {
           "democratic": {
@@ -133,7 +133,7 @@
         "chamber": "house",
         "source": "Manifold",
         "url": "https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn",
-        "fetchedAt": "2026-11-08T09:30:31.291Z",
+        "fetchedAt": "2026-11-08T15:20:03.030Z",
         "priceMethod": "Play-money · independent Yes probabilities",
         "parties": {
           "democratic": {
@@ -154,7 +154,7 @@
         "chamber": "senate",
         "source": "Manifold",
         "url": "https://manifold.markets/BoltonBailey/will-democrats-lose-control-of-the",
-        "fetchedAt": "2026-11-08T09:30:33.110Z",
+        "fetchedAt": "2026-11-08T15:20:03.025Z",
         "priceMethod": "Play-money · independent Yes probabilities",
         "parties": {
           "democratic": {
@@ -174,9 +174,9 @@
     }
   },
   "errors": {
-    "kalshi/senate": "Crossed or incomplete order book",
     "kalshi/house": "Crossed or incomplete order book",
-    "predictit/senate": "Missing price",
-    "predictit/house": "Missing price"
+    "kalshi/senate": "Crossed or incomplete order book",
+    "predictit/house": "Missing price",
+    "predictit/senate": "Missing price"
   }
 }
