@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "electionYear": 2026,
-  "checkedAt": "2026-11-11T10:48:23.755Z",
+  "checkedAt": "2026-11-11T18:08:07.545Z",
   "sourceStatus": "source-backed calls",
   "sources": [
     {
@@ -26,7 +26,7 @@
       "name": "Election Monitor community desk",
       "url": "https://raw.githubusercontent.com/lakerainier/election-monitor/main/data/state.json",
       "status": "ok",
-      "winnerCount": 106
+      "winnerCount": 107
     }
   ],
   "winners": {
@@ -151,6 +151,14 @@
       "updatedAt": "2026-11-04T06:20:00.000Z"
     },
     "MN-S": {
+      "party": "D",
+      "name": "Democratic nominee",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-11T09:01:42.965Z"
+    },
+    "MS-S": {
       "party": "D",
       "name": "Democratic nominee",
       "status": "called",
