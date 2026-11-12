@@ -3,7 +3,7 @@
   "electionYear": 2026,
   "source": "https://election.lab.ufl.edu/early-vote/2026-early-voting/",
   "dataURL": "https://election.lab.ufl.edu/data-downloads/earlyvote/2026/US.csv",
-  "fetchedAt": "2026-11-11T18:08:08.587Z",
+  "fetchedAt": "2026-11-12T00:34:22.204Z",
   "rows": [
     {
       "code": "AK",
@@ -52,13 +52,13 @@
     {
       "code": "CO",
       "name": "Colorado",
-      "asOf": "2026-11-07",
+      "asOf": "2026-11-11",
       "source": "Colorado Secretary of State",
       "notes": "",
-      "total": 2746097,
-      "inPerson": 138127,
-      "mail": 2607970,
-      "requested": 4076809
+      "total": 2748515,
+      "inPerson": 138120,
+      "mail": 2610395,
+      "requested": 4079234
     },
     {
       "code": "CT",
@@ -118,13 +118,13 @@
     {
       "code": "HI",
       "name": "Hawaii",
-      "asOf": "2026-11-06",
+      "asOf": "2026-11-11",
       "source": "https://elections.hawaii.gov/resources/absentee-voting-report/",
       "notes": "",
-      "total": 392027,
-      "inPerson": 17462,
-      "mail": 374565,
-      "requested": 726524
+      "total": 392315,
+      "inPerson": 17524,
+      "mail": 374791,
+      "requested": 726637
     },
     {
       "code": "ID",
@@ -393,12 +393,12 @@
     {
       "code": "OR",
       "name": "Oregon",
-      "asOf": "2026-11-06",
+      "asOf": "2026-11-11",
       "source": "https://sos.oregon.gov/elections/Documents/2026-general-election-unofficial-ballot-returns.pdf",
       "notes": "",
-      "total": 2028213,
+      "total": 2033781,
       "inPerson": 0,
-      "mail": 2028213,
+      "mail": 2033781,
       "requested": 3117439
     },
     {
@@ -503,12 +503,12 @@
     {
       "code": "WA",
       "name": "Washington",
-      "asOf": "2026-11-05",
+      "asOf": "2026-11-11",
       "source": "https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics",
       "notes": "",
-      "total": 3095092,
+      "total": 3242690,
       "inPerson": 0,
-      "mail": 3095092,
+      "mail": 3242690,
       "requested": 5131622
     },
     {
