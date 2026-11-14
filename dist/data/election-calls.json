@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "electionYear": 2026,
-  "checkedAt": "2026-11-14T14:15:30.363Z",
+  "checkedAt": "2026-11-14T20:15:44.013Z",
   "sourceStatus": "source-backed calls",
   "sources": [
     {
@@ -26,7 +26,7 @@
       "name": "Election Monitor community desk",
       "url": "https://raw.githubusercontent.com/lakerainier/election-monitor/main/data/state.json",
       "status": "ok",
-      "winnerCount": 109
+      "winnerCount": 112
     }
   ],
   "winners": {
@@ -37,6 +37,14 @@
       "source": "Poliwave election desk",
       "sourceUrl": "https://www.poliwave.com/us/live/midterms-2026/senate",
       "updatedAt": "2026-11-04T06:20:00.000Z"
+    },
+    "AK-S": {
+      "party": "D",
+      "name": "Democratic nominee",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-14T01:36:03.046Z"
     },
     "AR-S": {
       "party": "R",
@@ -622,9 +630,25 @@
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
       "updatedAt": "2026-11-14T01:36:03.046Z"
     },
+    "NC-07": {
+      "party": "R",
+      "name": "David Rouzer",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-14T01:36:03.046Z"
+    },
     "NC-09": {
       "party": "D",
       "name": "Richard Ojeda",
+      "status": "called",
+      "source": "Election Monitor community results desk (AP-attributed entry)",
+      "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
+      "updatedAt": "2026-11-14T01:36:03.046Z"
+    },
+    "NC-10": {
+      "party": "R",
+      "name": "Pat Harrigan",
       "status": "called",
       "source": "Election Monitor community results desk (AP-attributed entry)",
       "sourceUrl": "https://github.com/lakerainier/election-monitor/blob/main/data/state.json",
